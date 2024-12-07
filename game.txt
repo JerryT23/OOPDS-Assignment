@@ -1,4 +1,4 @@
-iterations 100
+iterations 100 !!SPACE SENSITIVE
 width 10
 height 10
 Battleship * 5
