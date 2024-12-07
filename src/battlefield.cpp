@@ -1,8 +1,8 @@
 #include <iostream>
 #include <string>
 #include <fstream>
-#include "../header/battlefield.h"
 #include "../header/shiptype.h"
+#include "../header/battlefield.h"
 using namespace std;
 
 // 1. vectors, queues and linked lists is not allowed in this assignment
@@ -23,7 +23,8 @@ void Game::init()
     //height
     getline(configFile,temp);
     height << stoi(temp.substr(7));
-    
+    //battleship
+    getline(configFile,temp);
 }
 
 void display_battlefield(int position_ship1, int position_ship2, int position_ship3, int position_ship4, int position_ship5, int position_ship6)

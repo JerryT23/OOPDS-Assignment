@@ -1,5 +1,5 @@
 #include <iostream>
-#include "../header/battlefield.h"
+#include "./header/battlefield.h"
 using namespace std;
 
 int main(){
