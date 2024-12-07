@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 #include <fstream>
 #include "../header/battlefield.h"
 #include "../header/shiptype.h"
