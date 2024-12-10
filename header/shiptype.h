@@ -1,45 +1,75 @@
 #ifndef SHIPTYPE_H
 #define SHIPTYPE_H
-class Battleship {
-    static char symbol;
-    static int amount;
+class Ship {
     int shipPositionX;
     int shipPositionY;
+    public:
+    void setShipPositionX(int x);
+    void setShipPositionY(int y);
+    int getShipPositionX() const;
+    int getShipPositionY() const;
 };
-class Cruiser {
+class Battleship : public Ship{
     static char symbol;
     static int amount;
-    int shipPositionX;
-    int shipPositionY;
+    public:
+    void setSymbol(char c);
+    void setAmount(int x);
+    int getSymbol() const;
+    int getAmount() const;
 };
-class Destroyer {
+class Cruiser : public Ship{
     static char symbol;
     static int amount;
-    int shipPositionX;
-    int shipPositionY;
+    public:
+    void setSymbol(char c);
+    void setAmount(int x);
+    int getSymbol() const;
+    int getAmount() const;
 };
-class Frigate {
+class Destroyer : public Ship{
     static char symbol;
     static int amount;
-    int shipPositionX;
-    int shipPositionY;
+    public:
+    void setSymbol(char c);
+    void setAmount(int x);
+    int getSymbol() const;
+    int getAmount() const;
 };
-class Corvette {
+class Frigate : public Ship{
     static char symbol;
     static int amount;
-    int shipPositionX;
-    int shipPositionY;
+    public:
+    void setSymbol(char c);
+    void setAmount(int x);
+    int getSymbol() const;
+    int getAmount() const;
 };
-class Amphibious {
+class Corvette : public Ship{
     static char symbol;
     static int amount;
-    int shipPositionX;
-    int shipPositionY;
+    public:
+    void setSymbol(char c);
+    void setAmount(int x);
+    int getSymbol() const;
+    int getAmount() const;
 };
-class Supership {
+class Amphibious : public Ship{
+    static char symbol;
+    static int amount;
+    public:
+    void setSymbol(char c);
+    void setAmount(int x);
+    int getSymbol() const;
+    int getAmount() const;
+};
+class Supership : public Ship{
     static char symbol; //what symbol oh?
     static int amount;
-    int shipPositionX;
-    int shipPositionY;
+    public:
+    void setSymbol(char c);
+    void setAmount(int x);
+    int getSymbol() const;
+    int getAmount() const;
 };
 #endif
