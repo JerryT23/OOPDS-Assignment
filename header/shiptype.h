@@ -4,72 +4,31 @@ class Ship {
     int shipPositionX;
     int shipPositionY;
     public:
-    void setShipPositionX(int x);
-    void setShipPositionY(int y);
-    int getShipPositionX() const;
-    int getShipPositionY() const;
+    virtual void looks() = 0;
+    virtual void moves() = 0;
+    virtual void shoots() = 0;
+    virtual void idkyet() = 0;
 };
-class Battleship : public Ship{
-    static char symbol;
-    static int amount;
-    public:
-    void setSymbol(char c);
-    void setAmount(int x);
-    int getSymbol() const;
-    int getAmount() const;
+
+//no overlapping method and attribute for subclasses
+
+class SeeingRobot : public Ship {
+   
 };
-class Cruiser : public Ship{
-    static char symbol;
-    static int amount;
-    public:
-    void setSymbol(char c);
-    void setAmount(int x);
-    int getSymbol() const;
-    int getAmount() const;
+
+class MovingShip : public Ship {
+   
 };
-class Destroyer : public Ship{
-    static char symbol;
-    static int amount;
-    public:
-    void setSymbol(char c);
-    void setAmount(int x);
-    int getSymbol() const;
-    int getAmount() const;
+
+class ShootingShip : public Ship {
+
 };
-class Frigate : public Ship{
-    static char symbol;
-    static int amount;
-    public:
-    void setSymbol(char c);
-    void setAmount(int x);
-    int getSymbol() const;
-    int getAmount() const;
+
+class RamShip : public Ship {
+
 };
-class Corvette : public Ship{
-    static char symbol;
-    static int amount;
-    public:
-    void setSymbol(char c);
-    void setAmount(int x);
-    int getSymbol() const;
-    int getAmount() const;
-};
-class Amphibious : public Ship{
-    static char symbol;
-    static int amount;
-    public:
-    void setSymbol(char c);
-    void setAmount(int x);
-    int getSymbol() const;
-    int getAmount() const;
-};
-class Supership : public Ship{
-    static char symbol; //what symbol oh?
-    static int amount;
-    public:
-    void setSymbol(char c);
-    void setAmount(int x);
-    int getSymbol() const;
-    int getAmount() const;
-};
+
+class Battleship : 
+
+
 #endif
