@@ -13,6 +13,7 @@ using namespace std;
 void Game::init()
 {
     string temp;
+    int amount, teamAmount = 1;
     ifstream configFile("game.txt");
     //iteration
     getline(configFile, temp);
@@ -23,14 +24,25 @@ void Game::init()
     //height
     getline(configFile,temp);
     height << stoi(temp.substr(7));
-    //Team
+    //Team (assume at least one team)
     getline(configFile,temp);
+    teams = new Team[1]; //first team
+    teams[0].setTeamName(temp.substr(0,6)); //first team
+    do {
+        amount = stoi(temp.substr(7));
+        for(int i = 0;i < amount; i++) { 
+            //only allow team name with one char;
+            //example Team A ok but Team AA not ok;
+            getline(configFile,temp);
+        }
+        getline(configFile,temp);
+    } while(temp.substr(0,4) == "Team");
     configFile.close();
 }
 
 void Game::terminate()
 {
-    
+    delete[] teams;
 }
 
 void display_battlefield(int position_ship1, int position_ship2, int position_ship3, int position_ship4, int position_ship5, int position_ship6)
