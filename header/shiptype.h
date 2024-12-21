@@ -10,7 +10,7 @@ class Ship
 
 public: // find a virtual func for base
     virtual void action() = 0;
-    void setSymbol();
+    void setSymbol(char c);
     char getSymbol() const;
     virtual ~Ship() {}
 };
