@@ -4,33 +4,45 @@
 using namespace std;
 class arr {
     public:
-    int size;
-    int* data;
-    arr() {
-        size = 1;
-        data = new int(3);
+    arr(){
+        cout << "construc arr"<< endl;
     }
-    arr(const arr& obj) {
-        this->data = new int();
-        *data = obj.data
+    virtual void print() {cout << "No Print" << endl;}
+    virtual void push() {cout << "No Push" << endl;}
+    virtual ~arr() {cout << "destruc arr"<< endl;}
+};
+class boom : virtual public arr {
+    public:
+    boom(){
+        cout << "construc boom"<< endl;
     }
-    ~arr() {
-        delete data;
+    virtual void print() = 0;
+    virtual ~boom() {cout << "destruc boom"<< endl;}
+};
+class man : virtual public arr {
+    public:
+    man(){
+        cout << "construc man"<< endl;
     }
-    int getData() {
-        return *data;
+    virtual void push() = 0;
+    virtual ~man() {cout << "destruc man"<< endl;}
+};
+class base : public boom {
+    public:
+    base(){
+        cout << "construc base"<< endl;
     }
-
-    void setData(int x) {
-        *data = x;
+    void print() {
+        cout << "print  meee"<< endl;
     }
+    ~base() {cout << "destruc base"<< endl;}
 };
 
 int main() {
-    arr a;
-    arr b(a);
-    a.setData(5);
-    cout << a.getData() << b.getData();
+    arr* arrys = new base;
+    arrys->push();
+    arrys->print();
+    delete arrys;
 
     return 0;
 }

@@ -1,5 +1,7 @@
 #include "../header/shiptype.h"
 
+Ship::Ship() : life(3) {}
+
 std::string Team::getTeamName() const {
     return Team::teamName;
 };

@@ -5,9 +5,13 @@ class Ship
 {
     int shipPositionX;
     int shipPositionY;
+    char symbol;
     int life = 3;
 
 public: // find a virtual func for base
+    virtual void action() = 0;
+    void setSymbol();
+    char getSymbol() const;
     virtual ~Ship() {}
 };
 
@@ -23,28 +27,28 @@ class Team
 
 // no overlapping method and attribute for subclasses
 
-class SeeingRobot : public Ship
+class SeeingRobot : virtual public Ship
 {
 public:
     virtual void look() = 0;
     virtual ~SeeingRobot() {}
 };
 
-class MovingShip : public Ship
+class MovingShip : virtual public Ship
 {
 public:
     virtual void move() = 0;
     virtual ~MovingShip() {}
 };
 
-class ShootingShip : public Ship
+class ShootingShip : virtual public Ship
 {
 public:
     virtual void shoot() = 0;
     virtual ~ShootingShip() {}
 };
 
-class RamShip : public Ship
+class RamShip : virtual public Ship
 {
 public:
     virtual void ram() = 0;
