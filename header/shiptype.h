@@ -1,5 +1,6 @@
 #ifndef SHIPTYPE_H
 #define SHIPTYPE_H
+#include <iostream>
 class Ship
 {
     int shipPositionX;
@@ -8,6 +9,16 @@ class Ship
 
 public: // find a virtual func for base
     virtual ~Ship() {}
+};
+
+class Team
+{
+    std::string teamName;
+    Ship* ships;
+    public:
+    std::string getTeamName() const;
+    void setTeamName(std::string s);
+    void setShips();
 };
 
 // no overlapping method and attribute for subclasses
