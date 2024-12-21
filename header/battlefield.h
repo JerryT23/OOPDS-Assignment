@@ -2,6 +2,7 @@
 #define BATTLEFIELD_H
 class Game {
     private:
+        Team* teams;
         int width;
         int height;
         int iterations;
