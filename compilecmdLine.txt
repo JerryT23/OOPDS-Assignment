@@ -1,0 +1,1 @@
+g++ main.cpp src/battlefield.cpp src/shiptype.cpp -o main
