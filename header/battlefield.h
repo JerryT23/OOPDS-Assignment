@@ -7,5 +7,6 @@ class Game {
         int iterations;
     public:
     void init();
+    void terminate();
 };
 #endif

@@ -23,8 +23,14 @@ void Game::init()
     //height
     getline(configFile,temp);
     height << stoi(temp.substr(7));
-    //battleship
+    //Team
     getline(configFile,temp);
+    configFile.close();
+}
+
+void Game::terminate()
+{
+    
 }
 
 void display_battlefield(int position_ship1, int position_ship2, int position_ship3, int position_ship4, int position_ship5, int position_ship6)
