@@ -28,6 +28,8 @@ void Game::init()
     getline(configFile,temp);
     teams = new Team[1]; //first team
     teams[0].setTeamName(temp.substr(0,6)); //first team
+    //to do: every new team delete old teams[] and create new arry;
+    //initialise every details of team;
     do {
         amount = stoi(temp.substr(7));
         for(int i = 0;i < amount; i++) { 
