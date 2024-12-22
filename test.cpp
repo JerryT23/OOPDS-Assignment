@@ -11,38 +11,20 @@ class arr {
     virtual void push() {cout << "No Push" << endl;}
     virtual ~arr() {cout << "destruc arr"<< endl;}
 };
-class boom : virtual public arr {
+class base2{
+    arr obj;
     public:
-    boom(){
-        cout << "construc boom"<< endl;
+    base2(){
+        cout << "construc base2"<< endl;
     }
-    virtual void print() = 0;
-    virtual ~boom() {cout << "destruc boom"<< endl;}
-};
-class man : virtual public arr {
-    public:
-    man(){
-        cout << "construc man"<< endl;
+    void push() {
+        cout << "push  meee"<< endl;
     }
-    virtual void push() = 0;
-    virtual ~man() {cout << "destruc man"<< endl;}
-};
-class base : public boom {
-    public:
-    base(){
-        cout << "construc base"<< endl;
-    }
-    void print() {
-        cout << "print  meee"<< endl;
-    }
-    ~base() {cout << "destruc base"<< endl;}
+    ~base2() {cout << "destruc base2"<< endl;}
 };
 
 int main() {
-    arr* arrys = new base;
-    arrys->push();
-    arrys->print();
-    delete arrys;
-
+    
+    base2 obj;
     return 0;
 }

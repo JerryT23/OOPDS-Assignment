@@ -1,6 +1,7 @@
 #ifndef SHIPTYPE_H
 #define SHIPTYPE_H
 #include <iostream>
+#include "../header/vector.h"
 class Ship
 {
     int shipPositionX;
@@ -18,7 +19,7 @@ public: // find a virtual func for base
 class Team
 {
     std::string teamName;
-    Ship* ships;
+    Vector<Vector<Ship>> ships;
     public:
     std::string getTeamName() const;
     void setTeamName(std::string s);
