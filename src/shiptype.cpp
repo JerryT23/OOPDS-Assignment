@@ -12,6 +12,13 @@ std::string Team::getTeamName() const {
 void Team::setTeamName(std::string s) {
     Team::teamName = s;
 };
-void Team::setShips() {
-    Team::ships;
-};
+void Team::setShips(int size) {
+    ships = new Ship*[size];
+}
+
+Team::~Team() {
+    for(int i = 0; i < shipAmount; i++) {
+        delete[] ships[i];
+    }
+    delete[] ships;
+}

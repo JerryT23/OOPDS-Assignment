@@ -19,11 +19,12 @@ public: // find a virtual func for base
 class Team
 {
     std::string teamName;
-    Vector<Vector<Ship>> ships;
+    int shipAmount; //in a team
+    Ship** ships;
     public:
     std::string getTeamName() const;
     void setTeamName(std::string s);
-    void setShips();
+    void setShips(int size);
 };
 
 // no overlapping method and attribute for subclasses

@@ -26,16 +26,21 @@ void Game::init()
     height << stoi(temp.substr(7));
     //Team (assume at least one team)
     getline(configFile,temp);
-    teams = new Team[1]; //first team
-    teams[0].setTeamName(temp.substr(0,6)); //first team
+    teams = new Team[teamAmount]; //first team
+    teams[teamAmount-1].setTeamName(temp.substr(0,6)); //first team
     //to do: every new team delete old teams[] and create new arry;
     //initialise every details of team;
     do {
         amount = stoi(temp.substr(7));
+        teams[teamAmount-1].setShips(amount); //set ships row for every shipType for each team
         for(int i = 0;i < amount; i++) { 
             //only allow team name with one char;
             //example Team A ok but Team AA not ok;
             getline(configFile,temp);
+            switch(temp[0]) {
+                case 'B': //contructing
+
+            }
         }
         getline(configFile,temp);
     } while(temp.substr(0,4) == "Team");
