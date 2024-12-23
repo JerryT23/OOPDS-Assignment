@@ -7,9 +7,10 @@ class Ship
     int shipPositionX;
     int shipPositionY;
     char symbol;
-    int life = 3;
+    int life;
 
 public: // find a virtual func for base
+    Ship() : life(3) {}
     virtual void action() = 0;
     void setSymbol(char c);
     char getSymbol() const;
@@ -25,6 +26,12 @@ class Team
     std::string getTeamName() const;
     void setTeamName(std::string s);
     void setShips(int size);
+    ~Team() {
+    for(int i = 0; i < shipAmount; i++) {
+        delete[] ships[i];
+    }
+    delete[] ships;
+}
 };
 
 // no overlapping method and attribute for subclasses

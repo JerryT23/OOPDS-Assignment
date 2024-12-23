@@ -37,10 +37,6 @@ void Game::init()
             //only allow team name with one char;
             //example Team A ok but Team AA not ok;
             getline(configFile,temp);
-            switch(temp[0]) {
-                case 'B': //contructing
-
-            }
         }
         getline(configFile,temp);
     } while(temp.substr(0,4) == "Team");
