@@ -7,6 +7,7 @@ class Game {
         int width;
         int height;
         int iterations;
+        void updateTeamsSize(); //to do
     public:
     void init();
     void terminate();
