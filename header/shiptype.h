@@ -68,26 +68,104 @@ public:
 
 class Battleship : public MovingShip, public SeeingRobot, public ShootingShip
 {
+    public:
+        void move() {
+
+        }
+        void look() {
+
+        }
+        void shoot() {
+
+        }
+        void action() {
+
+        }
 };
 
 class Cruiser : public SeeingRobot, public MovingShip, public RamShip
 {
+    public:
+        void move() {
+
+        }
+        void look() {
+
+        }
+        void ram() {
+
+        }
+        void action() {
+
+        }
 };
 
 class Destroyer : public MovingShip, public SeeingRobot, public ShootingShip, public RamShip
 {
+    public:
+        void move() {
+
+        }
+        void look() {
+
+        }
+        void shoot() {
+
+        }
+        void ram() {
+
+        }
+        void action() {
+
+        }
 };
 class Frigate : public ShootingShip
 { // start up clockwise
+    public:
+        void shoot() {
+
+        }
 };
 class Corvette : public ShootingShip
 { // immediate nearby random
+    public:
+        void shoot() {
+
+        }
 };
 class Amphibious : public MovingShip, public SeeingRobot, public ShootingShip {
     //can walk land & water
+    public:
+        void move() {
+
+        }
+        void look() {
+
+        }
+        void shoot() {
+
+        }
+        void action() {
+
+        }
 } ;
-class Supership : public SeeingRobot, public MovingShip, public RamShip {
-    //
+class Supership : public SeeingRobot, public MovingShip, public RamShip, public ShootingShip {
+    public:
+        void move() {
+
+        }
+        void look() {
+
+        }
+        void shoot() {
+
+        }
+        void ram() {
+            
+        }
+        void action() {
+
+        }
 } ;
 
 #endif
