@@ -125,11 +125,17 @@ class Frigate : public ShootingShip
         void shoot() {
 
         }
+        void action() {
+
+        }
 };
 class Corvette : public ShootingShip
 { // immediate nearby random
     public:
         void shoot() {
+
+        }
+        void action() {
 
         }
 };
