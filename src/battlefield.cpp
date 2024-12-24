@@ -28,8 +28,6 @@ void Game::init()
     getline(configFile,temp);
     teams = new Team[teamAmount]; //first team
     teams[teamAmount-1].setTeamName(temp.substr(0,6)); //first team
-    //to do: every new team delete old teams[] and create new arry;
-    //initialise every details of team;
     {
         int typeAmount; 
         do {
@@ -39,7 +37,7 @@ void Game::init()
                 //only allow team name with one char;
                 //example Team A ok but Team AA not ok;
                 getline(configFile,temp);
-                
+
                 if(temp.substr(0,2) == "Ba") {
                     typeAmount = stoi(temp.substr(13));
                     teams[teamAmount-1].setShipsCol(i,new Battleship[typeAmount]);
@@ -63,10 +61,10 @@ void Game::init()
                     teams[teamAmount-1].setShipsCol(i,new Supership[typeAmount]);
                 }
             } 
-        getline(configFile,temp);
-    } while(temp.substr(0,4) == "Team");
-    configFile.close();
+            getline(configFile,temp);
+            } while(temp.substr(0,4) == "Team");
     }
+    configFile.close();
 }
 
 void Game::terminate()
