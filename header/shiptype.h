@@ -26,6 +26,7 @@ class Team
     std::string getTeamName() const;
     void setTeamName(std::string s);
     void setShips(int size);
+    void Team::setShipsCol(int index,Ship* obj);
     ~Team() {
     for(int i = 0; i < shipAmount; i++) {
         delete[] ships[i];
