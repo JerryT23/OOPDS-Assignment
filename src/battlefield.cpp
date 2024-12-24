@@ -30,17 +30,43 @@ void Game::init()
     teams[teamAmount-1].setTeamName(temp.substr(0,6)); //first team
     //to do: every new team delete old teams[] and create new arry;
     //initialise every details of team;
-    do {
-        amount = stoi(temp.substr(7));
-        teams[teamAmount-1].setShips(amount); //set ships row for every shipType for each team
-        for(int i = 0;i < amount; i++) { 
-            //only allow team name with one char;
-            //example Team A ok but Team AA not ok;
-            getline(configFile,temp);
-        }
+    {
+        int typeAmount; 
+        do {
+            amount = stoi(temp.substr(7));
+            teams[teamAmount-1].setShips(amount); //set ships row for every shipType for each team
+            for(int i = 0;i < amount; i++) { 
+                //only allow team name with one char;
+                //example Team A ok but Team AA not ok;
+                getline(configFile,temp);
+                
+                if(temp.substr(0,2) == "Ba") {
+                    typeAmount = stoi(temp.substr(13));
+                    teams[teamAmount-1].setShipsCol(i,new Battleship[typeAmount]);
+                } else if (temp.substr(0,2) == "Cr") {
+                    typeAmount = stoi(temp.substr(10));
+                    teams[teamAmount-1].setShipsCol(i,new Cruiser[typeAmount]);
+                } else if (temp.substr(0,2) == "De") {
+                    typeAmount = stoi(temp.substr(12));
+                    teams[teamAmount-1].setShipsCol(i,new Destroyer[typeAmount]);
+                } else if (temp.substr(0,2) == "Fr") {
+                    typeAmount = stoi(temp.substr(10));
+                    teams[teamAmount-1].setShipsCol(i,new Frigate[typeAmount]);
+                } else if (temp.substr(0,2) == "Co") {
+                    typeAmount = stoi(temp.substr(11));
+                    teams[teamAmount-1].setShipsCol(i,new Corvette[typeAmount]);
+                } else if (temp.substr(0,2) == "Am") {
+                    typeAmount = stoi(temp.substr(13));
+                    teams[teamAmount-1].setShipsCol(i,new Amphibious[typeAmount]);
+                } else if (temp.substr(0,2) == "Su") {
+                    typeAmount = stoi(temp.substr(12));
+                    teams[teamAmount-1].setShipsCol(i,new Supership[typeAmount]);
+                }
+            } 
         getline(configFile,temp);
     } while(temp.substr(0,4) == "Team");
     configFile.close();
+    }
 }
 
 void Game::terminate()
