@@ -10,6 +10,16 @@ using namespace std;
 //    INHERITANCE, POLYMORPHISM, OPERATOR OVERLOADING, MOVE
 //    SEMANTICS and any number of C++ object oriented features
 
+Team* Game::teamsSizeInc(Team* teams, int& currentSize) {
+    Team* temp = new Team[currentSize+1];
+    for(int i = 0; i < currentSize; i++) {
+        temp[i] = teams[i];
+    }
+    delete[] teams;
+    currentSize += 1;
+    return temp;
+}
+
 void Game::init()
 {
     string temp;

@@ -7,7 +7,7 @@ class Game {
         int width;
         int height;
         int iterations;
-        void updateTeamsSize(); //to do
+        Team* teamsSizeInc(Team* teams, int& currentSize); //to do
     public:
     void init();
     void terminate();
