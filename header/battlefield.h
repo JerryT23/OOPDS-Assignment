@@ -9,6 +9,7 @@ class Game {
         int iterations;
         Team* teamsSizeInc(Team* teams, int& currentSize); //to do
     public:
+    Game();
     void init();
     void terminate();
 };

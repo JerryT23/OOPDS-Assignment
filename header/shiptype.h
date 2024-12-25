@@ -20,7 +20,7 @@ public: // find a virtual func for base
 class Team
 {
     std::string teamName;
-    int shipAmount; //in a team
+    int typeAmount; //in a team
     Ship** ships;
     public:
     std::string getTeamName() const;
@@ -28,11 +28,11 @@ class Team
     void setShips(int size);
     void setShipsCol(int index,Ship* obj);
     ~Team() {
-    for(int i = 0; i < shipAmount; i++) {
+    for(int i = 0; i < typeAmount; i++) {
         delete[] ships[i];
     }
     delete[] ships;
-}
+    }
 };
 
 // no overlapping method and attribute for subclasses
@@ -79,7 +79,7 @@ class Battleship : public MovingShip, public SeeingRobot, public ShootingShip
 
         }
         void action() {
-
+            std::cout << "I'm battleship brather";
         }
 };
 
@@ -96,7 +96,7 @@ class Cruiser : public SeeingRobot, public MovingShip, public RamShip
 
         }
         void action() {
-
+            std::cout << "I'm Cruiser brather";
         }
 };
 

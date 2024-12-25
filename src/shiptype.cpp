@@ -12,7 +12,7 @@ void Team::setTeamName(std::string s) {
     Team::teamName = s;
 };
 void Team::setShips(int size) {
-    shipAmount = size;
+    typeAmount = size;
     ships = new Ship*[size];
 }
 

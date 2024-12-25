@@ -15,15 +15,20 @@ Team* Game::teamsSizeInc(Team* teams, int& currentSize) {
     for(int i = 0; i < currentSize; i++) {
         temp[i] = teams[i];
     }
-    delete[] teams;
+    if (teams) {
+        delete[] teams;
+        cout << "in";
+    }
     currentSize += 1;
     return temp;
 }
 
+Game::Game():teams(nullptr) {}
+
 void Game::init()
 {
     string temp;
-    int amount, teamAmount = 1;
+    int amount, teamAmount = 0;
     ifstream configFile("game.txt");
     //iteration
     getline(configFile, temp);
@@ -36,18 +41,17 @@ void Game::init()
     height << stoi(temp.substr(7));
     //Team (assume at least one team)
     getline(configFile,temp);
-    teams = new Team[teamAmount]; //first team
-    teams[teamAmount-1].setTeamName(temp.substr(0,6)); //first team
     {
         int typeAmount; 
         do {
+            teams = teamsSizeInc(teams,teamAmount);
+            teams->setTeamName(temp.substr(0,6));
             amount = stoi(temp.substr(7));
             teams[teamAmount-1].setShips(amount); //set ships row for every shipType for each team
             for(int i = 0;i < amount; i++) { 
                 //only allow team name with one char;
                 //example Team A ok but Team AA not ok;
                 getline(configFile,temp);
-
                 if(temp.substr(0,2) == "Ba") {
                     typeAmount = stoi(temp.substr(13));
                     teams[teamAmount-1].setShipsCol(i,new Battleship[typeAmount]);

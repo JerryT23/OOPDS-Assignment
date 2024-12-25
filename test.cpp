@@ -4,33 +4,26 @@
 using namespace std;
 class arr {
     public:
-    int x = 0;
+    int **arr2d;
     arr(){
         cout << "construc arr"<< endl;
     }
     void print() {cout << "No Print" << endl;}
     void push() {cout << "No Push" << endl;}
-    ~arr() {cout << "destruc arr"<< endl;}
+    ~arr() {
+        for(int i = 0; i < 4; i++) {
+            delete[] arr2d[i];
+        }
+        delete[] arr2d;
+        cout << "destruct successful";
+    }
 };
 
-arr* arrInc(arr* obj ,int& currentSize) {
-    arr* temp = new arr[currentSize+1];
-    for(int i = 0; i < currentSize; i++) {
-        temp[i] = obj[i];
-    }
-    delete[] obj;
-    currentSize += 1;
-    return temp;
-}
-
 int main() {
-    int amount = 1;
-    arr* arrys = new arr[1];
-    arrys[0].x = 9;
-    cout << "------------------" << endl;
-    arrys = arrInc(arrys,amount);
-    cout << "------------------" << endl;
-    cout << arrys[0].x << endl;
-    delete[] arrys;
+    arr** doublePointer = new arr*[4];
+    for(int i = 0; i < 4; i++) {
+        doublePointer[i] = new arr[4];
+    }
+    doublePointer[3][3].print();
     return 0;
 }
