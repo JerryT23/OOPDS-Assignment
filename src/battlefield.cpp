@@ -70,10 +70,10 @@ void Game::init()
     //                    teamShipTotal = {16,5};
     //
     
+    // Team
     {
-        // Team
         int typeLeft;
-        getline(configFile, temp);
+        getline(configFile, temp); // first Team / space if no team
         teams = new Team[teamShipTotal.get_size()];
         for (int i = 0; i < teamShipTotal.get_size(); i++) //if two team run two time
         {
