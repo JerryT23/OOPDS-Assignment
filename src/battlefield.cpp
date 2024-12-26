@@ -86,18 +86,25 @@ void Game::init()
                     //check what shiptype and allocate new object
                     if(temp.substr(0,2) == "Ba") {
                         teams[i].setShipsCol(y,new Battleship);
+                        teams[i].getShip(y)->setType("Battleship");
                     } else if (temp.substr(0,2) == "Cr") {
                         teams[i].setShipsCol(y,new Cruiser);
+                        teams[i].getShip(y)->setType("Cruiser");
                     } else if (temp.substr(0,2) == "De") {
                         teams[i].setShipsCol(y,new Destroyer);
+                        teams[i].getShip(y)->setType("Destroyer");
                     } else if (temp.substr(0,2) == "Fr") {
                         teams[i].setShipsCol(y,new Frigate);
+                        teams[i].getShip(y)->setType("Frigate");
                     } else if (temp.substr(0,2) == "Co") {
                         teams[i].setShipsCol(y,new Corvette);
+                        teams[i].getShip(y)->setType("Corvette");
                     } else if (temp.substr(0,2) == "Am") {
                         teams[i].setShipsCol(y,new Amphibious);
+                        teams[i].getShip(y)->setType("Amphibious");
                     } else if (temp.substr(0,2) == "Su") {
                         teams[i].setShipsCol(y,new Supership);
+                        teams[i].getShip(y)->setType("Supership");
                     }
                 } 
                 if(y+1 == typeLeft) { //go to next line after allocated last obj of a type
@@ -108,8 +115,6 @@ void Game::init()
             }
         }
     }
-
-    teams[1].getShip(1)->action();
     configFile.close();
 }
 
