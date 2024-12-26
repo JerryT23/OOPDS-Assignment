@@ -38,6 +38,7 @@ public:
         if (i >= element)
         {
             std::cout << "ACCESS VIOLATION, OUT OF RANGE! CONSIDER ENDING THE PROGRAM" << std::endl;
+            exit(-1);
         }
         return arr[i];
     }
