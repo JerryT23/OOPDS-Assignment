@@ -42,7 +42,7 @@ void Game::init()
     height << stoi(temp.substr(7));
 
     // get ship amount in a team then to array;
-    Vector<int> teamShipTotal;
+    Vector<int> teamShipTotal; //maybe need to change data type
     {
         int sum, typeAmount;
         string line;
@@ -87,24 +87,31 @@ void Game::init()
                     if(temp.substr(0,2) == "Ba") {
                         teams[i].setShipsCol(y,new Battleship);
                         teams[i].getShip(y)->setType("Battleship");
+                        teams[i].setSymbol("Battleship",temp[temp.find(' ') + 1]);
                     } else if (temp.substr(0,2) == "Cr") {
                         teams[i].setShipsCol(y,new Cruiser);
                         teams[i].getShip(y)->setType("Cruiser");
+                        teams[i].setSymbol("Cruiser",temp[temp.find(' ') + 1]);
                     } else if (temp.substr(0,2) == "De") {
                         teams[i].setShipsCol(y,new Destroyer);
                         teams[i].getShip(y)->setType("Destroyer");
+                        teams[i].setSymbol("Destroyer",temp[temp.find(' ') + 1]);
                     } else if (temp.substr(0,2) == "Fr") {
                         teams[i].setShipsCol(y,new Frigate);
                         teams[i].getShip(y)->setType("Frigate");
+                        teams[i].setSymbol("Frigate",temp[temp.find(' ') + 1]);
                     } else if (temp.substr(0,2) == "Co") {
                         teams[i].setShipsCol(y,new Corvette);
                         teams[i].getShip(y)->setType("Corvette");
+                        teams[i].setSymbol("Corvette",temp[temp.find(' ') + 1]);
                     } else if (temp.substr(0,2) == "Am") {
                         teams[i].setShipsCol(y,new Amphibious);
                         teams[i].getShip(y)->setType("Amphibious");
+                        teams[i].setSymbol("Amphibious",temp[temp.find(' ') + 1]);
                     } else if (temp.substr(0,2) == "Su") {
                         teams[i].setShipsCol(y,new Supership);
                         teams[i].getShip(y)->setType("Supership");
+                        teams[i].setSymbol("Supership",temp[temp.find(' ') + 1]);
                     }
                 } 
                 if(y+1 == typeLeft) { //go to next line after allocated last obj of a type
@@ -115,6 +122,8 @@ void Game::init()
             }
         }
     }
+    // cout << teams->getSymbol(teams[0].getShip(2)->getType());
+    // upper explanation: to get symbol of first team third ship symbol
     configFile.close();
 }
 
