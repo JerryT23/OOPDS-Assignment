@@ -1,35 +1,40 @@
 #ifndef SHIPTYPE_H
 #define SHIPTYPE_H
 #include <iostream>
+#include <unordered_map>
 #include "../header/vector.h"
 class Ship
 {
+    std::string type;
     int shipPositionX;
     int shipPositionY;
-    char symbol;
     int life;
 
 public: // find a virtual func for base
     Ship() : life(3) {}
     virtual void action() = 0;
-    void setSymbol(char c);
-    char getSymbol() const;
+    void setType(std::string s);
+    std::string getType() const;
     virtual ~Ship() {}
 };
 
 class Team
 {
     std::string teamName;
+    std::unordered_map<std::string,char> symbol;
     int typeAmount; //in a team
     Ship** ships;
     public:
     std::string getTeamName() const;
     void setTeamName(std::string s);
+    void setSymbol(std::string type, char symbolP);
+    char getSymbol(std::string type);
     void setShips(int size);
     void setShipsCol(int index,Ship* obj);
+    Ship* getShip(int index);
     ~Team() {
     for(int i = 0; i < typeAmount; i++) {
-        delete[] ships[i];
+        delete ships[i];
     }
     delete[] ships;
     }
