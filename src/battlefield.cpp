@@ -169,7 +169,9 @@ void Game::terminate()
     delete[] teams;
     for (int i = 0; i < height; i++)
     {
+        delete[] grid[i];
     }
+    delete[] grid;
 }
 
 void display_battlefield(int position_ship1, int position_ship2, int position_ship3, int position_ship4, int position_ship5, int position_ship6)
