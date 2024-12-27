@@ -7,6 +7,7 @@ class Game {
         int width;
         int height;
         int iterations;
+        int** grid;
         Team* teamsSizeInc(Team* teams, int& currentSize); //to do
     public:
     Game();
