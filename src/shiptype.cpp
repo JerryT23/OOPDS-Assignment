@@ -28,8 +28,11 @@ char Team::getSymbol(std::string type)
 
 void Team::setShips(int size)
 {
-    typeAmount = size;
+    shipAmount = size;
     ships = new Ship *[size];
+
+    //init ship position after getting shipAmount
+    shipPositions = new int[shipAmount][2];
 }
 void Team::setShipsCol(int index, Ship *obj)
 {

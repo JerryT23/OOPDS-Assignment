@@ -6,8 +6,6 @@
 class Ship
 {
     std::string type;
-    int shipPositionX;
-    int shipPositionY;
     int life;
 
 public: // find a virtual func for base
@@ -22,7 +20,8 @@ class Team
 {
     std::string teamName;
     std::unordered_map<std::string,char> symbol;
-    int typeAmount; //in a team
+    int (*shipPositions)[2];
+    int shipAmount; //in a team
     Ship** ships;
     public:
     std::string getTeamName() const;
@@ -33,7 +32,7 @@ class Team
     void setShipsCol(int index,Ship* obj);
     Ship* getShip(int index);
     ~Team() {
-    for(int i = 0; i < typeAmount; i++) {
+    for(int i = 0; i < shipAmount; i++) {
         delete ships[i];
     }
     delete[] ships;
