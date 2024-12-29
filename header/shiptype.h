@@ -32,6 +32,7 @@ class Team
     int* getShipPosition(int index) const;
     void setShips(int size);
     void setShipsCol(int index,Ship* obj);
+    int getShipAmount() const;
     Ship* getShip(int index);
     ~Team() {
         delete[] shipPositions;

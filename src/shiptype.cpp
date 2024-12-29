@@ -46,6 +46,7 @@ void Team::setShipsCol(int index, Ship *obj)
 {
     ships[index] = obj;
 }
+int Team::getShipAmount() const {return shipAmount;}
 Ship* Team::getShip(int index) {
     return ships[index];
 }
