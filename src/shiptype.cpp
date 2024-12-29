@@ -26,6 +26,14 @@ char Team::getSymbol(std::string type)
     return symbol[type];
 }
 
+void Team::setShipPosition(int index, int x, int y) {
+    shipPositions[index][0] = x;
+    shipPositions[index][1] = y;
+}
+int* Team::getShipPosition(int index) const {
+    return shipPositions[index];
+}
+
 void Team::setShips(int size)
 {
     shipAmount = size;

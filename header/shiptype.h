@@ -28,10 +28,13 @@ class Team
     void setTeamName(std::string s);
     void setSymbol(std::string type, char symbolP);
     char getSymbol(std::string type);
+    void setShipPosition(int index, int x, int y);
+    int* getShipPosition(int index) const;
     void setShips(int size);
     void setShipsCol(int index,Ship* obj);
     Ship* getShip(int index);
     ~Team() {
+        delete[] shipPositions;
     for(int i = 0; i < shipAmount; i++) {
         delete ships[i];
     }
