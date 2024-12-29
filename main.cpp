@@ -1,5 +1,5 @@
 #include <iostream>
-#include "./header/battlefield.h"
+#include "./header/game.h"
 #include "./header/vector.h"
 using namespace std;
 

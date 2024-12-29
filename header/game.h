@@ -1,5 +1,5 @@
-#ifndef BATTLEFIELD_H
-#define BATTLEFIELD_H
+#ifndef GAME_H
+#define GAME_H
 #include "shiptype.h"
 class Game {
     private:
@@ -13,5 +13,6 @@ class Game {
     Game();
     void init();
     void terminate();
+    void shipRandomGenerate();
 };
 #endif
