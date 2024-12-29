@@ -9,7 +9,6 @@ class Game {
         int height;
         int iterations;
         int** grid;
-        Team* teamsSizeInc(Team* teams, int& currentSize); //to do
     public:
     Game();
     void init();
