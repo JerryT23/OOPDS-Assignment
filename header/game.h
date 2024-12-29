@@ -4,6 +4,7 @@
 class Game {
     private:
         Team* teams;
+        Vector<int> teamShipTotal; //team A have 16 ship team B have 5 ship then => {16,5}
         int width;
         int height;
         int iterations;

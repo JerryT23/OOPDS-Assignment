@@ -42,7 +42,6 @@ void Game::init()
     height = stoi(temp.substr(7));
 
     // get ship amount in a team then to array;
-    Vector<int> teamShipTotal; // maybe need to change data type
     {
         int sum, typeAmount;
         string line;
@@ -166,7 +165,9 @@ void Game::init()
 
 void Game::terminate()
 {
+    //delete teams
     delete[] teams;
+    //delete grid
     for (int i = 0; i < height; i++)
     {
         delete[] grid[i];
@@ -174,7 +175,7 @@ void Game::terminate()
     delete[] grid;
 }
 
-void Game::shipRandomGenerate()
+void Game::shipRandomGenerate() //generate random position for ship
 {
     
 }
