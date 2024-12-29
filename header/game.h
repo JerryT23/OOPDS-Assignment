@@ -1,6 +1,16 @@
 #ifndef GAME_H
 #define GAME_H
 #include "shiptype.h"
+class Grid {
+    bool taken;
+    int val;
+    public:
+    void setTaken(bool b);
+    bool getTaken() const;
+    void setVal(int value);
+    int getVal() const;
+};
+
 class Game {
     private:
         Team* teams;
@@ -8,7 +18,7 @@ class Game {
         int width;
         int height;
         int iterations;
-        int** grid;
+        Grid** grid;
     public:
     Game();
     void init();

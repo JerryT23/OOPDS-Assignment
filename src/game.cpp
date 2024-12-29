@@ -1,4 +1,6 @@
 #include <iostream>
+#include <cstdlib>
+#include <ctime>
 #include <string>
 #include <fstream>
 #include "../header/shiptype.h"
@@ -9,6 +11,19 @@ using namespace std;
 // 2. must employ the OOP concepts you have learnt such as
 //    INHERITANCE, POLYMORPHISM, OPERATOR OVERLOADING, MOVE
 //    SEMANTICS and any number of C++ object oriented features
+
+void Grid::setTaken(bool b) {
+    taken = b;
+}
+bool Grid::getTaken() const {
+    return taken;
+}
+void Grid::setVal(int value) {
+    val = value;
+}
+int Grid::getVal() const {
+    return val;
+}
 
 Game::Game() : teams(nullptr) {}
 
@@ -125,10 +140,10 @@ void Game::init()
     // upper explanation: to get symbol of first team third ship symbol
 
     // create 2d array game map (grid) using height and width
-    grid = new int *[height];
+    grid = new Grid *[height];
     for (int i = 0; i < height; i++)
     {
-        grid[i] = new int[width];
+        grid[i] = new Grid[width];
     }
     //-------------
 
@@ -139,7 +154,8 @@ void Game::init()
         {
             for(int i = 0; i < width; i++) {
                 configFile >> num;
-                grid[o][i] = num - 48; //conv char to int
+                grid[o][i].setVal(num - 48); //conv char to int
+                grid[o][i].setTaken(false); //no ship in current coordinate
             }
         }
     }
@@ -160,7 +176,18 @@ void Game::terminate()
     delete[] grid;
 }
 
-void Game::shipRandomGenerate() //generate random position for ship
-{
-    
-}
+// void Game::shipRandomGenerate() //generate random position for ship
+// {
+//     srand(time(0));
+//     int randx, randy;
+//     for(int teamI = 0; teamI < teamShipTotal.get_size();teamI++) //loop "team" amount
+//     {
+//         for(int shipI = 0; shipI < teams[teamI].getShipAmount();shipI++) {
+//             do {
+//                 randx = rand() % width;
+//                 randy = rand() % height;
+//             }
+//             while((grid[randy][randx] != 0 && grid[randy][randx] != 1) || (grid[randy][randx] == 1 && teams[teamI].getShip(shipI)->getType() != "Amphibious"));
+//         }
+//     } 
+// }
