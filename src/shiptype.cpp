@@ -7,7 +7,12 @@ std::string Ship::getType() const
 {
     return type;
 }
-
+void Ship::setDisplay(std::string s) {
+    display = s;
+}
+std::string Ship::getDisplay() const {
+ return display;
+}
 
 std::string Team::getTeamName() const
 {
@@ -17,14 +22,6 @@ void Team::setTeamName(std::string s)
 {
     Team::teamName = s;
 };
-void Team::setSymbol(std::string type, char symbolP)
-{
-    symbol[type] = symbolP;
-}
-char Team::getSymbol(std::string type)
-{
-    return symbol[type];
-}
 
 void Team::setShipPosition(int index, int x, int y) {
     shipPositions[index][0] = x;

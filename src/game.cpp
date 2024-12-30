@@ -12,16 +12,20 @@ using namespace std;
 //    INHERITANCE, POLYMORPHISM, OPERATOR OVERLOADING, MOVE
 //    SEMANTICS and any number of C++ object oriented features
 
-void Grid::setTaken(bool b) {
+void Grid::setTaken(bool b)
+{
     taken = b;
 }
-bool Grid::getTaken() const {
+bool Grid::getTaken() const
+{
     return taken;
 }
-void Grid::setVal(int value) {
+void Grid::setVal(int value)
+{
     val = value;
 }
-int Grid::getVal() const {
+int Grid::getVal() const
+{
     return val;
 }
 
@@ -71,7 +75,9 @@ void Game::init()
 
     // Team
     {
-        int typeLeft;
+        int typeLeft;              // ships that are done/doing init
+        int count;                 // trace number of the type
+        string converter;          // convert char to string
         getline(configFile, temp); // first Team / space if no team
         teams = new Team[teamShipTotal.get_size()];
         for (int i = 0; i < teamShipTotal.get_size(); i++) // if two team run two time
@@ -79,65 +85,66 @@ void Game::init()
             teams[i].setShips(teamShipTotal[i]);
             getline(configFile, temp); // first type of the team
             typeLeft = stoi(temp.substr(temp.find(' ') + 3));
+            count = 1;
+            converter = "";
             for (int y = 0; y < teamShipTotal[i]; y++) // if team A have 16 loop 16 times
             {
-                if (y < typeLeft)
+                converter = "";
+                // check what shiptype and allocate new object
+                if (temp.substr(0, 2) == "Ba")
                 {
-                    // check what shiptype and allocate new object
-                    if (temp.substr(0, 2) == "Ba")
-                    {
-                        teams[i].setShipsCol(y, new Battleship);
-                        teams[i].getShip(y)->setType("Battleship");
-                        teams[i].setSymbol("Battleship", temp[temp.find(' ') + 1]);
-                    }
-                    else if (temp.substr(0, 2) == "Cr")
-                    {
-                        teams[i].setShipsCol(y, new Cruiser);
-                        teams[i].getShip(y)->setType("Cruiser");
-                        teams[i].setSymbol("Cruiser", temp[temp.find(' ') + 1]);
-                    }
-                    else if (temp.substr(0, 2) == "De")
-                    {
-                        teams[i].setShipsCol(y, new Destroyer);
-                        teams[i].getShip(y)->setType("Destroyer");
-                        teams[i].setSymbol("Destroyer", temp[temp.find(' ') + 1]);
-                    }
-                    else if (temp.substr(0, 2) == "Fr")
-                    {
-                        teams[i].setShipsCol(y, new Frigate);
-                        teams[i].getShip(y)->setType("Frigate");
-                        teams[i].setSymbol("Frigate", temp[temp.find(' ') + 1]);
-                    }
-                    else if (temp.substr(0, 2) == "Co")
-                    {
-                        teams[i].setShipsCol(y, new Corvette);
-                        teams[i].getShip(y)->setType("Corvette");
-                        teams[i].setSymbol("Corvette", temp[temp.find(' ') + 1]);
-                    }
-                    else if (temp.substr(0, 2) == "Am")
-                    {
-                        teams[i].setShipsCol(y, new Amphibious);
-                        teams[i].getShip(y)->setType("Amphibious");
-                        teams[i].setSymbol("Amphibious", temp[temp.find(' ') + 1]);
-                    }
-                    else if (temp.substr(0, 2) == "Su")
-                    {
-                        teams[i].setShipsCol(y, new Supership);
-                        teams[i].getShip(y)->setType("Supership");
-                        teams[i].setSymbol("Supership", temp[temp.find(' ') + 1]);
-                    }
+                    teams[i].setShipsCol(y, new Battleship);
+                    teams[i].getShip(y)->setType("Battleship");
+                    teams[i].getShip(y)->setDisplay(converter + temp[temp.find(' ') + 1] + static_cast<char>(count + 48));
                 }
+                else if (temp.substr(0, 2) == "Cr")
+                {
+                    teams[i].setShipsCol(y, new Cruiser);
+                    teams[i].getShip(y)->setType("Cruiser");
+                    teams[i].getShip(y)->setDisplay(converter + temp[temp.find(' ') + 1] + static_cast<char>(count + 48));
+                }
+                else if (temp.substr(0, 2) == "De")
+                {
+                    teams[i].setShipsCol(y, new Destroyer);
+                    teams[i].getShip(y)->setType("Destroyer");
+                    teams[i].getShip(y)->setDisplay(converter + temp[temp.find(' ') + 1] + static_cast<char>(count + 48));
+                }
+                else if (temp.substr(0, 2) == "Fr")
+                {
+                    teams[i].setShipsCol(y, new Frigate);
+                    teams[i].getShip(y)->setType("Frigate");
+                    teams[i].getShip(y)->setDisplay(converter + temp[temp.find(' ') + 1] + static_cast<char>(count + 48));
+                }
+                else if (temp.substr(0, 2) == "Co")
+                {
+                    teams[i].setShipsCol(y, new Corvette);
+                    teams[i].getShip(y)->setType("Corvette");
+                    teams[i].getShip(y)->setDisplay(converter + temp[temp.find(' ') + 1] + static_cast<char>(count + 48));
+                }
+                else if (temp.substr(0, 2) == "Am")
+                {
+                    teams[i].setShipsCol(y, new Amphibious);
+                    teams[i].getShip(y)->setType("Amphibious");
+                    teams[i].getShip(y)->setDisplay(converter + temp[temp.find(' ') + 1] + static_cast<char>(count + 48));
+                }
+                else if (temp.substr(0, 2) == "Su")
+                {
+                    teams[i].setShipsCol(y, new Supership);
+                    teams[i].getShip(y)->setType("Supership");
+                    teams[i].getShip(y)->setDisplay(converter + temp[temp.find(' ') + 1] + static_cast<char>(count + 48));
+                }
+                count++;
                 if (y + 1 == typeLeft)
                 { // go to next line after allocated last obj of a type
                     getline(configFile, temp);
+                    count = 1;
                     if (!temp.empty() && temp.substr(0, 4) != "Team")
                         typeLeft += stoi(temp.substr(temp.find(' ') + 3));
                 }
             }
         }
+        cout << teams[1].getShip(4)->getDisplay();
     }
-    // cout << teams->getSymbol(teams[0].getShip(2)->getType());
-    // upper explanation: to get symbol of first team third ship symbol
 
     // create 2d array game map (grid) using height and width
     grid = new Grid *[height];
@@ -152,10 +159,11 @@ void Game::init()
         char num; // num = 0/1 on map
         for (int o = 0; o < height; o++)
         {
-            for(int i = 0; i < width; i++) {
+            for (int i = 0; i < width; i++)
+            {
                 configFile >> num;
-                grid[o][i].setVal(num - 48); //conv char to int
-                grid[o][i].setTaken(false); //no ship in current coordinate
+                grid[o][i].setVal(num - 48); // conv char to int
+                grid[o][i].setTaken(false);  // no ship in current coordinate
             }
         }
     }
@@ -166,9 +174,9 @@ void Game::init()
 
 void Game::terminate()
 {
-    //delete teams
+    // delete teams
     delete[] teams;
-    //delete grid
+    // delete grid
     for (int i = 0; i < height; i++)
     {
         delete[] grid[i];
@@ -187,7 +195,8 @@ void Game::terminate()
 //                 randx = rand() % width;
 //                 randy = rand() % height;
 //             }
-//             while((grid[randy][randx] != 0 && grid[randy][randx] != 1) || (grid[randy][randx] == 1 && teams[teamI].getShip(shipI)->getType() != "Amphibious"));
+//             while(grid[randy][randx].getTaken() || (grid[randy][randx].getVal() == 1 && teams[teamI].getShip(shipI)->getType() != "Amphibious"));
+//             grid[randy][randx] = teams->getSymbol(teams[teamI].getShip(shipI)->getType());
 //         }
-//     } 
+//     }
 // }

@@ -6,28 +6,28 @@
 class Ship
 {
     std::string type;
+    std::string display;
     int life;
 
-public: // find a virtual func for base
+public:
     Ship() : life(3) {}
     virtual void action() = 0;
     void setType(std::string s);
     std::string getType() const;
+    void setDisplay(std::string s);
+    std::string getDisplay() const;
     virtual ~Ship() {}
 };
 
 class Team
 {
     std::string teamName;
-    std::unordered_map<std::string,char> symbol;
     int (*shipPositions)[2];
     int shipAmount; //in a team
     Ship** ships;
     public:
     std::string getTeamName() const;
     void setTeamName(std::string s);
-    void setSymbol(std::string type, char symbolP);
-    char getSymbol(std::string type);
     void setShipPosition(int index, int x, int y);
     int* getShipPosition(int index) const;
     void setShips(int size);
@@ -45,11 +45,11 @@ class Team
 
 // no overlapping method and attribute for subclasses
 
-class SeeingRobot : virtual public Ship
+class SeeingShip : virtual public Ship
 {
 public:
     virtual void look() = 0;
-    virtual ~SeeingRobot() {}
+    virtual ~SeeingShip() {}
 };
 
 class MovingShip : virtual public Ship
@@ -74,7 +74,7 @@ public:
 };
 
 
-class Battleship : public MovingShip, public SeeingRobot, public ShootingShip
+class Battleship : public MovingShip, public SeeingShip, public ShootingShip
 {
     public:
         void move() {
@@ -91,7 +91,7 @@ class Battleship : public MovingShip, public SeeingRobot, public ShootingShip
         }
 };
 
-class Cruiser : public SeeingRobot, public MovingShip, public RamShip
+class Cruiser : public SeeingShip, public MovingShip, public RamShip
 {
     public:
         void move() {
@@ -108,7 +108,7 @@ class Cruiser : public SeeingRobot, public MovingShip, public RamShip
         }
 };
 
-class Destroyer : public MovingShip, public SeeingRobot, public ShootingShip, public RamShip
+class Destroyer : public MovingShip, public SeeingShip, public ShootingShip, public RamShip
 {
     public:
         void move() {
@@ -147,7 +147,7 @@ class Corvette : public ShootingShip
 
         }
 };
-class Amphibious : public MovingShip, public SeeingRobot, public ShootingShip {
+class Amphibious : public MovingShip, public SeeingShip, public ShootingShip {
     //can walk land & water
     public:
         void move() {
@@ -163,7 +163,7 @@ class Amphibious : public MovingShip, public SeeingRobot, public ShootingShip {
 
         }
 } ;
-class Supership : public SeeingRobot, public MovingShip, public RamShip, public ShootingShip {
+class Supership : public SeeingShip, public MovingShip, public RamShip, public ShootingShip {
     public:
         void move() {
 
