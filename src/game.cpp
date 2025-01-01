@@ -20,13 +20,19 @@ bool Grid::getTaken() const
 {
     return taken;
 }
-void Grid::setVal(int value)
+void Grid::setVal(string value)
 {
+    if(value == "0" || value == "1")
+        type = value;
     val = value;
 }
-int Grid::getVal() const
+string Grid::getVal() const
 {
     return val;
+}
+string Grid::getType() const
+{
+    return type;
 }
 
 Game::Game() : teams(nullptr) {}
@@ -143,7 +149,6 @@ void Game::init()
                 }
             }
         }
-        cout << teams[1].getShip(4)->getDisplay();
     }
 
     // create 2d array game map (grid) using height and width
@@ -157,17 +162,27 @@ void Game::init()
     // init 2d array game map (grid)
     {
         char num; // num = 0/1 on map
+        string converter = "";
         for (int o = 0; o < height; o++)
         {
             for (int i = 0; i < width; i++)
             {
                 configFile >> num;
-                grid[o][i].setVal(num - 48); // conv char to int
+                grid[o][i].setVal(converter + num);
                 grid[o][i].setTaken(false);  // no ship in current coordinate
             }
         }
     }
     //---------------------------
+    for (int o = 0; o < height; o++)
+        {
+            for (int i = 0; i < width; i++)
+            {
+                cout << grid[o][i].getVal();  // no ship in current coordinate
+            }
+            cout << endl;
+        }
+    // cout << teams[1].getShip(4)->getDisplay();
 
     configFile.close();
 }

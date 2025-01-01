@@ -3,12 +3,14 @@
 #include "shiptype.h"
 class Grid {
     bool taken;
-    int val;
+    std::string val; //string bcs store *1 if ship is at the location
+    std::string type; // 0/1
     public:
     void setTaken(bool b);
     bool getTaken() const;
-    void setVal(int value);
-    int getVal() const;
+    void setVal(std::string value);
+    std::string getVal() const;
+    std::string getType() const;
 };
 
 class Game {
