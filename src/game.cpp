@@ -174,15 +174,6 @@ void Game::init()
         }
     }
     //---------------------------
-    for (int o = 0; o < height; o++)
-        {
-            for (int i = 0; i < width; i++)
-            {
-                cout << grid[o][i].getVal();  // no ship in current coordinate
-            }
-            cout << endl;
-        }
-    // cout << teams[1].getShip(4)->getDisplay();
 
     configFile.close();
 }
@@ -199,19 +190,35 @@ void Game::terminate()
     delete[] grid;
 }
 
-// void Game::shipRandomGenerate() //generate random position for ship
-// {
-//     srand(time(0));
-//     int randx, randy;
-//     for(int teamI = 0; teamI < teamShipTotal.get_size();teamI++) //loop "team" amount
-//     {
-//         for(int shipI = 0; shipI < teams[teamI].getShipAmount();shipI++) {
-//             do {
-//                 randx = rand() % width;
-//                 randy = rand() % height;
-//             }
-//             while(grid[randy][randx].getTaken() || (grid[randy][randx].getVal() == 1 && teams[teamI].getShip(shipI)->getType() != "Amphibious"));
-//             grid[randy][randx] = teams->getSymbol(teams[teamI].getShip(shipI)->getType());
-//         }
-//     }
-// }
+void Game::shipRandomGenerate() //generate random position for ship
+{
+    srand(time(0));
+    int randx, randy;
+    for(int teamI = 0; teamI < teamShipTotal.get_size();teamI++) //loop "team" amount
+    {
+        for(int shipI = 0; shipI < teams[teamI].getShipAmount();shipI++) {
+            do {
+                randx = rand() % width;
+                randy = rand() % height;
+            }
+            while(grid[randy][randx].getTaken() || (grid[randy][randx].getVal() == "1" && teams[teamI].getShip(shipI)->getType() != "Amphibious"));
+            grid[randy][randx].setVal(teams[teamI].getShip(shipI)->getDisplay());
+            grid[randy][randx].setTaken(true);
+            teams[teamI].setShipPosition(shipI,randx,randy);
+        }
+    }
+
+    for (int o = 0; o < height; o++)
+        {
+            for (int i = 0; i < width; i++)
+            {
+                if(grid[o][i].getVal().length() == 1) {
+                    cout << grid[o][i].getVal() << "  ";
+                } // no ship in current coordinate
+                else {
+                    cout << grid[o][i].getVal() << ' ';
+                }
+            }
+            cout << endl;
+        }
+}

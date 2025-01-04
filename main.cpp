@@ -6,5 +6,6 @@ using namespace std;
 int main(){
     Game game;
     game.init();
+    game.shipRandomGenerate();
     game.terminate();
 }
