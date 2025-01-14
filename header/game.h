@@ -1,6 +1,8 @@
 #ifndef GAME_H
 #define GAME_H
 #include "shiptype.h"
+#include "team.h"
+#include "vector.h"
 class Grid {
     bool taken;
     std::string val; //string bcs store *1 if ship is at the location

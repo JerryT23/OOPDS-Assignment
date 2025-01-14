@@ -88,7 +88,6 @@ void Game::init()
         teams = new Team[teamShipTotal.get_size()];
         for (int i = 0; i < teamShipTotal.get_size(); i++) // if two team run two time
         {
-            teams[i].setShips(teamShipTotal[i]);
             getline(configFile, temp); // first type of the team
             typeLeft = stoi(temp.substr(temp.find(' ') + 3));
             count = 1;
@@ -99,45 +98,45 @@ void Game::init()
                 // check what shiptype and allocate new object
                 if (temp.substr(0, 2) == "Ba")
                 {
-                    teams[i].setShipsCol(y, new Battleship);
-                    teams[i].getShip(y)->setType("Battleship");
-                    teams[i].getShip(y)->setDisplay(converter + temp[temp.find(' ') + 1] + static_cast<char>(count + 48));
+                    teams[i].pushbackShips(new Battleship);
+                    teams[i].searchShip(y)->setType("Battleship");
+                    teams[i].searchShip(y)->setDisplay(converter + temp[temp.find(' ') + 1] + static_cast<char>(count + 48));
                 }
                 else if (temp.substr(0, 2) == "Cr")
                 {
-                    teams[i].setShipsCol(y, new Cruiser);
-                    teams[i].getShip(y)->setType("Cruiser");
-                    teams[i].getShip(y)->setDisplay(converter + temp[temp.find(' ') + 1] + static_cast<char>(count + 48));
+                    teams[i].pushbackShips(new Cruiser);
+                    teams[i].searchShip(y)->setType("Cruiser");
+                    teams[i].searchShip(y)->setDisplay(converter + temp[temp.find(' ') + 1] + static_cast<char>(count + 48));
                 }
                 else if (temp.substr(0, 2) == "De")
                 {
-                    teams[i].setShipsCol(y, new Destroyer);
-                    teams[i].getShip(y)->setType("Destroyer");
-                    teams[i].getShip(y)->setDisplay(converter + temp[temp.find(' ') + 1] + static_cast<char>(count + 48));
+                    teams[i].pushbackShips(new Destroyer);
+                    teams[i].searchShip(y)->setType("Destroyer");
+                    teams[i].searchShip(y)->setDisplay(converter + temp[temp.find(' ') + 1] + static_cast<char>(count + 48));
                 }
                 else if (temp.substr(0, 2) == "Fr")
                 {
-                    teams[i].setShipsCol(y, new Frigate);
-                    teams[i].getShip(y)->setType("Frigate");
-                    teams[i].getShip(y)->setDisplay(converter + temp[temp.find(' ') + 1] + static_cast<char>(count + 48));
+                    teams[i].pushbackShips(new Frigate);
+                    teams[i].searchShip(y)->setType("Frigate");
+                    teams[i].searchShip(y)->setDisplay(converter + temp[temp.find(' ') + 1] + static_cast<char>(count + 48));
                 }
                 else if (temp.substr(0, 2) == "Co")
                 {
-                    teams[i].setShipsCol(y, new Corvette);
-                    teams[i].getShip(y)->setType("Corvette");
-                    teams[i].getShip(y)->setDisplay(converter + temp[temp.find(' ') + 1] + static_cast<char>(count + 48));
+                    teams[i].pushbackShips(new Corvette);
+                    teams[i].searchShip(y)->setType("Corvette");
+                    teams[i].searchShip(y)->setDisplay(converter + temp[temp.find(' ') + 1] + static_cast<char>(count + 48));
                 }
                 else if (temp.substr(0, 2) == "Am")
                 {
-                    teams[i].setShipsCol(y, new Amphibious);
-                    teams[i].getShip(y)->setType("Amphibious");
-                    teams[i].getShip(y)->setDisplay(converter + temp[temp.find(' ') + 1] + static_cast<char>(count + 48));
+                    teams[i].pushbackShips(new Amphibious);
+                    teams[i].searchShip(y)->setType("Amphibious");
+                    teams[i].searchShip(y)->setDisplay(converter + temp[temp.find(' ') + 1] + static_cast<char>(count + 48));
                 }
                 else if (temp.substr(0, 2) == "Su")
                 {
-                    teams[i].setShipsCol(y, new Supership);
-                    teams[i].getShip(y)->setType("Supership");
-                    teams[i].getShip(y)->setDisplay(converter + temp[temp.find(' ') + 1] + static_cast<char>(count + 48));
+                    teams[i].pushbackShips(new Supership);
+                    teams[i].searchShip(y)->setType("Supership");
+                    teams[i].searchShip(y)->setDisplay(converter + temp[temp.find(' ') + 1] + static_cast<char>(count + 48));
                 }
                 count++;
                 if (y + 1 == typeLeft)
@@ -201,8 +200,8 @@ void Game::shipRandomGenerate() //generate random position for ship
                 randx = rand() % width;
                 randy = rand() % height;
             }
-            while(grid[randy][randx].getTaken() || (grid[randy][randx].getVal() == "1" && teams[teamI].getShip(shipI)->getType() != "Amphibious"));
-            grid[randy][randx].setVal(teams[teamI].getShip(shipI)->getDisplay());
+            while(grid[randy][randx].getTaken() || (grid[randy][randx].getVal() == "1" && teams[teamI].searchShip(shipI)->getType() != "Amphibious"));
+            grid[randy][randx].setVal(teams[teamI].searchShip(shipI)->getDisplay());
             grid[randy][randx].setTaken(true);
             teams[teamI].setShipPosition(shipI,randx,randy);
         }

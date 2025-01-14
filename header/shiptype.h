@@ -2,7 +2,6 @@
 #define SHIPTYPE_H
 #include <iostream>
 #include <unordered_map>
-#include "../header/vector.h"
 class Ship
 {
     std::string type;
@@ -17,30 +16,6 @@ public:
     void setDisplay(std::string s);
     std::string getDisplay() const;
     virtual ~Ship() {}
-};
-
-class Team
-{
-    std::string teamName;
-    int (*shipPositions)[2];
-    int shipAmount; //in a team
-    Ship** ships;
-    public:
-    std::string getTeamName() const;
-    void setTeamName(std::string s);
-    void setShipPosition(int index, int x, int y);
-    int* getShipPosition(int index) const;
-    void setShips(int size);
-    void setShipsCol(int index,Ship* obj);
-    int getShipAmount() const;
-    Ship* getShip(int index);
-    ~Team() {
-        delete[] shipPositions;
-    for(int i = 0; i < shipAmount; i++) {
-        delete ships[i];
-    }
-    delete[] ships;
-    }
 };
 
 // no overlapping method and attribute for subclasses
@@ -180,6 +155,5 @@ class Supership : public SeeingShip, public MovingShip, public RamShip, public S
         void action() {
 
         }
-} ;
-
+};
 #endif

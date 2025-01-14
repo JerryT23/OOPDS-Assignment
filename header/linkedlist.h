@@ -15,6 +15,13 @@ class LinkedList {
     LinkedList(): head(nullptr),tail(nullptr),size(0) {}
     void pushback(Ship* value);
     Ship* search(int index);
+    void print() {
+        Node* ptr = head;
+        while(ptr!=nullptr) {
+            std::cout << ptr->value->getType() << ' ';
+            ptr = ptr->next;
+        }
+    }
     ~LinkedList(); 
 };
 #endif
