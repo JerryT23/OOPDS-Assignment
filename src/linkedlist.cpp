@@ -21,7 +21,17 @@ void LinkedList::pushback(Ship* value){
         size++;
     }
 }
-
+Ship* LinkedList::search(int index){
+        if(index >= size) {
+            std::cout << "violation access\n " << __LINE__ << " lines";
+            exit(-1);
+        }
+        Node* ret = head;
+        for(int i = 0; i < index; i++) {
+            ret = ret->next;
+        }
+        return ret->value;
+    }
 LinkedList::~LinkedList() {
     Node* n = head;
     Node* deleteptr = head;
