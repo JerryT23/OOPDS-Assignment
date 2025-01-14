@@ -31,3 +31,13 @@ void queue::dequeue()
         rear = nullptr;
     }
 }
+
+queue::~queue() {
+    Node* n = front;
+    Node* deleteptr = front;
+    while(deleteptr) {
+        n = deleteptr->next;
+        delete deleteptr;
+        deleteptr = n;
+    }
+}

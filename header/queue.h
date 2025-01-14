@@ -15,5 +15,6 @@ public:
     bool empty();
     void enqueue(Ship* value);
     void dequeue();
+    ~queue();
 };
 #endif
