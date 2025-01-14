@@ -2,28 +2,48 @@
 #include <iostream>
 
 using namespace std;
-class arr {
-    public:
-    int **arr2d;
-    arr(){
-        cout << "construc arr"<< endl;
+class LinkedList {
+    struct Node{
+        int value;
+        Node* next;
+    };
+    Node* head;
+    Node* tail;
+    int size;
+    void pushFirst(int value) {
+        Node* newNode = new Node;
+        newNode->value = value;
+        newNode->next = nullptr;
+        head = newNode;
+        tail = newNode;
+        size = 1;
     }
-    void print() {cout << "No Print" << endl;}
-    void push() {cout << "No Push" << endl;}
-    ~arr() {
-        for(int i = 0; i < 4; i++) {
-            delete[] arr2d[i];
+    public:
+    LinkedList(): head(nullptr),tail(nullptr),size(0) {
+
+    }
+    void pushback(int value) {
+        if(!head) {
+            pushFirst(value);
+        } else {
+            Node* newNode = new Node;
+            newNode->value = value;
+            newNode->next = nullptr;
+            tail->next = newNode;
+            tail = newNode;
+            size++;
         }
-        delete[] arr2d;
-        cout << "destruct successful";
+    }
+    void print() {
+        for(int i = 0; i < size;i++) {
+            Node* ptr = head;
+            cout << ptr->value << ' ';
+            ptr = ptr->next;
+        }
     }
 };
 
 int main() {
-    arr** doublePointer = new arr*[4];
-    for(int i = 0; i < 4; i++) {
-        doublePointer[i] = new arr[4];
-    }
-    doublePointer[3][3].print();
+    LinkedList list;
     return 0;
 }
