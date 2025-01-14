@@ -21,3 +21,13 @@ void LinkedList::pushback(Ship* value){
         size++;
     }
 }
+
+LinkedList::~LinkedList() {
+    Node* n = head;
+    Node* deleteptr = head;
+    for(int i = 0; i < size; i++) {
+        n = deleteptr->next;
+        delete deleteptr;
+        deleteptr = n;
+    }
+}

@@ -14,6 +14,7 @@ class LinkedList {
     LinkedList(): head(nullptr),tail(nullptr),size(0) {
 
     }
-    void pushback(Ship* value); 
+    void pushback(Ship* value);
+    ~LinkedList(); 
 };
 #endif

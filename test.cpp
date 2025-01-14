@@ -3,56 +3,51 @@
 
 using namespace std;
 
-class queue
-{
-    struct Node
-    {
+class LinkedList {
+    struct Node{
         int value;
-        Node *next;
+        Node* next;
     };
-    Node *front;
-    Node *rear;
-public:
-    queue() : front(nullptr), rear(nullptr) {}
-    bool empty() {
-        return front == nullptr;
+    Node* head;
+    Node* tail;
+    int size;
+    public:
+    void pushFirst(int value);
+    LinkedList(): head(nullptr),tail(nullptr),size(0) {
+
     }
-    void enqueue(int value) {
+    void pushback(int value);
+    ~LinkedList(); 
+};
+void LinkedList::pushFirst(int value)  {
+    Node* newNode = new Node;
+    newNode->value = value;
+    newNode->next = nullptr;
+    head = newNode;
+    tail = newNode;
+    size = 1;
+}
+
+void LinkedList::pushback(int value){
+    if(!head) {
+        pushFirst(value);
+    } else {
         Node* newNode = new Node;
         newNode->value = value;
         newNode->next = nullptr;
-        if(empty()) {
-            front = rear = newNode;
-        } else {
-            rear->next = newNode;
-            rear = newNode;
-        }
+        tail->next = newNode;
+        tail = newNode;
+        size++;
     }
-    void dequeue() {
-        Node* frontNode = front;
-        front = front->next;
-        delete frontNode;
-        if(front == nullptr) {
-            rear = nullptr;
-        }
-    }
-    void display() {
-        Node* n = front;
-        while(n!=nullptr) {
-            cout << n->value << ' ';
-            n = n->next;
-        }
-    }
-};
+}
 
+LinkedList::~LinkedList();
 int main()
 {
-    queue list;
-    list.enqueue(3);
-    list.enqueue(5);
-    list.enqueue(8);
-    list.display();
-    list.dequeue();
-    list.display();
+    LinkedList* list = new LinkedList;
+    list->pushback(3);
+    list->pushback(5);
+    list->pushback(8);
+    delete list;
     return 0;
 }
