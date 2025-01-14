@@ -1,54 +1,58 @@
-//this file is for testing certain function only:)))
+// this file is for testing certain function only:)))
 #include <iostream>
 
 using namespace std;
-class LinkedList {
-    struct Node{
+
+class queue
+{
+    struct Node
+    {
         int value;
-        Node* next;
+        Node *next;
     };
-    Node* head;
-    Node* tail;
-    int size;
-    void pushFirst(int value) {
+    Node *front;
+    Node *rear;
+public:
+    queue() : front(nullptr), rear(nullptr) {}
+    bool empty() {
+        return front == nullptr;
+    }
+    void enqueue(int value) {
         Node* newNode = new Node;
         newNode->value = value;
         newNode->next = nullptr;
-        head = newNode;
-        tail = newNode;
-        size = 1;
-    }
-    public:
-    LinkedList(): head(nullptr),tail(nullptr),size(0) {
-
-    }
-    void pushback(int value) {
-        if(!head) {
-            pushFirst(value);
+        if(empty()) {
+            front = rear = newNode;
         } else {
-            Node* newNode = new Node;
-            newNode->value = value;
-            newNode->next = nullptr;
-            tail->next = newNode;
-            tail = newNode;
-            size++;
+            rear->next = newNode;
+            rear = newNode;
         }
     }
-    void print() {
-            Node* ptr = head;
-        for(int i = 0; i < size;i++) {
-            cout << ptr->value << ' ';
-            ptr = ptr->next;
+    void dequeue() {
+        Node* frontNode = front;
+        front = front->next;
+        delete frontNode;
+        if(front == nullptr) {
+            rear = nullptr;
+        }
+    }
+    void display() {
+        Node* n = front;
+        while(n!=nullptr) {
+            cout << n->value << ' ';
+            n = n->next;
         }
     }
 };
 
-int main() {
-    LinkedList list;
-    list.pushback(3);
-    list.pushback(5);
-    list.pushback(8);
-    list.pushback(7);
-    list.print();
+int main()
+{
+    queue list;
+    list.enqueue(3);
+    list.enqueue(5);
+    list.enqueue(8);
+    list.display();
+    list.dequeue();
+    list.display();
     return 0;
 }
