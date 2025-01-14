@@ -35,8 +35,8 @@ class LinkedList {
         }
     }
     void print() {
-        for(int i = 0; i < size;i++) {
             Node* ptr = head;
+        for(int i = 0; i < size;i++) {
             cout << ptr->value << ' ';
             ptr = ptr->next;
         }
@@ -45,5 +45,10 @@ class LinkedList {
 
 int main() {
     LinkedList list;
+    list.pushback(3);
+    list.pushback(5);
+    list.pushback(8);
+    list.pushback(7);
+    list.print();
     return 0;
 }
