@@ -87,7 +87,7 @@ void Game::init()
         getline(configFile, temp); // first Team / space if no team
         teams = new Team[teamShipTotal.get_size()];
         for (int i = 0; i < teamShipTotal.get_size(); i++) // if two team run two time
-        {
+        {   teams[i].initShipPositions(teamShipTotal[i]);
             getline(configFile, temp); // first type of the team
             typeLeft = stoi(temp.substr(temp.find(' ') + 3));
             count = 1;
@@ -195,7 +195,7 @@ void Game::shipRandomGenerate() //generate random position for ship
     int randx, randy;
     for(int teamI = 0; teamI < teamShipTotal.get_size();teamI++) //loop "team" amount
     {
-        for(int shipI = 0; shipI < teams[teamI].getShipAmount();shipI++) {
+        for(int shipI = 0; shipI < teamShipTotal[teamI];shipI++) {
             do {
                 randx = rand() % width;
                 randy = rand() % height;
