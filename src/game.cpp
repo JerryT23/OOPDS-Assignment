@@ -28,6 +28,7 @@ for (int o = 0; o < height; o++)
     }
     cout << endl;
     }
+    cout << "-----------------------------------------" <<endl;
 }
 
 void Game::init()

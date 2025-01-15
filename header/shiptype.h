@@ -38,7 +38,7 @@ public:
 class MovingShip : virtual public Ship
 {
 public:
-    virtual void move() = 0;
+    virtual void move(Grid** grid, int shipPositionX, int shipPositionY) = 0;
     virtual ~MovingShip() {}
 };
 
@@ -62,14 +62,7 @@ class Battleship : public MovingShip, public SeeingShip, public ShootingShip
     Vector<int> xNy; //store x and y for push into available move
     Vector<Vector<int>> availableMove;
     public:
-        void move() {
-            if(availableMove.get_size()==0) {
-                std::cout << "Ship have nowhere to move!" <<std::endl;
-            }
-            srand(time(0));
-            int index = rand() % availableMove.get_size();
-            
-        }
+        void move(Grid** grid, int shipPositionX, int shipPositionY);
         void look(int x, int y, Grid** grid, int shipPositionX, int shipPositionY,int width, int height);
         void shoot() {
 
@@ -77,7 +70,7 @@ class Battleship : public MovingShip, public SeeingShip, public ShootingShip
         void action(Grid** grid, int shipPositionX, int shipPositionY,int width,int height) {
             std::cout << this->getDisplay() << " Ship look(0,0):" <<std::endl;
             look(0,0,grid,shipPositionX,shipPositionY,width,height);
-            move();
+            move(grid,shipPositionX,shipPositionY);
             availableMove.clear();
         }
 };
@@ -85,7 +78,7 @@ class Battleship : public MovingShip, public SeeingShip, public ShootingShip
 class Cruiser : public SeeingShip, public MovingShip, public RamShip
 {
     public:
-        void move() {
+        void move(Grid** grid, int shipPositionX, int shipPositionY) {
 
         }
         void look(int x, int y, Grid** grid, int shipPositionX, int shipPositionY,int width, int height) {
@@ -102,7 +95,7 @@ class Cruiser : public SeeingShip, public MovingShip, public RamShip
 class Destroyer : public MovingShip, public SeeingShip, public ShootingShip, public RamShip
 {
     public:
-        void move() {
+        void move(Grid** grid, int shipPositionX, int shipPositionY) {
 
         }
         void look(int x, int y, Grid** grid, int shipPositionX, int shipPositionY,int width, int height) {
@@ -141,7 +134,7 @@ class Corvette : public ShootingShip
 class Amphibious : public MovingShip, public SeeingShip, public ShootingShip {
     //can walk land & water
     public:
-        void move() {
+        void move(Grid** grid, int shipPositionX, int shipPositionY) {
 
         }
         void look(int x, int y, Grid** grid, int shipPositionX, int shipPositionY,int width, int height) {
@@ -156,7 +149,7 @@ class Amphibious : public MovingShip, public SeeingShip, public ShootingShip {
 } ;
 class Supership : public SeeingShip, public MovingShip, public RamShip, public ShootingShip {
     public:
-        void move() {
+        void move(Grid** grid, int shipPositionX, int shipPositionY) {
 
         }
         void look(int x, int y, Grid** grid, int shipPositionX, int shipPositionY,int width, int height) {
