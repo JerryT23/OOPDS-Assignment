@@ -62,7 +62,8 @@ Ship* LinkedList::search(int index){
     }
     return ret->value;
 }
-Node* LinkedList::getHead() const{ return head;};
+Node* LinkedList::getHead() const{ return head;}
+Node* LinkedList::getTail() const {return tail;}
 LinkedList::~LinkedList() {
     Node* n = head;
     Node* deleteptr = head;

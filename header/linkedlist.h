@@ -15,6 +15,7 @@ class LinkedList {
     void deleteNode(int index);
     Ship* search(int index);
     Node* getHead() const;
+    Node* getTail() const;
     void print() {
         Node* ptr = head;
         while(ptr!=nullptr) {
