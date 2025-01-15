@@ -52,16 +52,17 @@ void LinkedList::deleteNode(int index) {
         size--;
 }
 Ship* LinkedList::search(int index){
-        if(index >= size) {
-            std::cout << "violation access\n " << __LINE__ << " lines";
-            exit(-1);
-        }
-        Node* ret = head;
-        for(int i = 0; i < index; i++) {
-            ret = ret->next;
-        }
-        return ret->value;
+    if(index >= size) {
+        std::cout << "violation access\n " << __LINE__ << " lines";
+        exit(-1);
     }
+    Node* ret = head;
+    for(int i = 0; i < index; i++) {
+        ret = ret->next;
+    }
+    return ret->value;
+}
+Node* LinkedList::getHead() const{ return head;};
 LinkedList::~LinkedList() {
     Node* n = head;
     Node* deleteptr = head;
