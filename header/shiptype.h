@@ -2,6 +2,7 @@
 #define SHIPTYPE_H
 #include <iostream>
 #include <unordered_map>
+#include "./grid.h"
 class Ship
 {
     std::string type;
@@ -10,7 +11,7 @@ class Ship
 
 public:
     Ship() : life(3) {}
-    virtual void action() = 0;
+    virtual void action(Grid** grid) = 0;
     void setType(std::string s);
     std::string getType() const;
     void setDisplay(std::string s);
@@ -61,7 +62,7 @@ class Battleship : public MovingShip, public SeeingShip, public ShootingShip
         void shoot() {
 
         }
-        void action() {
+        void action(Grid** grid) {
             std::cout << "I'm battleship brather";
         }
 };
@@ -78,7 +79,7 @@ class Cruiser : public SeeingShip, public MovingShip, public RamShip
         void ram() {
 
         }
-        void action() {
+        void action(Grid** grid) {
             std::cout << "I'm Cruiser brather";
         }
 };
@@ -98,7 +99,7 @@ class Destroyer : public MovingShip, public SeeingShip, public ShootingShip, pub
         void ram() {
 
         }
-        void action() {
+        void action(Grid** grid) {
 
         }
 };
@@ -108,7 +109,7 @@ class Frigate : public ShootingShip
         void shoot() {
 
         }
-        void action() {
+        void action(Grid** grid) {
 
         }
 };
@@ -118,7 +119,7 @@ class Corvette : public ShootingShip
         void shoot() {
 
         }
-        void action() {
+        void action(Grid** grid) {
 
         }
 };
@@ -134,7 +135,7 @@ class Amphibious : public MovingShip, public SeeingShip, public ShootingShip {
         void shoot() {
 
         }
-        void action() {
+        void action(Grid** grid) {
 
         }
 } ;
@@ -152,7 +153,7 @@ class Supership : public SeeingShip, public MovingShip, public RamShip, public S
         void ram() {
             
         }
-        void action() {
+        void action(Grid** grid) {
 
         }
 };

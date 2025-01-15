@@ -13,29 +13,6 @@ using namespace std;
 //    INHERITANCE, POLYMORPHISM, OPERATOR OVERLOADING, MOVE
 //    SEMANTICS and any number of C++ object oriented features
 
-void Grid::setTaken(bool b)
-{
-    taken = b;
-}
-bool Grid::getTaken() const
-{
-    return taken;
-}
-void Grid::setVal(string value)
-{
-    if(value == "0" || value == "1")
-        type = value;
-    val = value;
-}
-string Grid::getVal() const
-{
-    return val;
-}
-string Grid::getType() const
-{
-    return type;
-}
-
 Game::Game() : teams(nullptr) {}
 void Game::printGrid() const {
 for (int o = 0; o < height; o++)
