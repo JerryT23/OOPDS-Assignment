@@ -2,6 +2,7 @@
 #define SHIPTYPE_H
 #include <iostream>
 #include <unordered_map>
+#include <cstdlib>
 #include "./grid.h"
 #include "./vector.h"
 class Ship
@@ -13,7 +14,7 @@ class Ship
 
 public:
     Ship() : life(3) {}
-    virtual void action(Grid** grid, int shipPositionX, int shipPositionY) = 0;
+    virtual void action(Grid** grid, int shipPositionX, int shipPositionY,int width,int height) = 0;
     void setType(std::string s);
     std::string getType() const;
     void setDisplay(std::string s);
@@ -28,7 +29,7 @@ public:
 class SeeingShip : virtual public Ship
 {
 public:
-    virtual void look(int x, int y, Grid** grid, int shipPositionX, int shipPositionY) = 0;
+    virtual void look(int x, int y, Grid** grid, int shipPositionX, int shipPositionY,int width, int height) = 0;
     virtual ~SeeingShip() {}
 };
 
@@ -56,32 +57,23 @@ public:
 
 class Battleship : public MovingShip, public SeeingShip, public ShootingShip
 {
+    Vector<int> xNy; //store x and y for push into available move
+    Vector<Vector<int>> availableMove;
     public:
         void move() {
-
+            srand(time(0));
+            int index = rand() % availableMove.get_size();
+            
         }
-        void look(int x, int y, Grid** grid, int shipPositionX, int shipPositionY) {
-            for(int gridY = shipPositionY-1; gridY <= shipPositionY+1;gridY++) { //get the grid of nine-square area centered on (x,y)
-                if(gridY < 0) continue; //if outside of grid
-                for(int gridX = shipPositionX-1; gridX <= shipPositionX+1;gridX++) {
-                    if(gridX < 0) continue;
-                    std::cout <<gridY << ',' << gridX << std::endl;
-                    if(gridX == shipPositionX && gridY==shipPositionY) continue; //ignore self;
-                    if(grid[gridY][gridX].getship()) {
-                        if(grid[gridY][gridX].getship()->getTeamName() == this->getTeamName()) {
-                            std::cout << "Friendly ship found at -> Y:" <<gridY << " X:" << gridX << std::endl;
-                        } else {
-                            std::cout << "Enemy ship found at -> Y:" <<gridY << " X:" << gridX << std::endl;
-                        }
-                    }
-                }
-            }
-        }
+        void look(int x, int y, Grid** grid, int shipPositionX, int shipPositionY,int width, int height);
         void shoot() {
 
         }
-        void action(Grid** grid, int shipPositionX, int shipPositionY) {
-            look(0,0,grid,shipPositionX,shipPositionY);
+        void action(Grid** grid, int shipPositionX, int shipPositionY,int width,int height) {
+            std::cout << this->getDisplay() << " Ship look(0,0):" <<std::endl;
+            look(0,0,grid,shipPositionX,shipPositionY,width,height);
+            move();
+            availableMove.clear();
         }
 };
 
@@ -91,13 +83,13 @@ class Cruiser : public SeeingShip, public MovingShip, public RamShip
         void move() {
 
         }
-        void look(int x, int y, Grid** grid, int shipPositionX, int shipPositionY) {
+        void look(int x, int y, Grid** grid, int shipPositionX, int shipPositionY,int width, int height) {
 
         }
         void ram() {
 
         }
-        void action(Grid** grid, int shipPositionX, int shipPositionY) {
+        void action(Grid** grid, int shipPositionX, int shipPositionY,int width,int height) {
             std::cout << "I'm Cruiser brather";
         }
 };
@@ -108,7 +100,7 @@ class Destroyer : public MovingShip, public SeeingShip, public ShootingShip, pub
         void move() {
 
         }
-        void look(int x, int y, Grid** grid, int shipPositionX, int shipPositionY) {
+        void look(int x, int y, Grid** grid, int shipPositionX, int shipPositionY,int width, int height) {
 
         }
         void shoot() {
@@ -117,7 +109,7 @@ class Destroyer : public MovingShip, public SeeingShip, public ShootingShip, pub
         void ram() {
 
         }
-        void action(Grid** grid, int shipPositionX, int shipPositionY) {
+        void action(Grid** grid, int shipPositionX, int shipPositionY,int width,int height) {
 
         }
 };
@@ -127,7 +119,7 @@ class Frigate : public ShootingShip
         void shoot() {
 
         }
-        void action(Grid** grid, int shipPositionX, int shipPositionY) {
+        void action(Grid** grid, int shipPositionX, int shipPositionY,int width,int height) {
 
         }
 };
@@ -137,7 +129,7 @@ class Corvette : public ShootingShip
         void shoot() {
 
         }
-        void action(Grid** grid, int shipPositionX, int shipPositionY) {
+        void action(Grid** grid, int shipPositionX, int shipPositionY,int width,int height) {
 
         }
 };
@@ -147,13 +139,13 @@ class Amphibious : public MovingShip, public SeeingShip, public ShootingShip {
         void move() {
 
         }
-        void look(int x, int y, Grid** grid, int shipPositionX, int shipPositionY) {
+        void look(int x, int y, Grid** grid, int shipPositionX, int shipPositionY,int width, int height) {
 
         }
         void shoot() {
 
         }
-        void action(Grid** grid, int shipPositionX, int shipPositionY) {
+        void action(Grid** grid, int shipPositionX, int shipPositionY,int width,int height) {
 
         }
 } ;
@@ -162,7 +154,7 @@ class Supership : public SeeingShip, public MovingShip, public RamShip, public S
         void move() {
 
         }
-        void look(int x, int y, Grid** grid, int shipPositionX, int shipPositionY) {
+        void look(int x, int y, Grid** grid, int shipPositionX, int shipPositionY,int width, int height) {
 
         }
         void shoot() {
@@ -171,7 +163,7 @@ class Supership : public SeeingShip, public MovingShip, public RamShip, public S
         void ram() {
             
         }
-        void action(Grid** grid, int shipPositionX, int shipPositionY) {
+        void action(Grid** grid, int shipPositionX, int shipPositionY,int width,int height) {
 
         }
 };
