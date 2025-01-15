@@ -7,6 +7,7 @@ class Ship
 {
     std::string type;
     std::string display;
+    std::string teamName;
     int life;
 
 public:
@@ -16,6 +17,8 @@ public:
     std::string getType() const;
     void setDisplay(std::string s);
     std::string getDisplay() const;
+    void setTeamName(std::string teamname);
+    std::string getTeamName() const;
     virtual ~Ship() {}
 };
 
@@ -24,7 +27,7 @@ public:
 class SeeingShip : virtual public Ship
 {
 public:
-    virtual void look() = 0;
+    virtual void look(int x, int y, Grid** grid, int shipIndex) = 0;
     virtual ~SeeingShip() {}
 };
 
@@ -56,14 +59,14 @@ class Battleship : public MovingShip, public SeeingShip, public ShootingShip
         void move() {
 
         }
-        void look() {
+        void look(int x, int y, Grid** grid, int shipIndex) {
 
         }
         void shoot() {
 
         }
         void action(Grid** grid) {
-            std::cout << "I'm battleship brather";
+            move();
         }
 };
 
@@ -73,7 +76,7 @@ class Cruiser : public SeeingShip, public MovingShip, public RamShip
         void move() {
 
         }
-        void look() {
+        void look(int x, int y, Grid** grid, int shipIndex) {
 
         }
         void ram() {
@@ -90,7 +93,7 @@ class Destroyer : public MovingShip, public SeeingShip, public ShootingShip, pub
         void move() {
 
         }
-        void look() {
+        void look(int x, int y, Grid** grid, int shipIndex) {
 
         }
         void shoot() {
@@ -129,7 +132,7 @@ class Amphibious : public MovingShip, public SeeingShip, public ShootingShip {
         void move() {
 
         }
-        void look() {
+        void look(int x, int y, Grid** grid, int shipIndex) {
 
         }
         void shoot() {
@@ -144,7 +147,7 @@ class Supership : public SeeingShip, public MovingShip, public RamShip, public S
         void move() {
 
         }
-        void look() {
+        void look(int x, int y, Grid** grid, int shipIndex) {
 
         }
         void shoot() {
