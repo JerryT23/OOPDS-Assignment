@@ -77,10 +77,12 @@ void Game::init()
         int typeLeft;              // ships that are done/doing init
         int count;                 // trace number of the type
         string converter;          // convert char to string
+        string teamName;           // to store team name for ship
         getline(configFile, temp); // first Team / space if no team
         teams = new Team[teamShipTotal.get_size()];
         for (int i = 0; i < teamShipTotal.get_size(); i++) // if two team run two time
         {   teams[i].initShipPositions(teamShipTotal[i]);
+            teamName = temp.substr(0,6);
             getline(configFile, temp); // first type of the team
             typeLeft = stoi(temp.substr(temp.find(' ') + 3));
             count = 1;
@@ -94,42 +96,49 @@ void Game::init()
                     teams[i].pushbackShips(new Battleship);
                     teams[i].searchShip(y)->setType("Battleship");
                     teams[i].searchShip(y)->setDisplay(converter + temp[temp.find(' ') + 1] + static_cast<char>(count + 48));
+                    teams[i].searchShip(y)->setTeamName(teamName);                
                 }
                 else if (temp.substr(0, 2) == "Cr")
                 {
                     teams[i].pushbackShips(new Cruiser);
                     teams[i].searchShip(y)->setType("Cruiser");
                     teams[i].searchShip(y)->setDisplay(converter + temp[temp.find(' ') + 1] + static_cast<char>(count + 48));
+                    teams[i].searchShip(y)->setTeamName(teamName);                
                 }
                 else if (temp.substr(0, 2) == "De")
                 {
                     teams[i].pushbackShips(new Destroyer);
                     teams[i].searchShip(y)->setType("Destroyer");
                     teams[i].searchShip(y)->setDisplay(converter + temp[temp.find(' ') + 1] + static_cast<char>(count + 48));
+                    teams[i].searchShip(y)->setTeamName(teamName);                
                 }
                 else if (temp.substr(0, 2) == "Fr")
                 {
                     teams[i].pushbackShips(new Frigate);
                     teams[i].searchShip(y)->setType("Frigate");
                     teams[i].searchShip(y)->setDisplay(converter + temp[temp.find(' ') + 1] + static_cast<char>(count + 48));
+                    teams[i].searchShip(y)->setTeamName(teamName);                
                 }
                 else if (temp.substr(0, 2) == "Co")
                 {
                     teams[i].pushbackShips(new Corvette);
                     teams[i].searchShip(y)->setType("Corvette");
                     teams[i].searchShip(y)->setDisplay(converter + temp[temp.find(' ') + 1] + static_cast<char>(count + 48));
+                    teams[i].searchShip(y)->setTeamName(teamName);                
                 }
                 else if (temp.substr(0, 2) == "Am")
                 {
                     teams[i].pushbackShips(new Amphibious);
                     teams[i].searchShip(y)->setType("Amphibious");
                     teams[i].searchShip(y)->setDisplay(converter + temp[temp.find(' ') + 1] + static_cast<char>(count + 48));
+                    teams[i].searchShip(y)->setTeamName(teamName);                
                 }
                 else if (temp.substr(0, 2) == "Su")
                 {
                     teams[i].pushbackShips(new Supership);
                     teams[i].searchShip(y)->setType("Supership");
                     teams[i].searchShip(y)->setDisplay(converter + temp[temp.find(' ') + 1] + static_cast<char>(count + 48));
+                    teams[i].searchShip(y)->setTeamName(teamName);                
                 }
                 count++;
                 if (y + 1 == typeLeft)
@@ -206,14 +215,19 @@ void Game::shipRandomGenerate() //generate random position for ship
 void Game::start() {
     int teamI = 0;
     Node* shipPtr = teams[teamI].getLinkedListHead(); //get first team head
-    for(int i = 0; i < iterations; i++) {//iteration
-        if(!shipPtr) { //move to next team after all ships done
-            teamI++;
-            if(teamI == teamShipTotal.get_size()) //if teamI out of range reset back to zero
-                teamI = 0;
-            shipPtr = teams[teamI].getLinkedListHead();
-        }
-        cout << shipPtr->value->getDisplay() << ' '; //action
-        shipPtr = shipPtr->next;
-    }
+    // for(int i = 0; i < iterations; i++) {//iteration
+    //     if(!shipPtr) { //move to next team after all ships done
+    //         teamI++;
+    //         if(teamI == teamShipTotal.get_size()) //if teamI out of range reset back to zero
+    //             teamI = 0;
+    //         shipPtr = teams[teamI].getLinkedListHead();
+    //     }
+    //     cout << shipPtr->value->getDisplay() << ' '; //action
+    //     shipPtr = shipPtr->next;
+    // }
+    
+    //--------------------------------- testing
+    cout << shipPtr->value->getTeamName();
+    printGrid();
+    //----------------------------------
 }
