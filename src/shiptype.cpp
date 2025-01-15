@@ -15,3 +15,9 @@ std::string Ship::getDisplay() const
 {
     return display;
 }
+void Ship::setTeamName(std::string teamname) {
+    teamName = teamname;
+}
+std::string Ship::getTeamName() const {
+    return teamName;
+}
