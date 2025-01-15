@@ -1,12 +1,9 @@
 #ifndef LINKEDLIST_H
 #define LINKEDLIST_H
 #include "./shiptype.h"
+#include "node.h"
 #include <iostream>
 class LinkedList {
-    struct Node{
-        Ship* value;
-        Node* next;
-    };
     Node* head;
     Node* tail;
     int size;

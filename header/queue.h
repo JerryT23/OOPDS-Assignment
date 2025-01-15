@@ -1,13 +1,9 @@
 #ifndef QUEUE_H
 #define QUEUE_H
 #include "./shiptype.h"
+#include "node.h"
 class queue
 {
-    struct Node
-    {
-        Ship* value;
-        Node* next;
-    };
     Node* front;
     Node* rear;
 public:
