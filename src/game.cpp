@@ -5,6 +5,7 @@
 #include <fstream>
 #include "../header/shiptype.h"
 #include "../header/game.h"
+#include "../header/node.h"
 using namespace std;
 
 // 1. vectors, queues and linked lists is not allowed in this assignment
@@ -206,14 +207,14 @@ void Game::shipRandomGenerate() //generate random position for ship
             teams[teamI].setShipPosition(shipI,randx,randy);
         }
     }
-
+    cout << "Initialised ships position: " << endl;
     for (int o = 0; o < height; o++)
         {
             for (int i = 0; i < width; i++)
             {
-                if(grid[o][i].getVal().length() == 1) {
+                if(grid[o][i].getVal().length() == 1) { //if no ship in current coordinate
                     cout << grid[o][i].getVal() << "  ";
-                } // no ship in current coordinate
+                }
                 else {
                     cout << grid[o][i].getVal() << ' ';
                 }
@@ -223,5 +224,16 @@ void Game::shipRandomGenerate() //generate random position for ship
 }
 
 void Game::start() {
-    
+    int teamI = 0;
+    Node* shipPtr = teams[teamI].getLinkedListHead(); //get first team head
+    for(int i = 0; i < iterations; i++) {//iteration
+        if(!shipPtr) { //move to next team after all ships done
+            teamI++;
+            if(teamI == teamShipTotal.get_size()) //if teamI out of range reset back to zero
+                teamI = 0;
+            shipPtr = teams[teamI].getLinkedListHead();
+        }
+        cout << shipPtr->value->getDisplay() << ' '; //action
+        shipPtr = shipPtr->next;
+    }
 }
