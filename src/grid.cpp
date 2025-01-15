@@ -1,4 +1,5 @@
 #include "../header/grid.h"
+Grid::Grid():ship(nullptr){}
 void Grid::setTaken(bool b)
 {
     taken = b;
@@ -10,7 +11,7 @@ bool Grid::getTaken() const
 void Grid::setVal(std::string value)
 {
     if(value == "0" || value == "1")
-        type = value;
+        landtype = value;
     val = value;
 }
 std::string Grid::getVal() const
@@ -19,5 +20,11 @@ std::string Grid::getVal() const
 }
 std::string Grid::getType() const
 {
-    return type;
+    return landtype;
+}
+void Grid::setship(Ship* ship) {
+    this->ship = ship;
+}
+Ship* Grid::getship() const {
+    return this->ship;
 }
