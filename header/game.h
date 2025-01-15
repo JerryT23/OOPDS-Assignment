@@ -25,6 +25,7 @@ class Game {
         Grid** grid;
     public:
     Game();
+    void printGrid() const;
     void init();
     void terminate();
     void shipRandomGenerate();

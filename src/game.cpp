@@ -37,6 +37,21 @@ string Grid::getType() const
 }
 
 Game::Game() : teams(nullptr) {}
+void Game::printGrid() const {
+for (int o = 0; o < height; o++)
+{
+    for (int i = 0; i < width; i++)
+    {
+        if(grid[o][i].getVal().length() == 1) { //if no ship in current coordinate
+            cout << grid[o][i].getVal() << "  ";
+        }
+        else {
+            cout << grid[o][i].getVal() << ' ';
+        }
+    }
+    cout << endl;
+    }
+}
 
 void Game::init()
 {
@@ -208,19 +223,7 @@ void Game::shipRandomGenerate() //generate random position for ship
         }
     }
     cout << "Initialised ships position: " << endl;
-    for (int o = 0; o < height; o++)
-        {
-            for (int i = 0; i < width; i++)
-            {
-                if(grid[o][i].getVal().length() == 1) { //if no ship in current coordinate
-                    cout << grid[o][i].getVal() << "  ";
-                }
-                else {
-                    cout << grid[o][i].getVal() << ' ';
-                }
-            }
-            cout << endl;
-        }
+    printGrid();
 }
 
 void Game::start() {
