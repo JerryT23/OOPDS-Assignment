@@ -21,3 +21,9 @@ std::string Grid::getType() const
 {
     return type;
 }
+void Grid::setTeamName(std::string teamname) {
+    teamName = teamname;
+}
+std::string Grid::getTeamName() const {
+    return teamName;
+}
