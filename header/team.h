@@ -12,6 +12,8 @@ class Team
     void initShipPositions(int size);
     void setShipPosition(int index, int x, int y);
     int* getShipPosition(int index) const;
+    Node* getLinkedListHead() const;
+     Node* getLinkedListTail() const;
     void pushbackShips(Ship* ship);
     LinkedList getShips() {
         return ships;
