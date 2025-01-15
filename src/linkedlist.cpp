@@ -21,6 +21,36 @@ void LinkedList::pushback(Ship* value){
         size++;
     }
 }
+bool LinkedList::empty() {
+    return head == nullptr;
+}
+
+void LinkedList::deleteNode(int index) {
+    if(index >= size) {
+            std::cout << "invalid access\n " << __LINE__ << " lines";
+            exit(-1);
+        }
+        if(index==0) {
+            if(head == tail) tail=nullptr;
+            Node* ptr = head;
+            head = head->next;
+            delete ptr;
+        } else {
+            Node* indexNode = head;
+            Node* prev;
+            for(int i = 0; i < index; i++) {
+                prev = indexNode;
+                indexNode = indexNode->next;
+            }
+            if(index == (size-1)) {
+                tail = prev;
+                prev->next = nullptr;
+            } else
+                prev->next = indexNode->next;
+            delete indexNode;
+        }
+        size--;
+}
 Ship* LinkedList::search(int index){
         if(index >= size) {
             std::cout << "violation access\n " << __LINE__ << " lines";

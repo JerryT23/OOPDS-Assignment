@@ -11,6 +11,8 @@ class LinkedList {
     void pushFirst(Ship* value);
     LinkedList(): head(nullptr),tail(nullptr),size(0) {}
     void pushback(Ship* value);
+    bool empty();
+    void deleteNode(int index);
     Ship* search(int index);
     void print() {
         Node* ptr = head;

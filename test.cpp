@@ -17,7 +17,40 @@ class LinkedList {
 
     }
     void pushback(int value);
-    ~LinkedList(); 
+    bool empty() {return tail==nullptr;}
+    void deleteNode(int index) {
+        if(index >= size) {
+            std::cout << "invalid access\n " << __LINE__ << " lines";
+            exit(-1);
+        }
+        if(index==0) {
+            if(head == tail) tail=nullptr;
+            Node* ptr = head;
+            head = head->next;
+            delete ptr;
+        } else {
+            Node* indexNode = head;
+            Node* prev;
+            for(int i = 0; i < index; i++) {
+                prev = indexNode;
+                indexNode = indexNode->next;
+            }
+            if(index == (size-1)) {
+                tail = prev;
+                prev->next = nullptr;
+            } else
+                prev->next = indexNode->next;
+            delete indexNode;
+        }
+        size--;
+    }
+    void display() {
+        Node* ptr = head;
+        for(int i = 0; i < size; i ++) {
+            cout << ptr->value;
+            ptr = ptr->next;
+        }
+    }
 };
 void LinkedList::pushFirst(int value)  {
     Node* newNode = new Node;
@@ -40,14 +73,21 @@ void LinkedList::pushback(int value){
         size++;
     }
 }
-
-LinkedList::~LinkedList();
 int main()
 {
     LinkedList* list = new LinkedList;
     list->pushback(3);
     list->pushback(5);
     list->pushback(8);
+    list->deleteNode(0);
+    list->deleteNode(0);
+    list->deleteNode(0);
+    if(list->empty()) {
+        cout << "empty";
+    } else {
+        cout << "not Empty";
+    }
+    list->display();
     delete list;
     return 0;
 }
