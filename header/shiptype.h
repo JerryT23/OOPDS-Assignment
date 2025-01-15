@@ -12,7 +12,7 @@ class Ship
 
 public:
     Ship() : life(3) {}
-    virtual void action(Grid** grid) = 0;
+    virtual void action(Grid** grid, int shipPositionX, int shipPositionY) = 0;
     void setType(std::string s);
     std::string getType() const;
     void setDisplay(std::string s);
@@ -27,7 +27,7 @@ public:
 class SeeingShip : virtual public Ship
 {
 public:
-    virtual void look(int x, int y, Grid** grid, int shipIndex) = 0;
+    virtual void look(int x, int y, Grid** grid, int shipPositionX, int shipPositionY) = 0;
     virtual ~SeeingShip() {}
 };
 
@@ -59,14 +59,23 @@ class Battleship : public MovingShip, public SeeingShip, public ShootingShip
         void move() {
 
         }
-        void look(int x, int y, Grid** grid, int shipIndex) {
-
+        void look(int x, int y, Grid** grid, int shipPositionX, int shipPositionY) {
+            Vector<int> xAndy;
+            Vector<Vector<int>> availableMove;
+            for(int gridY = shipPositionY-1; gridY <= shipPositionY+1;gridY++) { //get the grid of nine-square area centered on (x,y)
+                if(gridY < 0) continue; //if outside of grid
+                for(int gridX = shipPositionX-1; gridX <= shipPositionX+1;shipPositionX++) {
+                    if(gridX < 0) continue;
+                    if(gridX == shipPositionX && gridY==shipPositionY) continue; //ignore self;
+                    grid[gridY][gridX]
+                }
+            }
         }
         void shoot() {
 
         }
-        void action(Grid** grid) {
-            move();
+        void action(Grid** grid, int shipPositionX, int shipPositionY) {
+            look(0,0,grid,shipPositionX,shipPositionY);
         }
 };
 
@@ -76,13 +85,13 @@ class Cruiser : public SeeingShip, public MovingShip, public RamShip
         void move() {
 
         }
-        void look(int x, int y, Grid** grid, int shipIndex) {
+        void look(int x, int y, Grid** grid, int shipPositionX, int shipPositionY) {
 
         }
         void ram() {
 
         }
-        void action(Grid** grid) {
+        void action(Grid** grid, int shipPositionX, int shipPositionY) {
             std::cout << "I'm Cruiser brather";
         }
 };
@@ -93,7 +102,7 @@ class Destroyer : public MovingShip, public SeeingShip, public ShootingShip, pub
         void move() {
 
         }
-        void look(int x, int y, Grid** grid, int shipIndex) {
+        void look(int x, int y, Grid** grid, int shipPositionX, int shipPositionY) {
 
         }
         void shoot() {
@@ -102,7 +111,7 @@ class Destroyer : public MovingShip, public SeeingShip, public ShootingShip, pub
         void ram() {
 
         }
-        void action(Grid** grid) {
+        void action(Grid** grid, int shipPositionX, int shipPositionY) {
 
         }
 };
@@ -112,7 +121,7 @@ class Frigate : public ShootingShip
         void shoot() {
 
         }
-        void action(Grid** grid) {
+        void action(Grid** grid, int shipPositionX, int shipPositionY) {
 
         }
 };
@@ -122,7 +131,7 @@ class Corvette : public ShootingShip
         void shoot() {
 
         }
-        void action(Grid** grid) {
+        void action(Grid** grid, int shipPositionX, int shipPositionY) {
 
         }
 };
@@ -132,13 +141,13 @@ class Amphibious : public MovingShip, public SeeingShip, public ShootingShip {
         void move() {
 
         }
-        void look(int x, int y, Grid** grid, int shipIndex) {
+        void look(int x, int y, Grid** grid, int shipPositionX, int shipPositionY) {
 
         }
         void shoot() {
 
         }
-        void action(Grid** grid) {
+        void action(Grid** grid, int shipPositionX, int shipPositionY) {
 
         }
 } ;
@@ -147,7 +156,7 @@ class Supership : public SeeingShip, public MovingShip, public RamShip, public S
         void move() {
 
         }
-        void look(int x, int y, Grid** grid, int shipIndex) {
+        void look(int x, int y, Grid** grid, int shipPositionX, int shipPositionY) {
 
         }
         void shoot() {
@@ -156,7 +165,7 @@ class Supership : public SeeingShip, public MovingShip, public RamShip, public S
         void ram() {
             
         }
-        void action(Grid** grid) {
+        void action(Grid** grid, int shipPositionX, int shipPositionY) {
 
         }
 };

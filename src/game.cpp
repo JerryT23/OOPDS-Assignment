@@ -204,6 +204,7 @@ void Game::shipRandomGenerate() //generate random position for ship
             }
             while(grid[randy][randx].getTaken() || (grid[randy][randx].getVal() == "1" && teams[teamI].searchShip(shipI)->getType() != "Amphibious"));
             grid[randy][randx].setVal(teams[teamI].searchShip(shipI)->getDisplay());
+            grid[randy][randx].setship(teams[teamI].searchShip(shipI));
             grid[randy][randx].setTaken(true);
             teams[teamI].setShipPosition(shipI,randx,randy);
         }
@@ -214,16 +215,19 @@ void Game::shipRandomGenerate() //generate random position for ship
 
 void Game::start() {
     int teamI = 0;
+    int shipI = 0;
     Node* shipPtr = teams[teamI].getLinkedListHead(); //get first team head
     // for(int i = 0; i < iterations; i++) {//iteration
     //     if(!shipPtr) { //move to next team after all ships done
     //         teamI++;
+    //         shipI = 0;
     //         if(teamI == teamShipTotal.get_size()) //if teamI out of range reset back to zero
     //             teamI = 0;
     //         shipPtr = teams[teamI].getLinkedListHead();
     //     }
     //     cout << shipPtr->value->getDisplay() << ' '; //action
     //     shipPtr = shipPtr->next;
+    //     shipI++;
     // }
     
     //--------------------------------- testing
