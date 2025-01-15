@@ -3,6 +3,7 @@
 #include <iostream>
 #include <unordered_map>
 #include <cstdlib>
+#include <ctime>
 #include "./grid.h"
 #include "./vector.h"
 class Ship
@@ -21,6 +22,7 @@ public:
     std::string getDisplay() const;
     void setTeamName(std::string teamname);
     std::string getTeamName() const;
+    bool oneOfFourNeighbour(int gridX,int gridY,int shipPositionX,int shipPositionY);
     virtual ~Ship() {}
 };
 
@@ -61,6 +63,9 @@ class Battleship : public MovingShip, public SeeingShip, public ShootingShip
     Vector<Vector<int>> availableMove;
     public:
         void move() {
+            if(availableMove.get_size()==0) {
+                std::cout << "Ship have nowhere to move!" <<std::endl;
+            }
             srand(time(0));
             int index = rand() % availableMove.get_size();
             

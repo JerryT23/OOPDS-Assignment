@@ -23,7 +23,13 @@ std::string Ship::getTeamName() const
 {
     return teamName;
 }
-
+bool Ship::oneOfFourNeighbour(int gridX,int gridY,int shipPositionX,int shipPositionY){
+            bool right = (gridY == shipPositionY) && (gridX == shipPositionX+1);
+            bool left = (gridY == shipPositionY) && (gridX == shipPositionX-1);
+            bool up = (gridY == shipPositionY-1) && (gridX == shipPositionX);
+            bool down = (gridY == shipPositionY+1) && (gridX == shipPositionX);
+            return (right||left||up||down);
+        }
 void Battleship::look(int x, int y, Grid** grid, int shipPositionX, int shipPositionY,int width, int height)
 {
     for (int gridY = shipPositionY - 1; gridY <= shipPositionY + 1; gridY++)
@@ -47,8 +53,8 @@ void Battleship::look(int x, int y, Grid** grid, int shipPositionX, int shipPosi
                     std::cout << "Enemy ship found at -> Y:" << gridY << " X:" << gridX << std::endl;
                 }
             }
-            else if (grid[gridY][gridX].getType() == "0")
-            { // if it's sea
+            else if (grid[gridY][gridX].getType() == "0" && oneOfFourNeighbour(gridX,gridY,shipPositionX,shipPositionY))
+            { // if it's land && one of four neighbour
                 xNy.push_back(gridX);
                 xNy.push_back(gridY);
                 availableMove.push_back(xNy);
