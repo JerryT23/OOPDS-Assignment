@@ -231,7 +231,8 @@ void Game::start() {
     // }
     
     //--------------------------------- testing
-    cout << shipPtr->value->getTeamName();
+    cout << endl;
+    shipPtr->value->action(grid,teams[teamI].getShipPosition(shipI)[0],teams[teamI].getShipPosition(shipI)[1]);
     printGrid();
     //----------------------------------
 }

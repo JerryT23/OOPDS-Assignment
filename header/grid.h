@@ -1,7 +1,8 @@
 #ifndef GRID_H
 #define GRID_H
 #include<string>
-#include"shiptype.h"
+
+class Ship;
 class Grid {
     bool taken;
     std::string val; //string bcs store *1 if ship is at the location
