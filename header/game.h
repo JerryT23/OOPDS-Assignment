@@ -28,5 +28,6 @@ class Game {
     void init();
     void terminate();
     void shipRandomGenerate();
+    void start();
 };
 #endif

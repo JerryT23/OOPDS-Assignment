@@ -221,3 +221,7 @@ void Game::shipRandomGenerate() //generate random position for ship
             cout << endl;
         }
 }
+
+void Game::start() {
+    
+}
