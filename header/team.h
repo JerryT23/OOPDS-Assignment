@@ -5,7 +5,6 @@
 
 class Team
 {
-    std::string teamName;
     int (*shipPositions)[2];
     LinkedList ships;
     public:
