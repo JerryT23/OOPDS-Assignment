@@ -1,4 +1,5 @@
 #include "../header/shiptype.h"
+#include "../header/queue.h"
 void Ship::setType(std::string s)
 {
     type = s;
@@ -125,4 +126,36 @@ void Battleship::move(Grid **grid, int &shipPositionX, int &shipPositionY)
     shipPositionY = availableMove[index][1];
     std::cout << this->getDisplay() << " Ship move to Y:" << availableMove[index][1] << " X:" << availableMove[index][0] << std::endl;
     OutputFile << this->getDisplay() << " Ship move to Y:" << availableMove[index][1] << " X:" << availableMove[index][0] << std::endl;
+}
+void Battleship::shoot(int x, int y, Grid **grid, int shipPositionX, int shipPositionY, queue &reenterQueue)
+{
+    int shootLocationX = shipPositionX + x;
+    int shootLocationY = shipPositionY + y;
+    std::cout << this->getDisplay() << " Ship shoot at Y:" << shootLocationY << " X:" << shootLocationX;
+    OutputFile << this->getDisplay() << " Ship shoot at Y:" << shootLocationY << " X:" << shootLocationX;
+    if (grid[shootLocationY][shootLocationX].getship() == nullptr)
+    {
+        std::cout << " which has no ship." << std::endl;
+        OutputFile << " which has no ship." << std::endl;
+    }
+    else
+    {
+        std::cout << " which destroyed " << grid[shootLocationY][shootLocationX].getship()->getDisplay() << std::endl;
+        OutputFile << " which destroyed " << grid[shootLocationY][shootLocationX].getship()->getDisplay() << std::endl;
+
+        grid[shootLocationY][shootLocationX].getship()->lifeMinus1();
+        this->totalKillIncrement();
+        // to be do upgrade, queue
+        std::cout << this->getDisplay() << " Total Kill:" << this->getTotalKill() << std::endl;
+        OutputFile << this->getDisplay() << " Total Kill:" << this->getTotalKill() << std::endl;
+
+        std::cout << grid[shootLocationY][shootLocationX].getship()->getDisplay() << " Life remaining: " << grid[shootLocationY][shootLocationX].getship()->getLife() << std::endl;
+        OutputFile << grid[shootLocationY][shootLocationX].getship()->getDisplay() << " Life remaining: " << grid[shootLocationY][shootLocationX].getship()->getLife() << std::endl;
+        reenterQueue.enqueue(grid[shootLocationY][shootLocationX].getship());
+        // set back to the land type after ship leave
+        grid[shootLocationY][shootLocationX].setTaken(false);
+        grid[shootLocationY][shootLocationX].setVal(grid[shootLocationY][shootLocationX].getType());
+        grid[shootLocationY][shootLocationX].setship(nullptr);
+        //-------------------------------
+    }
 }
