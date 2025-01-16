@@ -66,16 +66,7 @@ class Battleship : public MovingShip, public SeeingShip, public ShootingShip
     int infiniteLoopDetector = 0;
     int shootX,shootY;
     public:
-        bool friendlyShip(Grid** grid, int shipAdditionX,int shipAdditionY,int shipPositionX, int shipPositionY) {
-            int locationX = shipPositionX + shipAdditionX;
-            int locationY = shipPositionY + shipAdditionY;
-            if(grid[locationY][locationX].getship() == nullptr) {
-                return false;
-            } else if(grid[locationY][locationX].getship()->getTeamName() == this->getTeamName()){
-                return true;
-            }
-            return false;
-        }
+        bool friendlyShip(Grid** grid, int shipAdditionX,int shipAdditionY,int shipPositionX, int shipPositionY);
         void move(Grid** grid, int& shipPositionX, int& shipPositionY);
         void look(int x, int y, Grid** grid, int shipPositionX, int shipPositionY,int width, int height);
         void shoot(int x, int y, Grid** grid, int shipPositionX, int shipPositionY) {

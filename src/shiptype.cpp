@@ -31,6 +31,20 @@ bool Ship::oneOfFourNeighbour(int gridX, int gridY, int shipPositionX, int shipP
     bool down = (gridY == shipPositionY + 1) && (gridX == shipPositionX);
     return (right || left || up || down);
 }
+bool Battleship::friendlyShip(Grid **grid, int shipAdditionX, int shipAdditionY, int shipPositionX, int shipPositionY)
+{
+    int locationX = shipPositionX + shipAdditionX;
+    int locationY = shipPositionY + shipAdditionY;
+    if (grid[locationY][locationX].getship() == nullptr)
+    {
+        return false;
+    }
+    else if (grid[locationY][locationX].getship()->getTeamName() == this->getTeamName())
+    {
+        return true;
+    }
+    return false;
+}
 void Battleship::look(int x, int y, Grid **grid, int shipPositionX, int shipPositionY, int width, int height)
 {
     for (int gridY = shipPositionY - 1; gridY <= shipPositionY + 1; gridY++)
