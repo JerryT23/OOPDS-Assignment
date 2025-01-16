@@ -85,6 +85,6 @@ void Battleship::move(Grid **grid, int &shipPositionX, int &shipPositionY)
     grid[availableMove[index][1]][availableMove[index][0]].setship(this);
     shipPositionX = availableMove[index][0];
     shipPositionY = availableMove[index][1];
-    std::cout << this->getDisplay() << " Ship move to Y: " << availableMove[index][1] << " X: " << availableMove[index][0] << std::endl;
-    OutputFile << this->getDisplay() << " Ship move to Y: " << availableMove[index][1] << " X: " << availableMove[index][0] << std::endl;
+    std::cout << this->getDisplay() << " Ship move to Y:" << availableMove[index][1] << " X:" << availableMove[index][0] << std::endl;
+    OutputFile << this->getDisplay() << " Ship move to Y:" << availableMove[index][1] << " X:" << availableMove[index][0] << std::endl;
 }
