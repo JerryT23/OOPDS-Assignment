@@ -74,7 +74,6 @@ void Battleship::move(Grid **grid, int &shipPositionX, int &shipPositionY)
         OutputFile << "Ship have nowhere to move!" << std::endl;
         return;
     }
-    srand(time(0));
     int index = rand() % availableMove.get_size();
     // set back to the land type after ship leave
     grid[shipPositionY][shipPositionX].setVal(grid[shipPositionY][shipPositionX].getType());
