@@ -11,7 +11,7 @@ public:
     bool empty();
     void enqueue(Ship* value);
     void dequeue();
-    Node* queue::getFront();
+    Node* getFront();
     ~queue();
 };
 #endif
