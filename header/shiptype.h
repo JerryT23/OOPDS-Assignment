@@ -14,7 +14,7 @@ class Ship
     std::string teamName;
     int life;
     int totalKilled;
-    int positionIndex;
+    // int positionIndex;
 
 public:
     Ship() : life(3),totalKilled(0){}
@@ -29,8 +29,8 @@ public:
     int getLife() const;
     void totalKillIncrement();
     int getTotalKill() const;
-    void setPositionIndex(int index);
-    int getPositionIndex() const;
+    // void setPositionIndex(int index); may not needed
+    // int getPositionIndex() const;
     bool oneOfFourNeighbour(int gridX,int gridY,int shipPositionX,int shipPositionY);
     virtual ~Ship() {}
 };
@@ -115,7 +115,7 @@ class Battleship : public MovingShip, public SeeingShip, public ShootingShip
             availableMove.clear();
             //generate shoot coordinate
             do {
-                if(infiniteLoopDetector > 1000) { //if loop 1000 times still cant find a place to shoot
+                if(infiniteLoopDetector > 10000) { //if loop 10000 times still cant find a place to shoot
                     std::cout << "No Place to shoot";
                     OutputFile << "No Place to shoot";
                     break;
@@ -126,7 +126,7 @@ class Battleship : public MovingShip, public SeeingShip, public ShootingShip
             } while((shootX + shootY > 5) || (shootX == 0 && shootY == 0) || shipPositionX+shootX >= width ||
             shipPositionY+shootY>=height|| friendlyShip(grid,shootX,shootY,shipPositionX,shipPositionY));//
             //-------------------------------
-            if(infiniteLoopDetector <= 1000) shoot(shootX,shootY,grid,shipPositionX,shipPositionY);
+            if(infiniteLoopDetector <= 10000) shoot(shootX,shootY,grid,shipPositionX,shipPositionY);
         }
 };
 

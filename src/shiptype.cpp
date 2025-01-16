@@ -39,14 +39,14 @@ int Ship::getTotalKill() const
 {
     return totalKilled;
 }
-void Ship::setPositionIndex(int index)
-{
-    positionIndex = index;
-}
-int Ship::getPositionIndex() const
-{
-    return positionIndex;
-}
+// void Ship::setPositionIndex(int index)
+// {
+//     positionIndex = index;
+// }
+// int Ship::getPositionIndex() const
+// {
+//     return positionIndex;
+// }
 bool Ship::oneOfFourNeighbour(int gridX, int gridY, int shipPositionX, int shipPositionY)
 {
     bool right = (gridY == shipPositionY) && (gridX == shipPositionX + 1);
