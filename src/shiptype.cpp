@@ -23,17 +23,29 @@ std::string Ship::getTeamName() const
 {
     return teamName;
 }
-void Ship::lifeMinus1() {
+void Ship::lifeMinus1()
+{
     life -= 1;
 }
-int Ship::getLife() const {
+int Ship::getLife() const
+{
     return life;
 }
-void Ship::totalKillIncrement() {
+void Ship::totalKillIncrement()
+{
     totalKilled++;
 }
-int Ship::getTotalKill() const {
+int Ship::getTotalKill() const
+{
     return totalKilled;
+}
+void Ship::setPositionIndex(int index)
+{
+    positionIndex = index;
+}
+int Ship::getPositionIndex() const
+{
+    return positionIndex;
 }
 bool Ship::oneOfFourNeighbour(int gridX, int gridY, int shipPositionX, int shipPositionY)
 {

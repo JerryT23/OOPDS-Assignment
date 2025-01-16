@@ -14,6 +14,7 @@ class Ship
     std::string teamName;
     int life;
     int totalKilled;
+    int positionIndex;
 
 public:
     Ship() : life(3),totalKilled(0){}
@@ -28,6 +29,8 @@ public:
     int getLife() const;
     void totalKillIncrement();
     int getTotalKill() const;
+    void setPositionIndex(int index);
+    int getPositionIndex() const;
     bool oneOfFourNeighbour(int gridX,int gridY,int shipPositionX,int shipPositionY);
     virtual ~Ship() {}
 };
