@@ -11,4 +11,5 @@ int main(){
     game.shipRandomGenerate();
     game.start();
     game.terminate();
+    OutputFile.close();
 }
