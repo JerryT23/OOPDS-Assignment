@@ -220,6 +220,7 @@ void Game::shipRandomGenerate() //generate random position for ship
             grid[randy][randx].setship(teams[teamI].searchShip(shipI));
             grid[randy][randx].setTaken(true);
             teams[teamI].setShipPosition(shipI,randx,randy);
+            teams[teamI].searchShip(shipI)->setPositionIndex(shipI);
         }
     }
     cout << "Initialised ships position: " << endl;
