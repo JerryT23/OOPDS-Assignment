@@ -14,9 +14,6 @@ class Team
     Node* getLinkedListHead() const;
      Node* getLinkedListTail() const; //maybe not needed
     void pushbackShips(Ship* ship);
-    LinkedList getShips() {
-        return ships;
-    }
     Ship* searchShip(int index);
     ~Team() {
         delete[] shipPositions;
