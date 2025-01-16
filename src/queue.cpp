@@ -31,6 +31,9 @@ void queue::dequeue()
         rear = nullptr;
     }
 }
+Node* queue::getFront() {
+    return front;
+}
 
 queue::~queue() {
     Node* n = front;
