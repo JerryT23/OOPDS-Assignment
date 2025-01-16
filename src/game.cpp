@@ -201,12 +201,19 @@ void Game::shipRandomGenerate() //generate random position for ship
 {
     srand(time(0));
     int randx, randy;
+    int infiniteLoopDetector = 0;
     for(int teamI = 0; teamI < teamShipTotal.get_size();teamI++) //loop "team" amount
     {
         for(int shipI = 0; shipI < teamShipTotal[teamI];shipI++) {
             do {
+                if(infiniteLoopDetector > 100) { //if loop 100 times still cant find a position
+                    cout << "POSSIBLY NOT ENOUGH LAND FOR SHIPS TO INITIALIZE, ENDING PROGRAM.";
+                    OutputFile << "POSSIBLY NOT ENOUGH LAND FOR SHIPS TO INITIALIZE, ENDING PROGRAM.";
+                    exit(-1);
+                }
                 randx = rand() % width;
                 randy = rand() % height;
+                infiniteLoopDetector++;
             }
             while(grid[randy][randx].getTaken() || (grid[randy][randx].getVal() == "1" && teams[teamI].searchShip(shipI)->getType() != "Amphibious"));
             grid[randy][randx].setVal(teams[teamI].searchShip(shipI)->getDisplay());
