@@ -3,6 +3,7 @@
 #include "grid.h"
 #include "team.h"
 #include "vector.h"
+#include "queue.h"
 
 class Game {
     private:
@@ -12,6 +13,7 @@ class Game {
         int height;
         int iterations;
         Grid** grid;
+        queue destroyedShip;
     public:
     Game();
     void printGrid() const;
