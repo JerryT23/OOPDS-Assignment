@@ -226,14 +226,16 @@ void Game::start() {
     //             teamI = 0;
     //         shipPtr = teams[teamI].getLinkedListHead();
     //     }
-    //     cout << shipPtr->value->getDisplay() << ' '; //action
+    //     shipPtr->value->action(grid,teams[teamI].getShipPosition(shipI)[0],teams[teamI].getShipPosition(shipI)[1],
+    //                         width,height); //action
+    //     printGrid();
     //     shipPtr = shipPtr->next;
     //     shipI++;
     // }
     
     //--------------------------------- testing
     cout << endl;
-    shipPtr->value->action(grid,teams[teamI].getShipPosition(shipI)[0],teams[teamI].getShipPosition(shipI)[1],
+    shipPtr->value->action(grid,teams[0].getShipPosition(shipI)[0],teams[teamI].getShipPosition(shipI)[1],
     width,height);
     printGrid();
     //----------------------------------
