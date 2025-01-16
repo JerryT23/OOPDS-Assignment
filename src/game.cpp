@@ -35,7 +35,27 @@ for (int o = 0; o < height; o++)
     cout << "-----------------------------------------" <<endl;
     OutputFile << "-----------------------------------------" <<endl;
 }
-
+void Game::reenterBattlefield() {
+    srand(time(0));
+    int randx;
+    int randy;
+    int reenterAmount = 0;
+    while(!destroyedShip.empty() && reenterAmount < 2){
+        Ship* reenterShip = teams[destroyedShip.getFront()->value->getTeamPositionIndex()].searchShip(destroyedShip.getFront()->value->getShipPositionIndex());
+        do {
+            randx = rand() % width;
+            randy = rand() % height;
+        }while(grid[randy][randx].getTaken()||(grid[randy][randx].getVal() == "1" && destroyedShip.getFront()->value->getType() != "Amphibious"));
+        //set new ship position
+        teams[destroyedShip.getFront()->value->getTeamPositionIndex()].setShipPosition(destroyedShip.getFront()->value->getShipPositionIndex(),randx,randy);
+        grid[randy][randx].setVal(reenterShip->getDisplay());
+        grid[randy][randx].setship(reenterShip);
+        grid[randy][randx].setTaken(true);
+        std::cout << reenterShip->getDisplay() <<" New location: Y->" << randy << " X->" << randx << std::endl;
+        OutputFile << reenterShip->getDisplay() <<" New location: Y->" << randy << " X->" << randx << std::endl;
+        destroyedShip.dequeue();
+    }
+}
 void Game::init()
 {
     string temp;
@@ -220,7 +240,8 @@ void Game::shipRandomGenerate() //generate random position for ship
             grid[randy][randx].setship(teams[teamI].searchShip(shipI));
             grid[randy][randx].setTaken(true);
             teams[teamI].setShipPosition(shipI,randx,randy);
-            // teams[teamI].searchShip(shipI)->setPositionIndex(shipI);
+            teams[teamI].searchShip(shipI)->setShipPositionIndex(shipI);
+            teams[teamI].searchShip(shipI)->setTeamPositionIndex(teamI);
         }
     }
     cout << "Initialised ships position: " << endl;
@@ -232,27 +253,28 @@ void Game::start() {
     int teamI = 0;
     int shipI = 0;
     Node* shipPtr = teams[teamI].getLinkedListHead(); //get first team head
-    // for(int i = 0; i < iterations; i++) {//iteration
-    //     if(!shipPtr) { //move to next team after all ships done
-    //         teamI++;
-    //         shipI = 0;
-    //         if(teamI == teamShipTotal.get_size()) //if teamI out of range reset back to zero
-    //             teamI = 0;
-    //         shipPtr = teams[teamI].getLinkedListHead();
-    //     }
-    //     if(shipPtr->value->getLife() != 0){
-    //         shipPtr->value->action(grid,teams[teamI].getShipPosition(shipI)[0],teams[teamI].getShipPosition(shipI)[1],
-    //                             width,height,destroyedShip); //action
-    //         printGrid();
-    //     }
-    //     shipPtr = shipPtr->next;
-    //     shipI++;
-    // }
+    for(int i = 0; i < iterations; i++) {//iteration
+        reenterBattlefield(); //if queue is not empty
+        if(!shipPtr) { //move to next team after all ships done
+            teamI++;
+            shipI = 0;
+            if(teamI == teamShipTotal.get_size()) //if teamI out of range reset back to zero
+                teamI = 0;
+            shipPtr = teams[teamI].getLinkedListHead();
+        }
+        if(shipPtr->value->getLife() != 0){
+            shipPtr->value->action(grid,teams[teamI].getShipPosition(shipI)[0],teams[teamI].getShipPosition(shipI)[1],
+                                width,height,destroyedShip); //action
+            printGrid();
+        }
+        shipPtr = shipPtr->next;
+        shipI++;
+    }
     
     //--------------------------------- testing
-    cout << endl;
-    shipPtr->value->action(grid,teams[0].getShipPosition(shipI)[0],teams[teamI].getShipPosition(shipI)[1],
-    width,height,destroyedShip);
-    printGrid();
+    // cout << endl;
+    // shipPtr->value->action(grid,teams[0].getShipPosition(shipI)[0],teams[teamI].getShipPosition(shipI)[1],
+    // width,height,destroyedShip);
+    // printGrid();
     //----------------------------------
 }

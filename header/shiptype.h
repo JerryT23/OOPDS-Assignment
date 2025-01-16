@@ -16,8 +16,8 @@ class Ship
     std::string teamName;
     int life;
     int totalKilled;
-    // int positionIndex;
-
+    int shipPositionIndex;
+    int teamPositionIndex;
 public:
     Ship() : life(3),totalKilled(0){}
     virtual void action(Grid** grid, int& shipPositionX, int& shipPositionY,int width,int height,queue& reenterQueue) = 0;
@@ -31,8 +31,10 @@ public:
     int getLife() const;
     void totalKillIncrement();
     int getTotalKill() const;
-    // void setPositionIndex(int index); may not needed
-    // int getPositionIndex() const;
+    void setShipPositionIndex(int index);
+    int getShipPositionIndex() const;
+    void setTeamPositionIndex(int index);
+    int getTeamPositionIndex() const;
     bool oneOfFourNeighbour(int gridX,int gridY,int shipPositionX,int shipPositionY);
     virtual ~Ship() {}
 };
