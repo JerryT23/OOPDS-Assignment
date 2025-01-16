@@ -24,6 +24,7 @@ public:
     std::string getDisplay() const;
     void setTeamName(std::string teamname);
     std::string getTeamName() const;
+    int getLife() const;
     bool oneOfFourNeighbour(int gridX,int gridY,int shipPositionX,int shipPositionY);
     virtual ~Ship() {}
 };

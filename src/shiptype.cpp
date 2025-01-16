@@ -23,6 +23,9 @@ std::string Ship::getTeamName() const
 {
     return teamName;
 }
+int Ship::getLife() const {
+    return life;
+}
 bool Ship::oneOfFourNeighbour(int gridX, int gridY, int shipPositionX, int shipPositionY)
 {
     bool right = (gridY == shipPositionY) && (gridX == shipPositionX + 1);
