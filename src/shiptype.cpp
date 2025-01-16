@@ -23,8 +23,17 @@ std::string Ship::getTeamName() const
 {
     return teamName;
 }
+void Ship::lifeMinus1() {
+    life -= 1;
+}
 int Ship::getLife() const {
     return life;
+}
+void Ship::totalKillIncrement() {
+    totalKilled++;
+}
+int Ship::getTotalKill() const {
+    return totalKilled;
 }
 bool Ship::oneOfFourNeighbour(int gridX, int gridY, int shipPositionX, int shipPositionY)
 {

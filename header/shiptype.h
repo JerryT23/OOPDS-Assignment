@@ -16,7 +16,7 @@ class Ship
     int totalKilled;
 
 public:
-    Ship() : life(3) {}
+    Ship() : life(3),totalKilled(0){}
     virtual void action(Grid** grid, int& shipPositionX, int& shipPositionY,int width,int height) = 0;
     void setType(std::string s);
     std::string getType() const;
@@ -24,7 +24,10 @@ public:
     std::string getDisplay() const;
     void setTeamName(std::string teamname);
     std::string getTeamName() const;
+    void lifeMinus1();
     int getLife() const;
+    void totalKillIncrement();
+    int getTotalKill() const;
     bool oneOfFourNeighbour(int gridX,int gridY,int shipPositionX,int shipPositionY);
     virtual ~Ship() {}
 };
@@ -81,19 +84,38 @@ class Battleship : public MovingShip, public SeeingShip, public ShootingShip
             } else {
                 std::cout << " which destroyed " << grid[shootLocationY][shootLocationX].getship()->getDisplay() << std::endl;
                 OutputFile << " which destroyed " << grid[shootLocationY][shootLocationX].getship()->getDisplay() << std::endl;
+                
+                grid[shootLocationY][shootLocationX].getship()->lifeMinus1();
+                this->totalKillIncrement();
+                //to be do upgrade, queue
+                std::cout << this->getDisplay() << " Total Kill:"<< this->getTotalKill()<< std::endl;
+                OutputFile << this->getDisplay() << " Total Kill:"<< this->getTotalKill()<< std::endl;
+
+                std::cout << grid[shootLocationY][shootLocationX].getship()->getDisplay() <<
+                " Life remaining: " << grid[shootLocationY][shootLocationX].getship()->getLife() << std::endl;
+                OutputFile << grid[shootLocationY][shootLocationX].getship()->getDisplay() <<
+                " Life remaining: " << grid[shootLocationY][shootLocationX].getship()->getLife() << std::endl;
+
+                // set back to the land type after ship leave
+                grid[shootLocationY][shootLocationX].setTaken(false);
+                grid[shootLocationY][shootLocationX].setVal(grid[shootLocationY][shootLocationX].getType());
+                grid[shootLocationY][shootLocationX].setship(nullptr);
+                //-------------------------------
             }
         }
         void action(Grid** grid, int& shipPositionX, int& shipPositionY,int width,int height) {
             srand(time(0));
-            std::cout << this->getDisplay() << " Ship look(0,0):" <<std::endl;
-            OutputFile << this->getDisplay() << " Ship look(0,0):" <<std::endl;
+            std::cout << this->getDisplay() << " Ship look(0,0):" <<std::endl << "Ship type:"<<this->getType()<<std::endl;
+            OutputFile << this->getDisplay() << " Ship look(0,0):" <<std::endl << "Ship type:"<<this->getType()<<std::endl;
             look(0,0,grid,shipPositionX,shipPositionY,width,height);
             move(grid,shipPositionX,shipPositionY);
+            availableMove.clear();
             //generate shoot coordinate
             do {
                 if(infiniteLoopDetector > 1000) { //if loop 1000 times still cant find a place to shoot
                     std::cout << "No Place to shoot";
                     OutputFile << "No Place to shoot";
+                    break;
                 }
                 shootX = rand() % 6;
                 shootY = rand() % 6;
@@ -102,7 +124,6 @@ class Battleship : public MovingShip, public SeeingShip, public ShootingShip
             shipPositionY+shootY>=height|| friendlyShip(grid,shootX,shootY,shipPositionX,shipPositionY));//
             //-------------------------------
             if(infiniteLoopDetector <= 1000) shoot(shootX,shootY,grid,shipPositionX,shipPositionY);
-            availableMove.clear();
         }
 };
 

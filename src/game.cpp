@@ -231,20 +231,22 @@ void Game::start() {
     int teamI = 0;
     int shipI = 0;
     Node* shipPtr = teams[teamI].getLinkedListHead(); //get first team head
-    // for(int i = 0; i < iterations; i++) {//iteration
-    //     if(!shipPtr) { //move to next team after all ships done
-    //         teamI++;
-    //         shipI = 0;
-    //         if(teamI == teamShipTotal.get_size()) //if teamI out of range reset back to zero
-    //             teamI = 0;
-    //         shipPtr = teams[teamI].getLinkedListHead();
-    //     }
-    //     shipPtr->value->action(grid,teams[teamI].getShipPosition(shipI)[0],teams[teamI].getShipPosition(shipI)[1],
-    //                         width,height); //action
-    //     printGrid();
-    //     shipPtr = shipPtr->next;
-    //     shipI++;
-    // }
+    for(int i = 0; i < iterations; i++) {//iteration
+        if(!shipPtr) { //move to next team after all ships done
+            teamI++;
+            shipI = 0;
+            if(teamI == teamShipTotal.get_size()) //if teamI out of range reset back to zero
+                teamI = 0;
+            shipPtr = teams[teamI].getLinkedListHead();
+        }
+        if(shipPtr->value->getLife() != 0){
+            shipPtr->value->action(grid,teams[teamI].getShipPosition(shipI)[0],teams[teamI].getShipPosition(shipI)[1],
+                                width,height); //action
+            printGrid();
+        }
+        shipPtr = shipPtr->next;
+        shipI++;
+    }
     
     //--------------------------------- testing
     cout << endl;
