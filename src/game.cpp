@@ -6,6 +6,7 @@
 #include "../header/shiptype.h"
 #include "../header/game.h"
 #include "../header/node.h"
+#include "../header/externalOutput.h"
 using namespace std;
 
 // 1. vectors, queues and linked lists is not allowed in this assignment
@@ -21,14 +22,18 @@ for (int o = 0; o < height; o++)
     {
         if(grid[o][i].getVal().length() == 1) { //if no ship in current coordinate
             cout << grid[o][i].getVal() << "  ";
+            OutputFile << grid[o][i].getVal() << "  ";
         }
         else {
             cout << grid[o][i].getVal() << ' ';
+            OutputFile << grid[o][i].getVal() << ' ';
         }
     }
     cout << endl;
+    OutputFile << endl;
     }
     cout << "-----------------------------------------" <<endl;
+    OutputFile << "-----------------------------------------" <<endl;
 }
 
 void Game::init()
@@ -211,6 +216,7 @@ void Game::shipRandomGenerate() //generate random position for ship
         }
     }
     cout << "Initialised ships position: " << endl;
+    OutputFile << "Initialised ships position: " << endl;
     printGrid();
 }
 
@@ -218,25 +224,25 @@ void Game::start() {
     int teamI = 0;
     int shipI = 0;
     Node* shipPtr = teams[teamI].getLinkedListHead(); //get first team head
-    // for(int i = 0; i < iterations; i++) {//iteration
-    //     if(!shipPtr) { //move to next team after all ships done
-    //         teamI++;
-    //         shipI = 0;
-    //         if(teamI == teamShipTotal.get_size()) //if teamI out of range reset back to zero
-    //             teamI = 0;
-    //         shipPtr = teams[teamI].getLinkedListHead();
-    //     }
-    //     shipPtr->value->action(grid,teams[teamI].getShipPosition(shipI)[0],teams[teamI].getShipPosition(shipI)[1],
-    //                         width,height); //action
-    //     printGrid();
-    //     shipPtr = shipPtr->next;
-    //     shipI++;
-    // }
+    for(int i = 0; i < iterations; i++) {//iteration
+        if(!shipPtr) { //move to next team after all ships done
+            teamI++;
+            shipI = 0;
+            if(teamI == teamShipTotal.get_size()) //if teamI out of range reset back to zero
+                teamI = 0;
+            shipPtr = teams[teamI].getLinkedListHead();
+        }
+        shipPtr->value->action(grid,teams[teamI].getShipPosition(shipI)[0],teams[teamI].getShipPosition(shipI)[1],
+                            width,height); //action
+        printGrid();
+        shipPtr = shipPtr->next;
+        shipI++;
+    }
     
     //--------------------------------- testing
-    cout << endl;
-    shipPtr->value->action(grid,teams[0].getShipPosition(shipI)[0],teams[teamI].getShipPosition(shipI)[1],
-    width,height);
-    printGrid();
+    // cout << endl;
+    // shipPtr->value->action(grid,teams[0].getShipPosition(shipI)[0],teams[teamI].getShipPosition(shipI)[1],
+    // width,height);
+    // printGrid();
     //----------------------------------
 }

@@ -6,6 +6,7 @@
 #include <ctime>
 #include "./grid.h"
 #include "./vector.h"
+#include "./externalOutput.h"
 class Ship
 {
     std::string type;
@@ -69,6 +70,7 @@ class Battleship : public MovingShip, public SeeingShip, public ShootingShip
         }
         void action(Grid** grid, int& shipPositionX, int& shipPositionY,int width,int height) {
             std::cout << this->getDisplay() << " Ship look(0,0):" <<std::endl;
+            OutputFile << this->getDisplay() << " Ship look(0,0):" <<std::endl;
             look(0,0,grid,shipPositionX,shipPositionY,width,height);
             move(grid,shipPositionX,shipPositionY);
             availableMove.clear();

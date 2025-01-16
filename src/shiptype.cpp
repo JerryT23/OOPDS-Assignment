@@ -48,10 +48,12 @@ void Battleship::look(int x, int y, Grid **grid, int shipPositionX, int shipPosi
                 if (grid[gridY][gridX].getship()->getTeamName() == this->getTeamName())
                 {
                     std::cout << "Friendly ship found at -> Y:" << gridY << " X:" << gridX << std::endl;
+                    OutputFile << "Friendly ship found at -> Y:" << gridY << " X:" << gridX << std::endl;
                 }
                 else
                 {
                     std::cout << "Enemy ship found at -> Y:" << gridY << " X:" << gridX << std::endl;
+                    OutputFile << "Enemy ship found at -> Y:" << gridY << " X:" << gridX << std::endl;
                 }
             }
             else if (grid[gridY][gridX].getType() == "0" && oneOfFourNeighbour(gridX, gridY, shipPositionX, shipPositionY))
@@ -69,6 +71,7 @@ void Battleship::move(Grid **grid, int &shipPositionX, int &shipPositionY)
     if (availableMove.get_size() == 0)
     {
         std::cout << "Ship have nowhere to move!" << std::endl;
+        OutputFile << "Ship have nowhere to move!" << std::endl;
         return;
     }
     srand(time(0));
@@ -84,4 +87,5 @@ void Battleship::move(Grid **grid, int &shipPositionX, int &shipPositionY)
     shipPositionX = availableMove[index][0];
     shipPositionY = availableMove[index][1];
     std::cout << this->getDisplay() << " Ship move to Y: " << availableMove[index][1] << " X: " << availableMove[index][0] << std::endl;
+    OutputFile << this->getDisplay() << " Ship move to Y: " << availableMove[index][1] << " X: " << availableMove[index][0] << std::endl;
 }
