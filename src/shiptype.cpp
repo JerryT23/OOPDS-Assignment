@@ -106,10 +106,8 @@ void Battleship::look(int x, int y, Grid **grid, int shipPositionX, int shipPosi
             }
             else if (grid[gridY][gridX].getType() == "0" && oneOfFourNeighbour(gridX, gridY, shipPositionX, shipPositionY))
             { // if it's land && one of four neighbour
-            std::cout << "pushback" ;
                 temp.x = gridX;
                 temp.y = gridY;
-                std::cout << temp.x << temp.y << std::endl;
                 availableMove.push_back(temp);
             }
         }
