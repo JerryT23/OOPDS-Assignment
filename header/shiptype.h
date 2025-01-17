@@ -72,8 +72,11 @@ public:
 
 class Battleship : public MovingShip, public SeeingShip, public ShootingShip
 {
-    Vector<int> xNy; //store x and y for push into available move
-    Vector<Vector<int>> availableMove;
+    struct position {
+        int x;
+        int y;
+    };
+    Vector<position> availableMove;
     int infiniteLoopDetector = 0;
     int shootX,shootY;
     public:
@@ -86,6 +89,10 @@ class Battleship : public MovingShip, public SeeingShip, public ShootingShip
             std::cout << this->getDisplay() << " Ship look(0,0):" <<std::endl << "Ship type:"<<this->getType()<<std::endl;
             OutputFile << this->getDisplay() << " Ship look(0,0):" <<std::endl << "Ship type:"<<this->getType()<<std::endl;
             look(0,0,grid,shipPositionX,shipPositionY,width,height);
+            std::cout << "getsize: " << availableMove.get_size() << std::endl;
+            for(int i = 0; i < availableMove.get_size();i++) {
+                std::cout << availableMove[i].x << ' ' << availableMove[i].y << std::endl;
+            }
             move(grid,shipPositionX,shipPositionY);
             availableMove.clear();
             //generate shoot coordinate

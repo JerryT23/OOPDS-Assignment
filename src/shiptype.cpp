@@ -80,6 +80,7 @@ bool Battleship::friendlyShip(Grid **grid, int shipAdditionX, int shipAdditionY,
 }
 void Battleship::look(int x, int y, Grid **grid, int shipPositionX, int shipPositionY, int width, int height)
 {
+    position temp;
     for (int gridY = shipPositionY - 1; gridY <= shipPositionY + 1; gridY++)
     { // get the grid of nine-square area centered on (x,y)
         if (gridY < 0 || gridY >= height)
@@ -105,14 +106,16 @@ void Battleship::look(int x, int y, Grid **grid, int shipPositionX, int shipPosi
             }
             else if (grid[gridY][gridX].getType() == "0" && oneOfFourNeighbour(gridX, gridY, shipPositionX, shipPositionY))
             { // if it's land && one of four neighbour
-                xNy.push_back(gridX);
-                xNy.push_back(gridY);
-                availableMove.push_back(xNy);
-                xNy.clear();
+            std::cout << "pushback" ;
+                temp.x = gridX;
+                temp.y = gridY;
+                std::cout << temp.x << temp.y << std::endl;
+                availableMove.push_back(temp);
             }
         }
     }
 }
+
 void Battleship::move(Grid **grid, int &shipPositionX, int &shipPositionY)
 {
     if (availableMove.get_size() == 0)
@@ -127,13 +130,13 @@ void Battleship::move(Grid **grid, int &shipPositionX, int &shipPositionY)
     grid[shipPositionY][shipPositionX].setTaken(false);
     grid[shipPositionY][shipPositionX].setship(nullptr);
     //---------------------
-    grid[availableMove[index][1]][availableMove[index][0]].setVal(this->getDisplay());
-    grid[availableMove[index][1]][availableMove[index][0]].setTaken(true);
-    grid[availableMove[index][1]][availableMove[index][0]].setship(this);
-    shipPositionX = availableMove[index][0];
-    shipPositionY = availableMove[index][1];
-    std::cout << this->getDisplay() << " Ship move to Y:" << availableMove[index][1] << " X:" << availableMove[index][0] << std::endl;
-    OutputFile << this->getDisplay() << " Ship move to Y:" << availableMove[index][1] << " X:" << availableMove[index][0] << std::endl;
+    grid[availableMove[index].y][availableMove[index].x].setVal(this->getDisplay());
+    grid[availableMove[index].y][availableMove[index].x].setTaken(true);
+    grid[availableMove[index].y][availableMove[index].x].setship(this);
+    shipPositionX = availableMove[index].x;
+    shipPositionY = availableMove[index].y;
+    std::cout << this->getDisplay() << " Ship move to Y:" << availableMove[index].y << " X:" << availableMove[index].x << std::endl;
+    OutputFile << this->getDisplay() << " Ship move to Y:" << availableMove[index].y << " X:" << availableMove[index].x << std::endl;
 }
 void Battleship::shoot(int x, int y, Grid **grid, int shipPositionX, int shipPositionY, queue &reenterQueue)
 {
