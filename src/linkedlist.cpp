@@ -34,6 +34,7 @@ void LinkedList::deleteNode(int index) {
             if(head == tail) tail=nullptr;
             Node* ptr = head;
             head = head->next;
+            delete ptr->value;
             delete ptr;
         } else {
             Node* indexNode = head;
@@ -47,6 +48,7 @@ void LinkedList::deleteNode(int index) {
                 prev->next = nullptr;
             } else
                 prev->next = indexNode->next;
+            delete indexNode->value;
             delete indexNode;
         }
         size--;
@@ -71,6 +73,7 @@ void LinkedList::replace(int index,Ship* value) {
             Node* newship = new Node;
             newship->value = value;
             newship->next = head->next;
+            delete head->value;
             delete head;
             head = newship;
             if (size == 1) { //if there's only one node, update tail
@@ -90,6 +93,7 @@ void LinkedList::replace(int index,Ship* value) {
             if(index == (size-1)) {
                 tail = newship;
             }
+            delete indexNode->value;
             delete indexNode;
             }
 }
