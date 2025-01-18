@@ -62,6 +62,37 @@ Ship* LinkedList::search(int index){
     }
     return ret->value;
 }
+void LinkedList::replace(int index,Ship* value) {
+    if(index >= size) {
+            std::cout << "invalid access\n " << __LINE__ << " lines";
+            exit(-1);
+        }
+        if(index==0) {
+            Node* newship = new Node;
+            newship->value = value;
+            newship->next = head->next;
+            delete head;
+            head = newship;
+            if (size == 1) { //if there's only one node, update tail
+            tail = newship; 
+        }
+        } else {
+            Node* indexNode = head;
+            Node* prev;
+            Node* newship = new Node;
+            for(int i = 0; i < index; i++) {
+                prev = indexNode;
+                indexNode = indexNode->next;
+            }
+            newship->value = value;
+            newship->next = indexNode->next;
+            prev->next = newship;
+            if(index == (size-1)) {
+                tail = newship;
+            }
+            delete indexNode;
+            }
+}
 Node* LinkedList::getHead() const{ return head;}
 Node* LinkedList::getTail() const {return tail;}
 LinkedList::~LinkedList() {

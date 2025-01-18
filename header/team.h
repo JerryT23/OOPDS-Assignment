@@ -15,6 +15,7 @@ class Team
      Node* getLinkedListTail() const; //maybe not needed
     void pushbackShips(Ship* ship);
     Ship* searchShip(int index);
+    void replaceShip(int index,Ship* newShip);
     ~Team() {
         delete[] shipPositions;
     }

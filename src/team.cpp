@@ -26,3 +26,6 @@ Ship *Team::searchShip(int index)
 {
     return ships.search(index);
 }
+void Team::replaceShip(int index,Ship* newShip) {
+    ships.replace(index,newShip);
+}
