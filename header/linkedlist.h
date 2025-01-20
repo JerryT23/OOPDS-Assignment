@@ -17,13 +17,7 @@ class LinkedList {
     void replace(int index,Ship* value);
     Node* getHead() const;
     Node* getTail() const; //maybe not needed
-    void print() {
-        Node* ptr = head;
-        while(ptr!=nullptr) {
-            std::cout << ptr->value->getType() << ' ';
-            ptr = ptr->next;
-        }
-    }
+    void print();
     ~LinkedList(); 
 };
 #endif
