@@ -69,7 +69,7 @@ void LinkedList::replace(int index,Ship* value) {
         }
         if(index==0) {
             Node* newship = new Node;
-            newship->value = value;
+            newship->value = value; 
             newship->next = head->next;
             delete head;
             head = newship;
@@ -95,6 +95,13 @@ void LinkedList::replace(int index,Ship* value) {
 }
 Node* LinkedList::getHead() const{ return head;}
 Node* LinkedList::getTail() const {return tail;}
+void LinkedList::print() {
+        Node* ptr = head;
+        while(ptr!=nullptr) {
+            std::cout << ptr->value->getType() << ' ';
+            ptr = ptr->next;
+        }
+    }
 LinkedList::~LinkedList() {
     Node* n = head;
     Node* deleteptr = head;
