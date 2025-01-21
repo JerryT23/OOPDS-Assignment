@@ -13,7 +13,7 @@ class Team
     int* getShipPosition(int index) const;
     Node* getLinkedListHead() const;
     Node* getLinkedListTail() const; //maybe not needed
-    LinkedList getShip() const;
+    LinkedList& getShip();
     void pushbackShips(Ship* ship);
     Ship* searchShip(int index);
     void replaceShip(int index,Ship* newShip);
