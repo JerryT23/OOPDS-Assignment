@@ -36,7 +36,7 @@ void LinkedList::deleteNode(int index)
     if (index >= size)
     {
         std::cout << "invalid access\n " << __LINE__ << " lines";
-        exit(-1);
+        throw runtime_error("LinkedList Invalid Access");
     }
     if (index == 0)
     {
@@ -73,7 +73,7 @@ Ship *LinkedList::search(int index)
     if (index >= size)
     {
         std::cout << "violation access\n " << __LINE__ << " lines";
-        exit(-1);
+        throw runtime_error("LinkedList Invalid Access");
     }
     Node *ret = head;
     for (int i = 0; i < index; i++)
@@ -88,7 +88,7 @@ Node *LinkedList::replace(int index, Ship *value)
     if (index >= size)
     {
         std::cout << "invalid access\n " << __LINE__ << " lines";
-        exit(-1);
+        throw runtime_error("LinkedList Invalid Access");
     }
     if (index == 0)
     {
