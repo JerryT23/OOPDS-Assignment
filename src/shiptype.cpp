@@ -1,7 +1,8 @@
 #include "../header/shiptype.h"
 #include "../header/grid.h"
+#include <chrono> 
 
-Ship::Ship() : life(3), totalKilled(0), killedShip(nullptr) {}
+Ship::Ship() : life(3), totalKilled(0) {}
 void Ship::setType(std::string s)
 {
     type = s;
@@ -63,6 +64,26 @@ int Ship::getShipPositionY() const
 {
     return shipPositionY;
 }
+void Ship::pushKilledShip(Ship *pkilledShip)
+{
+    killedShip.push_back(pkilledShip);
+}
+Ship *Ship::getKilledShip(int index)
+{
+    return killedShip[index];
+}
+Vector<Ship *> Ship::getVecKilledShip()
+{
+    return killedShip;
+}
+void Ship::setUpgradeFlag(bool b)
+{
+    upgradeFlag = b;
+}
+bool Ship::getUpgradeFlag() const
+{
+    return upgradeFlag;
+}
 bool Ship::oneOfFourNeighbour(int gridX, int gridY, int shipPositionX, int shipPositionY)
 {
     bool right = (gridY == shipPositionY) && (gridX == shipPositionX + 1);
@@ -71,8 +92,8 @@ bool Ship::oneOfFourNeighbour(int gridX, int gridY, int shipPositionX, int shipP
     bool down = (gridY == shipPositionY + 1) && (gridX == shipPositionX);
     return (right || left || up || down);
 }
+bool Ship::friendlyShip(Grid **grid, int shootX, int shootY)
 // //----------------------------------------------Battleship----------------------------------------------------------------//
-bool Battleship::friendlyShip(Grid **grid, int shootX, int shootY)
 {
     int locationX = this->getShipPositionX() + shootX;
     int locationY = this->getShipPositionY() + shootY;
@@ -146,37 +167,52 @@ void Battleship::move(Grid **grid)
     std::cout << this->getDisplay() << " Ship move to Y:" << availableMove[index].y << " X:" << availableMove[index].x << std::endl;
     OutputFile << this->getDisplay() << " Ship move to Y:" << availableMove[index].y << " X:" << availableMove[index].x << std::endl;
 }
-void Battleship::shoot(Grid **grid, int shootX, int shootY)
+void Battleship::shoot(Grid **grid)
 {
-    int shootLocationX = this->getShipPositionX() + shootX;
-    int shootLocationY = this->getShipPositionY() + shootY;
-    cout << this->getDisplay() << " Ship shoot at Y:" << shootLocationY << " X:" << shootLocationX;
-    OutputFile << this->getDisplay() << " Ship shoot at Y:" << shootLocationY << " X:" << shootLocationX;
-    if (grid[shootLocationY][shootLocationX].getship() == nullptr)
+    srand(chrono::system_clock::now().time_since_epoch().count());
+    int shootx, shooty;
+    infiniteLoopDetector = 0;
+    do
     {
-        std::cout << " which has no ship." << std::endl;
-        OutputFile << " which has no ship." << std::endl;
-    }
-    else
+        if (infiniteLoopDetector > 10000)
+        { // if loop 10000 times still cant find a place to shoot
+            cout << "No Place to shoot" << endl;
+            OutputFile << "No Place to shoot" << endl;
+            break;
+        }
+        shootx = rand() % 6;
+        shooty = rand() % 6;
+        infiniteLoopDetector++;
+    } while ((shootx + shooty > 5) || (shootx == 0 && shooty == 0) || (this->getShipPositionX() + shootx) >= Grid::getwidth() ||
+             (this->getShipPositionY() + shooty) >= Grid::getHeight() ||
+             friendlyShip(grid, shootx, shooty));
+    if (infiniteLoopDetector <= 10000)
     {
-        std::cout << " which destroyed " << grid[shootLocationY][shootLocationX].getship()->getDisplay() << std::endl;
-        OutputFile << " which destroyed " << grid[shootLocationY][shootLocationX].getship()->getDisplay() << std::endl;
+        int shootLocationX = this->getShipPositionX() + shootx;
+        int shootLocationY = this->getShipPositionY() + shooty;
+        cout << this->getDisplay() << " Ship shoot at Y:" << shootLocationY << " X:" << shootLocationX;
+        OutputFile << this->getDisplay() << " Ship shoot at Y:" << shootLocationY << " X:" << shootLocationX;
+        if (grid[shootLocationY][shootLocationX].getship() == nullptr)
+        {
+            std::cout << " which has no ship." << std::endl;
+            OutputFile << " which has no ship." << std::endl;
+        }
+        else
+        {
+            std::cout << " which destroyed " << grid[shootLocationY][shootLocationX].getship()->getDisplay() << std::endl;
+            OutputFile << " which destroyed " << grid[shootLocationY][shootLocationX].getship()->getDisplay() << std::endl;
 
-        grid[shootLocationY][shootLocationX].getship()->lifeMinus1();
-        this->totalKillIncrement();
-        // to be do upgrade, queue
-        std::cout << this->getDisplay() << " Total Kill:" << this->getTotalKill() << std::endl;
-        OutputFile << this->getDisplay() << " Total Kill:" << this->getTotalKill() << std::endl;
-
-        // std::cout << grid[shootLocationY][shootLocationX].getship()->getDisplay() << " Life remaining: " << grid[shootLocationY][shootLocationX].getship()->getLife() << std::endl;
-        // OutputFile << grid[shootLocationY][shootLocationX].getship()->getDisplay() << " Life remaining: " << grid[shootLocationY][shootLocationX].getship()->getLife() << std::endl;
-        // reenterQueue.enqueue(grid[shootLocationY][shootLocationX].getship());
-        // // set back to the land type after ship leave
-        // grid[shootLocationY][shootLocationX].setTaken(false);
-        // grid[shootLocationY][shootLocationX].setVal(grid[shootLocationY][shootLocationX].getType());
-        // grid[shootLocationY][shootLocationX].setship(nullptr);
-        // //-------------------------------
-
+            this->totalKillIncrement();
+            // to be do upgrade, queue
+            std::cout << this->getDisplay() << " Total Kill:" << this->getTotalKill() << std::endl;
+            OutputFile << this->getDisplay() << " Total Kill:" << this->getTotalKill() << std::endl;
+            this->pushKilledShip(grid[shootLocationY][shootLocationX].getship());
+            // set back to the land type after ship leave
+            grid[shootLocationY][shootLocationX].setTaken(false);
+            grid[shootLocationY][shootLocationX].setVal(grid[shootLocationY][shootLocationX].getType());
+            grid[shootLocationY][shootLocationX].setship(nullptr);
+            //-------------------------------
+        }
     }
     // if (this->getTotalKill() == 1) {
     //     // Upgrade to Cruiser
@@ -197,6 +233,7 @@ void Battleship::shoot(Grid **grid, int shootX, int shootY)
 }
 void Battleship::action(Grid **grid)
 {
+    this->getVecKilledShip().clear();
     cout << this->getDisplay() << " turn. Ship Type: " << this->getType() << endl
          << this->getDisplay() << ": look from Y:" << this->getShipPositionY()
          << " X:" << this->getShipPositionX() << endl;
@@ -206,44 +243,17 @@ void Battleship::action(Grid **grid)
     look(grid);
     move(grid);
     availableMove.clear();
-    infiniteLoopDetector = 0;
     // generate random shoot x and y; shoot (shipPositionX + x, shipPositionY + y)
-    {
-        srand(time(0));
-        int shootx, shooty;
-        do
-        {
-            if (infiniteLoopDetector > 10000)
-            { // if loop 10000 times still cant find a place to shoot
-                cout << "No Place to shoot" << endl;
-                OutputFile << "No Place to shoot" << endl;
-                break;
-            }
-            shootx = rand() % 6;
-            shooty = rand() % 6;
-            infiniteLoopDetector++;
-        } while ((shootx + shooty > 5)|| (shootx == 0 && shooty == 0)|| (this->getShipPositionX() + shootx) >= Grid::getwidth() ||
-                 (this->getShipPositionY() + shooty) >= Grid::getHeight() ||
-                 friendlyShip(grid, shootx, shooty));
-    if (infiniteLoopDetector <= 10000)
-        shoot(grid, shootx, shooty);
-    }
+    shoot(grid);
+    shoot(grid);
+    shoot(grid);
+    shoot(grid);
+    shoot(grid);
+    shoot(grid);
+    shoot(grid);
+    shoot(grid);
 }
 // //----------------------------------------------Cruiser----------------------------------------------------------------//
-bool Cruiser::friendlyShip()
-{
-    // int locationX = shipPositionX + shipAdditionX;
-    // int locationY = shipPositionY + shipAdditionY;
-    // if (grid[locationY][locationX].getship() == nullptr)
-    // {
-    //     return false;
-    // }
-    // else if (grid[locationY][locationX].getship()->getTeamName() == this->getTeamName())
-    // {
-    //     return true;
-    // }
-    // return false;
-}
 void Cruiser::look(Grid **grid)
 {
     // position temp;

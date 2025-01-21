@@ -19,7 +19,8 @@ class Ship
     int teamIndex;
     int shipPositionX;
     int shipPositionY;
-    Ship* killedShip;
+    Vector<Ship*> killedShip;
+    bool upgradeFlag;
 public:
     Ship();
     virtual void action(Grid** grid) = 0;
@@ -39,7 +40,13 @@ public:
     int getShipPositionX() const;
     void setShipPositionY(int x);
     int getShipPositionY() const;
+    void pushKilledShip(Ship* pkilledShip);
+    Ship* getKilledShip(int index);
+    Vector<Ship*> getVecKilledShip();
+    void setUpgradeFlag(bool b);
+    bool getUpgradeFlag() const;
     bool oneOfFourNeighbour(int gridX,int gridY,int shipPositionX,int shipPositionY);
+    bool friendlyShip(Grid** grid,int shootX, int shootY);
     virtual ~Ship() {}
 };
 
@@ -62,7 +69,7 @@ public:
 class ShootingShip : virtual public Ship
 {
 public:
-    virtual void shoot(Grid** grid,int shootX, int shootY) = 0;
+    virtual void shoot(Grid** grid) = 0;
     virtual ~ShootingShip() {}
 };
 
@@ -83,10 +90,9 @@ class Battleship : public MovingShip, public SeeingShip, public ShootingShip
     Vector<position> availableMove;
     int infiniteLoopDetector = 0;
     public:
-        bool friendlyShip(Grid** grid,int shootX, int shootY);
         void move(Grid** grid);
         void look(Grid** grid);
-        void shoot(Grid** grid,int shootX, int shootY);
+        void shoot(Grid** grid);
         void action(Grid** grid);
 };
 
@@ -98,7 +104,6 @@ class Cruiser : public SeeingShip, public MovingShip, public RamShip
     };
     Vector<position> availableMove;
     public:
-        bool friendlyShip();
         void move(Grid** grid);
         void look(Grid** grid);
         void ram();
@@ -115,7 +120,7 @@ class Destroyer : public MovingShip, public SeeingShip, public ShootingShip, pub
         void look(Grid** grid) {
 
         }
-        void shoot(Grid** grid,int shootX, int shootY) {
+        void shoot(Grid** grid) {
 
         }
         void ram() {
@@ -128,7 +133,7 @@ class Destroyer : public MovingShip, public SeeingShip, public ShootingShip, pub
 class Frigate : public ShootingShip
 { // start up clockwise
     public:
-        void shoot(Grid** grid,int shootX, int shootY) {
+        void shoot(Grid** grid) {
 
         }
         void action(Grid** grid) {
@@ -138,7 +143,7 @@ class Frigate : public ShootingShip
 class Corvette : public ShootingShip
 { // immediate nearby random
     public:
-        void shoot(Grid** grid,int shootX, int shootY) {
+        void shoot(Grid** grid) {
 
         }
         void action(Grid** grid) {
@@ -154,7 +159,7 @@ class Amphibious : public MovingShip, public SeeingShip, public ShootingShip {
         void look(Grid** grid) {
 
         }
-        void shoot(Grid** grid,int shootX, int shootY) {
+        void shoot(Grid** grid) {
 
         }
         void action(Grid** grid) {
@@ -169,7 +174,7 @@ class Supership : public SeeingShip, public MovingShip, public RamShip, public S
         void look(Grid** grid) {
 
         }
-        void shoot(Grid** grid,int shootX, int shootY) {
+        void shoot(Grid** grid) {
 
         }
         void ram() {

@@ -197,6 +197,25 @@ void Game::terminate()
     delete[] grid;
 }
 
+void Game::reenterBattlefield() {
+    srand(time(0));
+    int randx;
+    int randy;
+    Ship* reenterShip = destroyedShip.getFront()->value;
+    do {
+        randx = rand() % width;
+        randy = rand() % height;
+    }while(grid[randy][randx].getTaken()||(grid[randy][randx].getVal() == "1" && destroyedShip.getFront()->value->getType() != "Amphibious"));
+    //set new ship position
+    reenterShip->setShipPositionX(randx);
+    reenterShip->setShipPositionX(randy);
+    grid[randy][randx].setVal(reenterShip->getDisplay());
+    grid[randy][randx].setship(reenterShip);
+    grid[randy][randx].setTaken(true);
+    std::cout << reenterShip->getDisplay() <<" New location: Y->" << randy << " X->" << randx << std::endl;
+    OutputFile << reenterShip->getDisplay() <<" New location: Y->" << randy << " X->" << randx << std::endl;
+    destroyedShip.dequeue();
+}
 void Game::shipRandomGenerate() //generate random position for ship
 {
     srand(time(0));
@@ -231,22 +250,38 @@ void Game::shipRandomGenerate() //generate random position for ship
 
 void Game::start() {
     int teamI = 0;
-    int shipI = 0;
     Node* shipPtr = teams[teamI].getLinkedListHead(); //get first team head
     for(int i = 0; i < iterations; i++) {//iteration 
         if(!shipPtr) { //move to next team after all ships done
             teamI++;
-            shipI = 0;
             if(teamI == teamShipTotal.get_size()) //if teamI out of range reset back to zero
                 teamI = 0;
             shipPtr = teams[teamI].getLinkedListHead();
         }
-        if(shipPtr->value->getLife() != 0){
-            shipPtr->value->action(grid); //action
-            printGrid();
-        }
+        shipPtr->value->action(grid); //action
+        printGrid();
+        // //check if any killed ship need to enter queue to reenter battlefield
+        // {
+        //     int vecIndex = 0;
+        //     while(shipPtr->value->getVecKilledShip().get_size() > 0 && vecIndex < shipPtr->value->getVecKilledShip().get_size()) {
+        //         cout << "in" << endl;
+        //         // destroyedShip.enqueue(shipPtr->value->getKilledShip(vecIndex));
+        //         // vecIndex++;
+        //     }
+        // }
+        // //reenter battlefield
+        // {
+        //     int reenterCount = 0;
+        //     while(!destroyedShip.empty() && reenterCount < 2) {
+        //         destroyedShip.getFront()->value->lifeMinus1();
+        //         std::cout << destroyedShip.getFront()->value->getDisplay() << " Life remaining: " << destroyedShip.getFront()->value->getLife() << std::endl;
+        //         OutputFile << destroyedShip.getFront()->value->getDisplay() << " Life remaining: " << destroyedShip.getFront()->value->getLife() << std::endl;
+        //         reenterBattlefield();
+        //         reenterCount++;
+        //     }
+        // }
+        //-------------------------------
         shipPtr = shipPtr->next;
-        shipI++;
     }
     
     //--------------------------------- testing

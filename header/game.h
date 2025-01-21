@@ -20,6 +20,7 @@ class Game {
     // void reenterBattlefield();
     void init();
     void terminate();
+    void reenterBattlefield();
     void shipRandomGenerate();
     void start();
 };
