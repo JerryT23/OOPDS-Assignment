@@ -45,10 +45,11 @@ void Game::init()
     // width
     getline(configFile, temp);
     width = stoi(temp.substr(6));
+    Grid::setwidth(stoi(temp.substr(6)));
     // height
     getline(configFile, temp);
     height = stoi(temp.substr(7));
-
+    Grid::setHeight(stoi(temp.substr(7)));
     // get ship amount in a team then to array;
     {
         int sum, typeAmount;
@@ -241,7 +242,7 @@ void Game::start() {
             shipPtr = teams[teamI].getLinkedListHead();
         }
         if(shipPtr->value->getLife() != 0){
-            shipPtr->value->action(); //action
+            shipPtr->value->action(grid); //action
             printGrid();
         }
         shipPtr = shipPtr->next;

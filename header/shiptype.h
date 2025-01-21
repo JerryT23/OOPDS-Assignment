@@ -4,14 +4,11 @@
 #include <unordered_map>
 #include <cstdlib>
 #include <ctime>
-#include "./grid.h"
 #include "./vector.h"
 #include "./externalOutput.h"
-#include "../header/linkedlist.h"
 using namespace std;
-class Node;
-class LinkedList;
-class queue;
+
+class Grid;
 class Ship
 {
     std::string type;
@@ -22,9 +19,10 @@ class Ship
     int teamIndex;
     int shipPositionX;
     int shipPositionY;
+    Ship* killedShip;
 public:
-    Ship() : life(3),totalKilled(0){}
-    virtual void action() = 0;
+    Ship();
+    virtual void action(Grid** grid) = 0;
     void setType(std::string s);
     std::string getType() const;
     void setDisplay(std::string s);
@@ -50,21 +48,21 @@ public:
 class SeeingShip : virtual public Ship
 {
 public:
-    virtual void look() = 0;
+    virtual void look(Grid** grid) = 0;
     virtual ~SeeingShip() {}
 };
 
 class MovingShip : virtual public Ship
 {
 public:
-    virtual void move() = 0;
+    virtual void move(Grid** grid) = 0;
     virtual ~MovingShip() {}
 };
 
 class ShootingShip : virtual public Ship
 {
 public:
-    virtual void shoot() = 0;
+    virtual void shoot(Grid** grid,int shootX, int shootY) = 0;
     virtual ~ShootingShip() {}
 };
 
@@ -84,16 +82,12 @@ class Battleship : public MovingShip, public SeeingShip, public ShootingShip
     };
     Vector<position> availableMove;
     int infiniteLoopDetector = 0;
-    int shootX,shootY;
     public:
-        bool friendlyShip();
-        void move();
-        void look();
-        void shoot();
-        void action() {
-            srand(time(0));
-            cout << "Battleship" << endl;
-        }
+        bool friendlyShip(Grid** grid,int shootX, int shootY);
+        void move(Grid** grid);
+        void look(Grid** grid);
+        void shoot(Grid** grid,int shootX, int shootY);
+        void action(Grid** grid);
 };
 
 class Cruiser : public SeeingShip, public MovingShip, public RamShip
@@ -105,83 +99,83 @@ class Cruiser : public SeeingShip, public MovingShip, public RamShip
     Vector<position> availableMove;
     public:
         bool friendlyShip();
-        void move();
-        void look();
+        void move(Grid** grid);
+        void look(Grid** grid);
         void ram();
-        void action() {
+        void action(Grid** grid) {
             cout << "Cruiser" << endl;
         }
 };
 class Destroyer : public MovingShip, public SeeingShip, public ShootingShip, public RamShip
 {
     public:
-        void move() {
+        void move(Grid** grid) {
 
         }
-        void look() {
+        void look(Grid** grid) {
 
         }
-        void shoot() {
+        void shoot(Grid** grid,int shootX, int shootY) {
 
         }
         void ram() {
 
         }
-        void action() {
+        void action(Grid** grid) {
             cout << "Destroyer" << endl;
         }
 };
 class Frigate : public ShootingShip
 { // start up clockwise
     public:
-        void shoot() {
+        void shoot(Grid** grid,int shootX, int shootY) {
 
         }
-        void action() {
+        void action(Grid** grid) {
             cout << "Frigate" << endl;
         }
 };
 class Corvette : public ShootingShip
 { // immediate nearby random
     public:
-        void shoot() {
+        void shoot(Grid** grid,int shootX, int shootY) {
 
         }
-        void action() {
+        void action(Grid** grid) {
             cout << "Corvette" << endl;
         }
 };
 class Amphibious : public MovingShip, public SeeingShip, public ShootingShip {
     //can walk land & water
     public:
-        void move() {
+        void move(Grid** grid) {
 
         }
-        void look() {
+        void look(Grid** grid) {
 
         }
-        void shoot() {
+        void shoot(Grid** grid,int shootX, int shootY) {
 
         }
-        void action() {
+        void action(Grid** grid) {
             cout << "Amphibious" << endl;
         }
 } ;
 class Supership : public SeeingShip, public MovingShip, public RamShip, public ShootingShip {
     public:
-        void move() {
+        void move(Grid** grid) {
 
         }
-        void look() {
+        void look(Grid** grid) {
 
         }
-        void shoot() {
+        void shoot(Grid** grid,int shootX, int shootY) {
 
         }
         void ram() {
             
         }
-        void action() {
+        void action(Grid** grid) {
             cout << "Supership" << endl;
         }
 };
