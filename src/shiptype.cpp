@@ -180,6 +180,7 @@ void Battleship::shoot(int x, int y, Grid **grid, int shipPositionX, int shipPos
         upgradedShip->setTeamPositionIndex(this->getTeamPositionIndex());
 
         // Replace in the LinkedList
+        std::cout << "Index: " << index << std::endl;
         ships.replace(index, upgradedShip);
 
         std::cout << "Battleship upgraded to Cruiser!" << std::endl;
