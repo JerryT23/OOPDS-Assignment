@@ -17,7 +17,7 @@ class Game {
     public:
     Game();
     void printGrid() const;
-    void reenterBattlefield();
+    // void reenterBattlefield();
     void init();
     void terminate();
     void shipRandomGenerate();

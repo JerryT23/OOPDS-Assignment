@@ -35,27 +35,6 @@ for (int o = 0; o < height; o++)
     cout << "-----------------------------------------" <<endl;
     OutputFile << "-----------------------------------------" <<endl;
 }
-void Game::reenterBattlefield() {
-    srand(time(0));
-    int randx;
-    int randy;
-    int reenterAmount = 0;
-    while(!destroyedShip.empty() && reenterAmount < 2){
-        Ship* reenterShip = teams[destroyedShip.getFront()->value->getTeamPositionIndex()].searchShip(destroyedShip.getFront()->value->getShipPositionIndex());
-        do {
-            randx = rand() % width;
-            randy = rand() % height;
-        }while(grid[randy][randx].getTaken()||(grid[randy][randx].getVal() == "1" && destroyedShip.getFront()->value->getType() != "Amphibious"));
-        //set new ship position
-        teams[destroyedShip.getFront()->value->getTeamPositionIndex()].setShipPosition(destroyedShip.getFront()->value->getShipPositionIndex(),randx,randy);
-        grid[randy][randx].setVal(reenterShip->getDisplay());
-        grid[randy][randx].setship(reenterShip);
-        grid[randy][randx].setTaken(true);
-        std::cout << reenterShip->getDisplay() <<" New location: Y->" << randy << " X->" << randx << std::endl;
-        OutputFile << reenterShip->getDisplay() <<" New location: Y->" << randy << " X->" << randx << std::endl;
-        destroyedShip.dequeue();
-    }
-}
 void Game::init()
 {
     string temp;
@@ -107,7 +86,7 @@ void Game::init()
         getline(configFile, temp); // first Team / space if no team
         teams = new Team[teamShipTotal.get_size()];
         for (int i = 0; i < teamShipTotal.get_size(); i++) // if two team run two time
-        {   teams[i].initShipPositions(teamShipTotal[i]);
+        {   
             teamName = temp.substr(0,6);
             getline(configFile, temp); // first type of the team
             typeLeft = stoi(temp.substr(temp.find(' ') + 3));
@@ -226,10 +205,10 @@ void Game::shipRandomGenerate() //generate random position for ship
     {
         for(int shipI = 0; shipI < teamShipTotal[teamI];shipI++) {
             do {
-                if(infiniteLoopDetector > 100) { //if loop 100 times still cant find a position
+                if(infiniteLoopDetector > 1000) { //if loop 100 times still cant find a position
                     cout << "POSSIBLY NOT ENOUGH LAND FOR SHIPS TO INITIALIZE, ENDING PROGRAM.";
                     OutputFile << "POSSIBLY NOT ENOUGH LAND FOR SHIPS TO INITIALIZE, ENDING PROGRAM.";
-                    exit(-1);
+                    throw runtime_error("NOT ENOUGH LAND FOR SHIPS TO INITIALIZE");
                 }
                 randx = rand() % width;
                 randy = rand() % height;
@@ -239,9 +218,9 @@ void Game::shipRandomGenerate() //generate random position for ship
             grid[randy][randx].setVal(teams[teamI].searchShip(shipI)->getDisplay());
             grid[randy][randx].setship(teams[teamI].searchShip(shipI));
             grid[randy][randx].setTaken(true);
-            teams[teamI].setShipPosition(shipI,randx,randy);
-            teams[teamI].searchShip(shipI)->setShipPositionIndex(shipI);
-            teams[teamI].searchShip(shipI)->setTeamPositionIndex(teamI);
+            teams[teamI].searchShip(shipI)->setShipPositionX(randx);
+            teams[teamI].searchShip(shipI)->setShipPositionY(randy);
+            teams[teamI].searchShip(shipI)->setTeamIndex(teamI);
         }
     }
     cout << "Initialised ships position: " << endl;
@@ -253,40 +232,25 @@ void Game::start() {
     int teamI = 0;
     int shipI = 0;
     Node* shipPtr = teams[teamI].getLinkedListHead(); //get first team head
-    // for(int i = 0; i < iterations; i++) {//iteration    
-    //     reenterBattlefield(); //if queue is not empty
-    //     if(!shipPtr) { //move to next team after all ships done
-    //         teamI++;
-    //         shipI = 0;
-    //         if(teamI == teamShipTotal.get_size()) //if teamI out of range reset back to zero
-    //             teamI = 0;
-    //         shipPtr = teams[teamI].getLinkedListHead();
-    //     }
-    //     if(shipPtr->value->getLife() != 0){
-    //         shipPtr->value->action(grid,teams[teamI].getShipPosition(shipI)[0],teams[teamI].getShipPosition(shipI)[1],
-    //                             width,height,destroyedShip,teams[teamI].getShip()); //action
-    //         printGrid();
-    //     }
-    //     shipPtr = shipPtr->next;
-    //     shipI++;
-    // }
+    for(int i = 0; i < iterations; i++) {//iteration 
+        if(!shipPtr) { //move to next team after all ships done
+            teamI++;
+            shipI = 0;
+            if(teamI == teamShipTotal.get_size()) //if teamI out of range reset back to zero
+                teamI = 0;
+            shipPtr = teams[teamI].getLinkedListHead();
+        }
+        if(shipPtr->value->getLife() != 0){
+            shipPtr->value->action(); //action
+            printGrid();
+        }
+        shipPtr = shipPtr->next;
+        shipI++;
+    }
     
     //--------------------------------- testing
-    cout << endl;
-    shipPtr->value->action(grid,teams[0].getShipPosition(shipI)[0],teams[teamI].getShipPosition(shipI)[1],
-    width,height,destroyedShip,teams[teamI].getShip(),shipPtr);
-    printGrid();
-    shipPtr->value->action(grid,teams[0].getShipPosition(shipI)[0],teams[teamI].getShipPosition(shipI)[1],
-    width,height,destroyedShip,teams[teamI].getShip(),shipPtr);
-    printGrid();
-    shipPtr->value->action(grid,teams[0].getShipPosition(shipI)[0],teams[teamI].getShipPosition(shipI)[1],
-    width,height,destroyedShip,teams[teamI].getShip(),shipPtr);
-    printGrid();
-    shipPtr->value->action(grid,teams[0].getShipPosition(shipI)[0],teams[teamI].getShipPosition(shipI)[1],
-    width,height,destroyedShip,teams[teamI].getShip(),shipPtr);
-    printGrid();
-    shipPtr->value->action(grid,teams[0].getShipPosition(shipI)[0],teams[teamI].getShipPosition(shipI)[1],
-    width,height,destroyedShip,teams[teamI].getShip(),shipPtr);
-    printGrid();
+    // cout << endl;
+    // shipPtr->value->action();
+    // printGrid();
     //----------------------------------
 }
