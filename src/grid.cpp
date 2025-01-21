@@ -1,4 +1,6 @@
 #include "../header/grid.h"
+int Grid::height = 0;
+int Grid::width = 0;
 Grid::Grid():ship(nullptr){}
 void Grid::setTaken(bool b)
 {
@@ -28,3 +30,7 @@ void Grid::setship(Ship* ship) {
 Ship* Grid::getship() const {
     return this->ship;
 }
+void Grid::setHeight(int x) {height = x;}
+int Grid::getHeight(){return height;}
+void Grid::setwidth(int x) {width = x;}
+int Grid::getwidth(){return width;}
