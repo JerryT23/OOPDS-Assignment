@@ -9,6 +9,7 @@
 #include "./externalOutput.h"
 #include "../header/linkedlist.h"
 
+class Node;
 class LinkedList;
 class queue;
 class Ship
@@ -22,7 +23,8 @@ class Ship
     int teamPositionIndex;
 public:
     Ship() : life(3),totalKilled(0){}
-    virtual void action(Grid** grid, int& shipPositionX, int& shipPositionY,int width,int height,queue& reenterQueue, LinkedList& ships) = 0;
+    virtual void action(Grid** grid, int& shipPositionX, int& shipPositionY,int width,
+    int height,queue& reenterQueue, LinkedList& ships,Node* gameShipPtr) = 0;
     void setType(std::string s);
     std::string getType() const;
     void setDisplay(std::string s);
@@ -60,7 +62,8 @@ public:
 class ShootingShip : virtual public Ship
 {
 public:
-    virtual void shoot(int x, int y, Grid** grid, int shipPositionX, int shipPositionY,queue& reenterQueue, LinkedList& ships) = 0;
+    virtual void shoot(int x, int y, Grid** grid, int shipPositionX, int shipPositionY,
+        queue& reenterQueue, LinkedList& ships, Node* gameShipPtr) = 0;
     virtual ~ShootingShip() {}
 };
 
@@ -85,8 +88,10 @@ class Battleship : public MovingShip, public SeeingShip, public ShootingShip
         bool friendlyShip(Grid** grid, int shipAdditionX,int shipAdditionY,int shipPositionX, int shipPositionY);
         void move(Grid** grid, int& shipPositionX, int& shipPositionY);
         void look(int x, int y, Grid** grid, int shipPositionX, int shipPositionY,int width, int height);
-        void shoot(int x, int y, Grid** grid, int shipPositionX, int shipPositionY,queue& reenterQueue, LinkedList& ships);
-        void action(Grid** grid, int& shipPositionX, int& shipPositionY,int width,int height,queue& reenterQueue, LinkedList& ships) {
+        void shoot(int x, int y, Grid** grid, int shipPositionX, int shipPositionY,
+            queue& reenterQueue, LinkedList& shi, Node* gameShipPtrps);
+        void action(Grid** grid, int& shipPositionX, int& shipPositionY,int width,
+        int height,queue& reenterQueue, LinkedList& ships,Node* gameShipPtr) {
             srand(time(0));
             std::cout << this->getDisplay() << " Ship look(0,0):" <<std::endl << "Ship type:"<<this->getType()<<std::endl;
             OutputFile << this->getDisplay() << " Ship look(0,0):" <<std::endl << "Ship type:"<<this->getType()<<std::endl;
@@ -94,10 +99,11 @@ class Battleship : public MovingShip, public SeeingShip, public ShootingShip
             move(grid,shipPositionX,shipPositionY);
             availableMove.clear();
             //generate shoot coordinate
+            infiniteLoopDetector = 0;
             do {
                 if(infiniteLoopDetector > 10000) { //if loop 10000 times still cant find a place to shoot
-                    std::cout << "No Place to shoot";
-                    OutputFile << "No Place to shoot";
+                    std::cout << "No Place to shoot" << std::endl;
+                    OutputFile << "No Place to shoot" << std::endl;
                     break;
                 }
                 shootX = rand() % 6;
@@ -106,7 +112,7 @@ class Battleship : public MovingShip, public SeeingShip, public ShootingShip
             } while((shootX + shootY > 5) || (shootX == 0 && shootY == 0) || shipPositionX+shootX >= width ||
             shipPositionY+shootY>=height|| friendlyShip(grid,shootX,shootY,shipPositionX,shipPositionY));//
             //-------------------------------
-            if(infiniteLoopDetector <= 10000) shoot(shootX,shootY,grid,shipPositionX,shipPositionY,reenterQueue, ships);
+            if(infiniteLoopDetector <= 10000) shoot(shootX,shootY,grid,shipPositionX,shipPositionY,reenterQueue, ships,gameShipPtr);
         }
 };
 
@@ -117,13 +123,13 @@ class Cruiser : public SeeingShip, public MovingShip, public RamShip
         int y;
     };
     Vector<position> availableMove;
-    int infiniteLoopDetector = 0;
     public:
         bool friendlyShip(Grid** grid, int shipAdditionX,int shipAdditionY,int shipPositionX, int shipPositionY);
         void move(Grid** grid, int& shipPositionX, int& shipPositionY);
         void look(int x, int y, Grid** grid, int shipPositionX, int shipPositionY,int width, int height);
         void ram(Grid** grid, int shipPositionX, int shipPositionY,int width, int height, queue &reenterQueue);
-        void action(Grid** grid, int& shipPositionX, int& shipPositionY,int width,int height,queue& reenterQueue, LinkedList& ships) {
+        void action(Grid** grid, int& shipPositionX, int& shipPositionY,int width,
+        int height,queue& reenterQueue, LinkedList& ships,Node* gameShipPtr) {
             std::cout << this->getDisplay() << " Ship look(0,0):" <<std::endl << "Ship type:"<<this->getType()<<std::endl;
             OutputFile << this->getDisplay() << " Ship look(0,0):" <<std::endl << "Ship type:"<<this->getType()<<std::endl;
             look(0,0,grid,shipPositionX,shipPositionY,width,height);
@@ -163,33 +169,39 @@ class Destroyer : public MovingShip, public SeeingShip, public ShootingShip, pub
         void look(int x, int y, Grid** grid, int shipPositionX, int shipPositionY,int width, int height) {
 
         }
-        void shoot(int x, int y, Grid** grid, int shipPositionX, int shipPositionY,queue& reenterQueue, LinkedList& ships) {
+        void shoot(int x, int y, Grid** grid, int shipPositionX, int shipPositionY,
+            queue& reenterQueue, LinkedList& ships, Node* gameShipPtr) {
 
         }
         void ram(Grid** grid, int shipPositionX, int shipPositionY,int width, int height, queue &reenterQueue) {
 
         }
-        void action(Grid** grid, int& shipPositionX, int& shipPositionY,int width,int height,queue& reenterQueue, LinkedList& ships) {
+        void action(Grid** grid, int& shipPositionX, int& shipPositionY,int width,
+        int height,queue& reenterQueue, LinkedList& ships,Node* gameShipPtr) {
 
         }
 };
 class Frigate : public ShootingShip
 { // start up clockwise
     public:
-        void shoot(int x, int y, Grid** grid, int shipPositionX, int shipPositionY,queue& reenterQueue, LinkedList& ships) {
+        void shoot(int x, int y, Grid** grid, int shipPositionX, int shipPositionY,
+            queue& reenterQueue, LinkedList& ships, Node* gameShipPtr) {
 
         }
-        void action(Grid** grid, int& shipPositionX, int& shipPositionY,int width,int height,queue& reenterQueue, LinkedList& ships) {
+        void action(Grid** grid, int& shipPositionX, int& shipPositionY,int width,
+        int height,queue& reenterQueue, LinkedList& ships,Node* gameShipPtr) {
 
         }
 };
 class Corvette : public ShootingShip
 { // immediate nearby random
     public:
-        void shoot(int x, int y, Grid** grid, int shipPositionX, int shipPositionY,queue& reenterQueue, LinkedList& ships) {
+        void shoot(int x, int y, Grid** grid, int shipPositionX, int shipPositionY,
+            queue& reenterQueue, LinkedList& ships, Node* gameShipPtr) {
 
         }
-        void action(Grid** grid, int& shipPositionX, int& shipPositionY,int width,int height,queue& reenterQueue, LinkedList& ships) {
+        void action(Grid** grid, int& shipPositionX, int& shipPositionY,int width,
+        int height,queue& reenterQueue, LinkedList& ships,Node* gameShipPtr) {
 
         }
 };
@@ -202,10 +214,12 @@ class Amphibious : public MovingShip, public SeeingShip, public ShootingShip {
         void look(int x, int y, Grid** grid, int shipPositionX, int shipPositionY,int width, int height) {
 
         }
-        void shoot(int x, int y, Grid** grid, int shipPositionX, int shipPositionY,queue& reenterQueue, LinkedList& ships) {
+        void shoot(int x, int y, Grid** grid, int shipPositionX, int shipPositionY,
+            queue& reenterQueue, LinkedList& ships, Node* gameShipPtr) {
 
         }
-        void action(Grid** grid, int& shipPositionX, int& shipPositionY,int width,int height,queue& reenterQueue, LinkedList& ships) {
+        void action(Grid** grid, int& shipPositionX, int& shipPositionY,int width,
+        int height,queue& reenterQueue, LinkedList& ships,Node* gameShipPtr) {
 
         }
 } ;
@@ -217,13 +231,15 @@ class Supership : public SeeingShip, public MovingShip, public RamShip, public S
         void look(int x, int y, Grid** grid, int shipPositionX, int shipPositionY,int width, int height) {
 
         }
-        void shoot(int x, int y, Grid** grid, int shipPositionX, int shipPositionY,queue& reenterQueue, LinkedList& ships) {
+        void shoot(int x, int y, Grid** grid, int shipPositionX, int shipPositionY,
+            queue& reenterQueue, LinkedList& ships, Node* gameShipPtr) {
 
         }
         void ram(Grid** grid, int shipPositionX, int shipPositionY,int width, int height, queue &reenterQueue) {
             
         }
-        void action(Grid** grid, int& shipPositionX, int& shipPositionY,int width,int height,queue& reenterQueue, LinkedList& ships) {
+        void action(Grid** grid, int& shipPositionX, int& shipPositionY,int width,
+        int height,queue& reenterQueue, LinkedList& ships,Node* gameShipPtr) {
 
         }
 };

@@ -1,6 +1,7 @@
 #include "../header/shiptype.h"
 #include "../header/linkedlist.h"
 #include "../header/queue.h"
+#include "../header/node.h"
 void Ship::setType(std::string s)
 {
     type = s;
@@ -137,7 +138,7 @@ void Battleship::move(Grid **grid, int &shipPositionX, int &shipPositionY)
     std::cout << this->getDisplay() << " Ship move to Y:" << availableMove[index].y << " X:" << availableMove[index].x << std::endl;
     OutputFile << this->getDisplay() << " Ship move to Y:" << availableMove[index].y << " X:" << availableMove[index].x << std::endl;
 }
-void Battleship::shoot(int x, int y, Grid **grid, int shipPositionX, int shipPositionY, queue &reenterQueue, LinkedList& ships)
+void Battleship::shoot(int x, int y, Grid **grid, int shipPositionX, int shipPositionY, queue &reenterQueue, LinkedList& ships, Node* gameShipPtr)
 {
     int shootLocationX = shipPositionX + x;
     int shootLocationY = shipPositionY + y;
@@ -180,8 +181,7 @@ void Battleship::shoot(int x, int y, Grid **grid, int shipPositionX, int shipPos
         upgradedShip->setTeamPositionIndex(this->getTeamPositionIndex());
 
         // Replace in the LinkedList
-        std::cout << "Index: " << index << std::endl;
-        ships.replace(index, upgradedShip);
+        gameShipPtr = ships.replace(index, upgradedShip);
 
         std::cout << "Battleship upgraded to Cruiser!" << std::endl;
         OutputFile << "Battleship upgraded to Cruiser!" << std::endl;
