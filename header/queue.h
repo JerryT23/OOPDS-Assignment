@@ -1,7 +1,7 @@
 #ifndef QUEUE_H
 #define QUEUE_H
-#include "./shiptype.h"
 #include "node.h"
+class Ship;
 class queue
 {
     Node* front;

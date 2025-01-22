@@ -9,6 +9,7 @@
 using namespace std;
 
 class Grid;
+class queue;
 class Ship
 {
     std::string type;
@@ -19,8 +20,9 @@ class Ship
     int teamIndex;
     int shipPositionX;
     int shipPositionY;
-    Vector<Ship*> killedShip;
+    queue* killedShip;
     bool upgradeFlag;
+    bool inBattlefield;
 public:
     Ship();
     virtual void action(Grid** grid) = 0;
@@ -40,14 +42,14 @@ public:
     int getShipPositionX() const;
     void setShipPositionY(int x);
     int getShipPositionY() const;
-    void pushKilledShip(Ship* pkilledShip);
-    Ship* getKilledShip(int index);
-    Vector<Ship*> getVecKilledShip();
+    queue* getKilledShips();
     void setUpgradeFlag(bool b);
     bool getUpgradeFlag() const;
+    void setInBattlefield(bool b);
+    bool getInBattlefield() const;
     bool oneOfFourNeighbour(int gridX,int gridY,int shipPositionX,int shipPositionY);
     bool friendlyShip(Grid** grid,int shootX, int shootY);
-    virtual ~Ship() {}
+    virtual ~Ship();
 };
 
 // no overlapping method and attribute for subclasses

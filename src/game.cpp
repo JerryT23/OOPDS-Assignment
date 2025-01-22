@@ -201,20 +201,19 @@ void Game::reenterBattlefield() {
     srand(time(0));
     int randx;
     int randy;
-    Ship* reenterShip = destroyedShip.getFront()->value;
+    Ship* reenterShip = reenterShips.getFront()->value;
     do {
         randx = rand() % width;
         randy = rand() % height;
-    }while(grid[randy][randx].getTaken()||(grid[randy][randx].getVal() == "1" && destroyedShip.getFront()->value->getType() != "Amphibious"));
+    }while(grid[randy][randx].getTaken()||(grid[randy][randx].getVal() == "1" && reenterShips.getFront()->value->getType() != "Amphibious"));
     //set new ship position
     reenterShip->setShipPositionX(randx);
-    reenterShip->setShipPositionX(randy);
+    reenterShip->setShipPositionY(randy);
     grid[randy][randx].setVal(reenterShip->getDisplay());
     grid[randy][randx].setship(reenterShip);
     grid[randy][randx].setTaken(true);
     std::cout << reenterShip->getDisplay() <<" New location: Y->" << randy << " X->" << randx << std::endl;
     OutputFile << reenterShip->getDisplay() <<" New location: Y->" << randy << " X->" << randx << std::endl;
-    destroyedShip.dequeue();
 }
 void Game::shipRandomGenerate() //generate random position for ship
 {
@@ -258,28 +257,34 @@ void Game::start() {
                 teamI = 0;
             shipPtr = teams[teamI].getLinkedListHead();
         }
-        shipPtr->value->action(grid); //action
+        if(shipPtr->value->getInBattlefield())
+            shipPtr->value->action(grid); //action
+        else {
+            cout << shipPtr->value->getDisplay() << " turn. But the ship is not in the battlefield. Skipping...." << endl;
+            OutputFile << shipPtr->value->getDisplay() << " turn. But the ship is not in the battlefield. Skipping...." << endl;
+        }
         printGrid();
-        // //check if any killed ship need to enter queue to reenter battlefield
-        // {
-        //     int vecIndex = 0;
-        //     while(shipPtr->value->getVecKilledShip().get_size() > 0 && vecIndex < shipPtr->value->getVecKilledShip().get_size()) {
-        //         cout << "in" << endl;
-        //         // destroyedShip.enqueue(shipPtr->value->getKilledShip(vecIndex));
-        //         // vecIndex++;
-        //     }
-        // }
-        // //reenter battlefield
-        // {
-        //     int reenterCount = 0;
-        //     while(!destroyedShip.empty() && reenterCount < 2) {
-        //         destroyedShip.getFront()->value->lifeMinus1();
-        //         std::cout << destroyedShip.getFront()->value->getDisplay() << " Life remaining: " << destroyedShip.getFront()->value->getLife() << std::endl;
-        //         OutputFile << destroyedShip.getFront()->value->getDisplay() << " Life remaining: " << destroyedShip.getFront()->value->getLife() << std::endl;
-        //         reenterBattlefield();
-        //         reenterCount++;
-        //     }
-        // }
+        //check if any killed ship need to enter queue to reenter battlefield
+        {
+            while(!shipPtr->value->getKilledShips()->empty()) {
+                reenterShips.enqueue(shipPtr->value->getKilledShips()->getFront()->value);
+                shipPtr->value->getKilledShips()->getFront()->value->setInBattlefield(false);
+                shipPtr->value->getKilledShips()->dequeue();
+            }
+        }
+        //reenter battlefield
+        {
+            int reenterCount = 0;
+            while(!reenterShips.empty() && reenterCount < 2) {
+                reenterShips.getFront()->value->lifeMinus1();
+                std::cout << reenterShips.getFront()->value->getDisplay() << " Life remaining: " << reenterShips.getFront()->value->getLife() << std::endl;
+                OutputFile << reenterShips.getFront()->value->getDisplay() << " Life remaining: " << reenterShips.getFront()->value->getLife() << std::endl;
+                reenterBattlefield();
+                reenterShips.getFront()->value->setInBattlefield(true);
+                reenterCount++;
+                reenterShips.dequeue();
+            }
+        }
         //-------------------------------
         shipPtr = shipPtr->next;
     }

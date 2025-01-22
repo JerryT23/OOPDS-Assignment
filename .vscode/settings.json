@@ -63,6 +63,11 @@
         "string_view": "cpp",
         "functional": "cpp",
         "numeric": "cpp",
-        "variant": "cpp"
+        "variant": "cpp",
+        "chrono": "cpp",
+        "forward_list": "cpp",
+        "iomanip": "cpp",
+        "ratio": "cpp",
+        "sstream": "cpp"
     }
 }

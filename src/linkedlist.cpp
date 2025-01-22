@@ -141,6 +141,7 @@ LinkedList::~LinkedList()
     for (int i = 0; i < size; i++)
     {
         n = deleteptr->next;
+        delete deleteptr->value;
         delete deleteptr;
         deleteptr = n;
     }

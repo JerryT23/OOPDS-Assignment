@@ -13,7 +13,7 @@ class Game {
         int height;
         int iterations;
         Grid** grid;
-        queue destroyedShip;
+        queue reenterShips;
     public:
     Game();
     void printGrid() const;

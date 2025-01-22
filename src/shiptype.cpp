@@ -1,8 +1,9 @@
 #include "../header/shiptype.h"
 #include "../header/grid.h"
+#include "../header/queue.h"
 #include <chrono> 
 
-Ship::Ship() : life(3), totalKilled(0) {}
+Ship::Ship() : life(3), totalKilled(0),killedShip(new queue),inBattlefield(true){}
 void Ship::setType(std::string s)
 {
     type = s;
@@ -64,16 +65,7 @@ int Ship::getShipPositionY() const
 {
     return shipPositionY;
 }
-void Ship::pushKilledShip(Ship *pkilledShip)
-{
-    killedShip.push_back(pkilledShip);
-}
-Ship *Ship::getKilledShip(int index)
-{
-    return killedShip[index];
-}
-Vector<Ship *> Ship::getVecKilledShip()
-{
+queue* Ship::getKilledShips() {
     return killedShip;
 }
 void Ship::setUpgradeFlag(bool b)
@@ -84,6 +76,12 @@ bool Ship::getUpgradeFlag() const
 {
     return upgradeFlag;
 }
+void Ship::setInBattlefield(bool b) {
+    inBattlefield = b;
+}
+bool Ship::getInBattlefield() const {
+    return inBattlefield;
+}
 bool Ship::oneOfFourNeighbour(int gridX, int gridY, int shipPositionX, int shipPositionY)
 {
     bool right = (gridY == shipPositionY) && (gridX == shipPositionX + 1);
@@ -93,7 +91,6 @@ bool Ship::oneOfFourNeighbour(int gridX, int gridY, int shipPositionX, int shipP
     return (right || left || up || down);
 }
 bool Ship::friendlyShip(Grid **grid, int shootX, int shootY)
-// //----------------------------------------------Battleship----------------------------------------------------------------//
 {
     int locationX = this->getShipPositionX() + shootX;
     int locationY = this->getShipPositionY() + shootY;
@@ -107,6 +104,7 @@ bool Ship::friendlyShip(Grid **grid, int shootX, int shootY)
     }
     return false;
 }
+// //----------------------------------------------Battleship----------------------------------------------------------------//
 void Battleship::look(Grid **grid)
 {
     position temp;
@@ -206,7 +204,7 @@ void Battleship::shoot(Grid **grid)
             // to be do upgrade, queue
             std::cout << this->getDisplay() << " Total Kill:" << this->getTotalKill() << std::endl;
             OutputFile << this->getDisplay() << " Total Kill:" << this->getTotalKill() << std::endl;
-            this->pushKilledShip(grid[shootLocationY][shootLocationX].getship());
+            this->getKilledShips()->enqueue(grid[shootLocationY][shootLocationX].getship());
             // set back to the land type after ship leave
             grid[shootLocationY][shootLocationX].setTaken(false);
             grid[shootLocationY][shootLocationX].setVal(grid[shootLocationY][shootLocationX].getType());
@@ -233,7 +231,6 @@ void Battleship::shoot(Grid **grid)
 }
 void Battleship::action(Grid **grid)
 {
-    this->getVecKilledShip().clear();
     cout << this->getDisplay() << " turn. Ship Type: " << this->getType() << endl
          << this->getDisplay() << ": look from Y:" << this->getShipPositionY()
          << " X:" << this->getShipPositionX() << endl;
@@ -244,12 +241,6 @@ void Battleship::action(Grid **grid)
     move(grid);
     availableMove.clear();
     // generate random shoot x and y; shoot (shipPositionX + x, shipPositionY + y)
-    shoot(grid);
-    shoot(grid);
-    shoot(grid);
-    shoot(grid);
-    shoot(grid);
-    shoot(grid);
     shoot(grid);
     shoot(grid);
 }
@@ -358,4 +349,8 @@ void Cruiser::ram()
     //         }
     //     }
     // }
+}
+
+Ship::~Ship() {
+    delete killedShip;
 }

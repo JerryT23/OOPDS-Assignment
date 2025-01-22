@@ -1,5 +1,5 @@
 #include "../header/queue.h"
-
+#include "../header/shiptype.h"
 bool queue::empty()
 {
     return front == nullptr;
