@@ -244,111 +244,141 @@ void Battleship::action(Grid **grid)
     shoot(grid);
     shoot(grid);
 }
-// //----------------------------------------------Cruiser----------------------------------------------------------------//
+//----------------------------------------------Cruiser----------------------------------------------------------------//
 void Cruiser::look(Grid **grid)
 {
-    // position temp;
-    // for (int gridY = shipPositionY - 1; gridY <= shipPositionY + 1; gridY++)
-    // { // get the grid of nine-square area centered on (x,y)
-    //     if (gridY < 0 || gridY >= height)
-    //         continue; // if outside of grid
-    //     for (int gridX = shipPositionX - 1; gridX <= shipPositionX + 1; gridX++)
-    //     {
-    //         if (gridX < 0 || gridX >= width)
-    //             continue;
-    //         if (gridX == shipPositionX && gridY == shipPositionY)
-    //             continue; // ignore self;
-    //         if (grid[gridY][gridX].getship())
-    //         { // if there's ship at the position
-    //             if (grid[gridY][gridX].getship()->getTeamName() == this->getTeamName())
-    //             {
-    //                 std::cout << "Friendly ship found at -> Y:" << gridY << " X:" << gridX << std::endl;
-    //                 OutputFile << "Friendly ship found at -> Y:" << gridY << " X:" << gridX << std::endl;
-    //             }
-    //             else
-    //             {
-    //                 std::cout << "Enemy ship found at -> Y:" << gridY << " X:" << gridX << std::endl;
-    //                 OutputFile << "Enemy ship found at -> Y:" << gridY << " X:" << gridX << std::endl;
-    //             }
-    //         }
-    //         else if (grid[gridY][gridX].getType() == "0" && oneOfFourNeighbour(gridX, gridY, shipPositionX, shipPositionY))
-    //         { // if it's land && one of four neighbour
-    //             temp.x = gridX;
-    //             temp.y = gridY;
-    //             availableMove.push_back(temp);
-    //         }
-    //     }
-    // }
+    position temp;
+    for (int gridY = this->getShipPositionY() - 1; gridY <= this->getShipPositionY() + 1; gridY++)
+    { // get the grid of nine-square area centered on (x,y)
+        if (gridY < 0 || gridY >= Grid::getHeight())
+            continue; // if outside of grid
+        for (int gridX = this->getShipPositionX() - 1; gridX <= this->getShipPositionX() + 1; gridX++)
+        {
+            if (gridX < 0 || gridX >= Grid::getwidth())
+                continue;
+            if (gridX == this->getShipPositionX() && gridY == this->getShipPositionY())
+                continue; // ignore self;
+            if (grid[gridY][gridX].getship())
+            { // if there's ship at the position
+                if (grid[gridY][gridX].getship()->getTeamName() == this->getTeamName())
+                {
+                    std::cout << "Friendly ship found at -> Y:" << gridY << " X:" << gridX << std::endl;
+                    OutputFile << "Friendly ship found at -> Y:" << gridY << " X:" << gridX << std::endl;
+                }
+                else
+                {
+                    std::cout << "Enemy ship found at -> Y:" << gridY << " X:" << gridX << std::endl;
+                    OutputFile << "Enemy ship found at -> Y:" << gridY << " X:" << gridX << std::endl;
+                }
+            }
+            else if (grid[gridY][gridX].getType() == "0" && oneOfFourNeighbour(gridX, gridY, this->getShipPositionX(), this->getShipPositionY()))
+            { // if it's land && one of four neighbour
+                temp.x = gridX;
+                temp.y = gridY;
+                availableMove.push_back(temp);
+            }
+        }
+    }
 }
 
 void Cruiser::move(Grid **grid)
 {
-    // if (availableMove.get_size() == 0)
-    // {
-    //     std::cout << "Ship have nowhere to move!" << std::endl;
-    //     OutputFile << "Ship have nowhere to move!" << std::endl;
-    //     return;
-    // }
-    // int index = rand() % availableMove.get_size();
-    // // set back to the land type after ship leave
-    // grid[shipPositionY][shipPositionX].setVal(grid[shipPositionY][shipPositionX].getType());
-    // grid[shipPositionY][shipPositionX].setTaken(false);
-    // grid[shipPositionY][shipPositionX].setship(nullptr);
-    // //---------------------
-    // grid[availableMove[index].y][availableMove[index].x].setVal(this->getDisplay());
-    // grid[availableMove[index].y][availableMove[index].x].setTaken(true);
-    // grid[availableMove[index].y][availableMove[index].x].setship(this);
-    // shipPositionX = availableMove[index].x;
-    // shipPositionY = availableMove[index].y;
-    // std::cout << this->getDisplay() << " Ship move to Y:" << availableMove[index].y << " X:" << availableMove[index].x << std::endl;
-    // OutputFile << this->getDisplay() << " Ship move to Y:" << availableMove[index].y << " X:" << availableMove[index].x << std::endl;
+    int shipPositionY = this->getShipPositionY();
+    int shipPositionX = this->getShipPositionX();
+    if (availableMove.get_size() == 0)
+    {
+        std::cout << "Ship have nowhere to move!" << std::endl;
+        OutputFile << "Ship have nowhere to move!" << std::endl;
+        return;
+    }
+    int index = rand() % availableMove.get_size();
+    // set back to the land type after ship leave
+    grid[shipPositionY][shipPositionX].setVal(grid[shipPositionY][shipPositionX].getType());
+    grid[shipPositionY][shipPositionX].setTaken(false);
+    grid[shipPositionY][shipPositionX].setship(nullptr);
+    //---------------------
+    grid[availableMove[index].y][availableMove[index].x].setVal(this->getDisplay());
+    grid[availableMove[index].y][availableMove[index].x].setTaken(true);
+    grid[availableMove[index].y][availableMove[index].x].setship(this);
+    shipPositionX = availableMove[index].x;
+    shipPositionY = availableMove[index].y;
+    std::cout << this->getDisplay() << " Ship move to Y:" << availableMove[index].y << " X:" << availableMove[index].x << std::endl;
+    OutputFile << this->getDisplay() << " Ship move to Y:" << availableMove[index].y << " X:" << availableMove[index].x << std::endl;
 }
 
-void Cruiser::ram()
+void Cruiser::ram(Grid **grid)
 {
-    // for (int gridY = shipPositionY - 1; gridY <= shipPositionY + 1; gridY++)
-    // { // get the grid of nine-square area centered on (x,y)
-    //     if (gridY < 0 || gridY >= height)
-    //         continue; // if outside of grid
-    //     for (int gridX = shipPositionX - 1; gridX <= shipPositionX + 1; gridX++)
-    //     {
-    //         if (gridX < 0 || gridX >= width)
-    //             continue;
-    //         if (gridX == shipPositionX && gridY == shipPositionY)
-    //             continue; // ignore self;
-    //         else if (grid[gridY][gridX].getship())
-    //         { // if there's ship at the position
-    //             if (grid[gridY][gridX].getship()->getTeamName() != this->getTeamName())
-    //             {
-    //                 // set back to the land type after ship leave
-    //                 grid[shipPositionY][shipPositionX].setVal(grid[shipPositionY][shipPositionX].getType());
-    //                 grid[shipPositionY][shipPositionX].setTaken(false);
-    //                 grid[shipPositionY][shipPositionX].setship(nullptr);
-    //                 //---------------------
-    //                 grid[gridY][gridX].setVal(this->getDisplay());
-    //                 grid[gridY][gridX].setTaken(true);
-    //                 grid[gridY][gridX].setship(this);
-    //                 shipPositionX = gridX;
-    //                 shipPositionY = gridY;
-    //                 std::cout << this->getDisplay() << " Ship move to Y:" << gridY << " X:" << gridX << std::endl;
-    //                 OutputFile << this->getDisplay() << " Ship move to Y:" << gridY << " X:" << gridX << std::endl;
+    position temp;
+    for (int gridY = this->getShipPositionY() - 1; gridY <= this->getShipPositionY() + 1; gridY++)
+    { // get the grid of nine-square area centered on (x,y)
+        if (gridY < 0 || gridY >= Grid::getHeight())
+            continue; // if outside of grid
+        for (int gridX = this->getShipPositionX() - 1; gridX <= this->getShipPositionX() + 1; gridX++)
+        {
+            if (gridX < 0 || gridX >= Grid::getwidth())
+                continue;
+            if (gridX == this->getShipPositionX() && gridY == this->getShipPositionY())
+                continue; // ignore self;
+            else if (grid[gridY][gridX].getship())
+            { // if there's ship at the position
+                if (grid[gridY][gridX].getship()->getTeamName() != this->getTeamName())
+                {
+                    temp.x = gridX;
+                    temp.y = gridY;
+                    ramPosition.push_back(temp);
+                }
+            }
+        }
+    }
+    if (ramPosition.get_size() > 0)
+    {
+        int index = rand() % ramPosition.get_size();
+        // set back to the land type after ship leave
+        grid[this->getShipPositionY()][this->getShipPositionX()].setVal(grid[this->getShipPositionY()][this->getShipPositionX()].getType());
+        grid[this->getShipPositionY()][this->getShipPositionX()].setTaken(false);
+        grid[this->getShipPositionY()][this->getShipPositionX()].setship(nullptr);
+        
+        std::cout << this->getDisplay() << " Ship move to Y:" << ramPosition[index].y << " X:" << ramPosition[index].x << std::endl;
+        OutputFile << this->getDisplay() << " Ship move to Y:" << ramPosition[index].y << " X:" << ramPosition[index].x << std::endl;
 
-    //                 std::cout << " which destroyed " << grid[gridY][gridX].getship()->getDisplay() << std::endl;
-    //                 OutputFile << " which destroyed " << grid[gridY][gridX].getship()->getDisplay() << std::endl;
+        std::cout << " which destroyed " << grid[ramPosition[index].y][ramPosition[index].x].getship()->getDisplay() << std::endl;
+        OutputFile << " which destroyed " << grid[ramPosition[index].y][ramPosition[index].x].getship()->getDisplay() << std::endl;
 
-    //                 grid[gridY][gridX].getship()->lifeMinus1();
-    //                 this->totalKillIncrement();
+        this->getKilledShips()->enqueue(grid[ramPosition[index].y][ramPosition[index].x].getship());
 
-    //                 std::cout << this->getDisplay() << " Total Kill:" << this->getTotalKill() << std::endl;
-    //                 OutputFile << this->getDisplay() << " Total Kill:" << this->getTotalKill() << std::endl;
+        //---------------------
+        grid[ramPosition[index].y][ramPosition[index].x].setVal(this->getDisplay());
+        grid[ramPosition[index].y][ramPosition[index].x].setTaken(true);
+        grid[ramPosition[index].y][ramPosition[index].x].setship(this);
+        this->setShipPositionX(ramPosition[index].x);
+        this->setShipPositionY(ramPosition[index].y);
+        this->totalKillIncrement();
 
-    //                 std::cout << grid[gridY][gridX].getship()->getDisplay() << " Life remaining: " << grid[gridY][gridX].getship()->getLife() << std::endl;
-    //                 OutputFile << grid[gridY][gridX].getship()->getDisplay() << " Life remaining: " << grid[gridY][gridX].getship()->getLife() << std::endl;
-    //                 reenterQueue.enqueue(grid[gridY][gridX].getship());
-    //             }
-    //         }
-    //     }
-    // }
+        std::cout << this->getDisplay() << " Total Kill:" << this->getTotalKill() << std::endl;
+        OutputFile << this->getDisplay() << " Total Kill:" << this->getTotalKill() << std::endl;
+
+        ramPosition.clear();
+    }
+    else {
+        std::cout << "Ship have nowhere to ram!" << std::endl;
+        OutputFile << "Ship have nowhere to ram!" << std::endl;
+        move(grid);
+        return; //exit the function when no target to ram
+    }
+}
+
+void Cruiser::action(Grid **grid)
+{
+    cout << this->getDisplay() << " turn. Ship Type: " << this->getType() << endl
+         << this->getDisplay() << ": look from Y:" << this->getShipPositionY()
+         << " X:" << this->getShipPositionX() << endl;
+    OutputFile << this->getDisplay() << " turn. Ship Type: " << this->getType() << endl
+               << this->getDisplay() << ": look from Y:" << this->getShipPositionY()
+               << " X:" << this->getShipPositionX() << endl;
+    
+    look(grid);
+    ram(grid);
+    availableMove.clear();
 }
 
 Ship::~Ship() {

@@ -78,7 +78,7 @@ public:
 class RamShip : virtual public Ship
 {
 public:
-    virtual void ram() = 0;
+    virtual void ram(Grid** grid) = 0;
     virtual ~RamShip() {}
 };
 
@@ -105,13 +105,12 @@ class Cruiser : public SeeingShip, public MovingShip, public RamShip
         int y;
     };
     Vector<position> availableMove;
+    Vector<position> ramPosition;
     public:
         void move(Grid** grid);
         void look(Grid** grid);
-        void ram();
-        void action(Grid** grid) {
-            cout << "Cruiser" << endl;
-        }
+        void ram(Grid **grid);
+        void action(Grid** grid);
 };
 class Destroyer : public MovingShip, public SeeingShip, public ShootingShip, public RamShip
 {
@@ -125,7 +124,7 @@ class Destroyer : public MovingShip, public SeeingShip, public ShootingShip, pub
         void shoot(Grid** grid) {
 
         }
-        void ram() {
+        void ram(Grid** grid) {
 
         }
         void action(Grid** grid) {
@@ -179,7 +178,7 @@ class Supership : public SeeingShip, public MovingShip, public RamShip, public S
         void shoot(Grid** grid) {
 
         }
-        void ram() {
+        void ram(Grid** grid) {
             
         }
         void action(Grid** grid) {
