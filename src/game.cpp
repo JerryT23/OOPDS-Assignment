@@ -281,7 +281,7 @@ void Game::start() {
                     cout << reenterShips.getFront()->value->getDisplay() << " is removed from the battlefield. " << endl;
                     OutputFile << reenterShips.getFront()->value->getDisplay() << " is removed from the battlefield. " << endl;
                     teams[reenterShips.getFront()->value->getTeamIndex()].getShip().deleteNode(reenterShips.getFront()->value);
-                    reenterShips.dequeue();//trace team left ship to end game
+                    reenterShips.dequeue();//todo: trace team left ship to end game
                 } else {
                     cout << reenterShips.getFront()->value->getDisplay() << " Life remaining: " << reenterShips.getFront()->value->getLife() << endl;
                     OutputFile << reenterShips.getFront()->value->getDisplay() << " Life remaining: " << reenterShips.getFront()->value->getLife() << endl;
