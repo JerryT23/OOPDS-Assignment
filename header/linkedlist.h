@@ -13,11 +13,12 @@ class LinkedList {
     void pushback(Ship* value);
     bool empty();
     void deleteNode(int index);
+    void deleteNode(Ship* ship);
     Ship* search(int index);
     Node* replace(int index,Ship* value);
     Node* getHead() const;
     Node* getTail() const; //maybe not needed
-    void print();
+    int getSize() const;
     ~LinkedList(); 
 };
 #endif

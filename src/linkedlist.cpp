@@ -68,6 +68,44 @@ void LinkedList::deleteNode(int index)
     }
     size--;
 }
+void LinkedList::deleteNode(Ship* ship) {
+    int index = 0;
+    Node* shipptr = head;
+    while(shipptr->value != ship) {
+        shipptr = shipptr->next;
+        index++;
+        if(index == size) throw runtime_error("Ship not found in the linkedlist, therefore cant be deleted.");
+    }
+    if (index == 0)
+    {
+        if (head == tail)
+            tail = nullptr;
+        Node *ptr = head;
+        head = head->next;
+        delete ptr->value;
+        delete ptr;
+    }
+    else
+    {
+        Node *indexNode = head;
+        Node *prev;
+        for (int i = 0; i < index; i++)
+        {
+            prev = indexNode;
+            indexNode = indexNode->next;
+        }
+        if (index == (size - 1))
+        {
+            tail = prev;
+            prev->next = nullptr;
+        }
+        else
+            prev->next = indexNode->next;
+        delete indexNode->value;
+        delete indexNode;
+    }
+    size--;
+}
 Ship *LinkedList::search(int index)
 {
     if (index >= size)
@@ -125,15 +163,7 @@ Node *LinkedList::replace(int index, Ship *value)
 }
 Node *LinkedList::getHead() const { return head; }
 Node *LinkedList::getTail() const { return tail; }
-void LinkedList::print()
-{
-    Node *ptr = head;
-    while (ptr != nullptr)
-    {
-        std::cout << ptr->value->getType() << ' ';
-        ptr = ptr->next;
-    }
-}
+int LinkedList::getSize() const {return size;}
 LinkedList::~LinkedList()
 {
     Node *n = head;

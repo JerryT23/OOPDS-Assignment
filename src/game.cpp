@@ -277,12 +277,19 @@ void Game::start() {
             int reenterCount = 0;
             while(!reenterShips.empty() && reenterCount < 2) {
                 reenterShips.getFront()->value->lifeMinus1();
-                std::cout << reenterShips.getFront()->value->getDisplay() << " Life remaining: " << reenterShips.getFront()->value->getLife() << std::endl;
-                OutputFile << reenterShips.getFront()->value->getDisplay() << " Life remaining: " << reenterShips.getFront()->value->getLife() << std::endl;
-                reenterBattlefield();
-                reenterShips.getFront()->value->setInBattlefield(true);
-                reenterCount++;
-                reenterShips.dequeue();
+                if(reenterShips.getFront()->value->getLife() < 0) {
+                    cout << reenterShips.getFront()->value->getDisplay() << " is removed from the battlefield. " << endl;
+                    OutputFile << reenterShips.getFront()->value->getDisplay() << " is removed from the battlefield. " << endl;
+                    teams[reenterShips.getFront()->value->getTeamIndex()].getShip().deleteNode(reenterShips.getFront()->value);
+                    reenterShips.dequeue();//trace team left ship to end game
+                } else {
+                    cout << reenterShips.getFront()->value->getDisplay() << " Life remaining: " << reenterShips.getFront()->value->getLife() << endl;
+                    OutputFile << reenterShips.getFront()->value->getDisplay() << " Life remaining: " << reenterShips.getFront()->value->getLife() << endl;
+                    reenterBattlefield();
+                    reenterShips.getFront()->value->setInBattlefield(true);
+                    reenterCount++;
+                    reenterShips.dequeue();
+                }
             }
         }
         //-------------------------------
