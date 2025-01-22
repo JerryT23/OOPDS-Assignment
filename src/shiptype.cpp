@@ -321,7 +321,8 @@ void Cruiser::ram(Grid **grid)
                 continue; // ignore self;
             else if (grid[gridY][gridX].getship())
             { // if there's ship at the position
-                if (grid[gridY][gridX].getship()->getTeamName() != this->getTeamName())
+                if (grid[gridY][gridX].getship()->getTeamName() != this->getTeamName() && grid[gridY][gridX].getType() == "0"
+                 && oneOfFourNeighbour(gridX, gridY, this->getShipPositionX(), this->getShipPositionY()))
                 {
                     temp.x = gridX;
                     temp.y = gridY;
@@ -338,8 +339,8 @@ void Cruiser::ram(Grid **grid)
         grid[this->getShipPositionY()][this->getShipPositionX()].setTaken(false);
         grid[this->getShipPositionY()][this->getShipPositionX()].setship(nullptr);
         
-        std::cout << this->getDisplay() << " Ship move to Y:" << ramPosition[index].y << " X:" << ramPosition[index].x << std::endl;
-        OutputFile << this->getDisplay() << " Ship move to Y:" << ramPosition[index].y << " X:" << ramPosition[index].x << std::endl;
+        std::cout << this->getDisplay() << " Ship move to Y:" << ramPosition[index].y << " X:" << ramPosition[index].x ;
+        OutputFile << this->getDisplay() << " Ship move to Y:" << ramPosition[index].y << " X:" << ramPosition[index].x ;
 
         std::cout << " which destroyed " << grid[ramPosition[index].y][ramPosition[index].x].getship()->getDisplay() << std::endl;
         OutputFile << " which destroyed " << grid[ramPosition[index].y][ramPosition[index].x].getship()->getDisplay() << std::endl;
