@@ -12,6 +12,6 @@ class Team
     LinkedList& getShip();
     void pushbackShips(Ship* ship);
     Ship* searchShip(int index);
-    void replaceShip(int index,Ship* newShip);
+    void replaceShip(Ship* oriShip,Ship* newShip);
 };
 #endif

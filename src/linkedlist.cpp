@@ -120,8 +120,17 @@ Ship *LinkedList::search(int index)
     }
     return ret->value;
 }
-Node *LinkedList::replace(int index, Ship *value)
+Node *LinkedList::replace(Ship* oriShip, Ship *value)
 {
+    //find oriship index
+    int index = 0;
+    Node* shipptr = head;
+    while(shipptr->value != oriShip) {
+        shipptr = shipptr->next;
+        index++;
+        if(index == size) throw runtime_error("Ship not found in the linkedlist, therefore cant be deleted.");
+    }
+    //////////////////
     Node *newship = new Node;
     if (index >= size)
     {

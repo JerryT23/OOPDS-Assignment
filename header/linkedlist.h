@@ -15,7 +15,7 @@ class LinkedList {
     void deleteNode(int index);
     void deleteNode(Ship* ship);
     Ship* search(int index);
-    Node* replace(int index,Ship* value);
+    Node* replace(Ship* oriShip,Ship* value);
     Node* getHead() const;
     Node* getTail() const; //maybe not needed
     int getSize() const;

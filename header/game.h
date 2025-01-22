@@ -5,6 +5,7 @@
 #include "vector.h"
 #include "queue.h"
 
+class Ship;
 class Game {
     private:
         bool gameRunning;
@@ -18,7 +19,7 @@ class Game {
     public:
     Game();
     void printGrid() const;
-    // void reenterBattlefield();
+    Node* upgradeShip(Ship* oriShip);
     void init();
     void terminate();
     void reenterBattlefield();

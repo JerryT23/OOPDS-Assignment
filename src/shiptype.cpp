@@ -3,7 +3,7 @@
 #include "../header/queue.h"
 #include <chrono> 
 
-Ship::Ship() : life(3), totalKilled(0),killedShip(new queue),inBattlefield(true){}
+Ship::Ship() : life(3), totalKilled(0),killedShip(new queue),inBattlefield(true),upgradeFlag(false){}
 void Ship::setType(std::string s)
 {
     type = s;
@@ -40,6 +40,7 @@ void Ship::totalKillIncrement()
 {
     totalKilled++;
 }
+void Ship::resetKillCount(){totalKilled = 0;}
 int Ship::getTotalKill() const
 {
     return totalKilled;
@@ -212,22 +213,10 @@ void Battleship::shoot(Grid **grid)
             //-------------------------------
         }
     }
-    // if (this->getTotalKill() == 1) {
-    //     // Upgrade to Cruiser
-    //     int index = this->getShipPositionIndex();
-    //     Ship* upgradedShip = new Cruiser();
-    //     upgradedShip->setType("Cruiser");
-    //     upgradedShip->setDisplay(this->getDisplay());
-    //     upgradedShip->setTeamName(this->getTeamName());
-    //     upgradedShip->setShipPositionIndex(index);
-    //     upgradedShip->setTeamPositionIndex(this->getTeamPositionIndex());
-
-    //     // Replace in the LinkedList
-    //     gameShipPtr = ships.replace(index, upgradedShip);
-
-    //     std::cout << "Battleship upgraded to Cruiser!" << std::endl;
-    //     OutputFile << "Battleship upgraded to Cruiser!" << std::endl;
-    // }
+    if (this->getTotalKill() == 2) {
+        this->setUpgradeFlag(1);
+        this->resetKillCount();
+    }
 }
 void Battleship::action(Grid **grid)
 {

@@ -16,9 +16,9 @@ Ship *Team::searchShip(int index)
 {
     return ships.search(index);
 }
-void Team::replaceShip(int index, Ship *newShip)
+void Team::replaceShip(Ship* oriShip, Ship *newShip)
 {
-    ships.replace(index, newShip);
+    ships.replace(oriShip, newShip);
 }
 LinkedList &Team::getShip()
 {

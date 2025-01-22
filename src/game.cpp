@@ -35,6 +35,23 @@ for (int o = 0; o < height; o++)
     cout << "-----------------------------------------" <<endl;
     OutputFile << "-----------------------------------------" <<endl;
 }
+Node* Game::upgradeShip(Ship* oriShip) {
+    Ship* upgradedShip;
+    if(oriShip->getType() == "Battleship") {
+        upgradedShip = new Destroyer();
+        upgradedShip->setType("Destroyer");
+        cout << "Battleship upgraded to Destroyer!" <<endl;
+        OutputFile << "Battleship upgraded to Destroyer!" <<endl;
+    }
+    upgradedShip->setDisplay(oriShip->getDisplay());
+    upgradedShip->setTeamName(oriShip->getTeamName());
+    upgradedShip->setTeamIndex(oriShip->getTeamIndex());
+
+    // Replace in the LinkedList
+    Node* ret;
+    ret = teams[oriShip->getTeamIndex()].getShip().replace(oriShip,upgradedShip);
+    return ret;
+}
 void Game::init()
 {
     string temp;
@@ -264,7 +281,11 @@ void Game::start() {
             OutputFile << shipPtr->value->getDisplay() << " turn. But the ship is not in the battlefield. Skipping...." << endl;
         }
         printGrid();
-
+        //check upgrade flag
+        if(shipPtr->value->getUpgradeFlag()) {
+            shipPtr = upgradeShip(shipPtr->value);
+            shipPtr->value->setUpgradeFlag(0);
+        }
         //check if any killed ship need to enter queue to reenter battlefield
         {
             while(!shipPtr->value->getKilledShips()->empty()) {

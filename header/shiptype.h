@@ -35,6 +35,7 @@ public:
     void lifeMinus1();
     int getLife() const;
     void totalKillIncrement();
+    void resetKillCount();
     int getTotalKill() const;
     void setTeamIndex(int index);
     int getTeamIndex() const;
