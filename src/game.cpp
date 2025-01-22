@@ -14,7 +14,7 @@ using namespace std;
 //    INHERITANCE, POLYMORPHISM, OPERATOR OVERLOADING, MOVE
 //    SEMANTICS and any number of C++ object oriented features
 
-Game::Game() : teams(nullptr) {}
+Game::Game() : teams(nullptr),gameRunning(true) {}
 void Game::printGrid() const {
 for (int o = 0; o < height; o++)
 {
@@ -250,8 +250,8 @@ void Game::shipRandomGenerate() //generate random position for ship
 void Game::start() {
     int teamI = 0;
     Node* shipPtr = teams[teamI].getLinkedListHead(); //get first team head
-    for(int i = 0; i < iterations; i++) {//iteration 
-        if(!shipPtr) { //move to next team after all ships done
+    for(int i = 0; i < iterations && gameRunning; i++) {//iteration //tobedo: gamerunning
+        while(!shipPtr) { //move to next team after all ships done/ team have no remaining ships
             teamI++;
             if(teamI == teamShipTotal.get_size()) //if teamI out of range reset back to zero
                 teamI = 0;
@@ -264,6 +264,7 @@ void Game::start() {
             OutputFile << shipPtr->value->getDisplay() << " turn. But the ship is not in the battlefield. Skipping...." << endl;
         }
         printGrid();
+
         //check if any killed ship need to enter queue to reenter battlefield
         {
             while(!shipPtr->value->getKilledShips()->empty()) {
@@ -281,7 +282,7 @@ void Game::start() {
                     cout << reenterShips.getFront()->value->getDisplay() << " is removed from the battlefield. " << endl;
                     OutputFile << reenterShips.getFront()->value->getDisplay() << " is removed from the battlefield. " << endl;
                     teams[reenterShips.getFront()->value->getTeamIndex()].getShip().deleteNode(reenterShips.getFront()->value);
-                    reenterShips.dequeue();//todo: trace team left ship to end game
+                    reenterShips.dequeue();
                 } else {
                     cout << reenterShips.getFront()->value->getDisplay() << " Life remaining: " << reenterShips.getFront()->value->getLife() << endl;
                     OutputFile << reenterShips.getFront()->value->getDisplay() << " Life remaining: " << reenterShips.getFront()->value->getLife() << endl;
@@ -290,6 +291,18 @@ void Game::start() {
                     reenterCount++;
                     reenterShips.dequeue();
                 }
+            }
+        }
+        //check game condition **HAVENTTEST**
+        {
+            int teamRemaining = 0;
+            for(int i = 0; i < teamShipTotal.get_size();i++) {
+                if(teams[i].getLinkedListTail()) teamRemaining++;
+            }
+            if(teamRemaining==1) {
+                cout << "Only One Team Remaining, ending the game." << endl;
+                OutputFile << "Only One Team Remaining, ending the game." << endl;
+                gameRunning = false;
             }
         }
         //-------------------------------

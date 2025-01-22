@@ -277,6 +277,12 @@ void Cruiser::look(Grid **grid)
                 temp.y = gridY;
                 availableMove.push_back(temp);
             }
+            if(grid[gridY][gridX].getship() && grid[gridY][gridX].getship()->getTeamName() != this->getTeamName() && grid[gridY][gridX].getType() == "0"
+                 && oneOfFourNeighbour(gridX, gridY, this->getShipPositionX(), this->getShipPositionY())) {
+                    temp.x = gridX;
+                    temp.y = gridY;
+                    ramPosition.push_back(temp);
+                 }
         }
     }
 }
@@ -300,37 +306,14 @@ void Cruiser::move(Grid **grid)
     grid[availableMove[index].y][availableMove[index].x].setVal(this->getDisplay());
     grid[availableMove[index].y][availableMove[index].x].setTaken(true);
     grid[availableMove[index].y][availableMove[index].x].setship(this);
-    shipPositionX = availableMove[index].x;
-    shipPositionY = availableMove[index].y;
+    this->setShipPositionX(availableMove[index].x);
+    this->setShipPositionY(availableMove[index].y);
     std::cout << this->getDisplay() << " Ship move to Y:" << availableMove[index].y << " X:" << availableMove[index].x << std::endl;
     OutputFile << this->getDisplay() << " Ship move to Y:" << availableMove[index].y << " X:" << availableMove[index].x << std::endl;
 }
 
 void Cruiser::ram(Grid **grid)
 {
-    position temp;
-    for (int gridY = this->getShipPositionY() - 1; gridY <= this->getShipPositionY() + 1; gridY++)
-    { // get the grid of nine-square area centered on (x,y)
-        if (gridY < 0 || gridY >= Grid::getHeight())
-            continue; // if outside of grid
-        for (int gridX = this->getShipPositionX() - 1; gridX <= this->getShipPositionX() + 1; gridX++)
-        {
-            if (gridX < 0 || gridX >= Grid::getwidth())
-                continue;
-            if (gridX == this->getShipPositionX() && gridY == this->getShipPositionY())
-                continue; // ignore self;
-            else if (grid[gridY][gridX].getship())
-            { // if there's ship at the position
-                if (grid[gridY][gridX].getship()->getTeamName() != this->getTeamName() && grid[gridY][gridX].getType() == "0"
-                 && oneOfFourNeighbour(gridX, gridY, this->getShipPositionX(), this->getShipPositionY()))
-                {
-                    temp.x = gridX;
-                    temp.y = gridY;
-                    ramPosition.push_back(temp);
-                }
-            }
-        }
-    }
     if (ramPosition.get_size() > 0)
     {
         int index = rand() % ramPosition.get_size();
@@ -364,12 +347,12 @@ void Cruiser::ram(Grid **grid)
         std::cout << "Ship have nowhere to ram!" << std::endl;
         OutputFile << "Ship have nowhere to ram!" << std::endl;
         move(grid);
-        return; //exit the function when no target to ram
     }
 }
 
 void Cruiser::action(Grid **grid)
 {
+    srand(chrono::system_clock::now().time_since_epoch().count());
     cout << this->getDisplay() << " turn. Ship Type: " << this->getType() << endl
          << this->getDisplay() << ": look from Y:" << this->getShipPositionY()
          << " X:" << this->getShipPositionX() << endl;
