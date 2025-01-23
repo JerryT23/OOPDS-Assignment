@@ -33,6 +33,7 @@ public:
     void setTeamName(std::string teamname);
     std::string getTeamName() const;
     void lifeMinus1();
+    void setLife(int upgradedShipLife);
     int getLife() const;
     void totalKillIncrement();
     void resetKillCount();
@@ -115,22 +116,20 @@ class Cruiser : public SeeingShip, public MovingShip, public RamShip
 };
 class Destroyer : public MovingShip, public SeeingShip, public ShootingShip, public RamShip
 {
+    struct position {
+        int x;
+        int y;
+    };
+    int infiniteLoopDetector = 0;
+    Vector<position> availableMove;
+    Vector<position> ramPosition;
+    
     public:
-        void move(Grid** grid) {
-
-        }
-        void look(Grid** grid) {
-
-        }
-        void shoot(Grid** grid) {
-
-        }
-        void ram(Grid** grid) {
-
-        }
-        void action(Grid** grid) {
-            cout << "Destroyer" << endl;
-        }
+        void move(Grid** grid);
+        void look(Grid** grid);
+        void ram(Grid **grid);
+        void shoot(Grid** grid);
+        void action(Grid** grid);
 };
 class Frigate : public ShootingShip
 { // start up clockwise

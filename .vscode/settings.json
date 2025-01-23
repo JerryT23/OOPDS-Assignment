@@ -68,6 +68,11 @@
         "forward_list": "cpp",
         "iomanip": "cpp",
         "ratio": "cpp",
-        "sstream": "cpp"
+        "sstream": "cpp",
+        "cwctype": "cpp",
+        "deque": "cpp",
+        "numbers": "cpp",
+        "span": "cpp",
+        "text_encoding": "cpp"
     }
 }

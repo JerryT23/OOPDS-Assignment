@@ -46,6 +46,9 @@ Node* Game::upgradeShip(Ship* oriShip) {
     upgradedShip->setDisplay(oriShip->getDisplay());
     upgradedShip->setTeamName(oriShip->getTeamName());
     upgradedShip->setTeamIndex(oriShip->getTeamIndex());
+    upgradedShip->setLife(oriShip->getLife());
+    upgradedShip->setShipPositionX(oriShip->getShipPositionX());
+    upgradedShip->setShipPositionY(oriShip->getShipPositionY());
     grid[oriShip->getShipPositionY()][oriShip->getShipPositionX()].setship(upgradedShip);
 
     // Replace in the LinkedList
@@ -282,11 +285,6 @@ void Game::start() {
             OutputFile << shipPtr->value->getDisplay() << " turn. But the ship is not in the battlefield. Skipping...." << endl;
         }
         printGrid();
-        //check upgrade flag
-        if(shipPtr->value->getUpgradeFlag()) {
-            shipPtr = upgradeShip(shipPtr->value);
-            shipPtr->value->setUpgradeFlag(0);
-        }
         //check if any killed ship need to enter queue to reenter battlefield
         {
             while(!shipPtr->value->getKilledShips()->empty()) {
@@ -294,6 +292,11 @@ void Game::start() {
                 shipPtr->value->getKilledShips()->getFront()->value->setInBattlefield(false);
                 shipPtr->value->getKilledShips()->dequeue();
             }
+        }
+        //check upgrade flag
+        if(shipPtr->value->getUpgradeFlag()) {
+            shipPtr = upgradeShip(shipPtr->value);
+            shipPtr->value->setUpgradeFlag(0);
         }
         //reenter battlefield
         {
@@ -315,7 +318,7 @@ void Game::start() {
                 }
             }
         }
-        //check game condition **HAVENTTEST**
+        //check game condition
         {
             int teamRemaining = 0;
             for(int i = 0; i < teamShipTotal.get_size();i++) {
