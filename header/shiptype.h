@@ -132,21 +132,18 @@ class Destroyer : public MovingShip, public SeeingShip, public ShootingShip, pub
         void action(Grid** grid);
 };
 class Frigate : public ShootingShip
-{ // start up clockwise
+{
     enum direction {UP,RIGHT,DOWN,LEFT}shootDirection;
     public:
         void shoot(Grid** grid);
         void action(Grid** grid);
 };
 class Corvette : public ShootingShip
-{ // immediate nearby random
+{
+    int infiniteLoopDetector = 0;
     public:
-        void shoot(Grid** grid) {
-
-        }
-        void action(Grid** grid) {
-            cout << "Corvette" << endl;
-        }
+        void shoot(Grid** grid);
+        void action(Grid** grid);
 };
 class Amphibious : public MovingShip, public SeeingShip, public ShootingShip {
     //can walk land & water

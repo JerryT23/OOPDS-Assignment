@@ -6,9 +6,10 @@ Battleship * 5
 Cruiser $ 4
 Destroyer # 4
 Frigate @ 3
-Team B 2
+Team B 3
 Battleship < 2
 Cruiser > 3
+Corvette ~ 5
 
 0 0 0 0 0 0 0 0 0 0
 0 0 0 0 0 0 0 1 1 0
