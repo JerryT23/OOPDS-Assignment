@@ -109,7 +109,7 @@ bool Ship::friendlyShip(Grid **grid, int shootX, int shootY)
     }
     return false;
 }
-// //----------------------------------------------Battleship----------------------------------------------------------------//
+//----------------------------------------------Battleship----------------------------------------------------------------//
 void Battleship::look(Grid **grid)
 {
     position temp;
@@ -478,10 +478,6 @@ void Destroyer::shoot(Grid **grid)
             //-------------------------------
         }
     }
-    if (this->getTotalKill() == 2) {
-        this->setUpgradeFlag(1);
-        this->resetKillCount();
-    }
 }
 
 void Destroyer::ram(Grid **grid)
@@ -541,6 +537,78 @@ void Destroyer::action(Grid **grid)
         this->setUpgradeFlag(1);
         this->resetKillCount();
     }
+}
+
+//----------------------------------------------Frigate----------------------------------------------------------------//
+void Frigate::shoot(Grid **grid)
+{
+    if (lastShootDirection == 0) { // Up
+        shootPositionY = this->getShipPositionY() - 1;
+        shootPositionX = this->getShipPositionX();
+        cout << this->getDisplay() << " Ship shoot up at Y:" << shootPositionY << " X:" << shootPositionX;
+        OutputFile << this->getDisplay() << " Ship shoot up at Y:" << shootPositionY << " X:" << shootPositionX;
+        lastShootDirection = 1; // Change to Right
+    } else if (lastShootDirection == 1) { // Right
+        shootPositionY = this->getShipPositionY();
+        shootPositionX = this->getShipPositionX() + 1;
+        cout << this->getDisplay() << " Ship shoot right at Y:" << shootPositionY << " X:" << shootPositionX;
+        OutputFile << this->getDisplay() << " Ship shoot right at Y:" << shootPositionY << " X:" << shootPositionX;
+        lastShootDirection = 2; // Change to Down
+    } else if (lastShootDirection == 2) { // Down
+        shootPositionY = this->getShipPositionY() + 1;
+        shootPositionX = this->getShipPositionX();
+        cout << this->getDisplay() << " Ship shoot down at Y:" << shootPositionY << " X:" << shootPositionX;
+        OutputFile << this->getDisplay() << " Ship shoot down at Y:" << shootPositionY << " X:" << shootPositionX;
+        lastShootDirection = 3; // Change to Left
+    } else if (lastShootDirection == 3) { // Left
+        shootPositionY = this->getShipPositionY();
+        shootPositionX = this->getShipPositionX() - 1;
+        cout << this->getDisplay() << " Ship shoot left at Y:" << shootPositionY << " X:" << shootPositionX;
+        OutputFile << this->getDisplay() << " Ship shoot left at Y:" << shootPositionY << " X:" << shootPositionX;
+        lastShootDirection = 0; // Change to Up
+    } else { 
+        // Initialize shooting direction (e.g., Up)
+        shootPositionY = this->getShipPositionY() - 1;
+        shootPositionX = this->getShipPositionX();
+        cout << this->getDisplay() << " Ship shoot up at Y:" << shootPositionY << " X:" << shootPositionX;
+        OutputFile << this->getDisplay() << " Ship shoot up at Y:" << shootPositionY << " X:" << shootPositionX;
+        lastShootDirection = 0; 
+    }
+
+    if (grid[shootPositionY][shootPositionX].getship() == nullptr)
+        {
+            std::cout << " which has no ship." << std::endl;
+            OutputFile << " which has no ship." << std::endl;
+        }
+        else
+        {
+            std::cout << " which destroyed " << grid[shootPositionY][shootPositionX].getship()->getDisplay() << std::endl;
+            OutputFile << " which destroyed " << grid[shootPositionY][shootPositionX].getship()->getDisplay() << std::endl;
+
+            this->totalKillIncrement();
+            // to be do upgrade, queue
+            std::cout << this->getDisplay() << " Total Kill:" << this->getTotalKill() << std::endl;
+            OutputFile << this->getDisplay() << " Total Kill:" << this->getTotalKill() << std::endl;
+            this->getKilledShips()->enqueue(grid[shootPositionY][shootPositionX].getship());
+            // set back to the land type after ship leave
+            grid[shootPositionY][shootPositionX].setTaken(false);
+            grid[shootPositionY][shootPositionX].setVal(grid[shootPositionY][shootPositionX].getType());
+            grid[shootPositionY][shootPositionX].setship(nullptr);
+            //-------------------------------
+        }
+}
+
+void Frigate::action(Grid **grid)
+{
+    srand(chrono::system_clock::now().time_since_epoch().count());
+    cout << this->getDisplay() << " turn. Ship Type: " << this->getType() << endl
+         << this->getDisplay() << ": look from Y:" << this->getShipPositionY()
+         << " X:" << this->getShipPositionX() << endl;
+    OutputFile << this->getDisplay() << " turn. Ship Type: " << this->getType() << endl
+               << this->getDisplay() << ": From Y:" << this->getShipPositionY()
+               << " X:" << this->getShipPositionX() << endl;
+    
+    shoot(grid);
 }
 
 Ship::~Ship() {
