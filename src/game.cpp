@@ -43,11 +43,16 @@ Node* Game::upgradeShip(Ship* oriShip) {
         cout << oriShip->getDisplay() <<" upgraded to Destroyer!" <<endl;
         OutputFile << oriShip->getDisplay() <<" upgraded to Destroyer!" <<endl;
     }
-    else if(oriShip->getType() == "Destroyer") {
+    else if(oriShip->getType() == "Destroyer" || oriShip->getType() == "Amphibious") {
         upgradedShip = new Supership();
         upgradedShip->setType("Supership");
         cout << oriShip->getDisplay() <<" upgraded to Supership!" <<endl;
         OutputFile << oriShip->getDisplay() <<" upgraded to Supership!" <<endl;
+    } else if(oriShip->getType() == "Frigate") {
+        upgradedShip = new Corvette();
+        upgradedShip->setType("Corvette");
+        cout << oriShip->getDisplay() <<" upgraded to Corvette!" <<endl;
+        OutputFile << oriShip->getDisplay() <<" upgraded to Corvette!" <<endl;
     }
     upgradedShip->setDisplay(oriShip->getDisplay());
     upgradedShip->setTeamName(oriShip->getTeamName());

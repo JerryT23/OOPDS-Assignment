@@ -146,37 +146,31 @@ class Corvette : public ShootingShip
         void action(Grid** grid);
 };
 class Amphibious : public MovingShip, public SeeingShip, public ShootingShip {
-    //can walk land & water
+    struct position {
+        int x;
+        int y;
+    };
+    Vector<position> availableMove;
+    int infiniteLoopDetector = 0;
     public:
-        void move(Grid** grid) {
-
-        }
-        void look(Grid** grid) {
-
-        }
-        void shoot(Grid** grid) {
-
-        }
-        void action(Grid** grid) {
-            cout << "Amphibious" << endl;
-        }
+        void move(Grid** grid);
+        void look(Grid** grid);
+        void shoot(Grid** grid);
+        void action(Grid** grid);
 } ;
 class Supership : public SeeingShip, public MovingShip, public RamShip, public ShootingShip {
+    struct position {
+        int x;
+        int y;
+    };
+    int infiniteLoopDetector = 0;
+    Vector<position> availableMove;
+    Vector<position> ramPosition;
     public:
-        void move(Grid** grid) {
-
-        }
-        void look(Grid** grid) {
-
-        }
-        void shoot(Grid** grid) {
-
-        }
-        void ram(Grid** grid) {
-            
-        }
-        void action(Grid** grid) {
-            cout << "Supership" << endl;
-        }
+        void move(Grid** grid);
+        void look(Grid** grid);
+        void shoot(Grid** grid);
+        void ram(Grid** grid);
+        void action(Grid** grid);
 };
 #endif
