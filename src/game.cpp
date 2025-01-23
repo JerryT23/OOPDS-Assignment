@@ -37,11 +37,17 @@ for (int o = 0; o < height; o++)
 }
 Node* Game::upgradeShip(Ship* oriShip) {
     Ship* upgradedShip;
-    if(oriShip->getType() == "Battleship") {
+    if(oriShip->getType() == "Battleship" || oriShip->getType() == "Cruiser" ) {
         upgradedShip = new Destroyer();
         upgradedShip->setType("Destroyer");
         cout << oriShip->getDisplay() <<" upgraded to Destroyer!" <<endl;
         OutputFile << oriShip->getDisplay() <<" upgraded to Destroyer!" <<endl;
+    }
+    else if(oriShip->getType() == "Destroyer") {
+        upgradedShip = new Supership();
+        upgradedShip->setType("Supership");
+        cout << oriShip->getDisplay() <<" upgraded to Supership!" <<endl;
+        OutputFile << oriShip->getDisplay() <<" upgraded to Supership!" <<endl;
     }
     upgradedShip->setDisplay(oriShip->getDisplay());
     upgradedShip->setTeamName(oriShip->getTeamName());
@@ -325,12 +331,17 @@ void Game::start() {
                 if(teams[i].getLinkedListTail()) teamRemaining++;
             }
             if(teamRemaining==1) {
-                cout << "Only One Team Remaining, ending the game." << endl;
-                OutputFile << "Only One Team Remaining, ending the game." << endl;
+                cout << "Only One Team Remaining, ending the simulation." << endl;
+                OutputFile << "Only One Team Remaining, ending the simulation." << endl;
                 gameRunning = false;
             }
         }
         //-------------------------------
         shipPtr = shipPtr->next;
+        if (i == iterations - 1) 
+        {
+            cout << "Iterations reached. Simulation END." << endl;
+            OutputFile << "Iterations reached. Simulation END." << endl;
+        }
     }
 }

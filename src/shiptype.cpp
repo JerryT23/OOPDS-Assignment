@@ -217,10 +217,6 @@ void Battleship::shoot(Grid **grid)
             //-------------------------------
         }
     }
-    if (this->getTotalKill() == 2) {
-        this->setUpgradeFlag(1);
-        this->resetKillCount();
-    }
 }
 void Battleship::action(Grid **grid)
 {
@@ -236,6 +232,10 @@ void Battleship::action(Grid **grid)
     // generate random shoot x and y; shoot (shipPositionX + x, shipPositionY + y)
     shoot(grid);
     shoot(grid);
+    if (this->getTotalKill() == 4) {
+        this->setUpgradeFlag(1);
+        this->resetKillCount();
+    }
 }
 //----------------------------------------------Cruiser----------------------------------------------------------------//
 void Cruiser::look(Grid **grid)
@@ -341,6 +341,7 @@ void Cruiser::ram(Grid **grid)
         OutputFile << "Ship have nowhere to ram!" << std::endl;
         move(grid);
     }
+    
 }
 
 void Cruiser::action(Grid **grid)
@@ -356,6 +357,10 @@ void Cruiser::action(Grid **grid)
     look(grid);
     ram(grid);
     availableMove.clear();
+    if (this->getTotalKill() == 3) {
+        this->setUpgradeFlag(1);
+        this->resetKillCount();
+    }
 }
 
 //----------------------------------------------Destroyer----------------------------------------------------------------//
@@ -532,6 +537,10 @@ void Destroyer::action(Grid **grid)
     availableMove.clear();
     shoot(grid);
     shoot(grid);
+    if (this->getTotalKill() == 3) {
+        this->setUpgradeFlag(1);
+        this->resetKillCount();
+    }
 }
 
 Ship::~Ship() {
