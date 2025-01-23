@@ -549,86 +549,102 @@ void Frigate::shoot(Grid **grid)
 {
     int shootPositionX;
     int shootPositionY;
-    // 4, because there's four direction
-    // and check if all 4 direction is invalid then
+    string directionText;
+    string nextDirectionText;
+    // 8, because there's eight direction
+    // and check if all 8 direction is invalid then
     // output no place to shoot
-    for (int i = 0; i <= 4; i++)
+    for (int i = 0; i <= 8; i++)
     {
         if (shootDirection == RIGHT)
         {
-            shootPositionY = this->getShipPositionY();
+            shootPositionY = this->getShipPositionY() + 1;
             shootPositionX = this->getShipPositionX() + 1;
 
-            if (shootPositionX >= Grid::getwidth() || (grid[shootPositionY][shootPositionX].getship() && (grid[shootPositionY][shootPositionX].getship()->getTeamName() == this->getTeamName())))
-            {
-                cout << "Switching shooting directions from right to down since it is out of range/friendly ship." << endl;
-                OutputFile << "Switching shooting directions from right to down since it is out of range/friendly ship." << endl;
-                shootDirection = DOWN;
-                continue;
-            }
+            shootDirection = DOWNRIGHT;
+            directionText = "RIGHT";
+            nextDirectionText = "DOWNRIGHT";
+        }
+        else if (shootDirection == DOWNRIGHT)
+        {
+            shootPositionY = this->getShipPositionY() + 1;
+            shootPositionX = this->getShipPositionX() + 1;
 
-            cout << this->getDisplay() << " Ship shoot right at Y:" << shootPositionY << " X:" << shootPositionX;
-            OutputFile << this->getDisplay() << " Ship shoot right at Y:" << shootPositionY << " X:" << shootPositionX;
             shootDirection = DOWN;
+            directionText = "DOWNRIGHT";
+            nextDirectionText = "DOWN";
         }
         else if (shootDirection == DOWN)
         {
             shootPositionY = this->getShipPositionY() + 1;
             shootPositionX = this->getShipPositionX();
 
-            if (shootPositionY >= Grid::getHeight() || (grid[shootPositionY][shootPositionX].getship() && (grid[shootPositionY][shootPositionX].getship()->getTeamName() == this->getTeamName())))
-            {
-                cout << "Switching shooting directions from down to left since it is out of range/friendly ship." << endl;
-                OutputFile << "Switching shooting directions from down to left since it is out of range/friendly ship." << endl;
-                shootDirection = LEFT;
-                continue;
-            }
+            shootDirection = DOWNLEFT;
+            directionText = "DOWN";
+            nextDirectionText = "DOWNLEFT";
+        }
+        else if (shootDirection == DOWNLEFT)
+        {
+            shootPositionY = this->getShipPositionY() + 1;
+            shootPositionX = this->getShipPositionX() - 1;
 
-            cout << this->getDisplay() << " Ship shoot down at Y:" << shootPositionY << " X:" << shootPositionX;
-            OutputFile << this->getDisplay() << " Ship shoot down at Y:" << shootPositionY << " X:" << shootPositionX;
             shootDirection = LEFT;
+            directionText = "DOWNLEFT";
+            nextDirectionText = "LEFT";
         }
         else if (shootDirection == LEFT)
         {
             shootPositionY = this->getShipPositionY();
             shootPositionX = this->getShipPositionX() - 1;
 
-            if (shootPositionX < 0 || (grid[shootPositionY][shootPositionX].getship() && (grid[shootPositionY][shootPositionX].getship()->getTeamName() == this->getTeamName())))
-            {
-                cout << "Switching shooting directions from left to up since it is out of range/friendly ship." << endl;
-                OutputFile << "Switching shooting directions from left to up since it is out of range/friendly ship." << endl;
-                shootDirection = UP;
-                continue;
-            }
+            shootDirection = UPLEFT;
+            directionText = "LEFT";
+            nextDirectionText = "UPLEFT";
+        }
+        else if (shootDirection == UPLEFT)
+        {
+            shootPositionY = this->getShipPositionY() - 1;
+            shootPositionX = this->getShipPositionX() - 1;
 
-            cout << this->getDisplay() << " Ship shoot left at Y:" << shootPositionY << " X:" << shootPositionX;
-            OutputFile << this->getDisplay() << " Ship shoot left at Y:" << shootPositionY << " X:" << shootPositionX;
             shootDirection = UP;
+            directionText = "UPLEFT";
+            nextDirectionText = "UP";
+        }
+        else if (shootDirection == UPRIGHT)
+        {
+            shootPositionY = this->getShipPositionY() - 1;
+            shootPositionX = this->getShipPositionX();
+
+            shootDirection = RIGHT;
+            directionText = "UPRIGHT";
+            nextDirectionText = "RIGHT";
         }
         else //initialise or shootdirection == UP
         {
             shootPositionY = this->getShipPositionY() - 1;
             shootPositionX = this->getShipPositionX();
-            if (shootPositionY < 0 || (grid[shootPositionY][shootPositionX].getship() && (grid[shootPositionY][shootPositionX].getship()->getTeamName() == this->getTeamName())))
-            {
-                cout << "Switching shooting directions from up to right since it is out of range/friendly ship." << endl;
-                OutputFile << "Switching shooting directions from up to right since it is out of range/friendly ship." << endl;
-                shootDirection = RIGHT;
-                continue;
-            }
-
-            cout << this->getDisplay() << " Ship shoot up at Y:" << shootPositionY << " X:" << shootPositionX;
-            OutputFile << this->getDisplay() << " Ship shoot up at Y:" << shootPositionY << " X:" << shootPositionX;
-            shootDirection = RIGHT;
+            
+            shootDirection = UPRIGHT;
+            directionText = "UP";
+            nextDirectionText = "UPRIGHT";
         }
-        if (i == 4)
+        if (i == 8)
         {
             cout << "Ship have nowhere to shoot!" << endl;
             OutputFile << "Ship have nowhere to shoot!" << endl;
             return;
         }
-        break;
+        if (shootPositionY < 0 || shootPositionY >= Grid::getHeight() || shootPositionX < 0 || shootPositionX >= Grid::getwidth() || (grid[shootPositionY][shootPositionX].getship() && (grid[shootPositionY][shootPositionX].getship()->getTeamName() == this->getTeamName())))
+        {
+            cout << "Switching shooting directions from " << directionText << " to " << nextDirectionText << " since it is out of range/friendly ship." << endl;
+            OutputFile << "Switching shooting directions from " << directionText << " to " << nextDirectionText << " since it is out of range/friendly ship." << endl;
+            continue;
+        }
     }
+
+    cout << this->getDisplay() << " Ship shoot " << directionText << " at Y:" << shootPositionY << " X:" << shootPositionX;
+    OutputFile << this->getDisplay() << " Ship shoot " << directionText << " at Y:" << shootPositionY << " X:" << shootPositionX;
+
     if (grid[shootPositionY][shootPositionX].getship() == nullptr)
     {
         std::cout << " which has no ship." << std::endl;
