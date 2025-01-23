@@ -133,9 +133,7 @@ class Destroyer : public MovingShip, public SeeingShip, public ShootingShip, pub
 };
 class Frigate : public ShootingShip
 { // start up clockwise
-    int shootPositionX = 0;
-    int shootPositionY = 0;
-    int lastShootDirection = 0;
+    enum direction {UP,RIGHT,DOWN,LEFT}shootDirection;
     public:
         void shoot(Grid** grid);
         void action(Grid** grid);
