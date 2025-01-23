@@ -40,12 +40,13 @@ Node* Game::upgradeShip(Ship* oriShip) {
     if(oriShip->getType() == "Battleship") {
         upgradedShip = new Destroyer();
         upgradedShip->setType("Destroyer");
-        cout << "Battleship upgraded to Destroyer!" <<endl;
-        OutputFile << "Battleship upgraded to Destroyer!" <<endl;
+        cout << oriShip->getDisplay() <<" upgraded to Destroyer!" <<endl;
+        OutputFile << oriShip->getDisplay() <<" upgraded to Destroyer!" <<endl;
     }
     upgradedShip->setDisplay(oriShip->getDisplay());
     upgradedShip->setTeamName(oriShip->getTeamName());
     upgradedShip->setTeamIndex(oriShip->getTeamIndex());
+    grid[oriShip->getShipPositionY()][oriShip->getShipPositionX()].setship(upgradedShip);
 
     // Replace in the LinkedList
     Node* ret;
@@ -329,10 +330,4 @@ void Game::start() {
         //-------------------------------
         shipPtr = shipPtr->next;
     }
-    
-    //--------------------------------- testing
-    // cout << endl;
-    // shipPtr->value->action();
-    // printGrid();
-    //----------------------------------
 }
