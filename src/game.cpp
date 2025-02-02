@@ -69,8 +69,11 @@ Node* Game::upgradeShip(Ship* oriShip) {
 }
 void Game::init()
 {
+    string gamefilename;
+    cout << "Enter Game Config File Name (***.txt): ";
+    cin >> gamefilename;
     string temp;
-    ifstream configFile("game.txt");
+    ifstream configFile(gamefilename);
     // iteration
     getline(configFile, temp);
     iterations = stoi(temp.substr(11));
@@ -86,7 +89,7 @@ void Game::init()
     {
         int sum, typeAmount;
         string line;
-        ifstream tempFile("game.txt"); // to calculate each team ship amount
+        ifstream tempFile(gamefilename); // to calculate each team ship amount
         getline(tempFile, line);
         getline(tempFile, line);
         getline(tempFile, line); // skip first three line
