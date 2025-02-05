@@ -1,1895 +1,1781 @@
 Initialised ships position: 
-0  *5 0  0  0  0  0  0  0  0  
-0  0  0  $3 0  0  0  1  1  0  
-*3 >1 0  0  $1 0  0  1  1  0  
-0  0  0  )2 0  #2 0  0  @1 !2 
-0  0  *1 @2 1  0  0  *2 0  @3 
-!1 0  0  <1 1  *4 #3 0  )1 0  
-0  0  0  #1 1  0  0  0  0  #4 
-0  0  0  )3 0  0  0  0  0  0  
-0  $4 >2 0  0  1  !3 1  <2 0  
-$2 0  0  0  >3 0  0  1  0  0  
+0  0  0  0  0  0  0  0  0  0  
+0  0  0  @2 !2 &2 0  1  1  0  
+0  0  0  0  0  0  0  1  1  !1 
+0  0  $1 0  #1 0  0  0  0  0  
+0  0  0  0  1  0  0  0  0  #2 
+0  0  0  0  1  0  0  0  &1 <1 
+)1 <2 0  0  1  )2 0  @1 0  0  
+0  0  0  0  0  0  0  )3 0  0  
+0  0  0  0  0  1  1  1  0  *1 
+0  0  !3 0  0  0  0  1  0  0  
 -----------------------------------------
 *1 turn. Ship Type: Battleship
-*1: look from Y:4 X:2
-Enemy ship found at -> Y:3 X:3
-Friendly ship found at -> Y:4 X:3
-Enemy ship found at -> Y:5 X:3
-*1 Ship move to Y:3 X:2
-*1 Ship shoot at Y:5 X:3 which destroyed <1
-*1 Total Kill:1
-*1 Ship shoot at Y:3 X:7 which has no ship.
-0  *5 0  0  0  0  0  0  0  0  
-0  0  0  $3 0  0  0  1  1  0  
-*3 >1 0  0  $1 0  0  1  1  0  
-0  0  *1 )2 0  #2 0  0  @1 !2 
-0  0  0  @2 1  0  0  *2 0  @3 
-!1 0  0  0  1  *4 #3 0  )1 0  
-0  0  0  #1 1  0  0  0  0  #4 
-0  0  0  )3 0  0  0  0  0  0  
-0  $4 >2 0  0  1  !3 1  <2 0  
-$2 0  0  0  >3 0  0  1  0  0  
------------------------------------------
-<1 Life remaining: 2
-<1 New location: Y->4 X->2
-*2 turn. Ship Type: Battleship
-*2: look from Y:4 X:7
-Friendly ship found at -> Y:3 X:8
-Friendly ship found at -> Y:5 X:6
-Enemy ship found at -> Y:5 X:8
-*2 Ship move to Y:5 X:7
-*2 Ship shoot at Y:9 X:8 which has no ship.
-*2 Ship shoot at Y:6 X:7 which has no ship.
-0  *5 0  0  0  0  0  0  0  0  
-0  0  0  $3 0  0  0  1  1  0  
-*3 >1 0  0  $1 0  0  1  1  0  
-0  0  *1 )2 0  #2 0  0  @1 !2 
-0  0  <1 @2 1  0  0  0  0  @3 
-!1 0  0  0  1  *4 #3 *2 )1 0  
-0  0  0  #1 1  0  0  0  0  #4 
-0  0  0  )3 0  0  0  0  0  0  
-0  $4 >2 0  0  1  !3 1  <2 0  
-$2 0  0  0  >3 0  0  1  0  0  
------------------------------------------
-*3 turn. Ship Type: Battleship
-*3: look from Y:2 X:0
-Enemy ship found at -> Y:2 X:1
-*3 Ship move to Y:1 X:0
-*3 Ship shoot at Y:3 X:1 which has no ship.
-*3 Ship shoot at Y:1 X:5 which has no ship.
-0  *5 0  0  0  0  0  0  0  0  
-*3 0  0  $3 0  0  0  1  1  0  
-0  >1 0  0  $1 0  0  1  1  0  
-0  0  *1 )2 0  #2 0  0  @1 !2 
-0  0  <1 @2 1  0  0  0  0  @3 
-!1 0  0  0  1  *4 #3 *2 )1 0  
-0  0  0  #1 1  0  0  0  0  #4 
-0  0  0  )3 0  0  0  0  0  0  
-0  $4 >2 0  0  1  !3 1  <2 0  
-$2 0  0  0  >3 0  0  1  0  0  
------------------------------------------
-*4 turn. Ship Type: Battleship
-*4: look from Y:5 X:5
-Friendly ship found at -> Y:5 X:6
-*4 Ship move to Y:6 X:5
-*4 Ship shoot at Y:6 X:6 which has no ship.
-*4 Ship shoot at Y:9 X:5 which has no ship.
-0  *5 0  0  0  0  0  0  0  0  
-*3 0  0  $3 0  0  0  1  1  0  
-0  >1 0  0  $1 0  0  1  1  0  
-0  0  *1 )2 0  #2 0  0  @1 !2 
-0  0  <1 @2 1  0  0  0  0  @3 
-!1 0  0  0  1  0  #3 *2 )1 0  
-0  0  0  #1 1  *4 0  0  0  #4 
-0  0  0  )3 0  0  0  0  0  0  
-0  $4 >2 0  0  1  !3 1  <2 0  
-$2 0  0  0  >3 0  0  1  0  0  
------------------------------------------
-*5 turn. Ship Type: Battleship
-*5: look from Y:0 X:1
-Friendly ship found at -> Y:1 X:0
-*5 Ship move to Y:1 X:1
-*5 Ship shoot at Y:3 X:1 which has no ship.
-*5 Ship shoot at Y:3 X:3 which destroyed )2
-*5 Total Kill:1
+*1: look from Y:8 X:9
+*1 Ship move to Y:7 X:9
+*1 Ship shoot at Y:9 X:9 which has no ship.
+*1 Ship shoot at Y:9 X:9 which has no ship.
 0  0  0  0  0  0  0  0  0  0  
-*3 *5 0  $3 0  0  0  1  1  0  
-0  >1 0  0  $1 0  0  1  1  0  
-0  0  *1 0  0  #2 0  0  @1 !2 
-0  0  <1 @2 1  0  0  0  0  @3 
-!1 0  0  0  1  0  #3 *2 )1 0  
-0  0  0  #1 1  *4 0  0  0  #4 
-0  0  0  )3 0  0  0  0  0  0  
-0  $4 >2 0  0  1  !3 1  <2 0  
-$2 0  0  0  >3 0  0  1  0  0  
+0  0  0  @2 !2 &2 0  1  1  0  
+0  0  0  0  0  0  0  1  1  !1 
+0  0  $1 0  #1 0  0  0  0  0  
+0  0  0  0  1  0  0  0  0  #2 
+0  0  0  0  1  0  0  0  &1 <1 
+)1 <2 0  0  1  )2 0  @1 0  0  
+0  0  0  0  0  0  0  )3 0  *1 
+0  0  0  0  0  1  1  1  0  0  
+0  0  !3 0  0  0  0  1  0  0  
+-----------------------------------------
+$1 turn. Ship Type: Cruiser
+$1: look from Y:3 X:2
+Ship have nowhere to ram!
+$1 Ship move to Y:3 X:1
+0  0  0  0  0  0  0  0  0  0  
+0  0  0  @2 !2 &2 0  1  1  0  
+0  0  0  0  0  0  0  1  1  !1 
+0  $1 0  0  #1 0  0  0  0  0  
+0  0  0  0  1  0  0  0  0  #2 
+0  0  0  0  1  0  0  0  &1 <1 
+)1 <2 0  0  1  )2 0  @1 0  0  
+0  0  0  0  0  0  0  )3 0  *1 
+0  0  0  0  0  1  1  1  0  0  
+0  0  !3 0  0  0  0  1  0  0  
+-----------------------------------------
+#1 turn. Ship Type: Destroyer
+#1: look from Y:3 X:4
+Ship have nowhere to ram!
+#1 Ship move to Y:3 X:3
+#1 Ship shoot at Y:6 X:5 which destroyed )2
+#1 Total Kill:1
+#1 Ship shoot at Y:5 X:3 which has no ship.
+0  0  0  0  0  0  0  0  0  0  
+0  0  0  @2 !2 &2 0  1  1  0  
+0  0  0  0  0  0  0  1  1  !1 
+0  $1 0  #1 0  0  0  0  0  0  
+0  0  0  0  1  0  0  0  0  #2 
+0  0  0  0  1  0  0  0  &1 <1 
+)1 <2 0  0  1  0  0  @1 0  0  
+0  0  0  0  0  0  0  )3 0  *1 
+0  0  0  0  0  1  1  1  0  0  
+0  0  !3 0  0  0  0  1  0  0  
 -----------------------------------------
 )2 Life remaining: 2
-)2 New location: Y->4 X->7
-$1 turn. Ship Type: Cruiser
-$1: look from Y:2 X:4
-Friendly ship found at -> Y:1 X:3
-Friendly ship found at -> Y:3 X:5
-Ship have nowhere to ram!
-$1 Ship move to Y:3 X:4
-0  0  0  0  0  0  0  0  0  0  
-*3 *5 0  $3 0  0  0  1  1  0  
-0  >1 0  0  0  0  0  1  1  0  
-0  0  *1 0  $1 #2 0  0  @1 !2 
-0  0  <1 @2 1  0  0  )2 0  @3 
-!1 0  0  0  1  0  #3 *2 )1 0  
-0  0  0  #1 1  *4 0  0  0  #4 
-0  0  0  )3 0  0  0  0  0  0  
-0  $4 >2 0  0  1  !3 1  <2 0  
-$2 0  0  0  >3 0  0  1  0  0  
------------------------------------------
-$2 turn. Ship Type: Cruiser
-$2: look from Y:9 X:0
-Friendly ship found at -> Y:8 X:1
-Ship have nowhere to ram!
-$2 Ship move to Y:8 X:0
-0  0  0  0  0  0  0  0  0  0  
-*3 *5 0  $3 0  0  0  1  1  0  
-0  >1 0  0  0  0  0  1  1  0  
-0  0  *1 0  $1 #2 0  0  @1 !2 
-0  0  <1 @2 1  0  0  )2 0  @3 
-!1 0  0  0  1  0  #3 *2 )1 0  
-0  0  0  #1 1  *4 0  0  0  #4 
-0  0  0  )3 0  0  0  0  0  0  
-$2 $4 >2 0  0  1  !3 1  <2 0  
-0  0  0  0  >3 0  0  1  0  0  
------------------------------------------
-$3 turn. Ship Type: Cruiser
-$3: look from Y:1 X:3
-Ship have nowhere to ram!
-$3 Ship move to Y:1 X:4
-0  0  0  0  0  0  0  0  0  0  
-*3 *5 0  0  $3 0  0  1  1  0  
-0  >1 0  0  0  0  0  1  1  0  
-0  0  *1 0  $1 #2 0  0  @1 !2 
-0  0  <1 @2 1  0  0  )2 0  @3 
-!1 0  0  0  1  0  #3 *2 )1 0  
-0  0  0  #1 1  *4 0  0  0  #4 
-0  0  0  )3 0  0  0  0  0  0  
-$2 $4 >2 0  0  1  !3 1  <2 0  
-0  0  0  0  >3 0  0  1  0  0  
------------------------------------------
-$4 turn. Ship Type: Cruiser
-$4: look from Y:8 X:1
-Friendly ship found at -> Y:8 X:0
-Enemy ship found at -> Y:8 X:2
-$4 Ship move to Y:8 X:2 which destroyed >2
-$4 Total Kill:1
-0  0  0  0  0  0  0  0  0  0  
-*3 *5 0  0  $3 0  0  1  1  0  
-0  >1 0  0  0  0  0  1  1  0  
-0  0  *1 0  $1 #2 0  0  @1 !2 
-0  0  <1 @2 1  0  0  )2 0  @3 
-!1 0  0  0  1  0  #3 *2 )1 0  
-0  0  0  #1 1  *4 0  0  0  #4 
-0  0  0  )3 0  0  0  0  0  0  
-$2 0  $4 0  0  1  !3 1  <2 0  
-0  0  0  0  >3 0  0  1  0  0  
------------------------------------------
->2 Life remaining: 2
->2 New location: Y->2 X->0
-#1 turn. Ship Type: Destroyer
-#1: look from Y:6 X:3
-Enemy ship found at -> Y:7 X:3
-#1 Ship move to Y:7 X:3 which destroyed )3
-#1 Total Kill:1
-#1 Ship shoot at Y:7 X:4 which has no ship.
-#1 Ship shoot at Y:8 X:7 which has no ship.
-0  0  0  0  0  0  0  0  0  0  
-*3 *5 0  0  $3 0  0  1  1  0  
->2 >1 0  0  0  0  0  1  1  0  
-0  0  *1 0  $1 #2 0  0  @1 !2 
-0  0  <1 @2 1  0  0  )2 0  @3 
-!1 0  0  0  1  0  #3 *2 )1 0  
-0  0  0  0  1  *4 0  0  0  #4 
-0  0  0  #1 0  0  0  0  0  0  
-$2 0  $4 0  0  1  !3 1  <2 0  
-0  0  0  0  >3 0  0  1  0  0  
------------------------------------------
-)3 Life remaining: 2
-)3 New location: Y->5 X->5
+)2 New location: Y->8 X->2
 #2 turn. Ship Type: Destroyer
-#2: look from Y:3 X:5
-Friendly ship found at -> Y:3 X:4
-Ship have nowhere to ram!
-#2 Ship move to Y:4 X:5
-#2 Ship shoot at Y:4 X:6 which has no ship.
-#2 Ship shoot at Y:6 X:8 which has no ship.
-0  0  0  0  0  0  0  0  0  0  
-*3 *5 0  0  $3 0  0  1  1  0  
->2 >1 0  0  0  0  0  1  1  0  
-0  0  *1 0  $1 0  0  0  @1 !2 
-0  0  <1 @2 1  #2 0  )2 0  @3 
-!1 0  0  0  1  )3 #3 *2 )1 0  
-0  0  0  0  1  *4 0  0  0  #4 
-0  0  0  #1 0  0  0  0  0  0  
-$2 0  $4 0  0  1  !3 1  <2 0  
-0  0  0  0  >3 0  0  1  0  0  
------------------------------------------
-#3 turn. Ship Type: Destroyer
-#3: look from Y:5 X:6
-Friendly ship found at -> Y:4 X:5
-Enemy ship found at -> Y:4 X:7
-Enemy ship found at -> Y:5 X:5
-Friendly ship found at -> Y:5 X:7
-Friendly ship found at -> Y:6 X:5
-#3 Ship move to Y:5 X:5 which destroyed )3
-#3 Total Kill:1
-#3 Ship shoot at Y:7 X:5 which has no ship.
-#3 Ship shoot at Y:8 X:7 which has no ship.
-0  0  0  0  0  0  0  0  0  0  
-*3 *5 0  0  $3 0  0  1  1  0  
->2 >1 0  0  0  0  0  1  1  0  
-0  0  *1 0  $1 0  0  0  @1 !2 
-0  0  <1 @2 1  #2 0  )2 0  @3 
-!1 0  0  0  1  #3 0  *2 )1 0  
-0  0  0  0  1  *4 0  0  0  #4 
-0  0  0  #1 0  0  0  0  0  0  
-$2 0  $4 0  0  1  !3 1  <2 0  
-0  0  0  0  >3 0  0  1  0  0  
------------------------------------------
-)3 Life remaining: 1
-)3 New location: Y->0 X->1
-#4 turn. Ship Type: Destroyer
-#4: look from Y:6 X:9
+#2: look from Y:4 X:9
 Enemy ship found at -> Y:5 X:8
-Ship have nowhere to ram!
-#4 Ship move to Y:5 X:9
-#4 Ship shoot at Y:9 X:9 which has no ship.
-#4 Ship shoot at Y:8 X:9 which has no ship.
-0  )3 0  0  0  0  0  0  0  0  
-*3 *5 0  0  $3 0  0  1  1  0  
->2 >1 0  0  0  0  0  1  1  0  
-0  0  *1 0  $1 0  0  0  @1 !2 
-0  0  <1 @2 1  #2 0  )2 0  @3 
-!1 0  0  0  1  #3 0  *2 )1 #4 
-0  0  0  0  1  *4 0  0  0  0  
-0  0  0  #1 0  0  0  0  0  0  
-$2 0  $4 0  0  1  !3 1  <2 0  
-0  0  0  0  >3 0  0  1  0  0  
+Enemy ship found at -> Y:5 X:9
+#2 Ship move to Y:5 X:9 which destroyed <1
+#2 Total Kill:1
+#2 Ship shoot at Y:9 X:9 which has no ship.
+#2 Ship shoot at Y:8 X:9 which has no ship.
+0  0  0  0  0  0  0  0  0  0  
+0  0  0  @2 !2 &2 0  1  1  0  
+0  0  0  0  0  0  0  1  1  !1 
+0  $1 0  #1 0  0  0  0  0  0  
+0  0  0  0  1  0  0  0  0  0  
+0  0  0  0  1  0  0  0  &1 #2 
+)1 <2 0  0  1  0  0  @1 0  0  
+0  0  0  0  0  0  0  )3 0  *1 
+0  0  )2 0  0  1  1  1  0  0  
+0  0  !3 0  0  0  0  1  0  0  
 -----------------------------------------
+<1 Life remaining: 2
+<1 New location: Y->9 X->1
 @1 turn. Ship Type: Frigate
-@1: From Y:3 X:8
-@1 Ship shoot UP at Y:2 X:8 which has no ship.
-0  )3 0  0  0  0  0  0  0  0  
-*3 *5 0  0  $3 0  0  1  1  0  
->2 >1 0  0  0  0  0  1  1  0  
-0  0  *1 0  $1 0  0  0  @1 !2 
-0  0  <1 @2 1  #2 0  )2 0  @3 
-!1 0  0  0  1  #3 0  *2 )1 #4 
-0  0  0  0  1  *4 0  0  0  0  
-0  0  0  #1 0  0  0  0  0  0  
-$2 0  $4 0  0  1  !3 1  <2 0  
-0  0  0  0  >3 0  0  1  0  0  
+@1: From Y:6 X:7
+@1 Ship shoot UP at Y:5 X:7 which has no ship.
+0  0  0  0  0  0  0  0  0  0  
+0  0  0  @2 !2 &2 0  1  1  0  
+0  0  0  0  0  0  0  1  1  !1 
+0  $1 0  #1 0  0  0  0  0  0  
+0  0  0  0  1  0  0  0  0  0  
+0  0  0  0  1  0  0  0  &1 #2 
+)1 <2 0  0  1  0  0  @1 0  0  
+0  0  0  0  0  0  0  )3 0  *1 
+0  0  )2 0  0  1  1  1  0  0  
+0  <1 !3 0  0  0  0  1  0  0  
 -----------------------------------------
 @2 turn. Ship Type: Frigate
-@2: From Y:4 X:3
-@2 Ship shoot UP at Y:3 X:3 which has no ship.
-0  )3 0  0  0  0  0  0  0  0  
-*3 *5 0  0  $3 0  0  1  1  0  
->2 >1 0  0  0  0  0  1  1  0  
-0  0  *1 0  $1 0  0  0  @1 !2 
-0  0  <1 @2 1  #2 0  )2 0  @3 
-!1 0  0  0  1  #3 0  *2 )1 #4 
-0  0  0  0  1  *4 0  0  0  0  
-0  0  0  #1 0  0  0  0  0  0  
-$2 0  $4 0  0  1  !3 1  <2 0  
-0  0  0  0  >3 0  0  1  0  0  
+@2: From Y:1 X:3
+@2 Ship shoot UP at Y:0 X:3 which has no ship.
+0  0  0  0  0  0  0  0  0  0  
+0  0  0  @2 !2 &2 0  1  1  0  
+0  0  0  0  0  0  0  1  1  !1 
+0  $1 0  #1 0  0  0  0  0  0  
+0  0  0  0  1  0  0  0  0  0  
+0  0  0  0  1  0  0  0  &1 #2 
+)1 <2 0  0  1  0  0  @1 0  0  
+0  0  0  0  0  0  0  )3 0  *1 
+0  0  )2 0  0  1  1  1  0  0  
+0  <1 !3 0  0  0  0  1  0  0  
 -----------------------------------------
-@3 turn. Ship Type: Frigate
-@3: From Y:4 X:9
-@3 Ship shoot UP at Y:3 X:9 which destroyed !2
-@3 Total Kill:1
-0  )3 0  0  0  0  0  0  0  0  
-*3 *5 0  0  $3 0  0  1  1  0  
->2 >1 0  0  0  0  0  1  1  0  
-0  0  *1 0  $1 0  0  0  @1 0  
-0  0  <1 @2 1  #2 0  )2 0  @3 
-!1 0  0  0  1  #3 0  *2 )1 #4 
-0  0  0  0  1  *4 0  0  0  0  
-0  0  0  #1 0  0  0  0  0  0  
-$2 0  $4 0  0  1  !3 1  <2 0  
-0  0  0  0  >3 0  0  1  0  0  
+&1 turn. Ship Type: Corvette
+&1: From Y:5 X:8
+&1 Ship shoot at Y:6 X:9 which has no ship.
+0  0  0  0  0  0  0  0  0  0  
+0  0  0  @2 !2 &2 0  1  1  0  
+0  0  0  0  0  0  0  1  1  !1 
+0  $1 0  #1 0  0  0  0  0  0  
+0  0  0  0  1  0  0  0  0  0  
+0  0  0  0  1  0  0  0  &1 #2 
+)1 <2 0  0  1  0  0  @1 0  0  
+0  0  0  0  0  0  0  )3 0  *1 
+0  0  )2 0  0  1  1  1  0  0  
+0  <1 !3 0  0  0  0  1  0  0  
 -----------------------------------------
-!2 Life remaining: 2
-!2 New location: Y->2 X->4
+&2 turn. Ship Type: Corvette
+&2: From Y:1 X:5
+&2 Ship shoot at Y:0 X:4 which has no ship.
+0  0  0  0  0  0  0  0  0  0  
+0  0  0  @2 !2 &2 0  1  1  0  
+0  0  0  0  0  0  0  1  1  !1 
+0  $1 0  #1 0  0  0  0  0  0  
+0  0  0  0  1  0  0  0  0  0  
+0  0  0  0  1  0  0  0  &1 #2 
+)1 <2 0  0  1  0  0  @1 0  0  
+0  0  0  0  0  0  0  )3 0  *1 
+0  0  )2 0  0  1  1  1  0  0  
+0  <1 !3 0  0  0  0  1  0  0  
+-----------------------------------------
 <1 turn. Ship Type: Battleship
-<1: look from Y:4 X:2
-Enemy ship found at -> Y:3 X:2
-Enemy ship found at -> Y:4 X:3
-<1 Ship move to Y:4 X:1
-<1 Ship shoot at Y:5 X:5 which destroyed #3
-<1 Total Kill:1
-<1 Ship shoot at Y:7 X:2 which has no ship.
-0  )3 0  0  0  0  0  0  0  0  
-*3 *5 0  0  $3 0  0  1  1  0  
->2 >1 0  0  !2 0  0  1  1  0  
-0  0  *1 0  $1 0  0  0  @1 0  
-0  <1 0  @2 1  #2 0  )2 0  @3 
-!1 0  0  0  1  0  0  *2 )1 #4 
-0  0  0  0  1  *4 0  0  0  0  
-0  0  0  #1 0  0  0  0  0  0  
-$2 0  $4 0  0  1  !3 1  <2 0  
-0  0  0  0  >3 0  0  1  0  0  
+<1: look from Y:9 X:1
+Enemy ship found at -> Y:8 X:2
+Friendly ship found at -> Y:9 X:2
+<1 Ship move to Y:9 X:0
+<1 Ship shoot at Y:9 X:3 which has no ship.
+<1 Ship shoot at Y:9 X:3 which has no ship.
+0  0  0  0  0  0  0  0  0  0  
+0  0  0  @2 !2 &2 0  1  1  0  
+0  0  0  0  0  0  0  1  1  !1 
+0  $1 0  #1 0  0  0  0  0  0  
+0  0  0  0  1  0  0  0  0  0  
+0  0  0  0  1  0  0  0  &1 #2 
+)1 <2 0  0  1  0  0  @1 0  0  
+0  0  0  0  0  0  0  )3 0  *1 
+0  0  )2 0  0  1  1  1  0  0  
+<1 0  !3 0  0  0  0  1  0  0  
 -----------------------------------------
-#3 Life remaining: 2
-#3 New location: Y->4 X->2
 <2 turn. Ship Type: Battleship
-<2: look from Y:8 X:8
-<2 Ship move to Y:7 X:8
-<2 Ship shoot at Y:8 X:8 which has no ship.
-<2 Ship shoot at Y:9 X:8 which has no ship.
-0  )3 0  0  0  0  0  0  0  0  
-*3 *5 0  0  $3 0  0  1  1  0  
->2 >1 0  0  !2 0  0  1  1  0  
-0  0  *1 0  $1 0  0  0  @1 0  
-0  <1 #3 @2 1  #2 0  )2 0  @3 
-!1 0  0  0  1  0  0  *2 )1 #4 
-0  0  0  0  1  *4 0  0  0  0  
-0  0  0  #1 0  0  0  0  <2 0  
-$2 0  $4 0  0  1  !3 1  0  0  
-0  0  0  0  >3 0  0  1  0  0  
+<2: look from Y:6 X:1
+Enemy ship found at -> Y:6 X:0
+<2 Ship move to Y:6 X:2
+<2 Ship shoot at Y:6 X:6 which has no ship.
+<2 Ship shoot at Y:8 X:2 which destroyed )2
+<2 Total Kill:1
+0  0  0  0  0  0  0  0  0  0  
+0  0  0  @2 !2 &2 0  1  1  0  
+0  0  0  0  0  0  0  1  1  !1 
+0  $1 0  #1 0  0  0  0  0  0  
+0  0  0  0  1  0  0  0  0  0  
+0  0  0  0  1  0  0  0  &1 #2 
+)1 0  <2 0  1  0  0  @1 0  0  
+0  0  0  0  0  0  0  )3 0  *1 
+0  0  0  0  0  1  1  1  0  0  
+<1 0  !3 0  0  0  0  1  0  0  
 -----------------------------------------
->1 turn. Ship Type: Cruiser
->1: look from Y:2 X:1
-Enemy ship found at -> Y:1 X:0
-Enemy ship found at -> Y:1 X:1
-Friendly ship found at -> Y:2 X:0
-Enemy ship found at -> Y:3 X:2
->1 Ship move to Y:1 X:1 which destroyed *5
->1 Total Kill:1
-0  )3 0  0  0  0  0  0  0  0  
-*3 >1 0  0  $3 0  0  1  1  0  
->2 0  0  0  !2 0  0  1  1  0  
-0  0  *1 0  $1 0  0  0  @1 0  
-0  <1 #3 @2 1  #2 0  )2 0  @3 
-!1 0  0  0  1  0  0  *2 )1 #4 
-0  0  0  0  1  *4 0  0  0  0  
-0  0  0  #1 0  0  0  0  <2 0  
-$2 0  $4 0  0  1  !3 1  0  0  
-0  0  0  0  >3 0  0  1  0  0  
+)2 Life remaining: 1
+)2 New location: Y->8 X->2
+!1 turn. Ship Type: Amphibious
+!1: look from Y:2 X:9
+!1 Ship move to Y:1 X:9
+!1 Ship shoot at Y:6 X:9 which has no ship.
+!1 Ship shoot at Y:2 X:9 which has no ship.
+0  0  0  0  0  0  0  0  0  0  
+0  0  0  @2 !2 &2 0  1  1  !1 
+0  0  0  0  0  0  0  1  1  0  
+0  $1 0  #1 0  0  0  0  0  0  
+0  0  0  0  1  0  0  0  0  0  
+0  0  0  0  1  0  0  0  &1 #2 
+)1 0  <2 0  1  0  0  @1 0  0  
+0  0  0  0  0  0  0  )3 0  *1 
+0  0  )2 0  0  1  1  1  0  0  
+<1 0  !3 0  0  0  0  1  0  0  
 -----------------------------------------
-*5 Life remaining: 2
-*5 New location: Y->5 X->5
->2 turn. Ship Type: Cruiser
->2: look from Y:2 X:0
-Enemy ship found at -> Y:1 X:0
-Friendly ship found at -> Y:1 X:1
->2 Ship move to Y:1 X:0 which destroyed *3
->2 Total Kill:1
-0  )3 0  0  0  0  0  0  0  0  
->2 >1 0  0  $3 0  0  1  1  0  
+!2 turn. Ship Type: Amphibious
+!2: look from Y:1 X:4
+Enemy ship found at -> Y:1 X:3
+Friendly ship found at -> Y:1 X:5
+!2 Ship move to Y:2 X:4
+!2 Ship shoot at Y:4 X:4 which has no ship.
+!2 Ship shoot at Y:6 X:4 which has no ship.
+0  0  0  0  0  0  0  0  0  0  
+0  0  0  @2 0  &2 0  1  1  !1 
 0  0  0  0  !2 0  0  1  1  0  
-0  0  *1 0  $1 0  0  0  @1 0  
-0  <1 #3 @2 1  #2 0  )2 0  @3 
-!1 0  0  0  1  *5 0  *2 )1 #4 
-0  0  0  0  1  *4 0  0  0  0  
-0  0  0  #1 0  0  0  0  <2 0  
-$2 0  $4 0  0  1  !3 1  0  0  
-0  0  0  0  >3 0  0  1  0  0  
+0  $1 0  #1 0  0  0  0  0  0  
+0  0  0  0  1  0  0  0  0  0  
+0  0  0  0  1  0  0  0  &1 #2 
+)1 0  <2 0  1  0  0  @1 0  0  
+0  0  0  0  0  0  0  )3 0  *1 
+0  0  )2 0  0  1  1  1  0  0  
+<1 0  !3 0  0  0  0  1  0  0  
 -----------------------------------------
-*3 Life remaining: 2
-*3 New location: Y->2 X->0
->3 turn. Ship Type: Cruiser
->3: look from Y:9 X:4
+!3 turn. Ship Type: Amphibious
+!3: look from Y:9 X:2
+Enemy ship found at -> Y:8 X:2
+!3 Ship move to Y:9 X:3
+!3 Ship shoot at Y:9 X:6 which has no ship.
+!3 Ship shoot at Y:9 X:6 which has no ship.
+0  0  0  0  0  0  0  0  0  0  
+0  0  0  @2 0  &2 0  1  1  !1 
+0  0  0  0  !2 0  0  1  1  0  
+0  $1 0  #1 0  0  0  0  0  0  
+0  0  0  0  1  0  0  0  0  0  
+0  0  0  0  1  0  0  0  &1 #2 
+)1 0  <2 0  1  0  0  @1 0  0  
+0  0  0  0  0  0  0  )3 0  *1 
+0  0  )2 0  0  1  1  1  0  0  
+<1 0  0  !3 0  0  0  1  0  0  
+-----------------------------------------
+)1 turn. Ship Type: Supership
+)1: look from Y:6 X:0
 Ship have nowhere to ram!
->3 Ship move to Y:9 X:5
-0  )3 0  0  0  0  0  0  0  0  
->2 >1 0  0  $3 0  0  1  1  0  
-*3 0  0  0  !2 0  0  1  1  0  
-0  0  *1 0  $1 0  0  0  @1 0  
-0  <1 #3 @2 1  #2 0  )2 0  @3 
-!1 0  0  0  1  *5 0  *2 )1 #4 
-0  0  0  0  1  *4 0  0  0  0  
-0  0  0  #1 0  0  0  0  <2 0  
-$2 0  $4 0  0  1  !3 1  0  0  
-0  0  0  0  0  >3 0  1  0  0  
+)1 Ship move to Y:6 X:1
+)1 Ship shoot at Y:0 X:6 which has no ship.
+)1 Ship shoot at Y:0 X:2 which has no ship.
+)1 Ship shoot at Y:5 X:3 which has no ship.
+0  0  0  0  0  0  0  0  0  0  
+0  0  0  @2 0  &2 0  1  1  !1 
+0  0  0  0  !2 0  0  1  1  0  
+0  $1 0  #1 0  0  0  0  0  0  
+0  0  0  0  1  0  0  0  0  0  
+0  0  0  0  1  0  0  0  &1 #2 
+0  )1 <2 0  1  0  0  @1 0  0  
+0  0  0  0  0  0  0  )3 0  *1 
+0  0  )2 0  0  1  1  1  0  0  
+<1 0  0  !3 0  0  0  1  0  0  
+-----------------------------------------
+)2 turn. Ship Type: Supership
+)2: look from Y:8 X:2
+Enemy ship found at -> Y:9 X:3
+Ship have nowhere to ram!
+)2 Ship move to Y:8 X:3
+)2 Ship shoot at Y:1 X:7 which has no ship.
+)2 Ship shoot at Y:3 X:1 which destroyed $1
+)2 Total Kill:1
+)2 Ship shoot at Y:3 X:7 which has no ship.
+0  0  0  0  0  0  0  0  0  0  
+0  0  0  @2 0  &2 0  1  1  !1 
+0  0  0  0  !2 0  0  1  1  0  
+0  0  0  #1 0  0  0  0  0  0  
+0  0  0  0  1  0  0  0  0  0  
+0  0  0  0  1  0  0  0  &1 #2 
+0  )1 <2 0  1  0  0  @1 0  0  
+0  0  0  0  0  0  0  )3 0  *1 
+0  0  0  )2 0  1  1  1  0  0  
+<1 0  0  !3 0  0  0  1  0  0  
+-----------------------------------------
+$1 Life remaining: 2
+$1 New location: Y->8 X->2
+)3 turn. Ship Type: Supership
+)3: look from Y:7 X:7
+Enemy ship found at -> Y:6 X:7
+)3 Ship move to Y:6 X:7 which destroyed @1
+)3 Total Kill:1
+)3 Ship shoot at Y:5 X:1 which has no ship.
+)3 Ship shoot at Y:5 X:6 which has no ship.
+)3 Ship shoot at Y:0 X:5 which has no ship.
+0  0  0  0  0  0  0  0  0  0  
+0  0  0  @2 0  &2 0  1  1  !1 
+0  0  0  0  !2 0  0  1  1  0  
+0  0  0  #1 0  0  0  0  0  0  
+0  0  0  0  1  0  0  0  0  0  
+0  0  0  0  1  0  0  0  &1 #2 
+0  )1 <2 0  1  0  0  )3 0  0  
+0  0  0  0  0  0  0  0  0  *1 
+0  0  $1 )2 0  1  1  1  0  0  
+<1 0  0  !3 0  0  0  1  0  0  
+-----------------------------------------
+@1 Life remaining: 2
+@1 New location: Y->9 X->1
+*1 turn. Ship Type: Battleship
+*1: look from Y:7 X:9
+*1 Ship move to Y:6 X:9
+*1 Ship shoot at Y:9 X:9 which has no ship.
+*1 Ship shoot at Y:7 X:9 which has no ship.
+0  0  0  0  0  0  0  0  0  0  
+0  0  0  @2 0  &2 0  1  1  !1 
+0  0  0  0  !2 0  0  1  1  0  
+0  0  0  #1 0  0  0  0  0  0  
+0  0  0  0  1  0  0  0  0  0  
+0  0  0  0  1  0  0  0  &1 #2 
+0  )1 <2 0  1  0  0  )3 0  *1 
+0  0  0  0  0  0  0  0  0  0  
+0  0  $1 )2 0  1  1  1  0  0  
+<1 @1 0  !3 0  0  0  1  0  0  
+-----------------------------------------
+$1 turn. Ship Type: Cruiser
+$1: look from Y:8 X:2
+Enemy ship found at -> Y:8 X:3
+Friendly ship found at -> Y:9 X:1
+Enemy ship found at -> Y:9 X:3
+$1 Ship move to Y:8 X:3 which destroyed )2
+$1 Total Kill:1
+0  0  0  0  0  0  0  0  0  0  
+0  0  0  @2 0  &2 0  1  1  !1 
+0  0  0  0  !2 0  0  1  1  0  
+0  0  0  #1 0  0  0  0  0  0  
+0  0  0  0  1  0  0  0  0  0  
+0  0  0  0  1  0  0  0  &1 #2 
+0  )1 <2 0  1  0  0  )3 0  *1 
+0  0  0  0  0  0  0  0  0  0  
+0  0  0  $1 0  1  1  1  0  0  
+<1 @1 0  !3 0  0  0  1  0  0  
+-----------------------------------------
+)2 Life remaining: 0
+)2 New location: Y->8 X->2
+#1 turn. Ship Type: Destroyer
+#1: look from Y:3 X:3
+Enemy ship found at -> Y:2 X:4
+Ship have nowhere to ram!
+#1 Ship move to Y:3 X:2
+#1 Ship shoot at Y:6 X:2 which destroyed <2
+#1 Total Kill:2
+#1 Ship shoot at Y:6 X:3 which has no ship.
+0  0  0  0  0  0  0  0  0  0  
+0  0  0  @2 0  &2 0  1  1  !1 
+0  0  0  0  !2 0  0  1  1  0  
+0  0  #1 0  0  0  0  0  0  0  
+0  0  0  0  1  0  0  0  0  0  
+0  0  0  0  1  0  0  0  &1 #2 
+0  )1 0  0  1  0  0  )3 0  *1 
+0  0  0  0  0  0  0  0  0  0  
+0  0  )2 $1 0  1  1  1  0  0  
+<1 @1 0  !3 0  0  0  1  0  0  
+-----------------------------------------
+<2 Life remaining: 2
+<2 New location: Y->7 X->9
+#2 turn. Ship Type: Destroyer
+#2: look from Y:5 X:9
+Enemy ship found at -> Y:5 X:8
+Friendly ship found at -> Y:6 X:9
+#2 Ship move to Y:5 X:8 which destroyed &1
+#2 Total Kill:2
+#2 Ship shoot at Y:6 X:8 which has no ship.
+#2 Ship shoot at Y:8 X:9 which has no ship.
+0  0  0  0  0  0  0  0  0  0  
+0  0  0  @2 0  &2 0  1  1  !1 
+0  0  0  0  !2 0  0  1  1  0  
+0  0  #1 0  0  0  0  0  0  0  
+0  0  0  0  1  0  0  0  0  0  
+0  0  0  0  1  0  0  0  #2 0  
+0  )1 0  0  1  0  0  )3 0  *1 
+0  0  0  0  0  0  0  0  0  <2 
+0  0  )2 $1 0  1  1  1  0  0  
+<1 @1 0  !3 0  0  0  1  0  0  
+-----------------------------------------
+&1 Life remaining: 2
+&1 New location: Y->7 X->1
+@1 turn. Ship Type: Frigate
+@1: From Y:9 X:1
+@1 Ship shoot UPRIGHT at Y:8 X:2 which destroyed )2
+@1 Total Kill:1
+0  0  0  0  0  0  0  0  0  0  
+0  0  0  @2 0  &2 0  1  1  !1 
+0  0  0  0  !2 0  0  1  1  0  
+0  0  #1 0  0  0  0  0  0  0  
+0  0  0  0  1  0  0  0  0  0  
+0  0  0  0  1  0  0  0  #2 0  
+0  )1 0  0  1  0  0  )3 0  *1 
+0  &1 0  0  0  0  0  0  0  <2 
+0  0  0  $1 0  1  1  1  0  0  
+<1 @1 0  !3 0  0  0  1  0  0  
+-----------------------------------------
+)2 is removed from the battlefield. 
+@2 turn. Ship Type: Frigate
+@2: From Y:1 X:3
+@2 Ship shoot UPRIGHT at Y:0 X:4 which has no ship.
+0  0  0  0  0  0  0  0  0  0  
+0  0  0  @2 0  &2 0  1  1  !1 
+0  0  0  0  !2 0  0  1  1  0  
+0  0  #1 0  0  0  0  0  0  0  
+0  0  0  0  1  0  0  0  0  0  
+0  0  0  0  1  0  0  0  #2 0  
+0  )1 0  0  1  0  0  )3 0  *1 
+0  &1 0  0  0  0  0  0  0  <2 
+0  0  0  $1 0  1  1  1  0  0  
+<1 @1 0  !3 0  0  0  1  0  0  
+-----------------------------------------
+&1 turn. Ship Type: Corvette
+&1: From Y:7 X:1
+&1 Ship shoot at Y:6 X:0 which has no ship.
+0  0  0  0  0  0  0  0  0  0  
+0  0  0  @2 0  &2 0  1  1  !1 
+0  0  0  0  !2 0  0  1  1  0  
+0  0  #1 0  0  0  0  0  0  0  
+0  0  0  0  1  0  0  0  0  0  
+0  0  0  0  1  0  0  0  #2 0  
+0  )1 0  0  1  0  0  )3 0  *1 
+0  &1 0  0  0  0  0  0  0  <2 
+0  0  0  $1 0  1  1  1  0  0  
+<1 @1 0  !3 0  0  0  1  0  0  
+-----------------------------------------
+&2 turn. Ship Type: Corvette
+&2: From Y:1 X:5
+&2 Ship shoot at Y:0 X:4 which has no ship.
+0  0  0  0  0  0  0  0  0  0  
+0  0  0  @2 0  &2 0  1  1  !1 
+0  0  0  0  !2 0  0  1  1  0  
+0  0  #1 0  0  0  0  0  0  0  
+0  0  0  0  1  0  0  0  0  0  
+0  0  0  0  1  0  0  0  #2 0  
+0  )1 0  0  1  0  0  )3 0  *1 
+0  &1 0  0  0  0  0  0  0  <2 
+0  0  0  $1 0  1  1  1  0  0  
+<1 @1 0  !3 0  0  0  1  0  0  
+-----------------------------------------
+<1 turn. Ship Type: Battleship
+<1: look from Y:9 X:0
+Enemy ship found at -> Y:9 X:1
+<1 Ship move to Y:8 X:0
+<1 Ship shoot at Y:8 X:3 which destroyed $1
+<1 Total Kill:1
+<1 Ship shoot at Y:9 X:2 which has no ship.
+0  0  0  0  0  0  0  0  0  0  
+0  0  0  @2 0  &2 0  1  1  !1 
+0  0  0  0  !2 0  0  1  1  0  
+0  0  #1 0  0  0  0  0  0  0  
+0  0  0  0  1  0  0  0  0  0  
+0  0  0  0  1  0  0  0  #2 0  
+0  )1 0  0  1  0  0  )3 0  *1 
+0  &1 0  0  0  0  0  0  0  <2 
+<1 0  0  0  0  1  1  1  0  0  
+0  @1 0  !3 0  0  0  1  0  0  
+-----------------------------------------
+$1 Life remaining: 1
+$1 New location: Y->8 X->2
+<2 turn. Ship Type: Battleship
+<2: look from Y:7 X:9
+Enemy ship found at -> Y:6 X:9
+<2 Ship move to Y:8 X:9
+<2 Ship shoot at Y:9 X:9 which has no ship.
+<2 Ship shoot at Y:9 X:9 which has no ship.
+0  0  0  0  0  0  0  0  0  0  
+0  0  0  @2 0  &2 0  1  1  !1 
+0  0  0  0  !2 0  0  1  1  0  
+0  0  #1 0  0  0  0  0  0  0  
+0  0  0  0  1  0  0  0  0  0  
+0  0  0  0  1  0  0  0  #2 0  
+0  )1 0  0  1  0  0  )3 0  *1 
+0  &1 0  0  0  0  0  0  0  0  
+<1 0  $1 0  0  1  1  1  0  <2 
+0  @1 0  !3 0  0  0  1  0  0  
 -----------------------------------------
 !1 turn. Ship Type: Amphibious
-!1: look from Y:5 X:0
-Friendly ship found at -> Y:4 X:1
-!1 Ship move to Y:4 X:0
-!1 Ship shoot at Y:7 X:1 which has no ship.
-!1 Ship shoot at Y:6 X:2 which has no ship.
-0  )3 0  0  0  0  0  0  0  0  
->2 >1 0  0  $3 0  0  1  1  0  
-*3 0  0  0  !2 0  0  1  1  0  
-0  0  *1 0  $1 0  0  0  @1 0  
-!1 <1 #3 @2 1  #2 0  )2 0  @3 
-0  0  0  0  1  *5 0  *2 )1 #4 
-0  0  0  0  1  *4 0  0  0  0  
-0  0  0  #1 0  0  0  0  <2 0  
-$2 0  $4 0  0  1  !3 1  0  0  
-0  0  0  0  0  >3 0  1  0  0  
+!1: look from Y:1 X:9
+!1 Ship move to Y:2 X:9
+!1 Ship shoot at Y:7 X:9 which has no ship.
+!1 Ship shoot at Y:3 X:9 which has no ship.
+0  0  0  0  0  0  0  0  0  0  
+0  0  0  @2 0  &2 0  1  1  0  
+0  0  0  0  !2 0  0  1  1  !1 
+0  0  #1 0  0  0  0  0  0  0  
+0  0  0  0  1  0  0  0  0  0  
+0  0  0  0  1  0  0  0  #2 0  
+0  )1 0  0  1  0  0  )3 0  *1 
+0  &1 0  0  0  0  0  0  0  0  
+<1 0  $1 0  0  1  1  1  0  <2 
+0  @1 0  !3 0  0  0  1  0  0  
 -----------------------------------------
 !2 turn. Ship Type: Amphibious
 !2: look from Y:2 X:4
-Enemy ship found at -> Y:1 X:4
-Enemy ship found at -> Y:3 X:4
+Enemy ship found at -> Y:1 X:3
+Friendly ship found at -> Y:1 X:5
 !2 Ship move to Y:2 X:3
-!2 Ship shoot at Y:6 X:3 which has no ship.
-!2 Ship shoot at Y:6 X:4 which has no ship.
-0  )3 0  0  0  0  0  0  0  0  
->2 >1 0  0  $3 0  0  1  1  0  
-*3 0  0  !2 0  0  0  1  1  0  
-0  0  *1 0  $1 0  0  0  @1 0  
-!1 <1 #3 @2 1  #2 0  )2 0  @3 
-0  0  0  0  1  *5 0  *2 )1 #4 
-0  0  0  0  1  *4 0  0  0  0  
-0  0  0  #1 0  0  0  0  <2 0  
-$2 0  $4 0  0  1  !3 1  0  0  
-0  0  0  0  0  >3 0  1  0  0  
------------------------------------------
-!3 turn. Ship Type: Amphibious
-!3: look from Y:8 X:6
-Friendly ship found at -> Y:9 X:5
-!3 Ship move to Y:7 X:6
-!3 Ship shoot at Y:9 X:6 which has no ship.
-!3 Ship shoot at Y:8 X:9 which has no ship.
-0  )3 0  0  0  0  0  0  0  0  
->2 >1 0  0  $3 0  0  1  1  0  
-*3 0  0  !2 0  0  0  1  1  0  
-0  0  *1 0  $1 0  0  0  @1 0  
-!1 <1 #3 @2 1  #2 0  )2 0  @3 
-0  0  0  0  1  *5 0  *2 )1 #4 
-0  0  0  0  1  *4 0  0  0  0  
-0  0  0  #1 0  0  !3 0  <2 0  
-$2 0  $4 0  0  1  1  1  0  0  
-0  0  0  0  0  >3 0  1  0  0  
------------------------------------------
-)1 turn. Ship Type: Supership
-)1: look from Y:5 X:8
-Friendly ship found at -> Y:4 X:7
-Enemy ship found at -> Y:4 X:9
-Enemy ship found at -> Y:5 X:7
-Enemy ship found at -> Y:5 X:9
-)1 Ship move to Y:5 X:7 which destroyed *2
-)1 Total Kill:1
-)1 Ship shoot at Y:5 X:9 which destroyed #4
-)1 Total Kill:2
-)1 Ship shoot at Y:6 X:6 which has no ship.
-)1 Ship shoot at Y:3 X:2 which destroyed *1
-)1 Total Kill:3
-0  )3 0  0  0  0  0  0  0  0  
->2 >1 0  0  $3 0  0  1  1  0  
-*3 0  0  !2 0  0  0  1  1  0  
-0  0  0  0  $1 0  0  0  @1 0  
-!1 <1 #3 @2 1  #2 0  )2 0  @3 
-0  0  0  0  1  *5 0  )1 0  0  
-0  0  0  0  1  *4 0  0  0  0  
-0  0  0  #1 0  0  !3 0  <2 0  
-$2 0  $4 0  0  1  1  1  0  0  
-0  0  0  0  0  >3 0  1  0  0  
------------------------------------------
-*2 Life remaining: 2
-*2 New location: Y->2 X->4
-#4 Life remaining: 2
-#4 New location: Y->9 X->0
-)2 turn. Ship Type: Supership
-)2: look from Y:4 X:7
-Enemy ship found at -> Y:3 X:8
-Friendly ship found at -> Y:5 X:7
-Ship have nowhere to ram!
-)2 Ship move to Y:4 X:6
-)2 Ship shoot at Y:9 X:0 which destroyed #4
-)2 Total Kill:1
-)2 Ship shoot at Y:5 X:2 which has no ship.
-)2 Ship shoot at Y:8 X:5 which has no ship.
-0  )3 0  0  0  0  0  0  0  0  
->2 >1 0  0  $3 0  0  1  1  0  
-*3 0  0  !2 *2 0  0  1  1  0  
-0  0  0  0  $1 0  0  0  @1 0  
-!1 <1 #3 @2 1  #2 )2 0  0  @3 
-0  0  0  0  1  *5 0  )1 0  0  
-0  0  0  0  1  *4 0  0  0  0  
-0  0  0  #1 0  0  !3 0  <2 0  
-$2 0  $4 0  0  1  1  1  0  0  
-0  0  0  0  0  >3 0  1  0  0  
------------------------------------------
-*1 Life remaining: 2
-*1 New location: Y->4 X->7
-#4 Life remaining: 1
-#4 New location: Y->9 X->0
-)3 turn. Ship Type: Supership
-)3: look from Y:0 X:1
-Enemy ship found at -> Y:1 X:0
-Enemy ship found at -> Y:1 X:1
-)3 Ship move to Y:1 X:1 which destroyed >1
-)3 Total Kill:1
-)3 Ship shoot at Y:8 X:6 which has no ship.
-)3 Ship shoot at Y:6 X:3 which has no ship.
-)3 Ship shoot at Y:3 X:4 which destroyed $1
-)3 Total Kill:2
+!2 Ship shoot at Y:7 X:3 which has no ship.
+!2 Ship shoot at Y:5 X:3 which has no ship.
 0  0  0  0  0  0  0  0  0  0  
->2 )3 0  0  $3 0  0  1  1  0  
-*3 0  0  !2 *2 0  0  1  1  0  
-0  0  0  0  0  0  0  0  @1 0  
-!1 <1 #3 @2 1  #2 )2 *1 0  @3 
-0  0  0  0  1  *5 0  )1 0  0  
-0  0  0  0  1  *4 0  0  0  0  
-0  0  0  #1 0  0  !3 0  <2 0  
-$2 0  $4 0  0  1  1  1  0  0  
-#4 0  0  0  0  >3 0  1  0  0  
------------------------------------------
->1 Life remaining: 2
->1 New location: Y->0 X->1
-$1 Life remaining: 2
-$1 New location: Y->1 X->3
-*1 turn. Ship Type: Battleship
-*1: look from Y:4 X:7
-Friendly ship found at -> Y:3 X:8
-Enemy ship found at -> Y:4 X:6
-Enemy ship found at -> Y:5 X:7
-*1 Ship move to Y:3 X:7
-*1 Ship shoot at Y:8 X:7 which has no ship.
-*1 Ship shoot at Y:8 X:7 which has no ship.
-0  >1 0  0  0  0  0  0  0  0  
->2 )3 0  $1 $3 0  0  1  1  0  
-*3 0  0  !2 *2 0  0  1  1  0  
-0  0  0  0  0  0  0  *1 @1 0  
-!1 <1 #3 @2 1  #2 )2 0  0  @3 
-0  0  0  0  1  *5 0  )1 0  0  
-0  0  0  0  1  *4 0  0  0  0  
-0  0  0  #1 0  0  !3 0  <2 0  
-$2 0  $4 0  0  1  1  1  0  0  
-#4 0  0  0  0  >3 0  1  0  0  
------------------------------------------
-*2 turn. Ship Type: Battleship
-*2: look from Y:2 X:4
-Friendly ship found at -> Y:1 X:3
-Friendly ship found at -> Y:1 X:4
-Enemy ship found at -> Y:2 X:3
-*2 Ship move to Y:3 X:4
-*2 Ship shoot at Y:5 X:7 which destroyed )1
-*2 Total Kill:1
-*2 Ship shoot at Y:4 X:7 which has no ship.
-0  >1 0  0  0  0  0  0  0  0  
->2 )3 0  $1 $3 0  0  1  1  0  
-*3 0  0  !2 0  0  0  1  1  0  
-0  0  0  0  *2 0  0  *1 @1 0  
-!1 <1 #3 @2 1  #2 )2 0  0  @3 
-0  0  0  0  1  *5 0  0  0  0  
-0  0  0  0  1  *4 0  0  0  0  
-0  0  0  #1 0  0  !3 0  <2 0  
-$2 0  $4 0  0  1  1  1  0  0  
-#4 0  0  0  0  >3 0  1  0  0  
------------------------------------------
-)1 Life remaining: 2
-)1 New location: Y->4 X->7
-*3 turn. Ship Type: Battleship
-*3: look from Y:2 X:0
-Enemy ship found at -> Y:1 X:0
-Enemy ship found at -> Y:1 X:1
-*3 Ship move to Y:2 X:1
-*3 Ship shoot at Y:5 X:2 which has no ship.
-*3 Ship shoot at Y:5 X:1 which has no ship.
-0  >1 0  0  0  0  0  0  0  0  
->2 )3 0  $1 $3 0  0  1  1  0  
-0  *3 0  !2 0  0  0  1  1  0  
-0  0  0  0  *2 0  0  *1 @1 0  
-!1 <1 #3 @2 1  #2 )2 )1 0  @3 
-0  0  0  0  1  *5 0  0  0  0  
-0  0  0  0  1  *4 0  0  0  0  
-0  0  0  #1 0  0  !3 0  <2 0  
-$2 0  $4 0  0  1  1  1  0  0  
-#4 0  0  0  0  >3 0  1  0  0  
------------------------------------------
-*4 turn. Ship Type: Battleship
-*4: look from Y:6 X:5
-Friendly ship found at -> Y:5 X:5
-Enemy ship found at -> Y:7 X:6
-*4 Ship move to Y:6 X:6
-*4 Ship shoot at Y:8 X:8 which has no ship.
-*4 Ship shoot at Y:6 X:7 which has no ship.
-0  >1 0  0  0  0  0  0  0  0  
->2 )3 0  $1 $3 0  0  1  1  0  
-0  *3 0  !2 0  0  0  1  1  0  
-0  0  0  0  *2 0  0  *1 @1 0  
-!1 <1 #3 @2 1  #2 )2 )1 0  @3 
-0  0  0  0  1  *5 0  0  0  0  
-0  0  0  0  1  0  *4 0  0  0  
-0  0  0  #1 0  0  !3 0  <2 0  
-$2 0  $4 0  0  1  1  1  0  0  
-#4 0  0  0  0  >3 0  1  0  0  
------------------------------------------
-*5 turn. Ship Type: Battleship
-*5: look from Y:5 X:5
-Friendly ship found at -> Y:4 X:5
-Enemy ship found at -> Y:4 X:6
-Friendly ship found at -> Y:6 X:6
-*5 Ship move to Y:5 X:6
-*5 Ship shoot at Y:5 X:9 which has no ship.
-*5 Ship shoot at Y:8 X:6 which has no ship.
-0  >1 0  0  0  0  0  0  0  0  
->2 )3 0  $1 $3 0  0  1  1  0  
-0  *3 0  !2 0  0  0  1  1  0  
-0  0  0  0  *2 0  0  *1 @1 0  
-!1 <1 #3 @2 1  #2 )2 )1 0  @3 
-0  0  0  0  1  0  *5 0  0  0  
-0  0  0  0  1  0  *4 0  0  0  
-0  0  0  #1 0  0  !3 0  <2 0  
-$2 0  $4 0  0  1  1  1  0  0  
-#4 0  0  0  0  >3 0  1  0  0  
------------------------------------------
-$1 turn. Ship Type: Cruiser
-$1: look from Y:1 X:3
-Friendly ship found at -> Y:1 X:4
-Enemy ship found at -> Y:2 X:3
-$1 Ship move to Y:2 X:3 which destroyed !2
-$1 Total Kill:1
-0  >1 0  0  0  0  0  0  0  0  
->2 )3 0  0  $3 0  0  1  1  0  
-0  *3 0  $1 0  0  0  1  1  0  
-0  0  0  0  *2 0  0  *1 @1 0  
-!1 <1 #3 @2 1  #2 )2 )1 0  @3 
-0  0  0  0  1  0  *5 0  0  0  
-0  0  0  0  1  0  *4 0  0  0  
-0  0  0  #1 0  0  !3 0  <2 0  
-$2 0  $4 0  0  1  1  1  0  0  
-#4 0  0  0  0  >3 0  1  0  0  
------------------------------------------
-!2 Life remaining: 1
-!2 New location: Y->2 X->0
-$2 turn. Ship Type: Cruiser
-$2: look from Y:8 X:0
-Friendly ship found at -> Y:9 X:0
-Ship have nowhere to ram!
-$2 Ship move to Y:7 X:0
-0  >1 0  0  0  0  0  0  0  0  
->2 )3 0  0  $3 0  0  1  1  0  
-!2 *3 0  $1 0  0  0  1  1  0  
-0  0  0  0  *2 0  0  *1 @1 0  
-!1 <1 #3 @2 1  #2 )2 )1 0  @3 
-0  0  0  0  1  0  *5 0  0  0  
-0  0  0  0  1  0  *4 0  0  0  
-$2 0  0  #1 0  0  !3 0  <2 0  
-0  0  $4 0  0  1  1  1  0  0  
-#4 0  0  0  0  >3 0  1  0  0  
------------------------------------------
-$3 turn. Ship Type: Cruiser
-$3: look from Y:1 X:4
-Friendly ship found at -> Y:2 X:3
-Ship have nowhere to ram!
-$3 Ship move to Y:0 X:4
-0  >1 0  0  $3 0  0  0  0  0  
->2 )3 0  0  0  0  0  1  1  0  
-!2 *3 0  $1 0  0  0  1  1  0  
-0  0  0  0  *2 0  0  *1 @1 0  
-!1 <1 #3 @2 1  #2 )2 )1 0  @3 
-0  0  0  0  1  0  *5 0  0  0  
-0  0  0  0  1  0  *4 0  0  0  
-$2 0  0  #1 0  0  !3 0  <2 0  
-0  0  $4 0  0  1  1  1  0  0  
-#4 0  0  0  0  >3 0  1  0  0  
------------------------------------------
-$4 turn. Ship Type: Cruiser
-$4: look from Y:8 X:2
-Friendly ship found at -> Y:7 X:3
-Ship have nowhere to ram!
-$4 Ship move to Y:8 X:1
-0  >1 0  0  $3 0  0  0  0  0  
->2 )3 0  0  0  0  0  1  1  0  
-!2 *3 0  $1 0  0  0  1  1  0  
-0  0  0  0  *2 0  0  *1 @1 0  
-!1 <1 #3 @2 1  #2 )2 )1 0  @3 
-0  0  0  0  1  0  *5 0  0  0  
-0  0  0  0  1  0  *4 0  0  0  
-$2 0  0  #1 0  0  !3 0  <2 0  
-0  $4 0  0  0  1  1  1  0  0  
-#4 0  0  0  0  >3 0  1  0  0  
------------------------------------------
-#1 turn. Ship Type: Destroyer
-#1: look from Y:7 X:3
-Ship have nowhere to ram!
-#1 Ship move to Y:7 X:2
-#1 Ship shoot at Y:8 X:5 which has no ship.
-#1 Ship shoot at Y:7 X:7 which has no ship.
-0  >1 0  0  $3 0  0  0  0  0  
->2 )3 0  0  0  0  0  1  1  0  
-!2 *3 0  $1 0  0  0  1  1  0  
-0  0  0  0  *2 0  0  *1 @1 0  
-!1 <1 #3 @2 1  #2 )2 )1 0  @3 
-0  0  0  0  1  0  *5 0  0  0  
-0  0  0  0  1  0  *4 0  0  0  
-$2 0  #1 0  0  0  !3 0  <2 0  
-0  $4 0  0  0  1  1  1  0  0  
-#4 0  0  0  0  >3 0  1  0  0  
------------------------------------------
-#2 turn. Ship Type: Destroyer
-#2: look from Y:4 X:5
-Friendly ship found at -> Y:3 X:4
-Enemy ship found at -> Y:4 X:6
-Friendly ship found at -> Y:5 X:6
-#2 Ship move to Y:4 X:6 which destroyed )2
-#2 Total Kill:1
-#2 Ship shoot at Y:6 X:7 which has no ship.
-#2 Ship shoot at Y:9 X:6 which has no ship.
-0  >1 0  0  $3 0  0  0  0  0  
->2 )3 0  0  0  0  0  1  1  0  
-!2 *3 0  $1 0  0  0  1  1  0  
-0  0  0  0  *2 0  0  *1 @1 0  
-!1 <1 #3 @2 1  0  #2 )1 0  @3 
-0  0  0  0  1  0  *5 0  0  0  
-0  0  0  0  1  0  *4 0  0  0  
-$2 0  #1 0  0  0  !3 0  <2 0  
-0  $4 0  0  0  1  1  1  0  0  
-#4 0  0  0  0  >3 0  1  0  0  
------------------------------------------
-)2 Life remaining: 1
-)2 New location: Y->5 X->5
-#3 turn. Ship Type: Destroyer
-#3: look from Y:4 X:2
-Enemy ship found at -> Y:4 X:1
-Friendly ship found at -> Y:4 X:3
-#3 Ship move to Y:4 X:1 which destroyed <1
-#3 Total Kill:2
-#3 Ship shoot at Y:7 X:1 which has no ship.
-#3 Ship shoot at Y:6 X:4 which has no ship.
-0  >1 0  0  $3 0  0  0  0  0  
->2 )3 0  0  0  0  0  1  1  0  
-!2 *3 0  $1 0  0  0  1  1  0  
-0  0  0  0  *2 0  0  *1 @1 0  
-!1 #3 0  @2 1  0  #2 )1 0  @3 
-0  0  0  0  1  )2 *5 0  0  0  
-0  0  0  0  1  0  *4 0  0  0  
-$2 0  #1 0  0  0  !3 0  <2 0  
-0  $4 0  0  0  1  1  1  0  0  
-#4 0  0  0  0  >3 0  1  0  0  
------------------------------------------
-<1 Life remaining: 1
-<1 New location: Y->4 X->2
-#4 turn. Ship Type: Destroyer
-#4: look from Y:9 X:0
-Friendly ship found at -> Y:8 X:1
-Ship have nowhere to ram!
-#4 Ship move to Y:9 X:1
-#4 Ship shoot at Y:9 X:2 which has no ship.
-#4 Ship shoot at Y:9 X:3 which has no ship.
-0  >1 0  0  $3 0  0  0  0  0  
->2 )3 0  0  0  0  0  1  1  0  
-!2 *3 0  $1 0  0  0  1  1  0  
-0  0  0  0  *2 0  0  *1 @1 0  
-!1 #3 <1 @2 1  0  #2 )1 0  @3 
-0  0  0  0  1  )2 *5 0  0  0  
-0  0  0  0  1  0  *4 0  0  0  
-$2 0  #1 0  0  0  !3 0  <2 0  
-0  $4 0  0  0  1  1  1  0  0  
-0  #4 0  0  0  >3 0  1  0  0  
------------------------------------------
-@1 turn. Ship Type: Frigate
-@1: From Y:3 X:8
-@1 Ship shoot UPRIGHT at Y:2 X:9 which has no ship.
-0  >1 0  0  $3 0  0  0  0  0  
->2 )3 0  0  0  0  0  1  1  0  
-!2 *3 0  $1 0  0  0  1  1  0  
-0  0  0  0  *2 0  0  *1 @1 0  
-!1 #3 <1 @2 1  0  #2 )1 0  @3 
-0  0  0  0  1  )2 *5 0  0  0  
-0  0  0  0  1  0  *4 0  0  0  
-$2 0  #1 0  0  0  !3 0  <2 0  
-0  $4 0  0  0  1  1  1  0  0  
-0  #4 0  0  0  >3 0  1  0  0  
------------------------------------------
-@2 turn. Ship Type: Frigate
-@2: From Y:4 X:3
-Switching shooting directions from UPRIGHT to RIGHT since it is out of range/friendly ship.
-@2 Ship shoot RIGHT at Y:4 X:4 which has no ship.
-0  >1 0  0  $3 0  0  0  0  0  
->2 )3 0  0  0  0  0  1  1  0  
-!2 *3 0  $1 0  0  0  1  1  0  
-0  0  0  0  *2 0  0  *1 @1 0  
-!1 #3 <1 @2 1  0  #2 )1 0  @3 
-0  0  0  0  1  )2 *5 0  0  0  
-0  0  0  0  1  0  *4 0  0  0  
-$2 0  #1 0  0  0  !3 0  <2 0  
-0  $4 0  0  0  1  1  1  0  0  
-0  #4 0  0  0  >3 0  1  0  0  
------------------------------------------
-@3 turn. Ship Type: Frigate
-@3: From Y:4 X:9
-Switching shooting directions from UPRIGHT to RIGHT since it is out of range/friendly ship.
-Switching shooting directions from RIGHT to DOWNRIGHT since it is out of range/friendly ship.
-Switching shooting directions from DOWNRIGHT to DOWN since it is out of range/friendly ship.
-@3 Ship shoot DOWN at Y:5 X:9 which has no ship.
-0  >1 0  0  $3 0  0  0  0  0  
->2 )3 0  0  0  0  0  1  1  0  
-!2 *3 0  $1 0  0  0  1  1  0  
-0  0  0  0  *2 0  0  *1 @1 0  
-!1 #3 <1 @2 1  0  #2 )1 0  @3 
-0  0  0  0  1  )2 *5 0  0  0  
-0  0  0  0  1  0  *4 0  0  0  
-$2 0  #1 0  0  0  !3 0  <2 0  
-0  $4 0  0  0  1  1  1  0  0  
-0  #4 0  0  0  >3 0  1  0  0  
------------------------------------------
-<1 turn. Ship Type: Battleship
-<1: look from Y:4 X:2
-Enemy ship found at -> Y:4 X:1
-Enemy ship found at -> Y:4 X:3
-<1 Ship move to Y:3 X:2
-<1 Ship shoot at Y:6 X:3 which has no ship.
-<1 Ship shoot at Y:4 X:6 which destroyed #2
-<1 Total Kill:2
-0  >1 0  0  $3 0  0  0  0  0  
->2 )3 0  0  0  0  0  1  1  0  
-!2 *3 0  $1 0  0  0  1  1  0  
-0  0  <1 0  *2 0  0  *1 @1 0  
-!1 #3 0  @2 1  0  0  )1 0  @3 
-0  0  0  0  1  )2 *5 0  0  0  
-0  0  0  0  1  0  *4 0  0  0  
-$2 0  #1 0  0  0  !3 0  <2 0  
-0  $4 0  0  0  1  1  1  0  0  
-0  #4 0  0  0  >3 0  1  0  0  
------------------------------------------
-#2 Life remaining: 2
-#2 New location: Y->4 X->2
-<2 turn. Ship Type: Battleship
-<2: look from Y:7 X:8
-<2 Ship move to Y:8 X:8
-<2 Ship shoot at Y:9 X:9 which has no ship.
-<2 Ship shoot at Y:9 X:8 which has no ship.
-0  >1 0  0  $3 0  0  0  0  0  
->2 )3 0  0  0  0  0  1  1  0  
-!2 *3 0  $1 0  0  0  1  1  0  
-0  0  <1 0  *2 0  0  *1 @1 0  
-!1 #3 #2 @2 1  0  0  )1 0  @3 
-0  0  0  0  1  )2 *5 0  0  0  
-0  0  0  0  1  0  *4 0  0  0  
-$2 0  #1 0  0  0  !3 0  0  0  
-0  $4 0  0  0  1  1  1  <2 0  
-0  #4 0  0  0  >3 0  1  0  0  
------------------------------------------
->1 turn. Ship Type: Cruiser
->1: look from Y:0 X:1
-Friendly ship found at -> Y:1 X:0
-Enemy ship found at -> Y:1 X:1
->1 Ship move to Y:1 X:1 which destroyed )3
->1 Total Kill:2
-0  0  0  0  $3 0  0  0  0  0  
->2 >1 0  0  0  0  0  1  1  0  
-!2 *3 0  $1 0  0  0  1  1  0  
-0  0  <1 0  *2 0  0  *1 @1 0  
-!1 #3 #2 @2 1  0  0  )1 0  @3 
-0  0  0  0  1  )2 *5 0  0  0  
-0  0  0  0  1  0  *4 0  0  0  
-$2 0  #1 0  0  0  !3 0  0  0  
-0  $4 0  0  0  1  1  1  <2 0  
-0  #4 0  0  0  >3 0  1  0  0  
------------------------------------------
-)3 Life remaining: 0
-)3 New location: Y->0 X->1
->2 turn. Ship Type: Cruiser
->2: look from Y:1 X:0
-Enemy ship found at -> Y:0 X:1
-Friendly ship found at -> Y:1 X:1
-Friendly ship found at -> Y:2 X:0
-Enemy ship found at -> Y:2 X:1
-Ship have nowhere to ram!
->2 Ship move to Y:0 X:0
->2 )3 0  0  $3 0  0  0  0  0  
-0  >1 0  0  0  0  0  1  1  0  
-!2 *3 0  $1 0  0  0  1  1  0  
-0  0  <1 0  *2 0  0  *1 @1 0  
-!1 #3 #2 @2 1  0  0  )1 0  @3 
-0  0  0  0  1  )2 *5 0  0  0  
-0  0  0  0  1  0  *4 0  0  0  
-$2 0  #1 0  0  0  !3 0  0  0  
-0  $4 0  0  0  1  1  1  <2 0  
-0  #4 0  0  0  >3 0  1  0  0  
------------------------------------------
->3 turn. Ship Type: Cruiser
->3: look from Y:9 X:5
-Ship have nowhere to ram!
->3 Ship move to Y:9 X:6
->2 )3 0  0  $3 0  0  0  0  0  
-0  >1 0  0  0  0  0  1  1  0  
-!2 *3 0  $1 0  0  0  1  1  0  
-0  0  <1 0  *2 0  0  *1 @1 0  
-!1 #3 #2 @2 1  0  0  )1 0  @3 
-0  0  0  0  1  )2 *5 0  0  0  
-0  0  0  0  1  0  *4 0  0  0  
-$2 0  #1 0  0  0  !3 0  0  0  
-0  $4 0  0  0  1  1  1  <2 0  
-0  #4 0  0  0  0  >3 1  0  0  
------------------------------------------
-!1 turn. Ship Type: Amphibious
-!1: look from Y:4 X:0
-Enemy ship found at -> Y:4 X:1
-!1 Ship move to Y:3 X:0
-!1 Ship shoot at Y:3 X:4 which destroyed *2
-!1 Total Kill:1
-!1 Ship shoot at Y:4 X:3 which destroyed @2
-!1 Total Kill:2
->2 )3 0  0  $3 0  0  0  0  0  
-0  >1 0  0  0  0  0  1  1  0  
-!2 *3 0  $1 0  0  0  1  1  0  
-!1 0  <1 0  0  0  0  *1 @1 0  
-0  #3 #2 0  1  0  0  )1 0  @3 
-0  0  0  0  1  )2 *5 0  0  0  
-0  0  0  0  1  0  *4 0  0  0  
-$2 0  #1 0  0  0  !3 0  0  0  
-0  $4 0  0  0  1  1  1  <2 0  
-0  #4 0  0  0  0  >3 1  0  0  
------------------------------------------
-*2 Life remaining: 1
-*2 New location: Y->2 X->4
-@2 Life remaining: 2
-@2 New location: Y->9 X->0
-!2 turn. Ship Type: Amphibious
-!2: look from Y:2 X:0
-Friendly ship found at -> Y:1 X:1
-Enemy ship found at -> Y:2 X:1
-Friendly ship found at -> Y:3 X:0
-!2 Ship move to Y:1 X:0
-!2 Ship shoot at Y:4 X:0 which has no ship.
-!2 Ship shoot at Y:1 X:5 which has no ship.
->2 )3 0  0  $3 0  0  0  0  0  
-!2 >1 0  0  0  0  0  1  1  0  
-0  *3 0  $1 *2 0  0  1  1  0  
-!1 0  <1 0  0  0  0  *1 @1 0  
-0  #3 #2 0  1  0  0  )1 0  @3 
-0  0  0  0  1  )2 *5 0  0  0  
-0  0  0  0  1  0  *4 0  0  0  
-$2 0  #1 0  0  0  !3 0  0  0  
-0  $4 0  0  0  1  1  1  <2 0  
-@2 #4 0  0  0  0  >3 1  0  0  
+0  0  0  @2 0  &2 0  1  1  0  
+0  0  0  !2 0  0  0  1  1  !1 
+0  0  #1 0  0  0  0  0  0  0  
+0  0  0  0  1  0  0  0  0  0  
+0  0  0  0  1  0  0  0  #2 0  
+0  )1 0  0  1  0  0  )3 0  *1 
+0  &1 0  0  0  0  0  0  0  0  
+<1 0  $1 0  0  1  1  1  0  <2 
+0  @1 0  !3 0  0  0  1  0  0  
 -----------------------------------------
 !3 turn. Ship Type: Amphibious
-!3: look from Y:7 X:6
-Enemy ship found at -> Y:6 X:6
-!3 Ship move to Y:8 X:6
-!3 Ship shoot at Y:9 X:7 which has no ship.
-!3 Ship shoot at Y:8 X:7 which has no ship.
->2 )3 0  0  $3 0  0  0  0  0  
-!2 >1 0  0  0  0  0  1  1  0  
-0  *3 0  $1 *2 0  0  1  1  0  
-!1 0  <1 0  0  0  0  *1 @1 0  
-0  #3 #2 0  1  0  0  )1 0  @3 
-0  0  0  0  1  )2 *5 0  0  0  
-0  0  0  0  1  0  *4 0  0  0  
-$2 0  #1 0  0  0  0  0  0  0  
-0  $4 0  0  0  1  !3 1  <2 0  
-@2 #4 0  0  0  0  >3 1  0  0  
+!3: look from Y:9 X:3
+Enemy ship found at -> Y:8 X:2
+!3 Ship move to Y:9 X:2
+!3 Ship shoot at Y:9 X:4 which has no ship.
+!3 Ship shoot at Y:9 X:4 which has no ship.
+0  0  0  0  0  0  0  0  0  0  
+0  0  0  @2 0  &2 0  1  1  0  
+0  0  0  !2 0  0  0  1  1  !1 
+0  0  #1 0  0  0  0  0  0  0  
+0  0  0  0  1  0  0  0  0  0  
+0  0  0  0  1  0  0  0  #2 0  
+0  )1 0  0  1  0  0  )3 0  *1 
+0  &1 0  0  0  0  0  0  0  0  
+<1 0  $1 0  0  1  1  1  0  <2 
+0  @1 !3 0  0  0  0  1  0  0  
 -----------------------------------------
 )1 turn. Ship Type: Supership
-)1: look from Y:4 X:7
-Enemy ship found at -> Y:3 X:7
-Enemy ship found at -> Y:3 X:8
-Enemy ship found at -> Y:5 X:6
-)1 Ship move to Y:3 X:7 which destroyed *1
-)1 Total Kill:4
-)1 Ship shoot at Y:9 X:3 which has no ship.
-)1 Ship shoot at Y:6 X:5 which has no ship.
-)1 Ship shoot at Y:8 X:8 which destroyed <2
-)1 Total Kill:5
->2 )3 0  0  $3 0  0  0  0  0  
-!2 >1 0  0  0  0  0  1  1  0  
-0  *3 0  $1 *2 0  0  1  1  0  
-!1 0  <1 0  0  0  0  )1 @1 0  
-0  #3 #2 0  1  0  0  0  0  @3 
-0  0  0  0  1  )2 *5 0  0  0  
-0  0  0  0  1  0  *4 0  0  0  
-$2 0  #1 0  0  0  0  0  0  0  
-0  $4 0  0  0  1  !3 1  0  0  
-@2 #4 0  0  0  0  >3 1  0  0  
------------------------------------------
-*1 Life remaining: 1
-*1 New location: Y->4 X->7
-<2 Life remaining: 2
-<2 New location: Y->2 X->0
-)2 turn. Ship Type: Supership
-)2: look from Y:5 X:5
-Enemy ship found at -> Y:5 X:6
-Enemy ship found at -> Y:6 X:6
-)2 Ship move to Y:5 X:6 which destroyed *5
-)2 Total Kill:2
-)2 Ship shoot at Y:1 X:4 which has no ship.
-)2 Ship shoot at Y:1 X:2 which has no ship.
-)2 Ship shoot at Y:7 X:0 which destroyed $2
-)2 Total Kill:3
->2 )3 0  0  $3 0  0  0  0  0  
-!2 >1 0  0  0  0  0  1  1  0  
-<2 *3 0  $1 *2 0  0  1  1  0  
-!1 0  <1 0  0  0  0  )1 @1 0  
-0  #3 #2 0  1  0  0  *1 0  @3 
-0  0  0  0  1  0  )2 0  0  0  
-0  0  0  0  1  0  *4 0  0  0  
+)1: look from Y:6 X:1
+Enemy ship found at -> Y:7 X:1
+)1 Ship move to Y:7 X:1 which destroyed &1
+)1 Total Kill:1
+)1 Ship shoot at Y:1 X:6 which has no ship.
+)1 Ship shoot at Y:3 X:7 which has no ship.
+)1 Ship shoot at Y:4 X:0 which has no ship.
+0  0  0  0  0  0  0  0  0  0  
+0  0  0  @2 0  &2 0  1  1  0  
+0  0  0  !2 0  0  0  1  1  !1 
 0  0  #1 0  0  0  0  0  0  0  
-0  $4 0  0  0  1  !3 1  0  0  
-@2 #4 0  0  0  0  >3 1  0  0  
+0  0  0  0  1  0  0  0  0  0  
+0  0  0  0  1  0  0  0  #2 0  
+0  0  0  0  1  0  0  )3 0  *1 
+0  )1 0  0  0  0  0  0  0  0  
+<1 0  $1 0  0  1  1  1  0  <2 
+0  @1 !3 0  0  0  0  1  0  0  
 -----------------------------------------
-*5 Life remaining: 1
-*5 New location: Y->5 X->5
-$2 Life remaining: 2
-$2 New location: Y->1 X->3
+&1 Life remaining: 1
+&1 New location: Y->7 X->9
 )3 turn. Ship Type: Supership
-)3: look from Y:0 X:1
-Enemy ship found at -> Y:0 X:0
-Enemy ship found at -> Y:1 X:0
-Enemy ship found at -> Y:1 X:1
-)3 Ship move to Y:0 X:0 which destroyed >2
-)3 Total Kill:3
-)3 Ship shoot at Y:0 X:8 which has no ship.
-)3 Ship shoot at Y:7 X:5 which has no ship.
-)3 Ship shoot at Y:4 X:6 which has no ship.
-)3 0  0  0  $3 0  0  0  0  0  
-!2 >1 0  $2 0  0  0  1  1  0  
-<2 *3 0  $1 *2 0  0  1  1  0  
-!1 0  <1 0  0  0  0  )1 @1 0  
-0  #3 #2 0  1  0  0  *1 0  @3 
-0  0  0  0  1  *5 )2 0  0  0  
-0  0  0  0  1  0  *4 0  0  0  
+)3: look from Y:6 X:7
+Enemy ship found at -> Y:5 X:8
+Ship have nowhere to ram!
+)3 Ship move to Y:6 X:6
+)3 Ship shoot at Y:3 X:6 which has no ship.
+)3 Ship shoot at Y:0 X:1 which has no ship.
+)3 Ship shoot at Y:9 X:0 which has no ship.
+0  0  0  0  0  0  0  0  0  0  
+0  0  0  @2 0  &2 0  1  1  0  
+0  0  0  !2 0  0  0  1  1  !1 
 0  0  #1 0  0  0  0  0  0  0  
-0  $4 0  0  0  1  !3 1  0  0  
-@2 #4 0  0  0  0  >3 1  0  0  
+0  0  0  0  1  0  0  0  0  0  
+0  0  0  0  1  0  0  0  #2 0  
+0  0  0  0  1  0  )3 0  0  *1 
+0  )1 0  0  0  0  0  0  0  &1 
+<1 0  $1 0  0  1  1  1  0  <2 
+0  @1 !3 0  0  0  0  1  0  0  
 -----------------------------------------
->2 Life remaining: 1
->2 New location: Y->0 X->1
 *1 turn. Ship Type: Battleship
-*1: look from Y:4 X:7
-Enemy ship found at -> Y:3 X:7
-Friendly ship found at -> Y:3 X:8
-Enemy ship found at -> Y:5 X:6
-*1 Ship move to Y:5 X:7
-*1 Ship shoot at Y:8 X:7 which has no ship.
-*1 Ship shoot at Y:7 X:9 which has no ship.
-)3 >2 0  0  $3 0  0  0  0  0  
-!2 >1 0  $2 0  0  0  1  1  0  
-<2 *3 0  $1 *2 0  0  1  1  0  
-!1 0  <1 0  0  0  0  )1 @1 0  
-0  #3 #2 0  1  0  0  0  0  @3 
-0  0  0  0  1  *5 )2 *1 0  0  
-0  0  0  0  1  0  *4 0  0  0  
+*1: look from Y:6 X:9
+Friendly ship found at -> Y:5 X:8
+Enemy ship found at -> Y:7 X:9
+*1 Ship move to Y:5 X:9
+*1 Ship shoot at Y:6 X:9 which has no ship.
+*1 Ship shoot at Y:8 X:9 which destroyed <2
+*1 Total Kill:1
+0  0  0  0  0  0  0  0  0  0  
+0  0  0  @2 0  &2 0  1  1  0  
+0  0  0  !2 0  0  0  1  1  !1 
 0  0  #1 0  0  0  0  0  0  0  
-0  $4 0  0  0  1  !3 1  0  0  
-@2 #4 0  0  0  0  >3 1  0  0  
+0  0  0  0  1  0  0  0  0  0  
+0  0  0  0  1  0  0  0  #2 *1 
+0  0  0  0  1  0  )3 0  0  0  
+0  )1 0  0  0  0  0  0  0  &1 
+<1 0  $1 0  0  1  1  1  0  0  
+0  @1 !3 0  0  0  0  1  0  0  
 -----------------------------------------
-*2 turn. Ship Type: Battleship
-*2: look from Y:2 X:4
-Friendly ship found at -> Y:1 X:3
-Friendly ship found at -> Y:2 X:3
-*2 Ship move to Y:1 X:4
-*2 Ship shoot at Y:2 X:7 which has no ship.
-*2 Ship shoot at Y:2 X:4 which has no ship.
-)3 >2 0  0  $3 0  0  0  0  0  
-!2 >1 0  $2 *2 0  0  1  1  0  
-<2 *3 0  $1 0  0  0  1  1  0  
-!1 0  <1 0  0  0  0  )1 @1 0  
-0  #3 #2 0  1  0  0  0  0  @3 
-0  0  0  0  1  *5 )2 *1 0  0  
-0  0  0  0  1  0  *4 0  0  0  
-0  0  #1 0  0  0  0  0  0  0  
-0  $4 0  0  0  1  !3 1  0  0  
-@2 #4 0  0  0  0  >3 1  0  0  
------------------------------------------
-*3 turn. Ship Type: Battleship
-*3: look from Y:2 X:1
-Enemy ship found at -> Y:1 X:0
-Enemy ship found at -> Y:1 X:1
-Enemy ship found at -> Y:2 X:0
-Enemy ship found at -> Y:3 X:0
-Enemy ship found at -> Y:3 X:2
-*3 Ship move to Y:3 X:1
-*3 Ship shoot at Y:5 X:2 which has no ship.
-*3 Ship shoot at Y:3 X:4 which has no ship.
-)3 >2 0  0  $3 0  0  0  0  0  
-!2 >1 0  $2 *2 0  0  1  1  0  
-<2 0  0  $1 0  0  0  1  1  0  
-!1 *3 <1 0  0  0  0  )1 @1 0  
-0  #3 #2 0  1  0  0  0  0  @3 
-0  0  0  0  1  *5 )2 *1 0  0  
-0  0  0  0  1  0  *4 0  0  0  
-0  0  #1 0  0  0  0  0  0  0  
-0  $4 0  0  0  1  !3 1  0  0  
-@2 #4 0  0  0  0  >3 1  0  0  
------------------------------------------
-*4 turn. Ship Type: Battleship
-*4: look from Y:6 X:6
-Friendly ship found at -> Y:5 X:5
-Enemy ship found at -> Y:5 X:6
-Friendly ship found at -> Y:5 X:7
-*4 Ship move to Y:6 X:5
-*4 Ship shoot at Y:6 X:9 which has no ship.
-*4 Ship shoot at Y:7 X:7 which has no ship.
-)3 >2 0  0  $3 0  0  0  0  0  
-!2 >1 0  $2 *2 0  0  1  1  0  
-<2 0  0  $1 0  0  0  1  1  0  
-!1 *3 <1 0  0  0  0  )1 @1 0  
-0  #3 #2 0  1  0  0  0  0  @3 
-0  0  0  0  1  *5 )2 *1 0  0  
-0  0  0  0  1  *4 0  0  0  0  
-0  0  #1 0  0  0  0  0  0  0  
-0  $4 0  0  0  1  !3 1  0  0  
-@2 #4 0  0  0  0  >3 1  0  0  
------------------------------------------
-*5 turn. Ship Type: Battleship
-*5: look from Y:5 X:5
-Enemy ship found at -> Y:5 X:6
-Friendly ship found at -> Y:6 X:5
-*5 Ship move to Y:4 X:5
-*5 Ship shoot at Y:7 X:6 which has no ship.
-*5 Ship shoot at Y:6 X:8 which has no ship.
-)3 >2 0  0  $3 0  0  0  0  0  
-!2 >1 0  $2 *2 0  0  1  1  0  
-<2 0  0  $1 0  0  0  1  1  0  
-!1 *3 <1 0  0  0  0  )1 @1 0  
-0  #3 #2 0  1  *5 0  0  0  @3 
-0  0  0  0  1  0  )2 *1 0  0  
-0  0  0  0  1  *4 0  0  0  0  
-0  0  #1 0  0  0  0  0  0  0  
-0  $4 0  0  0  1  !3 1  0  0  
-@2 #4 0  0  0  0  >3 1  0  0  
------------------------------------------
+<2 Life remaining: 1
+<2 New location: Y->6 X->3
 $1 turn. Ship Type: Cruiser
-$1: look from Y:2 X:3
-Friendly ship found at -> Y:1 X:3
-Friendly ship found at -> Y:1 X:4
-Enemy ship found at -> Y:3 X:2
-Ship have nowhere to ram!
-$1 Ship move to Y:2 X:4
-)3 >2 0  0  $3 0  0  0  0  0  
-!2 >1 0  $2 *2 0  0  1  1  0  
-<2 0  0  0  $1 0  0  1  1  0  
-!1 *3 <1 0  0  0  0  )1 @1 0  
-0  #3 #2 0  1  *5 0  0  0  @3 
-0  0  0  0  1  0  )2 *1 0  0  
-0  0  0  0  1  *4 0  0  0  0  
-0  0  #1 0  0  0  0  0  0  0  
-0  $4 0  0  0  1  !3 1  0  0  
-@2 #4 0  0  0  0  >3 1  0  0  
------------------------------------------
-$2 turn. Ship Type: Cruiser
-$2: look from Y:1 X:3
-Friendly ship found at -> Y:0 X:4
-Friendly ship found at -> Y:1 X:4
-Friendly ship found at -> Y:2 X:4
-Ship have nowhere to ram!
-$2 Ship move to Y:1 X:2
-)3 >2 0  0  $3 0  0  0  0  0  
-!2 >1 $2 0  *2 0  0  1  1  0  
-<2 0  0  0  $1 0  0  1  1  0  
-!1 *3 <1 0  0  0  0  )1 @1 0  
-0  #3 #2 0  1  *5 0  0  0  @3 
-0  0  0  0  1  0  )2 *1 0  0  
-0  0  0  0  1  *4 0  0  0  0  
-0  0  #1 0  0  0  0  0  0  0  
-0  $4 0  0  0  1  !3 1  0  0  
-@2 #4 0  0  0  0  >3 1  0  0  
------------------------------------------
-$3 turn. Ship Type: Cruiser
-$3: look from Y:0 X:4
-Friendly ship found at -> Y:1 X:4
-Ship have nowhere to ram!
-$3 Ship move to Y:0 X:5
-)3 >2 0  0  0  $3 0  0  0  0  
-!2 >1 $2 0  *2 0  0  1  1  0  
-<2 0  0  0  $1 0  0  1  1  0  
-!1 *3 <1 0  0  0  0  )1 @1 0  
-0  #3 #2 0  1  *5 0  0  0  @3 
-0  0  0  0  1  0  )2 *1 0  0  
-0  0  0  0  1  *4 0  0  0  0  
-0  0  #1 0  0  0  0  0  0  0  
-0  $4 0  0  0  1  !3 1  0  0  
-@2 #4 0  0  0  0  >3 1  0  0  
------------------------------------------
-$4 turn. Ship Type: Cruiser
-$4: look from Y:8 X:1
-Friendly ship found at -> Y:7 X:2
-Friendly ship found at -> Y:9 X:0
+$1: look from Y:8 X:2
+Enemy ship found at -> Y:7 X:1
 Friendly ship found at -> Y:9 X:1
-Ship have nowhere to ram!
-$4 Ship move to Y:8 X:2
-)3 >2 0  0  0  $3 0  0  0  0  
-!2 >1 $2 0  *2 0  0  1  1  0  
-<2 0  0  0  $1 0  0  1  1  0  
-!1 *3 <1 0  0  0  0  )1 @1 0  
-0  #3 #2 0  1  *5 0  0  0  @3 
-0  0  0  0  1  0  )2 *1 0  0  
-0  0  0  0  1  *4 0  0  0  0  
+Enemy ship found at -> Y:9 X:2
+$1 Ship move to Y:9 X:2 which destroyed !3
+$1 Total Kill:2
+0  0  0  0  0  0  0  0  0  0  
+0  0  0  @2 0  &2 0  1  1  0  
+0  0  0  !2 0  0  0  1  1  !1 
 0  0  #1 0  0  0  0  0  0  0  
-0  0  $4 0  0  1  !3 1  0  0  
-@2 #4 0  0  0  0  >3 1  0  0  
+0  0  0  0  1  0  0  0  0  0  
+0  0  0  0  1  0  0  0  #2 *1 
+0  0  0  <2 1  0  )3 0  0  0  
+0  )1 0  0  0  0  0  0  0  &1 
+<1 0  0  0  0  1  1  1  0  0  
+0  @1 $1 0  0  0  0  1  0  0  
 -----------------------------------------
+!3 Life remaining: 2
+!3 New location: Y->8 X->2
 #1 turn. Ship Type: Destroyer
-#1: look from Y:7 X:2
-Friendly ship found at -> Y:8 X:2
+#1: look from Y:3 X:2
+Enemy ship found at -> Y:2 X:3
 Ship have nowhere to ram!
-#1 Ship move to Y:7 X:1
-#1 Ship shoot at Y:8 X:4 which has no ship.
-#1 Ship shoot at Y:8 X:1 which has no ship.
-)3 >2 0  0  0  $3 0  0  0  0  
-!2 >1 $2 0  *2 0  0  1  1  0  
-<2 0  0  0  $1 0  0  1  1  0  
-!1 *3 <1 0  0  0  0  )1 @1 0  
-0  #3 #2 0  1  *5 0  0  0  @3 
-0  0  0  0  1  0  )2 *1 0  0  
-0  0  0  0  1  *4 0  0  0  0  
-0  #1 0  0  0  0  0  0  0  0  
-0  0  $4 0  0  1  !3 1  0  0  
-@2 #4 0  0  0  0  >3 1  0  0  
+#1 Ship move to Y:3 X:3
+#1 Ship shoot at Y:4 X:6 which has no ship.
+#1 Ship shoot at Y:6 X:3 which destroyed <2
+#1 Total Kill:3
+0  0  0  0  0  0  0  0  0  0  
+0  0  0  @2 0  &2 0  1  1  0  
+0  0  0  !2 0  0  0  1  1  !1 
+0  0  0  #1 0  0  0  0  0  0  
+0  0  0  0  1  0  0  0  0  0  
+0  0  0  0  1  0  0  0  #2 *1 
+0  0  0  0  1  0  )3 0  0  0  
+0  )1 0  0  0  0  0  0  0  &1 
+<1 0  !3 0  0  1  1  1  0  0  
+0  @1 $1 0  0  0  0  1  0  0  
 -----------------------------------------
+#1 upgraded to Supership!
+<2 Life remaining: 0
+<2 New location: Y->6 X->3
 #2 turn. Ship Type: Destroyer
-#2: look from Y:4 X:2
-Friendly ship found at -> Y:3 X:1
-Enemy ship found at -> Y:3 X:2
-Friendly ship found at -> Y:4 X:1
-#2 Ship move to Y:3 X:2 which destroyed <1
-#2 Total Kill:2
-#2 Ship shoot at Y:5 X:2 which has no ship.
-#2 Ship shoot at Y:3 X:7 which destroyed )1
+#2: look from Y:5 X:8
+Friendly ship found at -> Y:5 X:9
+Ship have nowhere to ram!
+#2 Ship move to Y:4 X:8
+#2 Ship shoot at Y:7 X:9 which destroyed &1
 #2 Total Kill:3
-)3 >2 0  0  0  $3 0  0  0  0  
-!2 >1 $2 0  *2 0  0  1  1  0  
-<2 0  0  0  $1 0  0  1  1  0  
-!1 *3 #2 0  0  0  0  0  @1 0  
-0  #3 0  0  1  *5 0  0  0  @3 
-0  0  0  0  1  0  )2 *1 0  0  
-0  0  0  0  1  *4 0  0  0  0  
-0  #1 0  0  0  0  0  0  0  0  
-0  0  $4 0  0  1  !3 1  0  0  
-@2 #4 0  0  0  0  >3 1  0  0  
+#2 Ship shoot at Y:6 X:9 which has no ship.
+0  0  0  0  0  0  0  0  0  0  
+0  0  0  @2 0  &2 0  1  1  0  
+0  0  0  !2 0  0  0  1  1  !1 
+0  0  0  #1 0  0  0  0  0  0  
+0  0  0  0  1  0  0  0  #2 0  
+0  0  0  0  1  0  0  0  0  *1 
+0  0  0  <2 1  0  )3 0  0  0  
+0  )1 0  0  0  0  0  0  0  0  
+<1 0  !3 0  0  1  1  1  0  0  
+0  @1 $1 0  0  0  0  1  0  0  
 -----------------------------------------
 #2 upgraded to Supership!
-<1 Life remaining: 0
-<1 New location: Y->4 X->2
-)1 Life remaining: 1
-)1 New location: Y->4 X->7
-#3 turn. Ship Type: Destroyer
-#3: look from Y:4 X:1
-Enemy ship found at -> Y:3 X:0
-Friendly ship found at -> Y:3 X:1
-Friendly ship found at -> Y:3 X:2
-Enemy ship found at -> Y:4 X:2
-#3 Ship move to Y:4 X:2 which destroyed <1
-#3 Total Kill:3
-#3 Ship shoot at Y:6 X:2 which has no ship.
-#3 Ship shoot at Y:7 X:3 which has no ship.
-)3 >2 0  0  0  $3 0  0  0  0  
-!2 >1 $2 0  *2 0  0  1  1  0  
-<2 0  0  0  $1 0  0  1  1  0  
-!1 *3 #2 0  0  0  0  0  @1 0  
-0  0  #3 0  1  *5 0  )1 0  @3 
-0  0  0  0  1  0  )2 *1 0  0  
-0  0  0  0  1  *4 0  0  0  0  
-0  #1 0  0  0  0  0  0  0  0  
-0  0  $4 0  0  1  !3 1  0  0  
-@2 #4 0  0  0  0  >3 1  0  0  
------------------------------------------
-#3 upgraded to Supership!
-<1 is removed from the battlefield. 
-#4 turn. Ship Type: Destroyer
-#4: look from Y:9 X:1
-Friendly ship found at -> Y:8 X:2
-Friendly ship found at -> Y:9 X:0
-Ship have nowhere to ram!
-#4 Ship move to Y:8 X:1
-#4 Ship shoot at Y:8 X:4 which has no ship.
-#4 Ship shoot at Y:8 X:3 which has no ship.
-)3 >2 0  0  0  $3 0  0  0  0  
-!2 >1 $2 0  *2 0  0  1  1  0  
-<2 0  0  0  $1 0  0  1  1  0  
-!1 *3 #2 0  0  0  0  0  @1 0  
-0  0  #3 0  1  *5 0  )1 0  @3 
-0  0  0  0  1  0  )2 *1 0  0  
-0  0  0  0  1  *4 0  0  0  0  
-0  #1 0  0  0  0  0  0  0  0  
-0  #4 $4 0  0  1  !3 1  0  0  
-@2 0  0  0  0  0  >3 1  0  0  
------------------------------------------
+&1 Life remaining: 0
+&1 New location: Y->7 X->9
 @1 turn. Ship Type: Frigate
-@1: From Y:3 X:8
-@1 Ship shoot RIGHT at Y:3 X:9 which has no ship.
-)3 >2 0  0  0  $3 0  0  0  0  
-!2 >1 $2 0  *2 0  0  1  1  0  
-<2 0  0  0  $1 0  0  1  1  0  
-!1 *3 #2 0  0  0  0  0  @1 0  
-0  0  #3 0  1  *5 0  )1 0  @3 
-0  0  0  0  1  0  )2 *1 0  0  
-0  0  0  0  1  *4 0  0  0  0  
-0  #1 0  0  0  0  0  0  0  0  
-0  #4 $4 0  0  1  !3 1  0  0  
-@2 0  0  0  0  0  >3 1  0  0  
------------------------------------------
-@2 turn. Ship Type: Frigate
-@2: From Y:9 X:0
+@1: From Y:9 X:1
+Switching shooting directions from RIGHT to DOWNRIGHT since it is out of range/friendly ship.
 Switching shooting directions from DOWNRIGHT to DOWN since it is out of range/friendly ship.
 Switching shooting directions from DOWN to DOWNLEFT since it is out of range/friendly ship.
 Switching shooting directions from DOWNLEFT to LEFT since it is out of range/friendly ship.
-Switching shooting directions from LEFT to UPLEFT since it is out of range/friendly ship.
-Switching shooting directions from UPLEFT to UP since it is out of range/friendly ship.
-@2 Ship shoot UP at Y:8 X:0 which has no ship.
-)3 >2 0  0  0  $3 0  0  0  0  
-!2 >1 $2 0  *2 0  0  1  1  0  
-<2 0  0  0  $1 0  0  1  1  0  
-!1 *3 #2 0  0  0  0  0  @1 0  
-0  0  #3 0  1  *5 0  )1 0  @3 
-0  0  0  0  1  0  )2 *1 0  0  
-0  0  0  0  1  *4 0  0  0  0  
-0  #1 0  0  0  0  0  0  0  0  
-0  #4 $4 0  0  1  !3 1  0  0  
-@2 0  0  0  0  0  >3 1  0  0  
------------------------------------------
-@3 turn. Ship Type: Frigate
-@3: From Y:4 X:9
-@3 Ship shoot DOWNLEFT at Y:5 X:8 which has no ship.
-)3 >2 0  0  0  $3 0  0  0  0  
-!2 >1 $2 0  *2 0  0  1  1  0  
-<2 0  0  0  $1 0  0  1  1  0  
-!1 *3 #2 0  0  0  0  0  @1 0  
-0  0  #3 0  1  *5 0  )1 0  @3 
-0  0  0  0  1  0  )2 *1 0  0  
-0  0  0  0  1  *4 0  0  0  0  
-0  #1 0  0  0  0  0  0  0  0  
-0  #4 $4 0  0  1  !3 1  0  0  
-@2 0  0  0  0  0  >3 1  0  0  
------------------------------------------
-<2 turn. Ship Type: Battleship
-<2: look from Y:2 X:0
-Friendly ship found at -> Y:1 X:0
-Friendly ship found at -> Y:1 X:1
-Friendly ship found at -> Y:3 X:0
-Enemy ship found at -> Y:3 X:1
-<2 Ship move to Y:2 X:1
-<2 Ship shoot at Y:2 X:2 which has no ship.
-<2 Ship shoot at Y:2 X:3 which has no ship.
-)3 >2 0  0  0  $3 0  0  0  0  
-!2 >1 $2 0  *2 0  0  1  1  0  
-0  <2 0  0  $1 0  0  1  1  0  
-!1 *3 #2 0  0  0  0  0  @1 0  
-0  0  #3 0  1  *5 0  )1 0  @3 
-0  0  0  0  1  0  )2 *1 0  0  
-0  0  0  0  1  *4 0  0  0  0  
-0  #1 0  0  0  0  0  0  0  0  
-0  #4 $4 0  0  1  !3 1  0  0  
-@2 0  0  0  0  0  >3 1  0  0  
------------------------------------------
->1 turn. Ship Type: Cruiser
->1: look from Y:1 X:1
-Enemy ship found at -> Y:0 X:0
-Friendly ship found at -> Y:0 X:1
-Friendly ship found at -> Y:1 X:0
-Enemy ship found at -> Y:1 X:2
-Friendly ship found at -> Y:2 X:1
->1 Ship move to Y:1 X:2 which destroyed $2
->1 Total Kill:3
-)3 >2 0  0  0  $3 0  0  0  0  
-!2 0  >1 0  *2 0  0  1  1  0  
-0  <2 0  0  $1 0  0  1  1  0  
-!1 *3 #2 0  0  0  0  0  @1 0  
-0  0  #3 0  1  *5 0  )1 0  @3 
-0  0  0  0  1  0  )2 *1 0  0  
-0  0  0  0  1  *4 0  0  0  0  
-0  #1 0  0  0  0  0  0  0  0  
-0  #4 $4 0  0  1  !3 1  0  0  
-@2 0  0  0  0  0  >3 1  0  0  
------------------------------------------
->1 upgraded to Destroyer!
-$2 Life remaining: 1
-$2 New location: Y->2 X->0
->2 turn. Ship Type: Cruiser
->2: look from Y:0 X:1
-Enemy ship found at -> Y:0 X:0
-Friendly ship found at -> Y:1 X:0
-Friendly ship found at -> Y:1 X:2
->2 Ship move to Y:0 X:0 which destroyed )3
->2 Total Kill:2
->2 0  0  0  0  $3 0  0  0  0  
-!2 0  >1 0  *2 0  0  1  1  0  
-$2 <2 0  0  $1 0  0  1  1  0  
-!1 *3 #2 0  0  0  0  0  @1 0  
-0  0  #3 0  1  *5 0  )1 0  @3 
-0  0  0  0  1  0  )2 *1 0  0  
-0  0  0  0  1  *4 0  0  0  0  
-0  #1 0  0  0  0  0  0  0  0  
-0  #4 $4 0  0  1  !3 1  0  0  
-@2 0  0  0  0  0  >3 1  0  0  
------------------------------------------
-)3 is removed from the battlefield. 
->3 turn. Ship Type: Cruiser
->3: look from Y:9 X:6
-Friendly ship found at -> Y:8 X:6
-Ship have nowhere to ram!
->3 Ship move to Y:9 X:5
->2 0  0  0  0  $3 0  0  0  0  
-!2 0  >1 0  *2 0  0  1  1  0  
-$2 <2 0  0  $1 0  0  1  1  0  
-!1 *3 #2 0  0  0  0  0  @1 0  
-0  0  #3 0  1  *5 0  )1 0  @3 
-0  0  0  0  1  0  )2 *1 0  0  
-0  0  0  0  1  *4 0  0  0  0  
-0  #1 0  0  0  0  0  0  0  0  
-0  #4 $4 0  0  1  !3 1  0  0  
-@2 0  0  0  0  >3 0  1  0  0  
------------------------------------------
-!1 turn. Ship Type: Amphibious
-!1: look from Y:3 X:0
-Enemy ship found at -> Y:2 X:0
-Friendly ship found at -> Y:2 X:1
-Enemy ship found at -> Y:3 X:1
-!1 Ship move to Y:4 X:0
-!1 Ship shoot at Y:7 X:2 which has no ship.
-!1 Ship shoot at Y:7 X:2 which has no ship.
->2 0  0  0  0  $3 0  0  0  0  
-!2 0  >1 0  *2 0  0  1  1  0  
-$2 <2 0  0  $1 0  0  1  1  0  
-0  *3 #2 0  0  0  0  0  @1 0  
-!1 0  #3 0  1  *5 0  )1 0  @3 
-0  0  0  0  1  0  )2 *1 0  0  
-0  0  0  0  1  *4 0  0  0  0  
-0  #1 0  0  0  0  0  0  0  0  
-0  #4 $4 0  0  1  !3 1  0  0  
-@2 0  0  0  0  >3 0  1  0  0  
------------------------------------------
-!2 turn. Ship Type: Amphibious
-!2: look from Y:1 X:0
-Friendly ship found at -> Y:0 X:0
-Enemy ship found at -> Y:2 X:0
-Friendly ship found at -> Y:2 X:1
-!2 Ship move to Y:1 X:1
-!2 Ship shoot at Y:3 X:3 which has no ship.
-!2 Ship shoot at Y:2 X:3 which has no ship.
->2 0  0  0  0  $3 0  0  0  0  
-0  !2 >1 0  *2 0  0  1  1  0  
-$2 <2 0  0  $1 0  0  1  1  0  
-0  *3 #2 0  0  0  0  0  @1 0  
-!1 0  #3 0  1  *5 0  )1 0  @3 
-0  0  0  0  1  0  )2 *1 0  0  
-0  0  0  0  1  *4 0  0  0  0  
-0  #1 0  0  0  0  0  0  0  0  
-0  #4 $4 0  0  1  !3 1  0  0  
-@2 0  0  0  0  >3 0  1  0  0  
------------------------------------------
-!3 turn. Ship Type: Amphibious
-!3: look from Y:8 X:6
-Friendly ship found at -> Y:9 X:5
-!3 Ship move to Y:7 X:6
-!3 Ship shoot at Y:9 X:9 which has no ship.
-!3 Ship shoot at Y:7 X:9 which has no ship.
->2 0  0  0  0  $3 0  0  0  0  
-0  !2 >1 0  *2 0  0  1  1  0  
-$2 <2 0  0  $1 0  0  1  1  0  
-0  *3 #2 0  0  0  0  0  @1 0  
-!1 0  #3 0  1  *5 0  )1 0  @3 
-0  0  0  0  1  0  )2 *1 0  0  
-0  0  0  0  1  *4 0  0  0  0  
-0  #1 0  0  0  0  !3 0  0  0  
-0  #4 $4 0  0  1  1  1  0  0  
-@2 0  0  0  0  >3 0  1  0  0  
------------------------------------------
-)1 turn. Ship Type: Supership
-)1: look from Y:4 X:7
-Enemy ship found at -> Y:3 X:8
-Friendly ship found at -> Y:5 X:6
-Enemy ship found at -> Y:5 X:7
-)1 Ship move to Y:5 X:7 which destroyed *1
-)1 Total Kill:6
-)1 Ship shoot at Y:4 X:8 which has no ship.
-)1 Ship shoot at Y:2 X:4 which destroyed $1
-)1 Total Kill:7
-)1 Ship shoot at Y:3 X:9 which has no ship.
->2 0  0  0  0  $3 0  0  0  0  
-0  !2 >1 0  *2 0  0  1  1  0  
-$2 <2 0  0  0  0  0  1  1  0  
-0  *3 #2 0  0  0  0  0  @1 0  
-!1 0  #3 0  1  *5 0  0  0  @3 
-0  0  0  0  1  0  )2 )1 0  0  
-0  0  0  0  1  *4 0  0  0  0  
-0  #1 0  0  0  0  !3 0  0  0  
-0  #4 $4 0  0  1  1  1  0  0  
-@2 0  0  0  0  >3 0  1  0  0  
------------------------------------------
-*1 Life remaining: 0
-*1 New location: Y->4 X->7
-$1 Life remaining: 1
-$1 New location: Y->5 X->5
-)2 turn. Ship Type: Supership
-)2: look from Y:5 X:6
-Enemy ship found at -> Y:4 X:5
-Enemy ship found at -> Y:4 X:7
-Enemy ship found at -> Y:5 X:5
-Friendly ship found at -> Y:5 X:7
-Enemy ship found at -> Y:6 X:5
-)2 Ship move to Y:5 X:5 which destroyed $1
-)2 Total Kill:4
-)2 Ship shoot at Y:3 X:3 which has no ship.
-)2 Ship shoot at Y:9 X:8 which has no ship.
-)2 Ship shoot at Y:6 X:6 which has no ship.
->2 0  0  0  0  $3 0  0  0  0  
-0  !2 >1 0  *2 0  0  1  1  0  
-$2 <2 0  0  0  0  0  1  1  0  
-0  *3 #2 0  0  0  0  0  @1 0  
-!1 0  #3 0  1  *5 0  *1 0  @3 
-0  0  0  0  1  )2 0  )1 0  0  
-0  0  0  0  1  *4 0  0  0  0  
-0  #1 0  0  0  0  !3 0  0  0  
-0  #4 $4 0  0  1  1  1  0  0  
-@2 0  0  0  0  >3 0  1  0  0  
------------------------------------------
-$1 Life remaining: 0
-$1 New location: Y->0 X->1
-*1 turn. Ship Type: Battleship
-*1: look from Y:4 X:7
-Friendly ship found at -> Y:3 X:8
-Enemy ship found at -> Y:5 X:7
-*1 Ship move to Y:4 X:8
-*1 Ship shoot at Y:7 X:8 which has no ship.
-*1 Ship shoot at Y:5 X:8 which has no ship.
->2 $1 0  0  0  $3 0  0  0  0  
-0  !2 >1 0  *2 0  0  1  1  0  
-$2 <2 0  0  0  0  0  1  1  0  
-0  *3 #2 0  0  0  0  0  @1 0  
-!1 0  #3 0  1  *5 0  0  *1 @3 
-0  0  0  0  1  )2 0  )1 0  0  
-0  0  0  0  1  *4 0  0  0  0  
-0  #1 0  0  0  0  !3 0  0  0  
-0  #4 $4 0  0  1  1  1  0  0  
-@2 0  0  0  0  >3 0  1  0  0  
------------------------------------------
-*2 turn. Ship Type: Battleship
-*2: look from Y:1 X:4
-Friendly ship found at -> Y:0 X:5
-*2 Ship move to Y:1 X:3
-*2 Ship shoot at Y:1 X:8 which has no ship.
-*2 Ship shoot at Y:3 X:5 which has no ship.
->2 $1 0  0  0  $3 0  0  0  0  
-0  !2 >1 *2 0  0  0  1  1  0  
-$2 <2 0  0  0  0  0  1  1  0  
-0  *3 #2 0  0  0  0  0  @1 0  
-!1 0  #3 0  1  *5 0  0  *1 @3 
-0  0  0  0  1  )2 0  )1 0  0  
-0  0  0  0  1  *4 0  0  0  0  
-0  #1 0  0  0  0  !3 0  0  0  
-0  #4 $4 0  0  1  1  1  0  0  
-@2 0  0  0  0  >3 0  1  0  0  
------------------------------------------
-*3 turn. Ship Type: Battleship
-*3: look from Y:3 X:1
-Friendly ship found at -> Y:2 X:0
-Enemy ship found at -> Y:2 X:1
-Friendly ship found at -> Y:3 X:2
-Enemy ship found at -> Y:4 X:0
-Friendly ship found at -> Y:4 X:2
-*3 Ship move to Y:4 X:1
-*3 Ship shoot at Y:4 X:4 which has no ship.
-*3 Ship shoot at Y:7 X:3 which has no ship.
->2 $1 0  0  0  $3 0  0  0  0  
-0  !2 >1 *2 0  0  0  1  1  0  
-$2 <2 0  0  0  0  0  1  1  0  
-0  0  #2 0  0  0  0  0  @1 0  
-!1 *3 #3 0  1  *5 0  0  *1 @3 
-0  0  0  0  1  )2 0  )1 0  0  
-0  0  0  0  1  *4 0  0  0  0  
-0  #1 0  0  0  0  !3 0  0  0  
-0  #4 $4 0  0  1  1  1  0  0  
-@2 0  0  0  0  >3 0  1  0  0  
------------------------------------------
-*4 turn. Ship Type: Battleship
-*4: look from Y:6 X:5
-Enemy ship found at -> Y:5 X:5
-Enemy ship found at -> Y:7 X:6
-*4 Ship move to Y:6 X:6
-*4 Ship shoot at Y:6 X:7 which has no ship.
-*4 Ship shoot at Y:7 X:6 which destroyed !3
-*4 Total Kill:1
->2 $1 0  0  0  $3 0  0  0  0  
-0  !2 >1 *2 0  0  0  1  1  0  
-$2 <2 0  0  0  0  0  1  1  0  
-0  0  #2 0  0  0  0  0  @1 0  
-!1 *3 #3 0  1  *5 0  0  *1 @3 
-0  0  0  0  1  )2 0  )1 0  0  
-0  0  0  0  1  0  *4 0  0  0  
-0  #1 0  0  0  0  0  0  0  0  
-0  #4 $4 0  0  1  1  1  0  0  
-@2 0  0  0  0  >3 0  1  0  0  
------------------------------------------
-!3 Life remaining: 2
-!3 New location: Y->2 X->5
-*5 turn. Ship Type: Battleship
-*5: look from Y:4 X:5
-Enemy ship found at -> Y:5 X:5
-*5 Ship move to Y:4 X:6
-*5 Ship shoot at Y:8 X:7 which has no ship.
-*5 Ship shoot at Y:6 X:7 which has no ship.
->2 $1 0  0  0  $3 0  0  0  0  
-0  !2 >1 *2 0  0  0  1  1  0  
-$2 <2 0  0  0  !3 0  1  1  0  
-0  0  #2 0  0  0  0  0  @1 0  
-!1 *3 #3 0  1  0  *5 0  *1 @3 
-0  0  0  0  1  )2 0  )1 0  0  
-0  0  0  0  1  0  *4 0  0  0  
-0  #1 0  0  0  0  0  0  0  0  
-0  #4 $4 0  0  1  1  1  0  0  
-@2 0  0  0  0  >3 0  1  0  0  
------------------------------------------
-$1 turn. Ship Type: Cruiser
-$1: look from Y:0 X:1
-Enemy ship found at -> Y:0 X:0
-Enemy ship found at -> Y:1 X:1
-Enemy ship found at -> Y:1 X:2
-$1 Ship move to Y:1 X:1 which destroyed !2
-$1 Total Kill:2
->2 0  0  0  0  $3 0  0  0  0  
-0  $1 >1 *2 0  0  0  1  1  0  
-$2 <2 0  0  0  !3 0  1  1  0  
-0  0  #2 0  0  0  0  0  @1 0  
-!1 *3 #3 0  1  0  *5 0  *1 @3 
-0  0  0  0  1  )2 0  )1 0  0  
-0  0  0  0  1  0  *4 0  0  0  
-0  #1 0  0  0  0  0  0  0  0  
-0  #4 $4 0  0  1  1  1  0  0  
-@2 0  0  0  0  >3 0  1  0  0  
------------------------------------------
-!2 Life remaining: 0
-!2 New location: Y->9 X->1
-$2 turn. Ship Type: Cruiser
-$2: look from Y:2 X:0
-Friendly ship found at -> Y:1 X:1
-Enemy ship found at -> Y:2 X:1
-$2 Ship move to Y:2 X:1 which destroyed <2
-$2 Total Kill:1
->2 0  0  0  0  $3 0  0  0  0  
-0  $1 >1 *2 0  0  0  1  1  0  
-0  $2 0  0  0  !3 0  1  1  0  
-0  0  #2 0  0  0  0  0  @1 0  
-!1 *3 #3 0  1  0  *5 0  *1 @3 
-0  0  0  0  1  )2 0  )1 0  0  
-0  0  0  0  1  0  *4 0  0  0  
-0  #1 0  0  0  0  0  0  0  0  
-0  #4 $4 0  0  1  1  1  0  0  
-@2 !2 0  0  0  >3 0  1  0  0  
------------------------------------------
-<2 Life remaining: 1
-<2 New location: Y->6 X->7
-$3 turn. Ship Type: Cruiser
-$3: look from Y:0 X:5
-Ship have nowhere to ram!
-$3 Ship move to Y:0 X:6
->2 0  0  0  0  0  $3 0  0  0  
-0  $1 >1 *2 0  0  0  1  1  0  
-0  $2 0  0  0  !3 0  1  1  0  
-0  0  #2 0  0  0  0  0  @1 0  
-!1 *3 #3 0  1  0  *5 0  *1 @3 
-0  0  0  0  1  )2 0  )1 0  0  
-0  0  0  0  1  0  *4 <2 0  0  
-0  #1 0  0  0  0  0  0  0  0  
-0  #4 $4 0  0  1  1  1  0  0  
-@2 !2 0  0  0  >3 0  1  0  0  
------------------------------------------
-$4 turn. Ship Type: Cruiser
-$4: look from Y:8 X:2
-Friendly ship found at -> Y:7 X:1
-Friendly ship found at -> Y:8 X:1
-Enemy ship found at -> Y:9 X:1
-Ship have nowhere to ram!
-$4 Ship move to Y:8 X:3
->2 0  0  0  0  0  $3 0  0  0  
-0  $1 >1 *2 0  0  0  1  1  0  
-0  $2 0  0  0  !3 0  1  1  0  
-0  0  #2 0  0  0  0  0  @1 0  
-!1 *3 #3 0  1  0  *5 0  *1 @3 
-0  0  0  0  1  )2 0  )1 0  0  
-0  0  0  0  1  0  *4 <2 0  0  
-0  #1 0  0  0  0  0  0  0  0  
-0  #4 0  $4 0  1  1  1  0  0  
-@2 !2 0  0  0  >3 0  1  0  0  
------------------------------------------
-#1 turn. Ship Type: Destroyer
-#1: look from Y:7 X:1
-Friendly ship found at -> Y:8 X:1
-Ship have nowhere to ram!
-#1 Ship move to Y:7 X:0
-#1 Ship shoot at Y:9 X:1 which destroyed !2
-#1 Total Kill:2
-#1 Ship shoot at Y:8 X:0 which has no ship.
->2 0  0  0  0  0  $3 0  0  0  
-0  $1 >1 *2 0  0  0  1  1  0  
-0  $2 0  0  0  !3 0  1  1  0  
-0  0  #2 0  0  0  0  0  @1 0  
-!1 *3 #3 0  1  0  *5 0  *1 @3 
-0  0  0  0  1  )2 0  )1 0  0  
-0  0  0  0  1  0  *4 <2 0  0  
-#1 0  0  0  0  0  0  0  0  0  
-0  #4 0  $4 0  1  1  1  0  0  
-@2 0  0  0  0  >3 0  1  0  0  
------------------------------------------
-!2 is removed from the battlefield. 
-#2 turn. Ship Type: Supership
-#2: look from Y:3 X:2
-Friendly ship found at -> Y:2 X:1
-Friendly ship found at -> Y:4 X:1
-Friendly ship found at -> Y:4 X:2
-Ship have nowhere to ram!
-#2 Ship move to Y:3 X:1
-#2 Ship shoot at Y:3 X:6 which has no ship.
-#2 Ship shoot at Y:3 X:7 which has no ship.
-#2 Ship shoot at Y:2 X:8 which has no ship.
->2 0  0  0  0  0  $3 0  0  0  
-0  $1 >1 *2 0  0  0  1  1  0  
-0  $2 0  0  0  !3 0  1  1  0  
-0  #2 0  0  0  0  0  0  @1 0  
-!1 *3 #3 0  1  0  *5 0  *1 @3 
-0  0  0  0  1  )2 0  )1 0  0  
-0  0  0  0  1  0  *4 <2 0  0  
-#1 0  0  0  0  0  0  0  0  0  
-0  #4 0  $4 0  1  1  1  0  0  
-@2 0  0  0  0  >3 0  1  0  0  
------------------------------------------
-#3 turn. Ship Type: Supership
-#3: look from Y:4 X:2
-Friendly ship found at -> Y:3 X:1
-Friendly ship found at -> Y:4 X:1
-Ship have nowhere to ram!
-#3 Ship move to Y:5 X:2
-#3 Ship shoot at Y:8 X:8 which has no ship.
-#3 Ship shoot at Y:6 X:4 which has no ship.
-#3 Ship shoot at Y:3 X:0 which has no ship.
->2 0  0  0  0  0  $3 0  0  0  
-0  $1 >1 *2 0  0  0  1  1  0  
-0  $2 0  0  0  !3 0  1  1  0  
-0  #2 0  0  0  0  0  0  @1 0  
-!1 *3 0  0  1  0  *5 0  *1 @3 
-0  0  #3 0  1  )2 0  )1 0  0  
-0  0  0  0  1  0  *4 <2 0  0  
-#1 0  0  0  0  0  0  0  0  0  
-0  #4 0  $4 0  1  1  1  0  0  
-@2 0  0  0  0  >3 0  1  0  0  
------------------------------------------
-#4 turn. Ship Type: Destroyer
-#4: look from Y:8 X:1
-Friendly ship found at -> Y:7 X:0
-Friendly ship found at -> Y:9 X:0
-Ship have nowhere to ram!
-#4 Ship move to Y:7 X:1
-#4 Ship shoot at Y:8 X:4 which has no ship.
-#4 Ship shoot at Y:7 X:3 which has no ship.
->2 0  0  0  0  0  $3 0  0  0  
-0  $1 >1 *2 0  0  0  1  1  0  
-0  $2 0  0  0  !3 0  1  1  0  
-0  #2 0  0  0  0  0  0  @1 0  
-!1 *3 0  0  1  0  *5 0  *1 @3 
-0  0  #3 0  1  )2 0  )1 0  0  
-0  0  0  0  1  0  *4 <2 0  0  
-#1 #4 0  0  0  0  0  0  0  0  
-0  0  0  $4 0  1  1  1  0  0  
-@2 0  0  0  0  >3 0  1  0  0  
------------------------------------------
-@1 turn. Ship Type: Frigate
-@1: From Y:3 X:8
-Switching shooting directions from DOWNRIGHT to DOWN since it is out of range/friendly ship.
-Switching shooting directions from DOWN to DOWNLEFT since it is out of range/friendly ship.
-@1 Ship shoot DOWNLEFT at Y:4 X:7 which has no ship.
->2 0  0  0  0  0  $3 0  0  0  
-0  $1 >1 *2 0  0  0  1  1  0  
-0  $2 0  0  0  !3 0  1  1  0  
-0  #2 0  0  0  0  0  0  @1 0  
-!1 *3 0  0  1  0  *5 0  *1 @3 
-0  0  #3 0  1  )2 0  )1 0  0  
-0  0  0  0  1  0  *4 <2 0  0  
-#1 #4 0  0  0  0  0  0  0  0  
-0  0  0  $4 0  1  1  1  0  0  
-@2 0  0  0  0  >3 0  1  0  0  
+@1 Ship shoot LEFT at Y:9 X:0 which has no ship.
+0  0  0  0  0  0  0  0  0  0  
+0  0  0  @2 0  &2 0  1  1  0  
+0  0  0  !2 0  0  0  1  1  !1 
+0  0  0  #1 0  0  0  0  0  0  
+0  0  0  0  1  0  0  0  #2 0  
+0  0  0  0  1  0  0  0  0  *1 
+0  0  0  <2 1  0  )3 0  0  0  
+0  )1 0  0  0  0  0  0  0  &1 
+<1 0  !3 0  0  1  1  1  0  0  
+0  @1 $1 0  0  0  0  1  0  0  
 -----------------------------------------
 @2 turn. Ship Type: Frigate
-@2: From Y:9 X:0
-@2 Ship shoot UPRIGHT at Y:8 X:1 which has no ship.
->2 0  0  0  0  0  $3 0  0  0  
-0  $1 >1 *2 0  0  0  1  1  0  
-0  $2 0  0  0  !3 0  1  1  0  
-0  #2 0  0  0  0  0  0  @1 0  
-!1 *3 0  0  1  0  *5 0  *1 @3 
-0  0  #3 0  1  )2 0  )1 0  0  
-0  0  0  0  1  0  *4 <2 0  0  
-#1 #4 0  0  0  0  0  0  0  0  
-0  0  0  $4 0  1  1  1  0  0  
-@2 0  0  0  0  >3 0  1  0  0  
+@2: From Y:1 X:3
+@2 Ship shoot RIGHT at Y:1 X:4 which has no ship.
+0  0  0  0  0  0  0  0  0  0  
+0  0  0  @2 0  &2 0  1  1  0  
+0  0  0  !2 0  0  0  1  1  !1 
+0  0  0  #1 0  0  0  0  0  0  
+0  0  0  0  1  0  0  0  #2 0  
+0  0  0  0  1  0  0  0  0  *1 
+0  0  0  <2 1  0  )3 0  0  0  
+0  )1 0  0  0  0  0  0  0  &1 
+<1 0  !3 0  0  1  1  1  0  0  
+0  @1 $1 0  0  0  0  1  0  0  
 -----------------------------------------
-@3 turn. Ship Type: Frigate
-@3: From Y:4 X:9
-Switching shooting directions from LEFT to UPLEFT since it is out of range/friendly ship.
-Switching shooting directions from UPLEFT to UP since it is out of range/friendly ship.
-@3 Ship shoot UP at Y:3 X:9 which has no ship.
->2 0  0  0  0  0  $3 0  0  0  
-0  $1 >1 *2 0  0  0  1  1  0  
-0  $2 0  0  0  !3 0  1  1  0  
-0  #2 0  0  0  0  0  0  @1 0  
-!1 *3 0  0  1  0  *5 0  *1 @3 
-0  0  #3 0  1  )2 0  )1 0  0  
-0  0  0  0  1  0  *4 <2 0  0  
-#1 #4 0  0  0  0  0  0  0  0  
-0  0  0  $4 0  1  1  1  0  0  
-@2 0  0  0  0  >3 0  1  0  0  
+&1 turn. Ship Type: Corvette
+&1: From Y:7 X:9
+&1 Ship shoot at Y:8 X:8 which has no ship.
+0  0  0  0  0  0  0  0  0  0  
+0  0  0  @2 0  &2 0  1  1  0  
+0  0  0  !2 0  0  0  1  1  !1 
+0  0  0  #1 0  0  0  0  0  0  
+0  0  0  0  1  0  0  0  #2 0  
+0  0  0  0  1  0  0  0  0  *1 
+0  0  0  <2 1  0  )3 0  0  0  
+0  )1 0  0  0  0  0  0  0  &1 
+<1 0  !3 0  0  1  1  1  0  0  
+0  @1 $1 0  0  0  0  1  0  0  
 -----------------------------------------
+&2 turn. Ship Type: Corvette
+&2: From Y:1 X:5
+&2 Ship shoot at Y:0 X:5 which has no ship.
+0  0  0  0  0  0  0  0  0  0  
+0  0  0  @2 0  &2 0  1  1  0  
+0  0  0  !2 0  0  0  1  1  !1 
+0  0  0  #1 0  0  0  0  0  0  
+0  0  0  0  1  0  0  0  #2 0  
+0  0  0  0  1  0  0  0  0  *1 
+0  0  0  <2 1  0  )3 0  0  0  
+0  )1 0  0  0  0  0  0  0  &1 
+<1 0  !3 0  0  1  1  1  0  0  
+0  @1 $1 0  0  0  0  1  0  0  
+-----------------------------------------
+<1 turn. Ship Type: Battleship
+<1: look from Y:8 X:0
+Enemy ship found at -> Y:7 X:1
+Enemy ship found at -> Y:9 X:1
+<1 Ship move to Y:9 X:0
+<1 Ship shoot at Y:9 X:4 which has no ship.
+<1 Ship shoot at Y:9 X:2 which destroyed $1
+<1 Total Kill:2
+0  0  0  0  0  0  0  0  0  0  
+0  0  0  @2 0  &2 0  1  1  0  
+0  0  0  !2 0  0  0  1  1  !1 
+0  0  0  #1 0  0  0  0  0  0  
+0  0  0  0  1  0  0  0  #2 0  
+0  0  0  0  1  0  0  0  0  *1 
+0  0  0  <2 1  0  )3 0  0  0  
+0  )1 0  0  0  0  0  0  0  &1 
+0  0  !3 0  0  1  1  1  0  0  
+<1 @1 0  0  0  0  0  1  0  0  
+-----------------------------------------
+$1 Life remaining: 0
+$1 New location: Y->0 X->9
 <2 turn. Ship Type: Battleship
-<2: look from Y:6 X:7
-Enemy ship found at -> Y:5 X:7
-Enemy ship found at -> Y:6 X:6
-<2 Ship move to Y:7 X:7
-<2 Ship shoot at Y:8 X:8 which has no ship.
-<2 Ship shoot at Y:8 X:9 which has no ship.
->2 0  0  0  0  0  $3 0  0  0  
-0  $1 >1 *2 0  0  0  1  1  0  
-0  $2 0  0  0  !3 0  1  1  0  
-0  #2 0  0  0  0  0  0  @1 0  
-!1 *3 0  0  1  0  *5 0  *1 @3 
-0  0  #3 0  1  )2 0  )1 0  0  
-0  0  0  0  1  0  *4 0  0  0  
-#1 #4 0  0  0  0  0  <2 0  0  
-0  0  0  $4 0  1  1  1  0  0  
-@2 0  0  0  0  >3 0  1  0  0  
------------------------------------------
->1 turn. Ship Type: Destroyer
->1: look from Y:1 X:2
-Enemy ship found at -> Y:1 X:1
-Enemy ship found at -> Y:1 X:3
-Enemy ship found at -> Y:2 X:1
->1 Ship move to Y:1 X:3 which destroyed *2
->1 Total Kill:1
->1 Ship shoot at Y:1 X:8 which has no ship.
->1 Ship shoot at Y:4 X:4 which has no ship.
->2 0  0  0  0  0  $3 0  0  0  
-0  $1 0  >1 0  0  0  1  1  0  
-0  $2 0  0  0  !3 0  1  1  0  
-0  #2 0  0  0  0  0  0  @1 0  
-!1 *3 0  0  1  0  *5 0  *1 @3 
-0  0  #3 0  1  )2 0  )1 0  0  
-0  0  0  0  1  0  *4 0  0  0  
-#1 #4 0  0  0  0  0  <2 0  0  
-0  0  0  $4 0  1  1  1  0  0  
-@2 0  0  0  0  >3 0  1  0  0  
------------------------------------------
-*2 Life remaining: 0
-*2 New location: Y->9 X->1
->2 turn. Ship Type: Cruiser
->2: look from Y:0 X:0
-Enemy ship found at -> Y:1 X:1
-Ship have nowhere to ram!
->2 Ship move to Y:1 X:0
-0  0  0  0  0  0  $3 0  0  0  
->2 $1 0  >1 0  0  0  1  1  0  
-0  $2 0  0  0  !3 0  1  1  0  
-0  #2 0  0  0  0  0  0  @1 0  
-!1 *3 0  0  1  0  *5 0  *1 @3 
-0  0  #3 0  1  )2 0  )1 0  0  
-0  0  0  0  1  0  *4 0  0  0  
-#1 #4 0  0  0  0  0  <2 0  0  
-0  0  0  $4 0  1  1  1  0  0  
-@2 *2 0  0  0  >3 0  1  0  0  
------------------------------------------
->3 turn. Ship Type: Cruiser
->3: look from Y:9 X:5
-Ship have nowhere to ram!
->3 Ship move to Y:9 X:4
-0  0  0  0  0  0  $3 0  0  0  
->2 $1 0  >1 0  0  0  1  1  0  
-0  $2 0  0  0  !3 0  1  1  0  
-0  #2 0  0  0  0  0  0  @1 0  
-!1 *3 0  0  1  0  *5 0  *1 @3 
-0  0  #3 0  1  )2 0  )1 0  0  
-0  0  0  0  1  0  *4 0  0  0  
-#1 #4 0  0  0  0  0  <2 0  0  
-0  0  0  $4 0  1  1  1  0  0  
-@2 *2 0  0  >3 0  0  1  0  0  
+<2: look from Y:6 X:3
+<2 Ship move to Y:7 X:3
+<2 Ship shoot at Y:7 X:5 which has no ship.
+<2 Ship shoot at Y:9 X:3 which has no ship.
+0  0  0  0  0  0  0  0  0  $1 
+0  0  0  @2 0  &2 0  1  1  0  
+0  0  0  !2 0  0  0  1  1  !1 
+0  0  0  #1 0  0  0  0  0  0  
+0  0  0  0  1  0  0  0  #2 0  
+0  0  0  0  1  0  0  0  0  *1 
+0  0  0  0  1  0  )3 0  0  0  
+0  )1 0  <2 0  0  0  0  0  &1 
+0  0  !3 0  0  1  1  1  0  0  
+<1 @1 0  0  0  0  0  1  0  0  
 -----------------------------------------
 !1 turn. Ship Type: Amphibious
-!1: look from Y:4 X:0
-Enemy ship found at -> Y:3 X:1
-Enemy ship found at -> Y:4 X:1
-!1 Ship move to Y:3 X:0
-!1 Ship shoot at Y:6 X:0 which has no ship.
-!1 Ship shoot at Y:5 X:0 which has no ship.
-0  0  0  0  0  0  $3 0  0  0  
->2 $1 0  >1 0  0  0  1  1  0  
-0  $2 0  0  0  !3 0  1  1  0  
-!1 #2 0  0  0  0  0  0  @1 0  
-0  *3 0  0  1  0  *5 0  *1 @3 
-0  0  #3 0  1  )2 0  )1 0  0  
-0  0  0  0  1  0  *4 0  0  0  
-#1 #4 0  0  0  0  0  <2 0  0  
-0  0  0  $4 0  1  1  1  0  0  
-@2 *2 0  0  >3 0  0  1  0  0  
+!1: look from Y:2 X:9
+!1 Ship move to Y:1 X:9
+!1 Ship shoot at Y:3 X:9 which has no ship.
+!1 Ship shoot at Y:5 X:9 which destroyed *1
+!1 Total Kill:1
+0  0  0  0  0  0  0  0  0  $1 
+0  0  0  @2 0  &2 0  1  1  !1 
+0  0  0  !2 0  0  0  1  1  0  
+0  0  0  #1 0  0  0  0  0  0  
+0  0  0  0  1  0  0  0  #2 0  
+0  0  0  0  1  0  0  0  0  0  
+0  0  0  0  1  0  )3 0  0  0  
+0  )1 0  <2 0  0  0  0  0  &1 
+0  0  !3 0  0  1  1  1  0  0  
+<1 @1 0  0  0  0  0  1  0  0  
 -----------------------------------------
+*1 Life remaining: 2
+*1 New location: Y->6 X->3
+!2 turn. Ship Type: Amphibious
+!2: look from Y:2 X:3
+Enemy ship found at -> Y:1 X:3
+Enemy ship found at -> Y:3 X:3
+!2 Ship move to Y:2 X:4
+!2 Ship shoot at Y:5 X:4 which has no ship.
+!2 Ship shoot at Y:2 X:9 which has no ship.
+0  0  0  0  0  0  0  0  0  $1 
+0  0  0  @2 0  &2 0  1  1  !1 
+0  0  0  0  !2 0  0  1  1  0  
+0  0  0  #1 0  0  0  0  0  0  
+0  0  0  0  1  0  0  0  #2 0  
+0  0  0  0  1  0  0  0  0  0  
+0  0  0  *1 1  0  )3 0  0  0  
+0  )1 0  <2 0  0  0  0  0  &1 
+0  0  !3 0  0  1  1  1  0  0  
+<1 @1 0  0  0  0  0  1  0  0  
+-----------------------------------------
+!3 turn. Ship Type: Amphibious
+!3: look from Y:8 X:2
+Enemy ship found at -> Y:7 X:1
+Friendly ship found at -> Y:7 X:3
+Enemy ship found at -> Y:9 X:1
+!3 Ship move to Y:8 X:1
+!3 Ship shoot at Y:8 X:6 which has no ship.
+!3 Ship shoot at Y:9 X:1 which destroyed @1
+!3 Total Kill:1
+0  0  0  0  0  0  0  0  0  $1 
+0  0  0  @2 0  &2 0  1  1  !1 
+0  0  0  0  !2 0  0  1  1  0  
+0  0  0  #1 0  0  0  0  0  0  
+0  0  0  0  1  0  0  0  #2 0  
+0  0  0  0  1  0  0  0  0  0  
+0  0  0  *1 1  0  )3 0  0  0  
+0  )1 0  <2 0  0  0  0  0  &1 
+0  !3 0  0  0  1  1  1  0  0  
+<1 0  0  0  0  0  0  1  0  0  
+-----------------------------------------
+@1 Life remaining: 1
+@1 New location: Y->8 X->2
+)1 turn. Ship Type: Supership
+)1: look from Y:7 X:1
+Enemy ship found at -> Y:8 X:1
+Enemy ship found at -> Y:8 X:2
+)1 Ship move to Y:8 X:1 which destroyed !3
+)1 Total Kill:2
+)1 Ship shoot at Y:3 X:9 which has no ship.
+)1 Ship shoot at Y:7 X:0 which has no ship.
+)1 Ship shoot at Y:8 X:4 which has no ship.
+0  0  0  0  0  0  0  0  0  $1 
+0  0  0  @2 0  &2 0  1  1  !1 
+0  0  0  0  !2 0  0  1  1  0  
+0  0  0  #1 0  0  0  0  0  0  
+0  0  0  0  1  0  0  0  #2 0  
+0  0  0  0  1  0  0  0  0  0  
+0  0  0  *1 1  0  )3 0  0  0  
+0  0  0  <2 0  0  0  0  0  &1 
+0  )1 @1 0  0  1  1  1  0  0  
+<1 0  0  0  0  0  0  1  0  0  
+-----------------------------------------
+!3 Life remaining: 1
+!3 New location: Y->9 X->1
+)3 turn. Ship Type: Supership
+)3: look from Y:6 X:6
+Ship have nowhere to ram!
+)3 Ship move to Y:6 X:7
+)3 Ship shoot at Y:0 X:0 which has no ship.
+)3 Ship shoot at Y:7 X:5 which has no ship.
+)3 Ship shoot at Y:2 X:1 which has no ship.
+0  0  0  0  0  0  0  0  0  $1 
+0  0  0  @2 0  &2 0  1  1  !1 
+0  0  0  0  !2 0  0  1  1  0  
+0  0  0  #1 0  0  0  0  0  0  
+0  0  0  0  1  0  0  0  #2 0  
+0  0  0  0  1  0  0  0  0  0  
+0  0  0  *1 1  0  0  )3 0  0  
+0  0  0  <2 0  0  0  0  0  &1 
+0  )1 @1 0  0  1  1  1  0  0  
+<1 !3 0  0  0  0  0  1  0  0  
+-----------------------------------------
+*1 turn. Ship Type: Battleship
+*1: look from Y:6 X:3
+Enemy ship found at -> Y:7 X:3
+*1 Ship move to Y:5 X:3
+*1 Ship shoot at Y:8 X:5 which has no ship.
+*1 Ship shoot at Y:5 X:6 which has no ship.
+0  0  0  0  0  0  0  0  0  $1 
+0  0  0  @2 0  &2 0  1  1  !1 
+0  0  0  0  !2 0  0  1  1  0  
+0  0  0  #1 0  0  0  0  0  0  
+0  0  0  0  1  0  0  0  #2 0  
+0  0  0  *1 1  0  0  0  0  0  
+0  0  0  0  1  0  0  )3 0  0  
+0  0  0  <2 0  0  0  0  0  &1 
+0  )1 @1 0  0  1  1  1  0  0  
+<1 !3 0  0  0  0  0  1  0  0  
+-----------------------------------------
+$1 turn. Ship Type: Cruiser
+$1: look from Y:0 X:9
+Enemy ship found at -> Y:1 X:9
+$1 Ship move to Y:1 X:9 which destroyed !1
+$1 Total Kill:3
+0  0  0  0  0  0  0  0  0  0  
+0  0  0  @2 0  &2 0  1  1  $1 
+0  0  0  0  !2 0  0  1  1  0  
+0  0  0  #1 0  0  0  0  0  0  
+0  0  0  0  1  0  0  0  #2 0  
+0  0  0  *1 1  0  0  0  0  0  
+0  0  0  0  1  0  0  )3 0  0  
+0  0  0  <2 0  0  0  0  0  &1 
+0  )1 @1 0  0  1  1  1  0  0  
+<1 !3 0  0  0  0  0  1  0  0  
+-----------------------------------------
+$1 upgraded to Destroyer!
+!1 Life remaining: 2
+!1 New location: Y->7 X->1
+#1 turn. Ship Type: Supership
+#1: look from Y:3 X:3
+Enemy ship found at -> Y:2 X:4
+Ship have nowhere to ram!
+#1 Ship move to Y:2 X:3
+#1 Ship shoot at Y:5 X:6 which has no ship.
+#1 Ship shoot at Y:3 X:9 which has no ship.
+#1 Ship shoot at Y:1 X:8 which has no ship.
+0  0  0  0  0  0  0  0  0  0  
+0  0  0  @2 0  &2 0  1  1  $1 
+0  0  0  #1 !2 0  0  1  1  0  
+0  0  0  0  0  0  0  0  0  0  
+0  0  0  0  1  0  0  0  #2 0  
+0  0  0  *1 1  0  0  0  0  0  
+0  0  0  0  1  0  0  )3 0  0  
+0  !1 0  <2 0  0  0  0  0  &1 
+0  )1 @1 0  0  1  1  1  0  0  
+<1 !3 0  0  0  0  0  1  0  0  
+-----------------------------------------
+#2 turn. Ship Type: Supership
+#2: look from Y:4 X:8
+Ship have nowhere to ram!
+#2 Ship move to Y:4 X:9
+#2 Ship shoot at Y:2 X:2 which has no ship.
+#2 Ship shoot at Y:6 X:0 which has no ship.
+#2 Ship shoot at Y:1 X:5 which destroyed &2
+#2 Total Kill:1
+0  0  0  0  0  0  0  0  0  0  
+0  0  0  @2 0  0  0  1  1  $1 
+0  0  0  #1 !2 0  0  1  1  0  
+0  0  0  0  0  0  0  0  0  0  
+0  0  0  0  1  0  0  0  0  #2 
+0  0  0  *1 1  0  0  0  0  0  
+0  0  0  0  1  0  0  )3 0  0  
+0  !1 0  <2 0  0  0  0  0  &1 
+0  )1 @1 0  0  1  1  1  0  0  
+<1 !3 0  0  0  0  0  1  0  0  
+-----------------------------------------
+&2 Life remaining: 2
+&2 New location: Y->6 X->3
+@1 turn. Ship Type: Frigate
+@1: From Y:8 X:2
+@1 Ship shoot UPLEFT at Y:7 X:1 which destroyed !1
+@1 Total Kill:2
+0  0  0  0  0  0  0  0  0  0  
+0  0  0  @2 0  0  0  1  1  $1 
+0  0  0  #1 !2 0  0  1  1  0  
+0  0  0  0  0  0  0  0  0  0  
+0  0  0  0  1  0  0  0  0  #2 
+0  0  0  *1 1  0  0  0  0  0  
+0  0  0  &2 1  0  0  )3 0  0  
+0  0  0  <2 0  0  0  0  0  &1 
+0  )1 @1 0  0  1  1  1  0  0  
+<1 !3 0  0  0  0  0  1  0  0  
+-----------------------------------------
+!1 Life remaining: 1
+!1 New location: Y->7 X->1
+@2 turn. Ship Type: Frigate
+@2: From Y:1 X:3
+@2 Ship shoot DOWNRIGHT at Y:2 X:4 which destroyed !2
+@2 Total Kill:1
+0  0  0  0  0  0  0  0  0  0  
+0  0  0  @2 0  0  0  1  1  $1 
+0  0  0  #1 0  0  0  1  1  0  
+0  0  0  0  0  0  0  0  0  0  
+0  0  0  0  1  0  0  0  0  #2 
+0  0  0  *1 1  0  0  0  0  0  
+0  0  0  &2 1  0  0  )3 0  0  
+0  !1 0  <2 0  0  0  0  0  &1 
+0  )1 @1 0  0  1  1  1  0  0  
+<1 !3 0  0  0  0  0  1  0  0  
+-----------------------------------------
+!2 Life remaining: 2
+!2 New location: Y->0 X->9
+&1 turn. Ship Type: Corvette
+&1: From Y:7 X:9
+&1 Ship shoot at Y:7 X:8 which has no ship.
+0  0  0  0  0  0  0  0  0  !2 
+0  0  0  @2 0  0  0  1  1  $1 
+0  0  0  #1 0  0  0  1  1  0  
+0  0  0  0  0  0  0  0  0  0  
+0  0  0  0  1  0  0  0  0  #2 
+0  0  0  *1 1  0  0  0  0  0  
+0  0  0  &2 1  0  0  )3 0  0  
+0  !1 0  <2 0  0  0  0  0  &1 
+0  )1 @1 0  0  1  1  1  0  0  
+<1 !3 0  0  0  0  0  1  0  0  
+-----------------------------------------
+&2 turn. Ship Type: Corvette
+&2: From Y:6 X:3
+&2 Ship shoot at Y:5 X:2 which has no ship.
+0  0  0  0  0  0  0  0  0  !2 
+0  0  0  @2 0  0  0  1  1  $1 
+0  0  0  #1 0  0  0  1  1  0  
+0  0  0  0  0  0  0  0  0  0  
+0  0  0  0  1  0  0  0  0  #2 
+0  0  0  *1 1  0  0  0  0  0  
+0  0  0  &2 1  0  0  )3 0  0  
+0  !1 0  <2 0  0  0  0  0  &1 
+0  )1 @1 0  0  1  1  1  0  0  
+<1 !3 0  0  0  0  0  1  0  0  
+-----------------------------------------
+<1 turn. Ship Type: Battleship
+<1: look from Y:9 X:0
+Enemy ship found at -> Y:8 X:1
+Friendly ship found at -> Y:9 X:1
+<1 Ship move to Y:8 X:0
+<1 Ship shoot at Y:8 X:1 which destroyed )1
+<1 Total Kill:3
+<1 Ship shoot at Y:9 X:3 which has no ship.
+0  0  0  0  0  0  0  0  0  !2 
+0  0  0  @2 0  0  0  1  1  $1 
+0  0  0  #1 0  0  0  1  1  0  
+0  0  0  0  0  0  0  0  0  0  
+0  0  0  0  1  0  0  0  0  #2 
+0  0  0  *1 1  0  0  0  0  0  
+0  0  0  &2 1  0  0  )3 0  0  
+0  !1 0  <2 0  0  0  0  0  &1 
+<1 0  @1 0  0  1  1  1  0  0  
+0  !3 0  0  0  0  0  1  0  0  
+-----------------------------------------
+)1 Life remaining: 2
+)1 New location: Y->9 X->2
+<2 turn. Ship Type: Battleship
+<2: look from Y:7 X:3
+Friendly ship found at -> Y:6 X:3
+Enemy ship found at -> Y:8 X:2
+<2 Ship move to Y:7 X:4
+<2 Ship shoot at Y:8 X:5 which has no ship.
+<2 Ship shoot at Y:7 X:6 which has no ship.
+0  0  0  0  0  0  0  0  0  !2 
+0  0  0  @2 0  0  0  1  1  $1 
+0  0  0  #1 0  0  0  1  1  0  
+0  0  0  0  0  0  0  0  0  0  
+0  0  0  0  1  0  0  0  0  #2 
+0  0  0  *1 1  0  0  0  0  0  
+0  0  0  &2 1  0  0  )3 0  0  
+0  !1 0  0  <2 0  0  0  0  &1 
+<1 0  @1 0  0  1  1  1  0  0  
+0  !3 )1 0  0  0  0  1  0  0  
+-----------------------------------------
+!1 turn. Ship Type: Amphibious
+!1: look from Y:7 X:1
+Friendly ship found at -> Y:8 X:0
+Enemy ship found at -> Y:8 X:2
+!1 Ship move to Y:6 X:1
+!1 Ship shoot at Y:8 X:3 which has no ship.
+!1 Ship shoot at Y:6 X:2 which has no ship.
+0  0  0  0  0  0  0  0  0  !2 
+0  0  0  @2 0  0  0  1  1  $1 
+0  0  0  #1 0  0  0  1  1  0  
+0  0  0  0  0  0  0  0  0  0  
+0  0  0  0  1  0  0  0  0  #2 
+0  0  0  *1 1  0  0  0  0  0  
+0  !1 0  &2 1  0  0  )3 0  0  
+0  0  0  0  <2 0  0  0  0  &1 
+<1 0  @1 0  0  1  1  1  0  0  
+0  !3 )1 0  0  0  0  1  0  0  
+-----------------------------------------
+!2 turn. Ship Type: Amphibious
+!2: look from Y:0 X:9
+Enemy ship found at -> Y:1 X:9
+!2 Ship move to Y:0 X:8
+!2 Ship shoot at Y:1 X:8 which has no ship.
+!2 Ship shoot at Y:2 X:9 which has no ship.
+0  0  0  0  0  0  0  0  !2 0  
+0  0  0  @2 0  0  0  1  1  $1 
+0  0  0  #1 0  0  0  1  1  0  
+0  0  0  0  0  0  0  0  0  0  
+0  0  0  0  1  0  0  0  0  #2 
+0  0  0  *1 1  0  0  0  0  0  
+0  !1 0  &2 1  0  0  )3 0  0  
+0  0  0  0  <2 0  0  0  0  &1 
+<1 0  @1 0  0  1  1  1  0  0  
+0  !3 )1 0  0  0  0  1  0  0  
+-----------------------------------------
+!3 turn. Ship Type: Amphibious
+!3: look from Y:9 X:1
+Friendly ship found at -> Y:8 X:0
+Enemy ship found at -> Y:8 X:2
+Enemy ship found at -> Y:9 X:2
+!3 Ship move to Y:8 X:1
+!3 Ship shoot at Y:9 X:2 which destroyed )1
+!3 Total Kill:2
+!3 Ship shoot at Y:8 X:4 which has no ship.
+0  0  0  0  0  0  0  0  !2 0  
+0  0  0  @2 0  0  0  1  1  $1 
+0  0  0  #1 0  0  0  1  1  0  
+0  0  0  0  0  0  0  0  0  0  
+0  0  0  0  1  0  0  0  0  #2 
+0  0  0  *1 1  0  0  0  0  0  
+0  !1 0  &2 1  0  0  )3 0  0  
+0  0  0  0  <2 0  0  0  0  &1 
+<1 !3 @1 0  0  1  1  1  0  0  
+0  0  0  0  0  0  0  1  0  0  
+-----------------------------------------
+)1 Life remaining: 1
+)1 New location: Y->9 X->1
+)1 turn. Ship Type: Supership
+)1: look from Y:9 X:1
+Enemy ship found at -> Y:8 X:0
+Enemy ship found at -> Y:8 X:1
+Enemy ship found at -> Y:8 X:2
+)1 Ship move to Y:8 X:1 which destroyed !3
+)1 Total Kill:3
+)1 Ship shoot at Y:0 X:0 which has no ship.
+)1 Ship shoot at Y:5 X:1 which has no ship.
+)1 Ship shoot at Y:8 X:7 which has no ship.
+0  0  0  0  0  0  0  0  !2 0  
+0  0  0  @2 0  0  0  1  1  $1 
+0  0  0  #1 0  0  0  1  1  0  
+0  0  0  0  0  0  0  0  0  0  
+0  0  0  0  1  0  0  0  0  #2 
+0  0  0  *1 1  0  0  0  0  0  
+0  !1 0  &2 1  0  0  )3 0  0  
+0  0  0  0  <2 0  0  0  0  &1 
+<1 )1 @1 0  0  1  1  1  0  0  
+0  0  0  0  0  0  0  1  0  0  
+-----------------------------------------
+!3 Life remaining: 0
+!3 New location: Y->9 X->1
+)3 turn. Ship Type: Supership
+)3: look from Y:6 X:7
+Ship have nowhere to ram!
+)3 Ship move to Y:5 X:7
+)3 Ship shoot at Y:1 X:2 which has no ship.
+)3 Ship shoot at Y:5 X:5 which has no ship.
+)3 Ship shoot at Y:1 X:3 which destroyed @2
+)3 Total Kill:2
+0  0  0  0  0  0  0  0  !2 0  
+0  0  0  0  0  0  0  1  1  $1 
+0  0  0  #1 0  0  0  1  1  0  
+0  0  0  0  0  0  0  0  0  0  
+0  0  0  0  1  0  0  0  0  #2 
+0  0  0  *1 1  0  0  )3 0  0  
+0  !1 0  &2 1  0  0  0  0  0  
+0  0  0  0  <2 0  0  0  0  &1 
+<1 )1 @1 0  0  1  1  1  0  0  
+0  !3 0  0  0  0  0  1  0  0  
+-----------------------------------------
+@2 Life remaining: 2
+@2 New location: Y->7 X->1
+*1 turn. Ship Type: Battleship
+*1: look from Y:5 X:3
+Enemy ship found at -> Y:6 X:3
+*1 Ship move to Y:5 X:2
+*1 Ship shoot at Y:5 X:5 which has no ship.
+*1 Ship shoot at Y:7 X:3 which has no ship.
+0  0  0  0  0  0  0  0  !2 0  
+0  0  0  0  0  0  0  1  1  $1 
+0  0  0  #1 0  0  0  1  1  0  
+0  0  0  0  0  0  0  0  0  0  
+0  0  0  0  1  0  0  0  0  #2 
+0  0  *1 0  1  0  0  )3 0  0  
+0  !1 0  &2 1  0  0  0  0  0  
+0  @2 0  0  <2 0  0  0  0  &1 
+<1 )1 @1 0  0  1  1  1  0  0  
+0  !3 0  0  0  0  0  1  0  0  
+-----------------------------------------
+$1 turn. Ship Type: Destroyer
+$1: look from Y:1 X:9
+Enemy ship found at -> Y:0 X:8
+Ship have nowhere to ram!
+$1 Ship move to Y:2 X:9
+$1 Ship shoot at Y:6 X:9 which has no ship.
+$1 Ship shoot at Y:3 X:9 which has no ship.
+0  0  0  0  0  0  0  0  !2 0  
+0  0  0  0  0  0  0  1  1  0  
+0  0  0  #1 0  0  0  1  1  $1 
+0  0  0  0  0  0  0  0  0  0  
+0  0  0  0  1  0  0  0  0  #2 
+0  0  *1 0  1  0  0  )3 0  0  
+0  !1 0  &2 1  0  0  0  0  0  
+0  @2 0  0  <2 0  0  0  0  &1 
+<1 )1 @1 0  0  1  1  1  0  0  
+0  !3 0  0  0  0  0  1  0  0  
+-----------------------------------------
+#1 turn. Ship Type: Supership
+#1: look from Y:2 X:3
+Ship have nowhere to ram!
+#1 Ship move to Y:3 X:3
+#1 Ship shoot at Y:3 X:5 which has no ship.
+#1 Ship shoot at Y:0 X:0 which has no ship.
+#1 Ship shoot at Y:1 X:2 which has no ship.
+0  0  0  0  0  0  0  0  !2 0  
+0  0  0  0  0  0  0  1  1  0  
+0  0  0  0  0  0  0  1  1  $1 
+0  0  0  #1 0  0  0  0  0  0  
+0  0  0  0  1  0  0  0  0  #2 
+0  0  *1 0  1  0  0  )3 0  0  
+0  !1 0  &2 1  0  0  0  0  0  
+0  @2 0  0  <2 0  0  0  0  &1 
+<1 )1 @1 0  0  1  1  1  0  0  
+0  !3 0  0  0  0  0  1  0  0  
+-----------------------------------------
+#2 turn. Ship Type: Supership
+#2: look from Y:4 X:9
+Ship have nowhere to ram!
+#2 Ship move to Y:4 X:8
+#2 Ship shoot at Y:2 X:6 which has no ship.
+#2 Ship shoot at Y:6 X:5 which has no ship.
+#2 Ship shoot at Y:2 X:2 which has no ship.
+0  0  0  0  0  0  0  0  !2 0  
+0  0  0  0  0  0  0  1  1  0  
+0  0  0  0  0  0  0  1  1  $1 
+0  0  0  #1 0  0  0  0  0  0  
+0  0  0  0  1  0  0  0  #2 0  
+0  0  *1 0  1  0  0  )3 0  0  
+0  !1 0  &2 1  0  0  0  0  0  
+0  @2 0  0  <2 0  0  0  0  &1 
+<1 )1 @1 0  0  1  1  1  0  0  
+0  !3 0  0  0  0  0  1  0  0  
+-----------------------------------------
+@1 turn. Ship Type: Frigate
+@1: From Y:8 X:2
+@1 Ship shoot UP at Y:7 X:2 which has no ship.
+0  0  0  0  0  0  0  0  !2 0  
+0  0  0  0  0  0  0  1  1  0  
+0  0  0  0  0  0  0  1  1  $1 
+0  0  0  #1 0  0  0  0  0  0  
+0  0  0  0  1  0  0  0  #2 0  
+0  0  *1 0  1  0  0  )3 0  0  
+0  !1 0  &2 1  0  0  0  0  0  
+0  @2 0  0  <2 0  0  0  0  &1 
+<1 )1 @1 0  0  1  1  1  0  0  
+0  !3 0  0  0  0  0  1  0  0  
+-----------------------------------------
+@2 turn. Ship Type: Frigate
+@2: From Y:7 X:1
+@2 Ship shoot DOWN at Y:8 X:1 which destroyed )1
+@2 Total Kill:2
+0  0  0  0  0  0  0  0  !2 0  
+0  0  0  0  0  0  0  1  1  0  
+0  0  0  0  0  0  0  1  1  $1 
+0  0  0  #1 0  0  0  0  0  0  
+0  0  0  0  1  0  0  0  #2 0  
+0  0  *1 0  1  0  0  )3 0  0  
+0  !1 0  &2 1  0  0  0  0  0  
+0  @2 0  0  <2 0  0  0  0  &1 
+<1 0  @1 0  0  1  1  1  0  0  
+0  !3 0  0  0  0  0  1  0  0  
+-----------------------------------------
+)1 Life remaining: 0
+)1 New location: Y->0 X->9
+&1 turn. Ship Type: Corvette
+&1: From Y:7 X:9
+&1 Ship shoot at Y:8 X:8 which has no ship.
+0  0  0  0  0  0  0  0  !2 )1 
+0  0  0  0  0  0  0  1  1  0  
+0  0  0  0  0  0  0  1  1  $1 
+0  0  0  #1 0  0  0  0  0  0  
+0  0  0  0  1  0  0  0  #2 0  
+0  0  *1 0  1  0  0  )3 0  0  
+0  !1 0  &2 1  0  0  0  0  0  
+0  @2 0  0  <2 0  0  0  0  &1 
+<1 0  @1 0  0  1  1  1  0  0  
+0  !3 0  0  0  0  0  1  0  0  
+-----------------------------------------
+&2 turn. Ship Type: Corvette
+&2: From Y:6 X:3
+&2 Ship shoot at Y:6 X:2 which has no ship.
+0  0  0  0  0  0  0  0  !2 )1 
+0  0  0  0  0  0  0  1  1  0  
+0  0  0  0  0  0  0  1  1  $1 
+0  0  0  #1 0  0  0  0  0  0  
+0  0  0  0  1  0  0  0  #2 0  
+0  0  *1 0  1  0  0  )3 0  0  
+0  !1 0  &2 1  0  0  0  0  0  
+0  @2 0  0  <2 0  0  0  0  &1 
+<1 0  @1 0  0  1  1  1  0  0  
+0  !3 0  0  0  0  0  1  0  0  
+-----------------------------------------
+<1 turn. Ship Type: Battleship
+<1: look from Y:8 X:0
+Enemy ship found at -> Y:7 X:1
+Friendly ship found at -> Y:9 X:1
+<1 Ship move to Y:7 X:0
+<1 Ship shoot at Y:9 X:2 which has no ship.
+<1 Ship shoot at Y:9 X:2 which has no ship.
+0  0  0  0  0  0  0  0  !2 )1 
+0  0  0  0  0  0  0  1  1  0  
+0  0  0  0  0  0  0  1  1  $1 
+0  0  0  #1 0  0  0  0  0  0  
+0  0  0  0  1  0  0  0  #2 0  
+0  0  *1 0  1  0  0  )3 0  0  
+0  !1 0  &2 1  0  0  0  0  0  
+<1 @2 0  0  <2 0  0  0  0  &1 
+0  0  @1 0  0  1  1  1  0  0  
+0  !3 0  0  0  0  0  1  0  0  
+-----------------------------------------
+<2 turn. Ship Type: Battleship
+<2: look from Y:7 X:4
+Friendly ship found at -> Y:6 X:3
+<2 Ship move to Y:8 X:4
+<2 Ship shoot at Y:9 X:5 which has no ship.
+<2 Ship shoot at Y:9 X:6 which has no ship.
+0  0  0  0  0  0  0  0  !2 )1 
+0  0  0  0  0  0  0  1  1  0  
+0  0  0  0  0  0  0  1  1  $1 
+0  0  0  #1 0  0  0  0  0  0  
+0  0  0  0  1  0  0  0  #2 0  
+0  0  *1 0  1  0  0  )3 0  0  
+0  !1 0  &2 1  0  0  0  0  0  
+<1 @2 0  0  0  0  0  0  0  &1 
+0  0  @1 0  <2 1  1  1  0  0  
+0  !3 0  0  0  0  0  1  0  0  
+-----------------------------------------
+!1 turn. Ship Type: Amphibious
+!1: look from Y:6 X:1
+Enemy ship found at -> Y:5 X:2
+Friendly ship found at -> Y:7 X:0
+Enemy ship found at -> Y:7 X:1
+!1 Ship move to Y:6 X:2
+!1 Ship shoot at Y:9 X:2 which has no ship.
+!1 Ship shoot at Y:8 X:3 which has no ship.
+0  0  0  0  0  0  0  0  !2 )1 
+0  0  0  0  0  0  0  1  1  0  
+0  0  0  0  0  0  0  1  1  $1 
+0  0  0  #1 0  0  0  0  0  0  
+0  0  0  0  1  0  0  0  #2 0  
+0  0  *1 0  1  0  0  )3 0  0  
+0  0  !1 &2 1  0  0  0  0  0  
+<1 @2 0  0  0  0  0  0  0  &1 
+0  0  @1 0  <2 1  1  1  0  0  
+0  !3 0  0  0  0  0  1  0  0  
+-----------------------------------------
+!2 turn. Ship Type: Amphibious
+!2: look from Y:0 X:8
+Enemy ship found at -> Y:0 X:9
+!2 Ship move to Y:1 X:8
+!2 Ship shoot at Y:4 X:9 which has no ship.
+!2 Ship shoot at Y:2 X:9 which destroyed $1
+!2 Total Kill:1
+0  0  0  0  0  0  0  0  0  )1 
+0  0  0  0  0  0  0  1  !2 0  
+0  0  0  0  0  0  0  1  1  0  
+0  0  0  #1 0  0  0  0  0  0  
+0  0  0  0  1  0  0  0  #2 0  
+0  0  *1 0  1  0  0  )3 0  0  
+0  0  !1 &2 1  0  0  0  0  0  
+<1 @2 0  0  0  0  0  0  0  &1 
+0  0  @1 0  <2 1  1  1  0  0  
+0  !3 0  0  0  0  0  1  0  0  
+-----------------------------------------
+$1 is removed from the battlefield. 
+!3 turn. Ship Type: Amphibious
+!3: look from Y:9 X:1
+Enemy ship found at -> Y:8 X:2
+!3 Ship move to Y:9 X:2
+!3 Ship shoot at Y:9 X:4 which has no ship.
+!3 Ship shoot at Y:9 X:6 which has no ship.
+0  0  0  0  0  0  0  0  0  )1 
+0  0  0  0  0  0  0  1  !2 0  
+0  0  0  0  0  0  0  1  1  0  
+0  0  0  #1 0  0  0  0  0  0  
+0  0  0  0  1  0  0  0  #2 0  
+0  0  *1 0  1  0  0  )3 0  0  
+0  0  !1 &2 1  0  0  0  0  0  
+<1 @2 0  0  0  0  0  0  0  &1 
+0  0  @1 0  <2 1  1  1  0  0  
+0  0  !3 0  0  0  0  1  0  0  
+-----------------------------------------
+)1 turn. Ship Type: Supership
+)1: look from Y:0 X:9
+Enemy ship found at -> Y:1 X:8
+Ship have nowhere to ram!
+)1 Ship move to Y:1 X:9
+)1 Ship shoot at Y:7 X:8 which has no ship.
+)1 Ship shoot at Y:2 X:0 which has no ship.
+)1 Ship shoot at Y:2 X:7 which has no ship.
+0  0  0  0  0  0  0  0  0  0  
+0  0  0  0  0  0  0  1  !2 )1 
+0  0  0  0  0  0  0  1  1  0  
+0  0  0  #1 0  0  0  0  0  0  
+0  0  0  0  1  0  0  0  #2 0  
+0  0  *1 0  1  0  0  )3 0  0  
+0  0  !1 &2 1  0  0  0  0  0  
+<1 @2 0  0  0  0  0  0  0  &1 
+0  0  @1 0  <2 1  1  1  0  0  
+0  0  !3 0  0  0  0  1  0  0  
+-----------------------------------------
+)3 turn. Ship Type: Supership
+)3: look from Y:5 X:7
+Enemy ship found at -> Y:4 X:8
+Ship have nowhere to ram!
+)3 Ship move to Y:6 X:7
+)3 Ship shoot at Y:1 X:1 which has no ship.
+)3 Ship shoot at Y:4 X:0 which has no ship.
+)3 Ship shoot at Y:8 X:2 which destroyed @1
+)3 Total Kill:3
+0  0  0  0  0  0  0  0  0  0  
+0  0  0  0  0  0  0  1  !2 )1 
+0  0  0  0  0  0  0  1  1  0  
+0  0  0  #1 0  0  0  0  0  0  
+0  0  0  0  1  0  0  0  #2 0  
+0  0  *1 0  1  0  0  0  0  0  
+0  0  !1 &2 1  0  0  )3 0  0  
+<1 @2 0  0  0  0  0  0  0  &1 
+0  0  0  0  <2 1  1  1  0  0  
+0  0  !3 0  0  0  0  1  0  0  
+-----------------------------------------
+@1 Life remaining: 0
+@1 New location: Y->8 X->2
+*1 turn. Ship Type: Battleship
+*1: look from Y:5 X:2
+Enemy ship found at -> Y:6 X:2
+Enemy ship found at -> Y:6 X:3
+*1 Ship move to Y:4 X:2
+*1 Ship shoot at Y:6 X:5 which has no ship.
+*1 Ship shoot at Y:4 X:5 which has no ship.
+0  0  0  0  0  0  0  0  0  0  
+0  0  0  0  0  0  0  1  !2 )1 
+0  0  0  0  0  0  0  1  1  0  
+0  0  0  #1 0  0  0  0  0  0  
+0  0  *1 0  1  0  0  0  #2 0  
+0  0  0  0  1  0  0  0  0  0  
+0  0  !1 &2 1  0  0  )3 0  0  
+<1 @2 0  0  0  0  0  0  0  &1 
+0  0  @1 0  <2 1  1  1  0  0  
+0  0  !3 0  0  0  0  1  0  0  
+-----------------------------------------
+#1 turn. Ship Type: Supership
+#1: look from Y:3 X:3
+Friendly ship found at -> Y:4 X:2
+Ship have nowhere to ram!
+#1 Ship move to Y:2 X:3
+#1 Ship shoot at Y:6 X:2 which destroyed !1
+#1 Total Kill:1
+#1 Ship shoot at Y:5 X:4 which has no ship.
+#1 Ship shoot at Y:1 X:8 which destroyed !2
+#1 Total Kill:2
+0  0  0  0  0  0  0  0  0  0  
+0  0  0  0  0  0  0  1  1  )1 
+0  0  0  #1 0  0  0  1  1  0  
+0  0  0  0  0  0  0  0  0  0  
+0  0  *1 0  1  0  0  0  #2 0  
+0  0  0  0  1  0  0  0  0  0  
+0  0  0  &2 1  0  0  )3 0  0  
+<1 @2 0  0  0  0  0  0  0  &1 
+0  0  @1 0  <2 1  1  1  0  0  
+0  0  !3 0  0  0  0  1  0  0  
+-----------------------------------------
+!1 Life remaining: 0
+!1 New location: Y->9 X->1
+!2 Life remaining: 1
+!2 New location: Y->0 X->9
+#2 turn. Ship Type: Supership
+#2: look from Y:4 X:8
+Ship have nowhere to ram!
+#2 Ship move to Y:4 X:9
+#2 Ship shoot at Y:3 X:0 which has no ship.
+#2 Ship shoot at Y:0 X:6 which has no ship.
+#2 Ship shoot at Y:8 X:5 which has no ship.
+0  0  0  0  0  0  0  0  0  !2 
+0  0  0  0  0  0  0  1  1  )1 
+0  0  0  #1 0  0  0  1  1  0  
+0  0  0  0  0  0  0  0  0  0  
+0  0  *1 0  1  0  0  0  0  #2 
+0  0  0  0  1  0  0  0  0  0  
+0  0  0  &2 1  0  0  )3 0  0  
+<1 @2 0  0  0  0  0  0  0  &1 
+0  0  @1 0  <2 1  1  1  0  0  
+0  !1 !3 0  0  0  0  1  0  0  
+-----------------------------------------
+@1 turn. Ship Type: Frigate
+@1: From Y:8 X:2
+@1 Ship shoot UPRIGHT at Y:7 X:3 which has no ship.
+0  0  0  0  0  0  0  0  0  !2 
+0  0  0  0  0  0  0  1  1  )1 
+0  0  0  #1 0  0  0  1  1  0  
+0  0  0  0  0  0  0  0  0  0  
+0  0  *1 0  1  0  0  0  0  #2 
+0  0  0  0  1  0  0  0  0  0  
+0  0  0  &2 1  0  0  )3 0  0  
+<1 @2 0  0  0  0  0  0  0  &1 
+0  0  @1 0  <2 1  1  1  0  0  
+0  !1 !3 0  0  0  0  1  0  0  
+-----------------------------------------
+@2 turn. Ship Type: Frigate
+@2: From Y:7 X:1
+@2 Ship shoot DOWNLEFT at Y:8 X:0 which has no ship.
+0  0  0  0  0  0  0  0  0  !2 
+0  0  0  0  0  0  0  1  1  )1 
+0  0  0  #1 0  0  0  1  1  0  
+0  0  0  0  0  0  0  0  0  0  
+0  0  *1 0  1  0  0  0  0  #2 
+0  0  0  0  1  0  0  0  0  0  
+0  0  0  &2 1  0  0  )3 0  0  
+<1 @2 0  0  0  0  0  0  0  &1 
+0  0  @1 0  <2 1  1  1  0  0  
+0  !1 !3 0  0  0  0  1  0  0  
+-----------------------------------------
+&1 turn. Ship Type: Corvette
+&1: From Y:7 X:9
+&1 Ship shoot at Y:8 X:9 which has no ship.
+0  0  0  0  0  0  0  0  0  !2 
+0  0  0  0  0  0  0  1  1  )1 
+0  0  0  #1 0  0  0  1  1  0  
+0  0  0  0  0  0  0  0  0  0  
+0  0  *1 0  1  0  0  0  0  #2 
+0  0  0  0  1  0  0  0  0  0  
+0  0  0  &2 1  0  0  )3 0  0  
+<1 @2 0  0  0  0  0  0  0  &1 
+0  0  @1 0  <2 1  1  1  0  0  
+0  !1 !3 0  0  0  0  1  0  0  
+-----------------------------------------
+&2 turn. Ship Type: Corvette
+&2: From Y:6 X:3
+&2 Ship shoot at Y:5 X:4 which has no ship.
+0  0  0  0  0  0  0  0  0  !2 
+0  0  0  0  0  0  0  1  1  )1 
+0  0  0  #1 0  0  0  1  1  0  
+0  0  0  0  0  0  0  0  0  0  
+0  0  *1 0  1  0  0  0  0  #2 
+0  0  0  0  1  0  0  0  0  0  
+0  0  0  &2 1  0  0  )3 0  0  
+<1 @2 0  0  0  0  0  0  0  &1 
+0  0  @1 0  <2 1  1  1  0  0  
+0  !1 !3 0  0  0  0  1  0  0  
+-----------------------------------------
+<1 turn. Ship Type: Battleship
+<1: look from Y:7 X:0
+Enemy ship found at -> Y:7 X:1
+<1 Ship move to Y:6 X:0
+<1 Ship shoot at Y:7 X:2 which has no ship.
+<1 Ship shoot at Y:8 X:2 which destroyed @1
+<1 Total Kill:4
+0  0  0  0  0  0  0  0  0  !2 
+0  0  0  0  0  0  0  1  1  )1 
+0  0  0  #1 0  0  0  1  1  0  
+0  0  0  0  0  0  0  0  0  0  
+0  0  *1 0  1  0  0  0  0  #2 
+0  0  0  0  1  0  0  0  0  0  
+<1 0  0  &2 1  0  0  )3 0  0  
+0  @2 0  0  0  0  0  0  0  &1 
+0  0  0  0  <2 1  1  1  0  0  
+0  !1 !3 0  0  0  0  1  0  0  
+-----------------------------------------
+<1 upgraded to Destroyer!
+@1 is removed from the battlefield. 
+<2 turn. Ship Type: Battleship
+<2: look from Y:8 X:4
+<2 Ship move to Y:7 X:4
+<2 Ship shoot at Y:8 X:8 which has no ship.
+<2 Ship shoot at Y:9 X:6 which has no ship.
+0  0  0  0  0  0  0  0  0  !2 
+0  0  0  0  0  0  0  1  1  )1 
+0  0  0  #1 0  0  0  1  1  0  
+0  0  0  0  0  0  0  0  0  0  
+0  0  *1 0  1  0  0  0  0  #2 
+0  0  0  0  1  0  0  0  0  0  
+<1 0  0  &2 1  0  0  )3 0  0  
+0  @2 0  0  <2 0  0  0  0  &1 
+0  0  0  0  0  1  1  1  0  0  
+0  !1 !3 0  0  0  0  1  0  0  
+-----------------------------------------
+!1 turn. Ship Type: Amphibious
+!1: look from Y:9 X:1
+Friendly ship found at -> Y:9 X:2
+!1 Ship move to Y:8 X:1
+!1 Ship shoot at Y:8 X:5 which has no ship.
+!1 Ship shoot at Y:8 X:4 which has no ship.
+0  0  0  0  0  0  0  0  0  !2 
+0  0  0  0  0  0  0  1  1  )1 
+0  0  0  #1 0  0  0  1  1  0  
+0  0  0  0  0  0  0  0  0  0  
+0  0  *1 0  1  0  0  0  0  #2 
+0  0  0  0  1  0  0  0  0  0  
+<1 0  0  &2 1  0  0  )3 0  0  
+0  @2 0  0  <2 0  0  0  0  &1 
+0  !1 0  0  0  1  1  1  0  0  
+0  0  !3 0  0  0  0  1  0  0  
+-----------------------------------------
+!2 turn. Ship Type: Amphibious
+!2: look from Y:0 X:9
+Enemy ship found at -> Y:1 X:9
+!2 Ship move to Y:0 X:8
+!2 Ship shoot at Y:0 X:9 which has no ship.
+!2 Ship shoot at Y:3 X:8 which has no ship.
+0  0  0  0  0  0  0  0  !2 0  
+0  0  0  0  0  0  0  1  1  )1 
+0  0  0  #1 0  0  0  1  1  0  
+0  0  0  0  0  0  0  0  0  0  
+0  0  *1 0  1  0  0  0  0  #2 
+0  0  0  0  1  0  0  0  0  0  
+<1 0  0  &2 1  0  0  )3 0  0  
+0  @2 0  0  <2 0  0  0  0  &1 
+0  !1 0  0  0  1  1  1  0  0  
+0  0  !3 0  0  0  0  1  0  0  
+-----------------------------------------
+!3 turn. Ship Type: Amphibious
+!3: look from Y:9 X:2
+Friendly ship found at -> Y:8 X:1
+!3 Ship move to Y:9 X:3
+!3 Ship shoot at Y:9 X:6 which has no ship.
+!3 Ship shoot at Y:9 X:8 which has no ship.
+0  0  0  0  0  0  0  0  !2 0  
+0  0  0  0  0  0  0  1  1  )1 
+0  0  0  #1 0  0  0  1  1  0  
+0  0  0  0  0  0  0  0  0  0  
+0  0  *1 0  1  0  0  0  0  #2 
+0  0  0  0  1  0  0  0  0  0  
+<1 0  0  &2 1  0  0  )3 0  0  
+0  @2 0  0  <2 0  0  0  0  &1 
+0  !1 0  0  0  1  1  1  0  0  
+0  0  0  !3 0  0  0  1  0  0  
+-----------------------------------------
+)1 turn. Ship Type: Supership
+)1: look from Y:1 X:9
+Enemy ship found at -> Y:0 X:8
+Ship have nowhere to ram!
+)1 Ship move to Y:2 X:9
+)1 Ship shoot at Y:3 X:5 which has no ship.
+)1 Ship shoot at Y:4 X:7 which has no ship.
+)1 Ship shoot at Y:7 X:5 which has no ship.
+0  0  0  0  0  0  0  0  !2 0  
+0  0  0  0  0  0  0  1  1  0  
+0  0  0  #1 0  0  0  1  1  )1 
+0  0  0  0  0  0  0  0  0  0  
+0  0  *1 0  1  0  0  0  0  #2 
+0  0  0  0  1  0  0  0  0  0  
+<1 0  0  &2 1  0  0  )3 0  0  
+0  @2 0  0  <2 0  0  0  0  &1 
+0  !1 0  0  0  1  1  1  0  0  
+0  0  0  !3 0  0  0  1  0  0  
+-----------------------------------------
+)3 turn. Ship Type: Supership
+)3: look from Y:6 X:7
+Ship have nowhere to ram!
+)3 Ship move to Y:7 X:7
+)3 Ship shoot at Y:5 X:5 which has no ship.
+)3 Ship shoot at Y:9 X:6 which has no ship.
+)3 Ship shoot at Y:7 X:6 which has no ship.
+0  0  0  0  0  0  0  0  !2 0  
+0  0  0  0  0  0  0  1  1  0  
+0  0  0  #1 0  0  0  1  1  )1 
+0  0  0  0  0  0  0  0  0  0  
+0  0  *1 0  1  0  0  0  0  #2 
+0  0  0  0  1  0  0  0  0  0  
+<1 0  0  &2 1  0  0  0  0  0  
+0  @2 0  0  <2 0  0  )3 0  &1 
+0  !1 0  0  0  1  1  1  0  0  
+0  0  0  !3 0  0  0  1  0  0  
+-----------------------------------------
+*1 turn. Ship Type: Battleship
+*1: look from Y:4 X:2
+*1 Ship move to Y:4 X:3
+*1 Ship shoot at Y:5 X:5 which has no ship.
+*1 Ship shoot at Y:8 X:3 which has no ship.
+0  0  0  0  0  0  0  0  !2 0  
+0  0  0  0  0  0  0  1  1  0  
+0  0  0  #1 0  0  0  1  1  )1 
+0  0  0  0  0  0  0  0  0  0  
+0  0  0  *1 1  0  0  0  0  #2 
+0  0  0  0  1  0  0  0  0  0  
+<1 0  0  &2 1  0  0  0  0  0  
+0  @2 0  0  <2 0  0  )3 0  &1 
+0  !1 0  0  0  1  1  1  0  0  
+0  0  0  !3 0  0  0  1  0  0  
+-----------------------------------------
+#1 turn. Ship Type: Supership
+#1: look from Y:2 X:3
+Ship have nowhere to ram!
+#1 Ship move to Y:1 X:3
+#1 Ship shoot at Y:2 X:8 which has no ship.
+#1 Ship shoot at Y:0 X:4 which has no ship.
+#1 Ship shoot at Y:4 X:4 which has no ship.
+0  0  0  0  0  0  0  0  !2 0  
+0  0  0  #1 0  0  0  1  1  0  
+0  0  0  0  0  0  0  1  1  )1 
+0  0  0  0  0  0  0  0  0  0  
+0  0  0  *1 1  0  0  0  0  #2 
+0  0  0  0  1  0  0  0  0  0  
+<1 0  0  &2 1  0  0  0  0  0  
+0  @2 0  0  <2 0  0  )3 0  &1 
+0  !1 0  0  0  1  1  1  0  0  
+0  0  0  !3 0  0  0  1  0  0  
+-----------------------------------------
+#2 turn. Ship Type: Supership
+#2: look from Y:4 X:9
+Ship have nowhere to ram!
+#2 Ship move to Y:3 X:9
+#2 Ship shoot at Y:1 X:6 which has no ship.
+#2 Ship shoot at Y:2 X:5 which has no ship.
+#2 Ship shoot at Y:3 X:3 which has no ship.
+0  0  0  0  0  0  0  0  !2 0  
+0  0  0  #1 0  0  0  1  1  0  
+0  0  0  0  0  0  0  1  1  )1 
+0  0  0  0  0  0  0  0  0  #2 
+0  0  0  *1 1  0  0  0  0  0  
+0  0  0  0  1  0  0  0  0  0  
+<1 0  0  &2 1  0  0  0  0  0  
+0  @2 0  0  <2 0  0  )3 0  &1 
+0  !1 0  0  0  1  1  1  0  0  
+0  0  0  !3 0  0  0  1  0  0  
+-----------------------------------------
+@2 turn. Ship Type: Frigate
+@2: From Y:7 X:1
+@2 Ship shoot LEFT at Y:7 X:0 which has no ship.
+0  0  0  0  0  0  0  0  !2 0  
+0  0  0  #1 0  0  0  1  1  0  
+0  0  0  0  0  0  0  1  1  )1 
+0  0  0  0  0  0  0  0  0  #2 
+0  0  0  *1 1  0  0  0  0  0  
+0  0  0  0  1  0  0  0  0  0  
+<1 0  0  &2 1  0  0  0  0  0  
+0  @2 0  0  <2 0  0  )3 0  &1 
+0  !1 0  0  0  1  1  1  0  0  
+0  0  0  !3 0  0  0  1  0  0  
+-----------------------------------------
+&1 turn. Ship Type: Corvette
+&1: From Y:7 X:9
+&1 Ship shoot at Y:8 X:8 which has no ship.
+0  0  0  0  0  0  0  0  !2 0  
+0  0  0  #1 0  0  0  1  1  0  
+0  0  0  0  0  0  0  1  1  )1 
+0  0  0  0  0  0  0  0  0  #2 
+0  0  0  *1 1  0  0  0  0  0  
+0  0  0  0  1  0  0  0  0  0  
+<1 0  0  &2 1  0  0  0  0  0  
+0  @2 0  0  <2 0  0  )3 0  &1 
+0  !1 0  0  0  1  1  1  0  0  
+0  0  0  !3 0  0  0  1  0  0  
+-----------------------------------------
+&2 turn. Ship Type: Corvette
+&2: From Y:6 X:3
+&2 Ship shoot at Y:6 X:4 which has no ship.
+0  0  0  0  0  0  0  0  !2 0  
+0  0  0  #1 0  0  0  1  1  0  
+0  0  0  0  0  0  0  1  1  )1 
+0  0  0  0  0  0  0  0  0  #2 
+0  0  0  *1 1  0  0  0  0  0  
+0  0  0  0  1  0  0  0  0  0  
+<1 0  0  &2 1  0  0  0  0  0  
+0  @2 0  0  <2 0  0  )3 0  &1 
+0  !1 0  0  0  1  1  1  0  0  
+0  0  0  !3 0  0  0  1  0  0  
+-----------------------------------------
+<1 turn. Ship Type: Destroyer
+<1: look from Y:6 X:0
+Enemy ship found at -> Y:7 X:1
+Ship have nowhere to ram!
+<1 Ship move to Y:6 X:1
+<1 Ship shoot at Y:7 X:3 which has no ship.
+<1 Ship shoot at Y:6 X:4 which has no ship.
+0  0  0  0  0  0  0  0  !2 0  
+0  0  0  #1 0  0  0  1  1  0  
+0  0  0  0  0  0  0  1  1  )1 
+0  0  0  0  0  0  0  0  0  #2 
+0  0  0  *1 1  0  0  0  0  0  
+0  0  0  0  1  0  0  0  0  0  
+0  <1 0  &2 1  0  0  0  0  0  
+0  @2 0  0  <2 0  0  )3 0  &1 
+0  !1 0  0  0  1  1  1  0  0  
+0  0  0  !3 0  0  0  1  0  0  
+-----------------------------------------
+<2 turn. Ship Type: Battleship
+<2: look from Y:7 X:4
+Friendly ship found at -> Y:6 X:3
+<2 Ship move to Y:8 X:4
+<2 Ship shoot at Y:9 X:7 which has no ship.
+<2 Ship shoot at Y:8 X:8 which has no ship.
+0  0  0  0  0  0  0  0  !2 0  
+0  0  0  #1 0  0  0  1  1  0  
+0  0  0  0  0  0  0  1  1  )1 
+0  0  0  0  0  0  0  0  0  #2 
+0  0  0  *1 1  0  0  0  0  0  
+0  0  0  0  1  0  0  0  0  0  
+0  <1 0  &2 1  0  0  0  0  0  
+0  @2 0  0  0  0  0  )3 0  &1 
+0  !1 0  0  <2 1  1  1  0  0  
+0  0  0  !3 0  0  0  1  0  0  
+-----------------------------------------
+!1 turn. Ship Type: Amphibious
+!1: look from Y:8 X:1
+Enemy ship found at -> Y:7 X:1
+!1 Ship move to Y:8 X:0
+!1 Ship shoot at Y:9 X:0 which has no ship.
+!1 Ship shoot at Y:9 X:1 which has no ship.
+0  0  0  0  0  0  0  0  !2 0  
+0  0  0  #1 0  0  0  1  1  0  
+0  0  0  0  0  0  0  1  1  )1 
+0  0  0  0  0  0  0  0  0  #2 
+0  0  0  *1 1  0  0  0  0  0  
+0  0  0  0  1  0  0  0  0  0  
+0  <1 0  &2 1  0  0  0  0  0  
+0  @2 0  0  0  0  0  )3 0  &1 
+!1 0  0  0  <2 1  1  1  0  0  
+0  0  0  !3 0  0  0  1  0  0  
+-----------------------------------------
+!2 turn. Ship Type: Amphibious
+!2: look from Y:0 X:8
+!2 Ship move to Y:0 X:9
+!2 Ship shoot at Y:3 X:9 which destroyed #2
+!2 Total Kill:2
+!2 Ship shoot at Y:3 X:9 which has no ship.
+0  0  0  0  0  0  0  0  0  !2 
+0  0  0  #1 0  0  0  1  1  0  
+0  0  0  0  0  0  0  1  1  )1 
+0  0  0  0  0  0  0  0  0  0  
+0  0  0  *1 1  0  0  0  0  0  
+0  0  0  0  1  0  0  0  0  0  
+0  <1 0  &2 1  0  0  0  0  0  
+0  @2 0  0  0  0  0  )3 0  &1 
+!1 0  0  0  <2 1  1  1  0  0  
+0  0  0  !3 0  0  0  1  0  0  
+-----------------------------------------
+#2 Life remaining: 2
+#2 New location: Y->8 X->2
 Iterations reached. Simulation END.
