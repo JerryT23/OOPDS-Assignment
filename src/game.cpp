@@ -1,3 +1,14 @@
+/**********|**********|**********|
+Program: game.cpp
+Course: Object Oriented Programming And Data Structure
+Trimester: 2430
+Name: Chang Hoe Hin, Tee Kah Le, Loke Mun Chun, Ng Zai Kit
+ID: 241UC2415N, 241UC2414Z, 241UC24160, 241UC240JT
+Lecture Section: TC1L
+Tutorial Section: TT4L
+Email: chang.hoe.hin@student.mmu.edu.my, tee.kah.le@student.mmu.edu.my, loke.mun.chun@student.mmu.edu.my, ng.zai.kit@student.mmu.edu.my
+Phone: 017-2453131, 011-2704 7627, 018-667 1883, 014-600 3652
+**********|**********|**********/
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
@@ -14,45 +25,53 @@ using namespace std;
 //    INHERITANCE, POLYMORPHISM, OPERATOR OVERLOADING, MOVE
 //    SEMANTICS and any number of C++ object oriented features
 
-Game::Game() : teams(nullptr),gameRunning(true) {}
-void Game::printGrid() const {
-for (int o = 0; o < height; o++)
+Game::Game() : teams(nullptr), gameRunning(true) {}
+void Game::printGrid() const
 {
-    for (int i = 0; i < width; i++)
+    for (int o = 0; o < height; o++)
     {
-        if(grid[o][i].getVal().length() == 1) { //if no ship in current coordinate
-            cout << grid[o][i].getVal() << "  ";
-            OutputFile << grid[o][i].getVal() << "  ";
+        for (int i = 0; i < width; i++)
+        {
+            if (grid[o][i].getVal().length() == 1)
+            { // if no ship in current coordinate
+                cout << grid[o][i].getVal() << "  ";
+                OutputFile << grid[o][i].getVal() << "  ";
+            }
+            else
+            {
+                cout << grid[o][i].getVal() << ' ';
+                OutputFile << grid[o][i].getVal() << ' ';
+            }
         }
-        else {
-            cout << grid[o][i].getVal() << ' ';
-            OutputFile << grid[o][i].getVal() << ' ';
-        }
+        cout << endl;
+        OutputFile << endl;
     }
-    cout << endl;
-    OutputFile << endl;
-    }
-    cout << "-----------------------------------------" <<endl;
-    OutputFile << "-----------------------------------------" <<endl;
+    cout << "-----------------------------------------" << endl;
+    OutputFile << "-----------------------------------------" << endl;
 }
-Node* Game::upgradeShip(Ship* oriShip) {
-    Ship* upgradedShip;
-    if(oriShip->getType() == "Battleship" || oriShip->getType() == "Cruiser" ) {
+Node *Game::upgradeShip(Ship *oriShip)
+{
+    Ship *upgradedShip;
+    if (oriShip->getType() == "Battleship" || oriShip->getType() == "Cruiser")
+    {
         upgradedShip = new Destroyer();
         upgradedShip->setType("Destroyer");
-        cout << oriShip->getDisplay() <<" upgraded to Destroyer!" <<endl;
-        OutputFile << oriShip->getDisplay() <<" upgraded to Destroyer!" <<endl;
+        cout << oriShip->getDisplay() << " upgraded to Destroyer!" << endl;
+        OutputFile << oriShip->getDisplay() << " upgraded to Destroyer!" << endl;
     }
-    else if(oriShip->getType() == "Destroyer" || oriShip->getType() == "Amphibious") {
+    else if (oriShip->getType() == "Destroyer" || oriShip->getType() == "Amphibious")
+    {
         upgradedShip = new Supership();
         upgradedShip->setType("Supership");
-        cout << oriShip->getDisplay() <<" upgraded to Supership!" <<endl;
-        OutputFile << oriShip->getDisplay() <<" upgraded to Supership!" <<endl;
-    } else if(oriShip->getType() == "Frigate") {
+        cout << oriShip->getDisplay() << " upgraded to Supership!" << endl;
+        OutputFile << oriShip->getDisplay() << " upgraded to Supership!" << endl;
+    }
+    else if (oriShip->getType() == "Frigate")
+    {
         upgradedShip = new Corvette();
         upgradedShip->setType("Corvette");
-        cout << oriShip->getDisplay() <<" upgraded to Corvette!" <<endl;
-        OutputFile << oriShip->getDisplay() <<" upgraded to Corvette!" <<endl;
+        cout << oriShip->getDisplay() << " upgraded to Corvette!" << endl;
+        OutputFile << oriShip->getDisplay() << " upgraded to Corvette!" << endl;
     }
     upgradedShip->setDisplay(oriShip->getDisplay());
     upgradedShip->setTeamName(oriShip->getTeamName());
@@ -63,14 +82,14 @@ Node* Game::upgradeShip(Ship* oriShip) {
     grid[oriShip->getShipPositionY()][oriShip->getShipPositionX()].setship(upgradedShip);
 
     // Replace in the LinkedList
-    Node* ret;
-    ret = teams[oriShip->getTeamIndex()].getShip().replace(oriShip,upgradedShip);
+    Node *ret;
+    ret = teams[oriShip->getTeamIndex()].getShip().replace(oriShip, upgradedShip);
     return ret;
 }
 void Game::init()
 {
     string gamefilename;
-    cout << "Enter Game Config File Name (***.txt): ";
+    cout << "Enter Game Config File Name (example:game2.txt)): ";
     cin >> gamefilename;
     string temp;
     ifstream configFile(gamefilename);
@@ -122,8 +141,8 @@ void Game::init()
         getline(configFile, temp); // first Team / space if no team
         teams = new Team[teamShipTotal.get_size()];
         for (int i = 0; i < teamShipTotal.get_size(); i++) // if two team run two time
-        {   
-            teamName = temp.substr(0,6);
+        {
+            teamName = temp.substr(0, 6);
             getline(configFile, temp); // first type of the team
             typeLeft = stoi(temp.substr(temp.find(' ') + 3));
             count = 1;
@@ -137,49 +156,49 @@ void Game::init()
                     teams[i].pushbackShips(new Battleship);
                     teams[i].searchShip(y)->setType("Battleship");
                     teams[i].searchShip(y)->setDisplay(converter + temp[temp.find(' ') + 1] + static_cast<char>(count + 48));
-                    teams[i].searchShip(y)->setTeamName(teamName);                
+                    teams[i].searchShip(y)->setTeamName(teamName);
                 }
                 else if (temp.substr(0, 2) == "Cr")
                 {
                     teams[i].pushbackShips(new Cruiser);
                     teams[i].searchShip(y)->setType("Cruiser");
                     teams[i].searchShip(y)->setDisplay(converter + temp[temp.find(' ') + 1] + static_cast<char>(count + 48));
-                    teams[i].searchShip(y)->setTeamName(teamName);                
+                    teams[i].searchShip(y)->setTeamName(teamName);
                 }
                 else if (temp.substr(0, 2) == "De")
                 {
                     teams[i].pushbackShips(new Destroyer);
                     teams[i].searchShip(y)->setType("Destroyer");
                     teams[i].searchShip(y)->setDisplay(converter + temp[temp.find(' ') + 1] + static_cast<char>(count + 48));
-                    teams[i].searchShip(y)->setTeamName(teamName);                
+                    teams[i].searchShip(y)->setTeamName(teamName);
                 }
                 else if (temp.substr(0, 2) == "Fr")
                 {
                     teams[i].pushbackShips(new Frigate);
                     teams[i].searchShip(y)->setType("Frigate");
                     teams[i].searchShip(y)->setDisplay(converter + temp[temp.find(' ') + 1] + static_cast<char>(count + 48));
-                    teams[i].searchShip(y)->setTeamName(teamName);                
+                    teams[i].searchShip(y)->setTeamName(teamName);
                 }
                 else if (temp.substr(0, 2) == "Co")
                 {
                     teams[i].pushbackShips(new Corvette);
                     teams[i].searchShip(y)->setType("Corvette");
                     teams[i].searchShip(y)->setDisplay(converter + temp[temp.find(' ') + 1] + static_cast<char>(count + 48));
-                    teams[i].searchShip(y)->setTeamName(teamName);                
+                    teams[i].searchShip(y)->setTeamName(teamName);
                 }
                 else if (temp.substr(0, 2) == "Am")
                 {
                     teams[i].pushbackShips(new Amphibious);
                     teams[i].searchShip(y)->setType("Amphibious");
                     teams[i].searchShip(y)->setDisplay(converter + temp[temp.find(' ') + 1] + static_cast<char>(count + 48));
-                    teams[i].searchShip(y)->setTeamName(teamName);                
+                    teams[i].searchShip(y)->setTeamName(teamName);
                 }
                 else if (temp.substr(0, 2) == "Su")
                 {
                     teams[i].pushbackShips(new Supership);
                     teams[i].searchShip(y)->setType("Supership");
                     teams[i].searchShip(y)->setDisplay(converter + temp[temp.find(' ') + 1] + static_cast<char>(count + 48));
-                    teams[i].searchShip(y)->setTeamName(teamName);                
+                    teams[i].searchShip(y)->setTeamName(teamName);
                 }
                 count++;
                 if (y + 1 == typeLeft)
@@ -211,7 +230,7 @@ void Game::init()
             {
                 configFile >> num;
                 grid[o][i].setVal(converter + num);
-                grid[o][i].setTaken(false);  // no ship in current coordinate
+                grid[o][i].setTaken(false); // no ship in current coordinate
             }
         }
     }
@@ -232,34 +251,39 @@ void Game::terminate()
     delete[] grid;
 }
 
-void Game::reenterBattlefield() {
+void Game::reenterBattlefield()
+{
     srand(time(0));
     int randx;
     int randy;
-    Ship* reenterShip = reenterShips.getFront()->value;
-    do {
+    Ship *reenterShip = reenterShips.getFront()->value;
+    do
+    {
         randx = rand() % width;
         randy = rand() % height;
-    }while(grid[randy][randx].getTaken()||(grid[randy][randx].getVal() == "1" && reenterShips.getFront()->value->getType() != "Amphibious"));
-    //set new ship position
+    } while (grid[randy][randx].getTaken() || (grid[randy][randx].getVal() == "1" && reenterShips.getFront()->value->getType() != "Amphibious"));
+    // set new ship position
     reenterShip->setShipPositionX(randx);
     reenterShip->setShipPositionY(randy);
     grid[randy][randx].setVal(reenterShip->getDisplay());
     grid[randy][randx].setship(reenterShip);
     grid[randy][randx].setTaken(true);
-    std::cout << reenterShip->getDisplay() <<" New location: Y->" << randy << " X->" << randx << std::endl;
-    OutputFile << reenterShip->getDisplay() <<" New location: Y->" << randy << " X->" << randx << std::endl;
+    std::cout << reenterShip->getDisplay() << " New location: Y->" << randy << " X->" << randx << std::endl;
+    OutputFile << reenterShip->getDisplay() << " New location: Y->" << randy << " X->" << randx << std::endl;
 }
-void Game::shipRandomGenerate() //generate random position for ship
+void Game::shipRandomGenerate() // generate random position for ship
 {
     srand(time(0));
     int randx, randy;
     int infiniteLoopDetector = 0;
-    for(int teamI = 0; teamI < teamShipTotal.get_size();teamI++) //loop "team" amount
+    for (int teamI = 0; teamI < teamShipTotal.get_size(); teamI++) // loop "team" amount
     {
-        for(int shipI = 0; shipI < teamShipTotal[teamI];shipI++) {
-            do {
-                if(infiniteLoopDetector > 1000) { //if loop 100 times still cant find a position
+        for (int shipI = 0; shipI < teamShipTotal[teamI]; shipI++)
+        {
+            do
+            {
+                if (infiniteLoopDetector > 1000)
+                { // if loop 100 times still cant find a position
                     cout << "POSSIBLY NOT ENOUGH LAND FOR SHIPS TO INITIALIZE, ENDING PROGRAM.";
                     OutputFile << "POSSIBLY NOT ENOUGH LAND FOR SHIPS TO INITIALIZE, ENDING PROGRAM.";
                     throw runtime_error("NOT ENOUGH LAND FOR SHIPS TO INITIALIZE");
@@ -267,8 +291,7 @@ void Game::shipRandomGenerate() //generate random position for ship
                 randx = rand() % width;
                 randy = rand() % height;
                 infiniteLoopDetector++;
-            }
-            while(grid[randy][randx].getTaken() || (grid[randy][randx].getVal() == "1" && teams[teamI].searchShip(shipI)->getType() != "Amphibious"));
+            } while (grid[randy][randx].getTaken() || (grid[randy][randx].getVal() == "1" && teams[teamI].searchShip(shipI)->getType() != "Amphibious"));
             grid[randy][randx].setVal(teams[teamI].searchShip(shipI)->getDisplay());
             grid[randy][randx].setship(teams[teamI].searchShip(shipI));
             grid[randy][randx].setTaken(true);
@@ -282,47 +305,57 @@ void Game::shipRandomGenerate() //generate random position for ship
     printGrid();
 }
 
-void Game::start() {
+void Game::start()
+{
     int teamI = 0;
-    Node* shipPtr = teams[teamI].getLinkedListHead(); //get first team head
-    for(int i = 0; i < iterations && gameRunning; i++) {//iteration //tobedo: gamerunning
-        while(!shipPtr) { //move to next team after all ships done/ team have no remaining ships
+    Node *shipPtr = teams[teamI].getLinkedListHead(); // get first team head
+    for (int i = 0; i < iterations && gameRunning; i++)
+    { // iteration
+        while (!shipPtr)
+        { // move to next team after all ships done/ team have no remaining ships
             teamI++;
-            if(teamI == teamShipTotal.get_size()) //if teamI out of range reset back to zero
+            if (teamI == teamShipTotal.get_size()) // if teamI out of range reset back to zero
                 teamI = 0;
             shipPtr = teams[teamI].getLinkedListHead();
         }
-        if(shipPtr->value->getInBattlefield())
-            shipPtr->value->action(grid); //action
-        else {
+        if (shipPtr->value->getInBattlefield())
+            shipPtr->value->action(grid); // action
+        else
+        {
             cout << shipPtr->value->getDisplay() << " turn. But the ship is not in the battlefield. Skipping...." << endl;
             OutputFile << shipPtr->value->getDisplay() << " turn. But the ship is not in the battlefield. Skipping...." << endl;
         }
         printGrid();
-        //check if any killed ship need to enter queue to reenter battlefield
+        // check if any killed ship need to enter queue to reenter battlefield
         {
-            while(!shipPtr->value->getKilledShips()->empty()) {
+            while (!shipPtr->value->getKilledShips()->empty())
+            {
                 reenterShips.enqueue(shipPtr->value->getKilledShips()->getFront()->value);
                 shipPtr->value->getKilledShips()->getFront()->value->setInBattlefield(false);
                 shipPtr->value->getKilledShips()->dequeue();
             }
         }
-        //check upgrade flag
-        if(shipPtr->value->getUpgradeFlag()) {
+        // check upgrade flag
+        if (shipPtr->value->getUpgradeFlag())
+        {
             shipPtr = upgradeShip(shipPtr->value);
             shipPtr->value->setUpgradeFlag(0);
         }
-        //reenter battlefield
+        // reenter battlefield
         {
             int reenterCount = 0;
-            while(!reenterShips.empty() && reenterCount < 2) {
+            while (!reenterShips.empty() && reenterCount < 2)
+            {
                 reenterShips.getFront()->value->lifeMinus1();
-                if(reenterShips.getFront()->value->getLife() < 0) {
+                if (reenterShips.getFront()->value->getLife() < 0)
+                {
                     cout << reenterShips.getFront()->value->getDisplay() << " is removed from the battlefield. " << endl;
                     OutputFile << reenterShips.getFront()->value->getDisplay() << " is removed from the battlefield. " << endl;
                     teams[reenterShips.getFront()->value->getTeamIndex()].getShip().deleteNode(reenterShips.getFront()->value);
                     reenterShips.dequeue();
-                } else {
+                }
+                else
+                {
                     cout << reenterShips.getFront()->value->getDisplay() << " Life remaining: " << reenterShips.getFront()->value->getLife() << endl;
                     OutputFile << reenterShips.getFront()->value->getDisplay() << " Life remaining: " << reenterShips.getFront()->value->getLife() << endl;
                     reenterBattlefield();
@@ -332,13 +365,16 @@ void Game::start() {
                 }
             }
         }
-        //check game condition
+        // check game condition
         {
             int teamRemaining = 0;
-            for(int i = 0; i < teamShipTotal.get_size();i++) {
-                if(teams[i].getLinkedListTail()) teamRemaining++;
+            for (int i = 0; i < teamShipTotal.get_size(); i++)
+            {
+                if (teams[i].getLinkedListTail())
+                    teamRemaining++;
             }
-            if(teamRemaining==1) {
+            if (teamRemaining == 1)
+            {
                 cout << "Only One Team Remaining, ending the simulation." << endl;
                 OutputFile << "Only One Team Remaining, ending the simulation." << endl;
                 gameRunning = false;
@@ -346,7 +382,7 @@ void Game::start() {
         }
         //-------------------------------
         shipPtr = shipPtr->next;
-        if (i == iterations - 1) 
+        if (i == iterations - 1)
         {
             cout << "Iterations reached. Simulation END." << endl;
             OutputFile << "Iterations reached. Simulation END." << endl;

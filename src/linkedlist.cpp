@@ -1,3 +1,14 @@
+/**********|**********|**********|
+Program: linkedlist.cpp
+Course: Object Oriented Programming And Data Structure
+Trimester: 2430
+Name: Chang Hoe Hin, Tee Kah Le, Loke Mun Chun, Ng Zai Kit
+ID: 241UC2415N, 241UC2414Z, 241UC24160, 241UC240JT
+Lecture Section: TC1L
+Tutorial Section: TT4L
+Email: chang.hoe.hin@student.mmu.edu.my, tee.kah.le@student.mmu.edu.my, loke.mun.chun@student.mmu.edu.my, ng.zai.kit@student.mmu.edu.my
+Phone: 017-2453131, 011-2704 7627, 018-667 1883, 014-600 3652
+**********|**********|**********/
 #include "../header/linkedlist.h"
 
 void LinkedList::pushFirst(Ship *value)
@@ -68,13 +79,16 @@ void LinkedList::deleteNode(int index)
     }
     size--;
 }
-void LinkedList::deleteNode(Ship* ship) {
+void LinkedList::deleteNode(Ship *ship)
+{
     int index = 0;
-    Node* shipptr = head;
-    while(shipptr->value != ship) {
+    Node *shipptr = head;
+    while (shipptr->value != ship)
+    {
         shipptr = shipptr->next;
         index++;
-        if(index == size) throw runtime_error("Ship not found in the linkedlist, therefore cant be deleted.");
+        if (index == size)
+            throw runtime_error("Ship not found in the linkedlist, therefore cant be deleted.");
     }
     if (index == 0)
     {
@@ -120,15 +134,17 @@ Ship *LinkedList::search(int index)
     }
     return ret->value;
 }
-Node *LinkedList::replace(Ship* oriShip, Ship *value)
+Node *LinkedList::replace(Ship *oriShip, Ship *value)
 {
-    //find oriship index
+    // find oriship index
     int index = 0;
-    Node* shipptr = head;
-    while(shipptr->value != oriShip) {
+    Node *shipptr = head;
+    while (shipptr->value != oriShip)
+    {
         shipptr = shipptr->next;
         index++;
-        if(index == size) throw runtime_error("Ship not found in the linkedlist, therefore cant be deleted.");
+        if (index == size)
+            throw runtime_error("Ship not found in the linkedlist, therefore cant be deleted.");
     }
     //////////////////
     Node *newship = new Node;
@@ -172,7 +188,7 @@ Node *LinkedList::replace(Ship* oriShip, Ship *value)
 }
 Node *LinkedList::getHead() const { return head; }
 Node *LinkedList::getTail() const { return tail; }
-int LinkedList::getSize() const {return size;}
+int LinkedList::getSize() const { return size; }
 LinkedList::~LinkedList()
 {
     Node *n = head;

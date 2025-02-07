@@ -1,1 +1,0 @@
-g++ main.cpp src/game.cpp src/shiptype.cpp src/linkedlist.cpp src/team.cpp src/grid.cpp src/queue.cpp -o main
